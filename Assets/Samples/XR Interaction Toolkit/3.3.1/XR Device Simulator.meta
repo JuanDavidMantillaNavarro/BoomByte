@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< master
 guid: a73f2da376c0ca84d907d9cbe6ac1039
+=======
+guid: 5c3bf0da0f10f614085203c83ca958ae
+>>>>>>> Sofia
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

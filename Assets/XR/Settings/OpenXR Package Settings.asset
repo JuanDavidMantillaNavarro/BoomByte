@@ -630,7 +630,11 @@ MonoBehaviour:
   m_Name: MetaXRFeature Standalone
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaXRFeature
   m_enabled: 1
+<<<<<<< master
   <failedInitialization>k__BackingField: 1
+=======
+  <failedInitialization>k__BackingField: 0
+>>>>>>> Sofia
   nameUi: Meta XR Feature
   version: 0.0.1
   featureIdInternal: com.meta.openxr.feature.metaxr

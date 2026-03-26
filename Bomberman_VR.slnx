@@ -1,5 +1,9 @@
 ﻿<Solution>
+<<<<<<< master
   <Project Path="Unity.XR.Hands.Samples.VisualizerSample.csproj" />
+=======
+  <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
+>>>>>>> Sofia
   <Project Path="Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
