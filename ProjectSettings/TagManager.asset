@@ -5,14 +5,16 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - Ground
+  - Destructible
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
+  - Walls
   - 
   - 
   - 
