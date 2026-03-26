@@ -1,10 +1,10 @@
 
 using System.Collections;
 using UnityEngine;
-public class LetrerosController : MonoBehaviour
 
+public class LetrerosController : MonoBehaviour
 {
-   [Header("Imagenes de tutorial")]
+     [Header("Imagenes de tutorial")]
     public GameObject imagenAgarrarBola;
     public GameObject imagenLanzarBola;
 

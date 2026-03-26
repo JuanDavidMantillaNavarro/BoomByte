@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.TextCore;
 
 public class EnergyByte : XRGrabInteractable
+
 {
+
     [Header("Maze Magnet Settings")]
     public float magnetForce = 10f; // Fuerza suave en el aire
     public LayerMask wallLayer;
@@ -19,12 +22,22 @@ public class EnergyByte : XRGrabInteractable
 
     private Rigidbody rb;
     private bool isFlying = false;
+    public LetrerosController letrerosController;
+
 
     protected override void Awake()
     {
         base.Awake();
         rb = GetComponent<Rigidbody>();
     }
+    
+ void OnGrab(SelectEnterEventArgs args)
+    {
+        Debug.Log("agarro");
+         letrerosController.agarrarBola = true;
+        
+    }
+    
 
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
