@@ -19,12 +19,22 @@ public class EnergyByte : XRGrabInteractable
 
     private Rigidbody rb;
     private bool isFlying = false;
+    public LetrerosController letrerosController;
+
 
     protected override void Awake()
     {
         base.Awake();
         rb = GetComponent<Rigidbody>();
     }
+    
+ void OnGrab(SelectEnterEventArgs args)
+    {
+        Debug.Log("agarro");
+         letrerosController.agarrarBola = true;
+        
+    }
+    
 
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
