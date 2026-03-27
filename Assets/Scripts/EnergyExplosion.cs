@@ -5,16 +5,27 @@ using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 public class EnergyExplosion : MonoBehaviour
 {
     private float gridRange;
-    private float heightRange = 4f; 
-    private float slowAmount = 0.4f; // 40%
+    private float heightRange = 4f;
+    private float slowAmount = 0.4f;
     private float duration = 3f;
+
     public string destructibleTag = "Destructible";
+
+    [Header("Efecto logo")]
+    public EfectoZoomLogo efectoLogo;
+
+    private bool efectoActivado = false;
 
     public void Initialize(float gridRadius)
     {
-        gridRange = gridRadius; 
-        
-        // Ejecutamos ambas lógicas
+        gridRange = gridRadius;
+
+        if (efectoLogo == null)
+        {
+            efectoLogo = FindFirstObjectByType<EfectoZoomLogo>();
+            Debug.Log("Buscando efectoLogo en escena: " + efectoLogo);
+        }
+
         ApplySlowEffect();
         DestroyWallsInRange();
     }
@@ -28,7 +39,6 @@ public class EnergyExplosion : MonoBehaviour
         Vector3 explosionPos = transform.position;
         Vector3 diff = playerPos - explosionPos;
 
-        // Verificamos si el jugador está en el cubo
         bool inHorizontalRange = Mathf.Abs(diff.x) <= gridRange && Mathf.Abs(diff.z) <= gridRange;
         bool inVerticalRange = diff.y >= -1f && diff.y <= heightRange;
 
@@ -44,19 +54,32 @@ public class EnergyExplosion : MonoBehaviour
 
     private void DestroyWallsInRange()
     {
-        // Definimos el centro y el tamaño de la caja de detección (el mismo del Gizmo)
-        Vector3 center = transform.position + new Vector3(0, heightRange / 2, 0);
-        Vector3 halfExtents = new Vector3(gridRange, heightRange / 2, gridRange);
+        Vector3 center = transform.position + new Vector3(0, heightRange / 2f, 0);
+        Vector3 halfExtents = new Vector3(gridRange, heightRange / 2f, gridRange);
 
-        // Detectamos todos los colisionadores dentro de esa caja
         Collider[] hitColliders = Physics.OverlapBox(center, halfExtents, Quaternion.identity);
+
+        Debug.Log("Cantidad de colliders detectados: " + hitColliders.Length);
 
         foreach (Collider hit in hitColliders)
         {
+            Debug.Log("Detectó collider: " + hit.name + " | tag: " + hit.tag);
+
             if (hit.CompareTag(destructibleTag))
             {
-                Debug.Log("<color=orange>Pared destruida: </color>" + hit.name);
-                // Aquí podrías instanciar partículas de escombros antes de destruir
+                Debug.Log("SI detectó pared destructible");
+
+                if (!efectoActivado && efectoLogo != null)
+                {
+                    Debug.Log("Va a activar el logo");
+                    efectoActivado = true;
+                    efectoLogo.ActivarEfectoAhora();
+                }
+                else
+                {
+                    Debug.LogWarning("No activó el logo: efectoLogo nulo o ya activado");
+                }
+
                 Destroy(hit.gameObject);
             }
         }
@@ -70,7 +93,6 @@ public class EnergyExplosion : MonoBehaviour
         float originalSpeed = moveProvider.moveSpeed;
         float targetSpeed = originalSpeed * (1f - slowAmount);
 
-        Debug.Log("<color=green>¡Jugador atrapado! Ralentizando...</color>");
         moveProvider.moveSpeed = targetSpeed;
 
         yield return new WaitForSeconds(duration - 0.5f);
@@ -84,17 +106,6 @@ public class EnergyExplosion : MonoBehaviour
         }
 
         moveProvider.moveSpeed = originalSpeed;
-        
-        // No destruimos el objeto aquí para dejar que las partículas terminen si las hay
-        // El objeto de la explosión se destruye al final del Initialize o con un timer
         Destroy(gameObject, 0.5f);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.cyan;
-        Vector3 center = transform.position + new Vector3(0, heightRange / 2, 0);
-        Vector3 size = new Vector3(gridRange * 2, heightRange, gridRange * 2);
-        Gizmos.DrawWireCube(center, size);
     }
 }
