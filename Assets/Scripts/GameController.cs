@@ -8,6 +8,9 @@ public class GameController : MonoBehaviour
     public LetrerosController letrerosController;
     public UIManagerVR uiManager;
 
+    public int BolasActivas = 0; //Bolas actualmente en el mundo
+    public int MaxBolas = 1; //Limite Max de Bolas permitidas para spawn
+
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -31,5 +34,20 @@ public class GameController : MonoBehaviour
     public void OnPlayerExplosion()
     {
         uiManager.ActivarVignette(3f);
+    }
+
+    public bool CanSpawnBall()
+    {
+        return BolasActivas < MaxBolas;
+    }
+
+    public void RegisterBallSpawned()
+    {
+        BolasActivas++;
+    }
+
+    public void RegisterBallDestroyed()
+    {
+        BolasActivas--;
     }
 }

@@ -61,8 +61,13 @@ public class EnergyByteGenerator : MonoBehaviour
 
     private void CreateAndGrabBall(IXRSelectInteractor interactor)
     {
+        // VALIDACIÓN DEL GAMECONTROLLER 
+        if (!GameController.Instance.CanSpawnBall())
+        return;
+        
         // Crear la bola
         GameObject newBall = Instantiate(energyBytePrefab, interactor.transform.position, Quaternion.identity);
+        GameController.Instance.RegisterBallSpawned();
         
         EnergyByte ballInteractable = newBall.GetComponent<EnergyByte>();
         Rigidbody ballRb = newBall.GetComponent<Rigidbody>();

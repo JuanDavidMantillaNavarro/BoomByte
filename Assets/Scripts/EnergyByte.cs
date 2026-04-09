@@ -73,6 +73,7 @@ public class EnergyByte : XRGrabInteractable
     {
         // Se da para el GameController para que el maneje la logica de explosión
         GameController.Instance.OnBallExploded(transform.position, model.explosionGridRadius, explosionPrefab);
+        GameController.Instance.RegisterBallDestroyed();
         Destroy(gameObject);
     }
 
