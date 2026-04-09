@@ -302,15 +302,11 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
-  magnetForce: 15
+  model: {fileID: 11400000, guid: 16678f400e1ed734dbdb61df827b01f8, type: 2}
   wallLayer:
     serializedVersion: 2
     m_Bits: 64
-  groundTag: Ground
   explosionPrefab: {fileID: 4466109608956289259, guid: 41b62d36aca3d3445a697506d6ea0917, type: 3}
-  delayBeforeExplode: 2
-  extraThrowForce: 1
-  explosionGridRadius: 2
 --- !u!135 &1380748546683143235
 SphereCollider:
   m_ObjectHideFlags: 0
