@@ -27,4 +27,9 @@ public class GameController : MonoBehaviour
         var expScript = fxEplosion.GetComponent<EnergyExplosion>();
         if (expScript != null) expScript.Initialize(Radio);
     }
+
+    public void OnPlayerExplosion()
+    {
+        uiManager.ActivarVignette(3f);
+    }
 }

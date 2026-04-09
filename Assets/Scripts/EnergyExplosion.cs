@@ -38,6 +38,7 @@ public class EnergyExplosion : MonoBehaviour
             if (playerRoot != null)
             {
                 StartCoroutine(SlowDownRoutine(playerRoot));
+                GameController.Instance.OnPlayerExplosion();
             }
         }
     }
