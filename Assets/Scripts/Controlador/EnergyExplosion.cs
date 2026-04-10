@@ -10,10 +10,13 @@ public class EnergyExplosion : MonoBehaviour
     private float duration = 3f;
     public string destructibleTag = "Destructible";
 
+    [Header("Efectos")]
+    public EffectData RadioExplosionEffect;
+
     public void Initialize(float gridRadius)
     {
-        gridRange = gridRadius; 
-        
+        gridRange = gridRadius + GameController.Instance.explosionRadiusModifier;
+        GameController.Instance.effectManager.ApplyEffect(RadioExplosionEffect);
         // Ejecutamos ambas lógicas
         ApplySlowEffect();
         DestroyWallsInRange();
@@ -38,6 +41,7 @@ public class EnergyExplosion : MonoBehaviour
             if (playerRoot != null)
             {
                 StartCoroutine(SlowDownRoutine(playerRoot));
+                GameController.Instance.OnPlayerExplosion();
             }
         }
     }
@@ -56,7 +60,7 @@ public class EnergyExplosion : MonoBehaviour
             if (hit.CompareTag(destructibleTag))
             {
                 Debug.Log("<color=orange>Pared destruida: </color>" + hit.name);
-                // Aquí podrías instanciar partículas de escombros antes de destruir
+                //animacion destruir?
                 Destroy(hit.gameObject);
             }
         }
@@ -85,8 +89,6 @@ public class EnergyExplosion : MonoBehaviour
 
         moveProvider.moveSpeed = originalSpeed;
         
-        // No destruimos el objeto aquí para dejar que las partículas terminen si las hay
-        // El objeto de la explosión se destruye al final del Initialize o con un timer
         Destroy(gameObject, 0.5f);
     }
 
