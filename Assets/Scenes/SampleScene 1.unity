@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRButtonTrigger
   tipo: 4
-  manager: {fileID: 0}
+  manager: {fileID: 1824281466}
 --- !u!65 &25529839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6274,9 +6274,9 @@ GameObject:
   - component: {fileID: 638151484}
   - component: {fileID: 638151489}
   - component: {fileID: 638151488}
-  - component: {fileID: 638151487}
   - component: {fileID: 638151486}
-  - component: {fileID: 638151485}
+  - component: {fileID: 638151491}
+  - component: {fileID: 638151490}
   m_Layer: 5
   m_Name: panel salir
   m_TagString: Untagged
@@ -6305,18 +6305,6 @@ RectTransform:
   m_AnchoredPosition: {x: 516.9, y: 0}
   m_SizeDelta: {x: 134.54, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &638151485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638151483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ee4828d5f68db458100dbe5300e3c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Billboard
 --- !u!225 &638151486
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6329,20 +6317,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &638151487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638151483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62393047cb23fe347bb251d99382c89a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RadialMenuController
-  radialMenu: {fileID: 638151483}
-  canvasGroup: {fileID: 638151486}
 --- !u!114 &638151488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6381,6 +6355,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638151483}
   m_CullTransparentMesh: 1
+--- !u!114 &638151490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638151483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ee4828d5f68db458100dbe5300e3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Billboard
+  distanceFromCamera: 2
+  heightOffset: -0.2
+--- !u!114 &638151491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638151483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62393047cb23fe347bb251d99382c89a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RadialMenuController
+  radialMenu: {fileID: 638151483}
+  canvasGroup: {fileID: 638151486}
+  teclaSimulador: 98
 --- !u!1 &638498286
 GameObject:
   m_ObjectHideFlags: 0
@@ -10493,7 +10496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRButtonTrigger
   tipo: 3
-  manager: {fileID: 0}
+  manager: {fileID: 1824281466}
 --- !u!65 &1056286072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13115,7 +13118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRButtonTrigger
   tipo: 1
-  manager: {fileID: 0}
+  manager: {fileID: 1824281466}
 --- !u!114 &1415647738 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5005649301645334909, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
@@ -15373,7 +15376,8 @@ GameObject:
   - component: {fileID: 1688587079}
   - component: {fileID: 1688587078}
   - component: {fileID: 1688587076}
-  - component: {fileID: 1688587075}
+  - component: {fileID: 1688587080}
+  - component: {fileID: 1688587081}
   m_Layer: 5
   m_Name: 'panel sonido '
   m_TagString: Untagged
@@ -15400,18 +15404,6 @@ RectTransform:
   m_AnchoredPosition: {x: 478.1, y: -5.53}
   m_SizeDelta: {x: 129.79, y: 88.95}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1688587075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1688587073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ee4828d5f68db458100dbe5300e3c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Billboard
 --- !u!225 &1688587076
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -15462,6 +15454,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688587073}
   m_CullTransparentMesh: 1
+--- !u!114 &1688587080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688587073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ee4828d5f68db458100dbe5300e3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Billboard
+  distanceFromCamera: 2
+  heightOffset: -0.2
+--- !u!114 &1688587081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688587073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62393047cb23fe347bb251d99382c89a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RadialMenuController
+  radialMenu: {fileID: 1688587073}
+  canvasGroup: {fileID: 1688587076}
+  teclaSimulador: 98
 --- !u!1 &1702963519
 GameObject:
   m_ObjectHideFlags: 0
@@ -16099,7 +16120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRButtonTrigger
   tipo: 0
-  manager: {fileID: 0}
+  manager: {fileID: 1824281466}
 --- !u!224 &1787981550 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2179057468902719979, guid: f47ad6ac315a3ea428b59e2cac6f2a2e, type: 3}
@@ -16581,12 +16602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da3995d759396747a6ef4a14b53b343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnapToGrid
-  gridSize: 0.5
-  gridOffset: {x: 0.25, y: 0, z: 0}
-  magnetForce: 5
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!135 &1861262702
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18153,7 +18168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRButtonTrigger
   tipo: 5
-  manager: {fileID: 0}
+  manager: {fileID: 1824281466}
 --- !u!65 &2017637803
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18395,16 +18410,15 @@ GameObject:
   - component: {fileID: 2041975953}
   - component: {fileID: 2041975955}
   - component: {fileID: 2041975954}
-  - component: {fileID: 2041975957}
   - component: {fileID: 2041975956}
-  - component: {fileID: 2041975958}
+  - component: {fileID: 2041975957}
   m_Layer: 5
   m_Name: radial menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2041975953
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18492,18 +18506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RadialMenuController
   radialMenu: {fileID: 2041975952}
   canvasGroup: {fileID: 2041975956}
---- !u!114 &2041975958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041975952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ee4828d5f68db458100dbe5300e3c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Billboard
+  teclaSimulador: 261
 --- !u!1 &2046629158
 GameObject:
   m_ObjectHideFlags: 0
@@ -18917,7 +18920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRButtonTrigger
   tipo: 2
-  manager: {fileID: 0}
+  manager: {fileID: 1824281466}
 --- !u!1 &2078959960
 GameObject:
   m_ObjectHideFlags: 0

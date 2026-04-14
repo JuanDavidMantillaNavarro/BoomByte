@@ -1,18 +1,23 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.XR;
 using System.Collections.Generic;
 
 public class RadialMenuController : MonoBehaviour
 {
-    public GameObject radialMenu; // arrastra: "radial menu"
+    public GameObject radialMenu; // arrastra el menú radial
     public CanvasGroup canvasGroup;
 
     private InputDevice rightController;
     private bool lastButtonState = false;
 
+    [Header("Simulador (Editor)")]
+    public KeyCode teclaSimulador = KeyCode.B;
+
     void Start()
     {
-        radialMenu.SetActive(false);
+        if (radialMenu != null)
+            radialMenu.SetActive(false);
+
         GetRightController();
     }
 
@@ -27,21 +32,28 @@ public class RadialMenuController : MonoBehaviour
 
     void Update()
     {
+        //Reintenta obtener el control si se pierde
         if (!rightController.isValid)
             GetRightController();
 
-        bool buttonBPressed;
+        bool buttonBPressed = false;
 
-        if (rightController.TryGetFeatureValue(CommonUsages.secondaryButton, out buttonBPressed))
+        // INPUT VR (Meta Quest)
+        if (rightController.isValid)
         {
-            // Detecta SOLO cuando se presiona (no mantener)
-            if (buttonBPressed && !lastButtonState)
-            {
-                ToggleMenu();
-            }
-
-            lastButtonState = buttonBPressed;
+            rightController.TryGetFeatureValue(CommonUsages.secondaryButton, out buttonBPressed);
         }
+
+        //INPUT SIMULADOR (teclado)
+        bool simuladorPressed = Input.GetKeyDown(teclaSimulador) || Input.GetKeyDown(KeyCode.M);
+
+        //Detectar pulsación (no mantener)
+        if ((buttonBPressed && !lastButtonState) || simuladorPressed)
+        {
+            ToggleMenu();
+        }
+
+        lastButtonState = buttonBPressed;
     }
 
     void ToggleMenu()
@@ -53,6 +65,9 @@ public class RadialMenuController : MonoBehaviour
         {
             canvasGroup.alpha = active ? 1 : 0;
             canvasGroup.blocksRaycasts = active;
+            canvasGroup.interactable = active;
         }
+
+        Debug.Log("Radial Menu: " + (active ? "ABIERTO" : "CERRADO"));
     }
 }
