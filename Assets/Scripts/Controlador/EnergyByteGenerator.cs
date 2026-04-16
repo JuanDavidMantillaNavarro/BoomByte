@@ -12,19 +12,18 @@ public class EnergyByteGenerator : MonoBehaviour
     [Header("Referencias")]
     public XRInteractionManager interactionManager;
 
-    // Lista para rastrear qué manos están dentro de la zona
+    // Lista para ver que manos están dentro del generador
     private List<IXRSelectInteractor> interactorsInZone = new List<IXRSelectInteractor>();
 
     private void OnTriggerEnter(Collider other)
     {
-        // Al entrar, verificamos si es un interactor (mano)
+        // Se verifica si es un interactor (es decir la mano)
         var interactor = other.GetComponentInParent<IXRSelectInteractor>();
         
         if (interactor != null && !interactorsInZone.Contains(interactor))
         {
             interactorsInZone.Add(interactor);
-            // Nos suscribimos al evento de cuando el usuario presiona el botón de agarrar
-            // Nota: En versiones nuevas de XRIT se usa selectEntered en el interactor
+            // Evento de cuando el usuario presiona el botón de agarrar
         }
     }
 
@@ -39,11 +38,10 @@ public class EnergyByteGenerator : MonoBehaviour
 
     private void Update()
     {
-        // Revisamos si alguna mano en la zona está intentando agarrar y no tiene nada
+        // Mano en generador
         foreach (var interactor in interactorsInZone)
         {
-            // Verificamos si el interactor está intentando seleccionar (botón presionado)
-            // y si NO tiene ya algo seleccionado
+            // Verifica si la mano está intentando seleccionar (botón presionado de grab) y no tiene nada seleccionado
             if (IsPressingGrab(interactor) && !interactor.hasSelection)
             {
                 CreateAndGrabBall(interactor);
@@ -53,8 +51,7 @@ public class EnergyByteGenerator : MonoBehaviour
 
     private bool IsPressingGrab(IXRSelectInteractor interactor)
     {
-        // Esta es la forma compatible de detectar si el botón de agarre está activo
-        // mientras está en la zona del trigger.
+        // Detectar si el botón de grap está activo mientras está en la zona del generador.
         if (interactor is XRDirectInteractor direct)
         {
             return direct.isSelectActive;
@@ -64,10 +61,14 @@ public class EnergyByteGenerator : MonoBehaviour
 
     private void CreateAndGrabBall(IXRSelectInteractor interactor)
     {
-        // Instanciar
-        GameObject newBall = Instantiate(energyBytePrefab, interactor.transform.position, Quaternion.identity);
+        // VALIDACIÓN DEL GAMECONTROLLER 
+        if (!GameController.Instance.CanSpawnBall())
+        return;
         
-        // Obtener el componente que creamos antes
+        // Crear la bola
+        GameObject newBall = Instantiate(energyBytePrefab, interactor.transform.position, Quaternion.identity);
+        GameController.Instance.RegisterBallSpawned();
+        
         EnergyByte ballInteractable = newBall.GetComponent<EnergyByte>();
         Rigidbody ballRb = newBall.GetComponent<Rigidbody>();
 
@@ -76,14 +77,11 @@ public class EnergyByteGenerator : MonoBehaviour
             ballRb.linearVelocity = Vector3.zero;
             ballRb.angularVelocity = Vector3.zero;
             ballRb.ResetInertiaTensor();
-            // Forzar el agarre
+            // Forzar el agarre a la bola
             interactionManager.SelectEnter(interactor, (IXRSelectInteractable)ballInteractable);
             ballRb.linearVelocity = Vector3.zero;
             ballRb.angularVelocity = Vector3.zero;
             ballRb.ResetInertiaTensor();
-            
-            // Opcional: Remover de la lista temporalmente para evitar doble spawn 
-            // aunque hasSelection ya debería prevenirlo
         }
     }
 }
