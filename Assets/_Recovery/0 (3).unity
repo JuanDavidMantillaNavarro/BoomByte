@@ -1003,7 +1003,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100100259}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 8.739}
+  m_LocalPosition: {x: 0, y: 0, z: 7.5619993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1011,7 +1011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.747, y: 0}
+  m_AnchoredPosition: {x: 2.2630005, y: 1.06}
   m_SizeDelta: {x: 112.66, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &100100261
@@ -1176,8 +1176,8 @@ MonoBehaviour:
   vignetteController: {fileID: 1373153107}
   explosionProvider: {fileID: 1373153109}
   timerText: {fileID: 2145741743}
-  winPanel: {fileID: 0}
-  losePanel: {fileID: 0}
+  winPanel: {fileID: 652753287}
+  losePanel: {fileID: 1078684282}
 --- !u!1 &149491187
 GameObject:
   m_ObjectHideFlags: 0
@@ -11591,6 +11591,56 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1254714005}
   m_SourcePrefab: {fileID: 100100000, guid: 2e3ae44d578e0794e80dbed1e8b7fc62, type: 3}
+--- !u!1 &843036498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 843036499}
+  - component: {fileID: 843036500}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &843036499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843036498}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 138.259, y: -82.339, z: -644.19995}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2047925103}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &843036500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843036498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9106a213edeb51d45b11a345c06868bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManagerVR
+  panelConfiguracion: {fileID: 0}
+  vignetteController: {fileID: 1373153107}
+  explosionProvider: {fileID: 1373153109}
+  timerText: {fileID: 2145741743}
+  winPanel: {fileID: 652753287}
+  losePanel: {fileID: 1078684282}
 --- !u!1 &844302123
 GameObject:
   m_ObjectHideFlags: 0
@@ -13111,7 +13161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &909294698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20041,10 +20091,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2556648708419447538, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
-      propertyPath: m_RayInteractor
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2556648708419447538, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_NearFarInteractor
       value: 
       objectReference: {fileID: 275672055}
@@ -20055,10 +20101,6 @@ PrefabInstance:
     - target: {fileID: 3163147119934678178, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3435865013543954137, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
-      propertyPath: m_RayInteractor
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3435865013543954137, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_NearFarInteractor
@@ -30676,6 +30718,7 @@ RectTransform:
   - {fileID: 2127455206}
   - {fileID: 2109282953}
   - {fileID: 250830522}
+  - {fileID: 843036499}
   - {fileID: 628883505}
   - {fileID: 1534373287}
   - {fileID: 609599309}
@@ -31008,9 +31051,8 @@ MonoBehaviour:
   puntoInicio: {fileID: 100100260}
   playerCamera: {fileID: 64579887}
   menuRayInteractor: {fileID: 1204502335}
-  distanceFromCamera: 0.66
+  distanceFromCamera: 1.5
   heightOffset: -0.2
-  botonBReference: {fileID: -8069514856583376848, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
 --- !u!1 &2058910459
 GameObject:
   m_ObjectHideFlags: 0
@@ -32994,7 +33036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2127455203
 MonoBehaviour:
   m_ObjectHideFlags: 0

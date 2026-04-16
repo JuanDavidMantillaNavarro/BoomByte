@@ -19,6 +19,9 @@ public class VRMenuManager : MonoBehaviour
     public float distanceFromCamera = 1.5f;
     public float heightOffset = -0.2f;
 
+     [Header("Input")]
+    public InputActionReference botonBReference; // <-- Asignas desde el inspector
+
     private bool menuAbierto = false;
 
     void Start()
@@ -31,20 +34,30 @@ public class VRMenuManager : MonoBehaviour
         DetectarInputMenu();
     }
 
+    bool BotonBVR()
+    {
+        UnityEngine.XR.InputDevice rightHand =
+            UnityEngine.XR.InputDevices.GetDeviceAtXRNode(UnityEngine.XR.XRNode.RightHand);
+
+        if (!rightHand.isValid)
+            return false;
+
+        bool botonB = false;
+
+        if (rightHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.secondaryButton, out botonB))
+        {
+            return botonB;
+        }
+
+        return false;
+    }
+
     void DetectarInputMenu()
     {
         // teclado simulador
         bool teclado = Keyboard.current != null && Keyboard.current.bKey.wasPressedThisFrame;
 
-        // VR control derecho botón B
-        bool vrBotonB = false;
-
-        if (Gamepad.current != null)
-        {
-            vrBotonB = Gamepad.current.buttonEast.wasPressedThisFrame;
-        }
-
-        if (teclado || vrBotonB)
+        if (teclado || BotonBVR())
         {
             ToggleMenu();
         }
@@ -63,7 +76,7 @@ public class VRMenuManager : MonoBehaviour
             if (menuRayInteractor != null)
                 menuRayInteractor.SetActive(true);
 
-            Debug.Log("MENÚ ABIERTO");
+            Debug.Log("MENï¿½ ABIERTO");
         }
         else
         {
@@ -73,7 +86,7 @@ public class VRMenuManager : MonoBehaviour
             if (menuRayInteractor != null)
                 menuRayInteractor.SetActive(false);
 
-            Debug.Log("MENÚ CERRADO");
+            Debug.Log("MENï¿½ CERRADO");
         }
     }
 
@@ -89,10 +102,10 @@ public class VRMenuManager : MonoBehaviour
 
         radialMenu.transform.position = targetPosition;
 
-        // mirar exactamente como la cámara
+        // mirar exactamente como la cï¿½mara
         radialMenu.transform.rotation = Quaternion.LookRotation(playerCamera.forward);
 
-        Debug.Log("Menú posicionado frente al jugador");
+        Debug.Log("Menï¿½ posicionado frente al jugador");
     }
 
     void PosicionarPanel(GameObject panel)
