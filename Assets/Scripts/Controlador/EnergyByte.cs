@@ -33,6 +33,9 @@ public class EnergyByte : XRGrabInteractable
         base.OnSelectExited(args);
         isFlying = true;
 
+        //ACTIVAR UI
+        FindObjectOfType<EnergyUIManager>().IniciarRecarga();
+
         Vector3 rawVelocity = rb.linearVelocity;
         Vector3 center = GetCentroCorredor(transform.position);
         Vector3 directionToCenter = center - transform.position;
