@@ -95,11 +95,27 @@ public class VRMenuManager : MonoBehaviour
         Debug.Log("Menú posicionado frente al jugador");
     }
 
+    void PosicionarPanel(GameObject panel)
+    {
+        if (playerCamera == null || panel == null) return;
+
+        Vector3 targetPosition =
+            playerCamera.position +
+            playerCamera.forward * distanceFromCamera;
+
+        targetPosition.y += heightOffset;
+
+        panel.transform.position = targetPosition;
+        panel.transform.rotation = Quaternion.LookRotation(playerCamera.forward);
+    }
+
     public void MostrarRadial()
     {
         radialMenu.SetActive(true);
         panelSonido.SetActive(false);
         panelSalir.SetActive(false);
+
+        PosicionarPanel(radialMenu);
     }
 
     public void MostrarSonido()
@@ -107,6 +123,8 @@ public class VRMenuManager : MonoBehaviour
         radialMenu.SetActive(false);
         panelSonido.SetActive(true);
         panelSalir.SetActive(false);
+
+        PosicionarPanel(panelSonido);
 
         Debug.Log("Panel sonido abierto");
     }
@@ -116,6 +134,8 @@ public class VRMenuManager : MonoBehaviour
         radialMenu.SetActive(false);
         panelSonido.SetActive(false);
         panelSalir.SetActive(true);
+
+        PosicionarPanel(panelSalir);
 
         Debug.Log("Panel salir abierto");
     }
