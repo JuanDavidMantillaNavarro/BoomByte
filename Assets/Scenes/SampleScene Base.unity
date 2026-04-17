@@ -1173,11 +1173,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManagerVR
   panelConfiguracion: {fileID: 0}
-  vignetteController: {fileID: 1373153107}
-  explosionProvider: {fileID: 1373153109}
-  timerText: {fileID: 2145741743}
-  winPanel: {fileID: 0}
-  losePanel: {fileID: 0}
 --- !u!1 &149491187
 GameObject:
   m_ObjectHideFlags: 0
@@ -2023,6 +2018,7 @@ MonoBehaviour:
   imagenAgarrarBola: {fileID: 290771223}
   imagenLanzarBola: {fileID: 1374289275}
   agarrarBola: 0
+  lanzarBola: 0
   tiempoEspera: 0
 --- !u!1 &184239361
 GameObject:
@@ -3411,7 +3407,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0ed617b8fc478b94ab9e0687720e2bab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b8a389dd558bd034baf853c878fe045a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3909,9 +3905,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 501507e51384b0146bbf6c5f4891d7a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VictoryUIController
-  panelVictoria: {fileID: 909294697}
-  puntoInicio: {fileID: 100100260}
-  player: {fileID: 64579887}
 --- !u!1 &342708725
 GameObject:
   m_ObjectHideFlags: 0
@@ -4753,9 +4746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64bff8fec81773d46b45f46d75789529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIFollowPlayer
-  playerCamera: {fileID: 64579887}
-  distancia: 1.5
-  alturaOffset: -0.2
 --- !u!114 &393066528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5505,17 +5495,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0718601ecacd1042b9b0be0419d17f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
-  letrerosController: {fileID: 182788456}
-  uiManager: {fileID: 148404792}
-  effectManager: {fileID: 439260411}
-  BolasActivas: 0
-  MaxBolas: 1
-  speedMulti: 1
-  explosionRadiusModifier: 0
-  abilitiesDisabled: 0
-  gameTime: 120
-  isPaused: 0
-  gameEnded: 0
 --- !u!4 &439260410
 Transform:
   m_ObjectHideFlags: 0
@@ -5543,7 +5522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2cc592a20668f4c9fab1ae2343f6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EffectManager
-  gameController: {fileID: 439260409}
 --- !u!1 &439481290
 GameObject:
   m_ObjectHideFlags: 0
@@ -7431,11 +7409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161d85909d97a5949a9dd34e4917aa89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlowUIFeedback
-  panelSlow: {fileID: 816785322}
-  playerCamera: {fileID: 64579887}
-  distancia: 1.5
-  altura: -0.2
-  duracion: 2.5
 --- !u!1 &609599308
 GameObject:
   m_ObjectHideFlags: 0
@@ -7486,13 +7459,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8bdaaf898f06546baea9731e7c49ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnergyUIManager
-  panelRecargando: {fileID: 1493451231}
-  panelLista: {fileID: 60790840}
-  textoPorcentaje: {fileID: 377482171}
-  modeloEnergy: {fileID: 11400000, guid: 16678f400e1ed734dbdb61df827b01f8, type: 2}
-  playerCamera: {fileID: 64579887}
-  distancia: 0.5
-  altura: -0.6
 --- !u!1 &610194559
 GameObject:
   m_ObjectHideFlags: 0
@@ -7956,7 +7922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 221.7, y: -21.97}
+  m_AnchoredPosition: {x: 198.6, y: -21.97}
   m_SizeDelta: {x: 144.31, y: 56.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &631063093
@@ -8915,7 +8881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4333b551070d9d34e84e36dc675bdd44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  victoryUI: {fileID: 336484336}
 --- !u!65 &658305501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9289,22 +9254,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc0d34940dd44129c17bc6d4396b866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StepButtonTextField: {fileID: 1002101473}
-  m_StepList:
-  - stepObject: {fileID: 2119740592}
-    buttonText: Continue
-  - stepObject: {fileID: 1543822913}
-    buttonText: Continue
-  - stepObject: {fileID: 184750006}
-    buttonText: Continue
-  - stepObject: {fileID: 1355269195}
-    buttonText: Continue
-  - stepObject: {fileID: 1660296818}
-    buttonText: Continue
-  - stepObject: {fileID: 539879276}
-    buttonText: Continue
-  - stepObject: {fileID: 1353248133}
-    buttonText: Restart
+  m_FadeAnimation: {fileID: 0}
+  m_Arrow: {fileID: 0}
+  m_TargetArrowHeight: 1
+  m_ArrowAnimationDuration: 0.2
+  m_AnimationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &695257747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9663,7 +9622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1027b0e988610143adf8b5c9831184c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverListener
-  defeatUI: {fileID: 1580621615}
 --- !u!1 &722984908 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bb40107929848f948bc46b853714c99d, type: 3}
@@ -13124,9 +13082,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64bff8fec81773d46b45f46d75789529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIFollowPlayer
-  playerCamera: {fileID: 64579887}
-  distancia: 1.5
-  alturaOffset: -0.2
 --- !u!114 &909294699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14795,8 +14750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c246ddb0bff402643856d775c8802417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHoverTrigger
-  menuManager: {fileID: 2054174304}
-  accion: 
 --- !u!114 &1049618419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14865,8 +14818,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38ae0d8bc0e776418b1e498d60150f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRButtonTrigger
-  tipo: 3
-  manager: {fileID: 2054174304}
 --- !u!65 &1049618421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15566,8 +15517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38ae0d8bc0e776418b1e498d60150f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRButtonTrigger
-  tipo: 4
-  manager: {fileID: 2054174304}
 --- !u!65 &1088977870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17339,8 +17288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c246ddb0bff402643856d775c8802417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHoverTrigger
-  menuManager: {fileID: 2054174304}
-  accion: Salir
 --- !u!114 &1210129309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17409,8 +17356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38ae0d8bc0e776418b1e498d60150f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRButtonTrigger
-  tipo: 1
-  manager: {fileID: 2054174304}
 --- !u!65 &1210129311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17704,8 +17649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38ae0d8bc0e776418b1e498d60150f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRButtonTrigger
-  tipo: 5
-  manager: {fileID: 2054174304}
 --- !u!65 &1229853304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18182,8 +18125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c246ddb0bff402643856d775c8802417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHoverTrigger
-  menuManager: {fileID: 2054174304}
-  accion: Reanudar
 --- !u!114 &1267996519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18252,8 +18193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38ae0d8bc0e776418b1e498d60150f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRButtonTrigger
-  tipo: 0
-  manager: {fileID: 2054174304}
 --- !u!65 &1267996521
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18772,11 +18711,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1415834b7de744bacd9c206b14af35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioSettingsController
-  volumenGeneralSlider: {fileID: 21052290}
-  musicaSlider: {fileID: 1536805505}
-  efectosSlider: {fileID: 2014760848}
-  musicaSource: {fileID: 0}
-  efectosSources: []
 --- !u!1 &1314531067
 GameObject:
   m_ObjectHideFlags: 0
@@ -20446,17 +20380,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1426568573}
   m_SourcePrefab: {fileID: 100100000, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
---- !u!114 &1373153107 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5518899284880179293, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
-  m_PrefabInstance: {fileID: 1373153106}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373153108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1c500f2a52a5eb4a952658e1bf51e88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1373153108 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5518899284880179291, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
@@ -20474,16 +20397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd6b8e1d4b44654d988e68c8f80f45d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExplosionVignetteProvider
-  parameters:
-    m_ApertureSize: 0.7
-    m_FeatheringEffect: 0.2
-    m_EaseInTime: 0.3
-    m_EaseOutTime: 0.3
-    m_EaseInTimeLock: 0
-    m_EaseOutDelayTime: 0
-    m_VignetteColor: {r: 0, g: 0, b: 0, a: 1}
-    m_VignetteColorBlend: {r: 0, g: 0, b: 0, a: 1}
-    m_ApertureVerticalPosition: 0
 --- !u!1 &1374289275
 GameObject:
   m_ObjectHideFlags: 0
@@ -20522,7 +20435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e3b00e61b09167d46a40384f8cda1096, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 027037685012f3d4b81e91c3660c6707, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21417,17 +21330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908100b30fe0ab4191734ae3261431f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PokeFollowTransform: {fileID: 10040970}
-  m_PokeFill: {fileID: 135779700}
-  m_PokeFillMaxSizeX: 150
-  m_PokeFillMaxSizeY: 60
-  m_SmoothingSpeed: 8
-  m_ReturnToInitialPosition: 1
-  m_ApplyIfChildIsTarget: 1
-  m_ClampToMinDistance: 1
-  m_MinDistance: 0.15
-  m_ClampToMaxDistance: 1
-  m_MaxDistance: 0
+  m_ProjectilePrefab: {fileID: 0}
+  m_StartPoint: {fileID: 0}
+  m_LaunchSpeed: 1
 --- !u!114 &1444839067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22067,10 +21972,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a414a8ea19dcf3429ef7da4e4412776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProfesorInteractivo
-  playerCamera: {fileID: 64579887}
-  canvasProfesor: {fileID: 628883502}
-  distanciaActivacion: 2
-  duracionMaxima: 10
 --- !u!136 &1472546070
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23973,10 +23874,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3d4e443da3eac4e851a2edd95d4e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefeatUIController
-  panelDerrota: {fileID: 393066526}
-  puntoInicio: {fileID: 100100260}
-  player: {fileID: 64579887}
-  tiempoEspera: 10
 --- !u!224 &1580621616
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28027,6 +27924,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da3995d759396747a6ef4a14b53b343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnapToGrid
+  gridSize: 0.5
+  gridOffset: {x: 0.25, y: 0, z: 0}
+  magnetForce: 8
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!135 &1861262702
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -28774,8 +28677,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c246ddb0bff402643856d775c8802417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHoverTrigger
-  menuManager: {fileID: 2054174304}
-  accion: Sonido
 --- !u!114 &1900368462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28865,8 +28766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38ae0d8bc0e776418b1e498d60150f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRButtonTrigger
-  tipo: 2
-  manager: {fileID: 2054174304}
 --- !u!114 &1900368465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31002,15 +30901,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c915288eaf7f2b94cadd50ab14013cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRMenuManager
-  radialMenu: {fileID: 2127455202}
-  panelSonido: {fileID: 250830518}
-  panelSalir: {fileID: 2109282949}
-  puntoInicio: {fileID: 100100260}
-  playerCamera: {fileID: 64579887}
-  menuRayInteractor: {fileID: 1204502335}
-  distanceFromCamera: 0.66
-  heightOffset: -0.2
-  botonBReference: {fileID: -8069514856583376848, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
 --- !u!1 &2058910459
 GameObject:
   m_ObjectHideFlags: 0
