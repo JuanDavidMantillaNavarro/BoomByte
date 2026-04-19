@@ -60,6 +60,8 @@ public class EnergyExplosion : MonoBehaviour
             if (hit.CompareTag(destructibleTag))
             {
                 Debug.Log("<color=orange>Pared destruida: </color>" + hit.name);
+
+                FindObjectOfType<SlowUIFeedback>().MostrarSlow(); 
                 //animacion destruir?
                 Destroy(hit.gameObject);
             }
