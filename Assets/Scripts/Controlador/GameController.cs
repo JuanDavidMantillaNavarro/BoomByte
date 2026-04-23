@@ -113,4 +113,17 @@ public class GameController : MonoBehaviour
     {
         BolasActivas--;
     }
+
+    public void ReiniciarEstado()
+    {
+        currentTime = gameTime;
+        gameEnded = false;
+        isPaused = false;
+
+        Time.timeScale = 1f;
+
+        uiManager.UpdateTimer(currentTime);
+
+        Debug.Log("Juego reiniciado + timer reseteado");
+    }
 }
