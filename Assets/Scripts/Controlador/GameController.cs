@@ -82,6 +82,8 @@ public class GameController : MonoBehaviour
     public void OnBallGrab()
     {
         letrerosController.agarrarBola = true;
+
+        TutorialHintManager.Instance.DetectarAgarre();
     }
 
     // Se llama por la clase EnergyByte cuando la bola explota
