@@ -1,5 +1,11 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+using XRInputDevice = UnityEngine.XR.InputDevice;
+using XRNode = UnityEngine.XR.XRNode;
+using XRCommonUsages = UnityEngine.XR.CommonUsages;
+using UnityEngine.XR;
 
 public class VRMenuManager : MonoBehaviour
 {
@@ -8,6 +14,10 @@ public class VRMenuManager : MonoBehaviour
     public GameObject panelSonido;
     public GameObject panelSalir;
     public Transform puntoInicio;
+
+    [Header("Fade")]
+    public CanvasGroup fadeMenu;
+    public float duracionFade = 0.4f;
 
     [Header("Player")]
     public Transform playerCamera;
@@ -19,14 +29,13 @@ public class VRMenuManager : MonoBehaviour
     public float distanceFromCamera = 1.5f;
     public float heightOffset = -0.2f;
 
-     [Header("Input")]
-    public InputActionReference botonBReference; // <-- Asignas desde el inspector
-
     private bool menuAbierto = false;
+    private bool animando = false;
 
     void Start()
     {
-        OcultarTodo();
+        Debug.Log("VRMenuManager iniciado");
+        OcultarTodoInstantaneo();
     }
 
     void Update()
@@ -36,63 +45,167 @@ public class VRMenuManager : MonoBehaviour
 
     bool BotonBVR()
     {
-        UnityEngine.XR.InputDevice rightHand =
-            UnityEngine.XR.InputDevices.GetDeviceAtXRNode(UnityEngine.XR.XRNode.RightHand);
+        XRInputDevice rightHand =
+            InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
         if (!rightHand.isValid)
+        {
+            Debug.Log("Control derecho no válido");
             return false;
+        }
 
         bool botonB = false;
 
-        if (rightHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.secondaryButton, out botonB))
-        {
-            return botonB;
-        }
+        bool presionado = rightHand.TryGetFeatureValue(
+            XRCommonUsages.secondaryButton,
+            out botonB
+        ) && botonB;
 
-        return false;
+        if (presionado)
+            Debug.Log("Botón B presionado en VR");
+
+        return presionado;
     }
 
     void DetectarInputMenu()
     {
-        // teclado simulador
-        bool teclado = Keyboard.current != null && Keyboard.current.bKey.wasPressedThisFrame;
+        if (animando) return;
+
+        bool teclado =
+            Keyboard.current != null &&
+            Keyboard.current.bKey.wasPressedThisFrame;
+
+        if (teclado)
+            Debug.Log("Tecla B presionada en simulador");
 
         if (teclado || BotonBVR())
         {
+            Debug.Log("Toggle menú ejecutado");
             ToggleMenu();
         }
     }
 
     public void ToggleMenu()
     {
+        if (animando)
+        {
+            Debug.Log("Animación en curso, ignorando toggle");
+            return;
+        }
+
         menuAbierto = !menuAbierto;
+
+        Debug.Log("Estado menú: " + menuAbierto);
 
         if (menuAbierto)
         {
-            MostrarRadial();
-            PosicionarMenuFrenteJugador();
-            GameController.Instance.TogglePause();
-
-            if (menuRayInteractor != null)
-                menuRayInteractor.SetActive(true);
-
-            Debug.Log("MEN� ABIERTO");
+            StartCoroutine(AbrirMenu());
         }
         else
         {
-            OcultarTodo();
-            GameController.Instance.TogglePause();
-
-            if (menuRayInteractor != null)
-                menuRayInteractor.SetActive(false);
-
-            Debug.Log("MEN� CERRADO");
+            StartCoroutine(CerrarMenu());
         }
+    }
+
+    IEnumerator AbrirMenu()
+    {
+        Debug.Log("Iniciando apertura de menú");
+        animando = true;
+
+        MostrarRadial();
+        PosicionarMenuFrenteJugador();
+
+        if (GameController.Instance != null)
+        {
+            GameController.Instance.isPaused = true;
+            Debug.Log("Juego pausado");
+        }
+
+        Time.timeScale = 0f;
+        Debug.Log("TimeScale = 0");
+
+        if (menuRayInteractor != null)
+        {
+            menuRayInteractor.SetActive(true);
+            Debug.Log("Ray interactor activado");
+        }
+
+        radialMenu.SetActive(true);
+
+        if (fadeMenu != null)
+        {
+            fadeMenu.alpha = 0f;
+
+            float tiempo = 0f;
+
+            while (tiempo < duracionFade)
+            {
+                tiempo += Time.unscaledDeltaTime;
+
+                fadeMenu.alpha =
+                    Mathf.Lerp(0f, 1f, tiempo / duracionFade);
+
+                yield return null;
+            }
+
+            fadeMenu.alpha = 1f;
+        }
+
+        Debug.Log("MENÚ ABIERTO COMPLETAMENTE");
+
+        animando = false;
+    }
+
+    IEnumerator CerrarMenu()
+    {
+        Debug.Log("Iniciando cierre de menú");
+        animando = true;
+
+        if (fadeMenu != null)
+        {
+            float tiempo = 0f;
+
+            while (tiempo < duracionFade)
+            {
+                tiempo += Time.unscaledDeltaTime;
+
+                fadeMenu.alpha =
+                    Mathf.Lerp(1f, 0f, tiempo / duracionFade);
+
+                yield return null;
+            }
+        }
+
+        OcultarTodoInstantaneo();
+        Debug.Log("Panels ocultados");
+
+        if (GameController.Instance != null)
+        {
+            GameController.Instance.isPaused = false;
+            Debug.Log("Juego reanudado");
+        }
+
+        Time.timeScale = 1f;
+        Debug.Log("TimeScale = 1");
+
+        if (menuRayInteractor != null)
+        {
+            menuRayInteractor.SetActive(false);
+            Debug.Log("Ray interactor desactivado");
+        }
+
+        Debug.Log("MENÚ CERRADO COMPLETAMENTE");
+
+        animando = false;
     }
 
     void PosicionarMenuFrenteJugador()
     {
-        if (playerCamera == null) return;
+        if (playerCamera == null)
+        {
+            Debug.LogWarning("PlayerCamera no asignada");
+            return;
+        }
 
         Vector3 targetPosition =
             playerCamera.position +
@@ -101,16 +214,19 @@ public class VRMenuManager : MonoBehaviour
         targetPosition.y += heightOffset;
 
         radialMenu.transform.position = targetPosition;
+        radialMenu.transform.rotation =
+            Quaternion.LookRotation(playerCamera.forward);
 
-        // mirar exactamente como la c�mara
-        radialMenu.transform.rotation = Quaternion.LookRotation(playerCamera.forward);
-
-        Debug.Log("Men� posicionado frente al jugador");
+        Debug.Log("Menú posicionado frente al jugador");
     }
 
     void PosicionarPanel(GameObject panel)
     {
-        if (playerCamera == null || panel == null) return;
+        if (playerCamera == null || panel == null)
+        {
+            Debug.LogWarning("Panel o cámara faltante");
+            return;
+        }
 
         Vector3 targetPosition =
             playerCamera.position +
@@ -119,11 +235,16 @@ public class VRMenuManager : MonoBehaviour
         targetPosition.y += heightOffset;
 
         panel.transform.position = targetPosition;
-        panel.transform.rotation = Quaternion.LookRotation(playerCamera.forward);
+        panel.transform.rotation =
+            Quaternion.LookRotation(playerCamera.forward);
+
+        Debug.Log("Panel posicionado: " + panel.name);
     }
 
     public void MostrarRadial()
     {
+        Debug.Log("Mostrando menú radial");
+
         radialMenu.SetActive(true);
         panelSonido.SetActive(false);
         panelSalir.SetActive(false);
@@ -133,31 +254,32 @@ public class VRMenuManager : MonoBehaviour
 
     public void MostrarSonido()
     {
+        Debug.Log("Mostrando panel sonido");
+
         radialMenu.SetActive(false);
         panelSonido.SetActive(true);
         panelSalir.SetActive(false);
 
         PosicionarPanel(panelSonido);
-
-        Debug.Log("Panel sonido abierto");
     }
 
     public void MostrarSalirConfirmacion()
     {
+        Debug.Log("Mostrando confirmación salir");
+
         radialMenu.SetActive(false);
         panelSonido.SetActive(false);
         panelSalir.SetActive(true);
 
         PosicionarPanel(panelSalir);
-
-        Debug.Log("Panel salir abierto");
     }
 
     public void ReanudarJuego()
     {
-        Debug.Log("Reanudar presionado");
+        Debug.Log("Botón reiniciar desde inicio");
 
-        GameObject jugador = GameObject.FindGameObjectWithTag("Player");
+        GameObject jugador =
+            GameObject.FindGameObjectWithTag("Player");
 
         if (jugador != null && puntoInicio != null)
         {
@@ -167,23 +289,29 @@ public class VRMenuManager : MonoBehaviour
             Debug.Log("Jugador enviado al punto inicial");
         }
 
-        Time.timeScale = 1;
+        if (GameController.Instance != null)
+        {
+            GameController.Instance.ReiniciarEstado();
+            Debug.Log("Estado del juego reiniciado");
+        }
+
         menuAbierto = false;
 
-        if (menuRayInteractor != null)
-            menuRayInteractor.SetActive(false);
-
-        OcultarTodo();
+        StartCoroutine(CerrarMenu());
     }
 
     public void PausarJuego()
     {
-        ToggleMenu();
+        Debug.Log("Botón cerrar menú / continuar");
+
+        menuAbierto = false;
+
+        StartCoroutine(CerrarMenu());
     }
 
     public void SalirJuego()
     {
-        Debug.Log("Salir confirmado");
+        Debug.Log("Salir del juego");
 
         Application.Quit();
     }
@@ -191,13 +319,16 @@ public class VRMenuManager : MonoBehaviour
     public void CancelarSalir()
     {
         Debug.Log("Cancelar salida");
+
         MostrarRadial();
     }
 
-    public void OcultarTodo()
+    void OcultarTodoInstantaneo()
     {
         radialMenu.SetActive(false);
         panelSonido.SetActive(false);
         panelSalir.SetActive(false);
+
+        Debug.Log("Todo ocultado instantáneamente");
     }
 }
