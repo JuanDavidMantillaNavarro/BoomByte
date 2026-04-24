@@ -12,11 +12,11 @@ public class AgentState
     public bool    patrullando   = false;
 
     public Vector3 ultimaPos     = Vector3.zero;
-    public int     ultimaAccion  = -1;
+    public int     ultimaAccion  = 0;
     public float   tiempoQuieto  = 0f;
     public float   distAnterior  = 0f;
 
     // Dirección actual de patrulla (la escribe MovementModule)
-    public Vector3 dirPatrulla   = Vector3.right;
+    public Vector3 dirPatrulla   = Vector3.forward;
     public float   tiempoPatrulla = 0f;
 }

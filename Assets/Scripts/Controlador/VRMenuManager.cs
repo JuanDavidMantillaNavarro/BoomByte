@@ -32,6 +32,7 @@ public class VRMenuManager : MonoBehaviour
     void Update()
     {
         DetectarInputMenu();
+
     }
 
     bool BotonBVR()
@@ -52,14 +53,40 @@ public class VRMenuManager : MonoBehaviour
         return false;
     }
 
+    bool BotonXVR()
+    {
+        UnityEngine.XR.InputDevice leftHand =
+            UnityEngine.XR.InputDevices.GetDeviceAtXRNode(UnityEngine.XR.XRNode.LeftHand);
+
+        if (!leftHand.isValid)
+            return false;
+
+        bool botonX = false;
+
+        if (leftHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out botonX))
+        {
+            return botonX;
+        }
+
+        return false;
+    }
+
     void DetectarInputMenu()
     {
-        // teclado simulador
+        // teclado simulador para menu radial
         bool teclado = Keyboard.current != null && Keyboard.current.bKey.wasPressedThisFrame;
 
         if (teclado || BotonBVR())
         {
             ToggleMenu();
+        }
+
+        // teclado simulador para menu radial
+        bool tecladoM = Keyboard.current != null && Keyboard.current.mKey.wasPressedThisFrame;
+
+        if (tecladoM || BotonXVR())
+        {
+           GameController.Instance.ActivateCameraView();
         }
     }
 

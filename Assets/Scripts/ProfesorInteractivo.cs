@@ -10,11 +10,12 @@ public class ProfesorInteractivo : MonoBehaviour
     public float distanciaActivacion = 2f;
     public float duracionMaxima = 10f;
 
-    private bool activo = false;
+    private bool activo = false, EfectoYa = false;
     private float tiempoInicio;
 
     void Start()
     {
+        EfectoYa = false;
         canvasProfesor.SetActive(false);
         Debug.Log("Script iniciado");
     }
@@ -32,6 +33,9 @@ public class ProfesorInteractivo : MonoBehaviour
         if (distancia <= distanciaActivacion && !activo)
         {
             ActivarDialogo();
+            if(!EfectoYa)
+            {GameController.Instance.OnNpcCollide();}
+            EfectoYa = true;
         }
 
         if (activo)

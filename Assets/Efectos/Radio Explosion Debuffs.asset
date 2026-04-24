@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c76e70d3b2970424287599880976aae1, type: 3}
-  m_Name: Radio Explosion
+  m_Name: Radio Explosion Debuffs
   m_EditorClassIdentifier: Assembly-CSharp::RadioExplosion
-  duration: 0
-  amount: 1
+  duration: 4
+  amount: -1

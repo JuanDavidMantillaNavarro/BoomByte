@@ -16,7 +16,7 @@ public class EnergyExplosion : MonoBehaviour
     public void Initialize(float gridRadius)
     {
         gridRange = gridRadius + GameController.Instance.explosionRadiusModifier;
-        GameController.Instance.effectManager.ApplyEffect(RadioExplosionEffect);
+        //GameController.Instance.effectManager.ApplyEffect(RadioExplosionEffect);
         // Ejecutamos ambas lógicas
         ApplySlowEffect();
         DestroyWallsInRange();

@@ -6,66 +6,79 @@ using UnityEngine;
 public class PerceptionModule : MonoBehaviour
 {
     [Header("Rangos de detección")]
-    public float radioDeteccion = 3f;
-    public float radioPerdida = 3.5f;
+    public float radioDeteccion = 20f;
+    public float radioPerdida = 25f;
     [Tooltip("Diferencia de altura máxima permitida para considerar al jugador en el mismo 'piso'")]
-    public float toleranciaAltura = 0.5f;
+    public float toleranciaAltura = 100f;
 
+    [Header("Visión directa")]
+    public bool usarVisionDirecta = false; // activa el raycast cuando estés listo
+
+     [Tooltip("Capas que bloquean la visión (paredes, obstáculos)")]
+    public LayerMask capasObstaculo;
+ 
     [Header("Referencias")]
     public Transform jugador;
-
+ 
     void Start()
     {
         if (jugador == null)
         {
-            GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
-            if (playerGO != null) jugador = playerGO.transform;
+            GameObject go = GameObject.FindGameObjectWithTag("Player");
+            if (go != null) jugador = go.transform;
         }
     }
-
+ 
     // ── Consultas ────────────────────────────────────────────────────────
-
-    // Vector dirección (posJugador - posAgente) en 3D
+ 
+    /// Vector 3D desde el agente hasta el jugador.
     public Vector3 VectorAlJugador()
-        => (jugador != null) ? (jugador.position - transform.position) : Vector3.zero;
-
+        => jugador != null ? jugador.position - transform.position : Vector3.zero;
+ 
+    /// Distancia total 3D.
     public float Distancia()
         => VectorAlJugador().magnitude;
-
-    // ¿El jugador entró al rango Y está en el mismo nivel de altura?
-    public bool JugadorEnRango()
+ 
+    /// Distancia en el plano XZ (ignora altura). Usada para decisiones de rango.
+    public float DistanciaPlana()
     {
-        if (jugador == null) return false;
-        
-        bool distanciaCorrecta = Distancia() <= radioDeteccion;
-        bool mismaAltura = Mathf.Abs(transform.position.y - jugador.position.y) <= toleranciaAltura;
-        
-        return distanciaCorrecta && mismaAltura;
+        if (jugador == null) return float.MaxValue;
+        Vector2 a = new Vector2(transform.position.x, transform.position.z);
+        Vector2 b = new Vector2(jugador.position.x,   jugador.position.z);
+        return Vector2.Distance(a, b);
     }
-
-    // Obstáculos entre jugador y agente usando Raycast 3D
+ 
+    /// ¿El jugador está dentro del radio de detección (en plano XZ)?
+    public bool JugadorEnRango()
+        => jugador != null && DistanciaPlana() <= radioDeteccion;
+ 
+    /// ¿El jugador salió del radio de persecución?
+    public bool JugadorSalioDeRango()
+        => DistanciaPlana() > radioPerdida;
+ 
+    /// ¿Hay línea de visión directa hasta el jugador?
+    /// Mientras usarVisionDirecta = false devuelve true si está en rango.
     public bool HayVisionDirecta()
     {
         if (jugador == null) return false;
-        
-        float dist = Distancia();
-        if (dist > radioDeteccion) return false;
+        if (!JugadorEnRango()) return false;
+ 
+        if (!usarVisionDirecta)
+            return true; // sin raycast, si está en rango lo "ve"
+ 
+        // Raycast desde la cabeza del agente hasta la cabeza del jugador
+        Vector3 origen    = transform.position + Vector3.up * 1.5f;
+        Vector3 destino   = jugador.position   + Vector3.up * 1.6f;
+        Vector3 direccion = (destino - origen).normalized;
+        float   distancia = Vector3.Distance(origen, destino);
 
-        Vector3 dir = VectorAlJugador();
-        // Lanzamos rayo desde el centro del objeto hacia el jugador
-        if (Physics.Raycast(transform.position + Vector3.up * 0.5f, dir.normalized, out RaycastHit hit, dist))
+        Debug.DrawLine(origen, destino, Color.red);
+ 
+        if (Physics.Raycast(origen, direccion, out RaycastHit hit, distancia, capasObstaculo))
         {
-            // Retorna true solo si lo que golpeamos es el jugador
-            return hit.transform == jugador;
+            // Si lo primero que toca es el jugador (o un hijo suyo), hay visión
+            return hit.transform.IsChildOf(jugador) || hit.transform == jugador;
         }
-        
-        return false;
+        return true; // no hay nada bloqueando
     }
-
-    public bool JugadorSalioDeRango()
-        => Distancia() > radioPerdida;
-
-    public bool JugadorMuyCerca() 
-        => Distancia() < 2.5f;
-
 }

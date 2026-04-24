@@ -11,73 +11,86 @@ public class AgentBrain : MonoBehaviour
     private float[] pesosPolitica = new float[4];
     private float   ValEstimado   = 0f;
 
-    private static readonly Vector2[] Direcciones =
+    // Direcciones en el plano XZ (equivalente a las 4 del 2D)
+    private static readonly Vector3[] Direcciones =
     {
-        Vector2.up, Vector2.down, Vector2.left, Vector2.right
+        Vector3.forward,   // caso 0 — equivale a Vector2.up
+        Vector3.back,      // caso 1 — equivale a Vector2.down
+        Vector3.left,      // caso 2
+        Vector3.right      // caso 3
     };
 
     void Start()
     {
-        CargarMemoria(); 
+        //CargarMemoria(); 
     }
 
-    public int ElegirAccion(Vector2 estado)
+    public int ElegirAccion(Vector3 estado)
     {
-        Vector2 dirHaciaJugador = estado.normalized;
+       // Aplanamos al plano XZ para ignorar diferencias de altura
+        Vector3 estadoPlano = new Vector3(estado.x, 0f, estado.z);
+        Vector3 dirHaciaJugador = estadoPlano.normalized;
+ 
         float[] pref = new float[4];
-
         for (int i = 0; i < 4; i++)
         {
-            float alineacion = Vector2.Dot(Direcciones[i], dirHaciaJugador);
+            float alineacion = Vector3.Dot(Direcciones[i], dirHaciaJugador);
             pref[i] = alineacion + pesosPolitica[i];
         }
-
-        int MejorAccion = 0;
-        float maxVal = pref[0];
+ 
+        // Acción con mayor preferencia
+        int   mejorAccion = 0;
+        float maxVal      = pref[0];
         for (int i = 1; i < pref.Length; i++)
         {
-            if (pref[i] > maxVal) { maxVal = pref[i]; MejorAccion = i; }
+            if (pref[i] > maxVal) { maxVal = pref[i]; mejorAccion = i; }
         }
-
-        // Lógica de zonas (IDÉNTICA al original)
-        float distancia = estado.magnitude;
+ 
+        // Zonas de comportamiento (idéntico al original)
+        float distancia = estadoPlano.magnitude;
+ 
         if (distancia > 3f)
         {
-            if (Random.value < 0.05f) MejorAccion = Random.Range(0, 4);
+            if (Random.value < 0.05f)
+                mejorAccion = Random.Range(0, 4);
         }
         else if (distancia > 1f && distancia <= 3f)
         {
-            if (Random.value < 0.7f) MejorAccion = System.Array.IndexOf(pref, Mathf.Max(pref));
+            if (Random.value < 0.7f)
+                mejorAccion = System.Array.IndexOf(pref, Mathf.Max(pref));
         }
         else
         {
-            if (Random.value < 0.3f) MejorAccion = Random.Range(0, 4);
+            if (Random.value < 0.3f)
+                mejorAccion = Random.Range(0, 4);
         }
-
-        return MejorAccion;
+ 
+        return mejorAccion;
     }
 
-    public void Aprende(Vector2 estado, int accion, float recompensa)
+    public void Aprende(Vector3 estado, int accion, float recompensa)
     {
-        // SEGURIDAD EXTRA: Si la acción no es válida, salimos del método
         if (accion < 0 || accion >= pesosPolitica.Length)
         {
-            Debug.LogWarning("Acción inválida recibida: " + accion);
-            return; 
+            Debug.LogWarning("[AgentBrain] Acción inválida: " + accion);
+            return;
         }
-        
+ 
         float nuevoVal = recompensa + Descuento * ValEstimado;
         float tdError  = nuevoVal - ValEstimado;
-
-        ValEstimado += TasaAprendizaje * tdError; 
-        pesosPolitica[accion] += TasaAprendizaje * tdError; 
+ 
+        ValEstimado           += TasaAprendizaje * tdError;
+        pesosPolitica[accion] += TasaAprendizaje * tdError;
+ 
+        if (tdError > 0.01f)
+            GuardarMemoria();
 
     }
 
     public void DarRecompensa(float r)
     {
         ValEstimado += r;
-
+        if (r > 5f)
             GuardarMemoria();
         
     }

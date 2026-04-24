@@ -1,32 +1,26 @@
 using UnityEngine;
 
-/*  AgentController.cs  —  Orquestador del agente
-    El flujo de FixedUpdate es IDÉNTICO al ControladorAgente original,
-    solo delegando cada responsabilidad al módulo correspondiente.
-
-    Para Boombyte (3D): este archivo NO cambia.
-*/
-
 [RequireComponent(typeof(AgentBrain))]
 [RequireComponent(typeof(PerceptionModule))]
 [RequireComponent(typeof(MovementModule))]
-
 public class AgentController : MonoBehaviour
 {
     private AgentBrain brain;
     private PerceptionModule perception;
     private MovementModule movement;
-    private Rigidbody2D rb;
+    private Rigidbody rb; 
 
     private AgentState state = new AgentState();
-    
 
+    [Header("Anti-atasco")]
+    [Tooltip("Segundos quieto antes de activar el escape. Sube si el agente escapa demasiado.")]
+    public float umbralAtasco = 0.5f;
     void Start()
     {
         brain = GetComponent<AgentBrain>();
         perception = GetComponent<PerceptionModule>();
         movement = GetComponent<MovementModule>();
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>(); // CAMBIO: Rigidbody (3D)
 
         movement.Inicializar();
         state.ultimaPos = transform.position;
@@ -36,65 +30,71 @@ public class AgentController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 vectorAlJugador = perception.VectorAlJugador();
+        // CAMBIO: Usamos Vector3 en todo el flujo
+        Vector3 vectorAlJugador = perception.VectorAlJugador();
         float distancia = vectorAlJugador.magnitude;
         bool visionDirecta = perception.HayVisionDirecta();
 
         // 1. Detección de atasco
-        float distMov = Vector2.Distance(transform.position, state.ultimaPos);
+        float distMov = Vector3.Distance(transform.position, state.ultimaPos);
         state.ultimaPos = transform.position;
 
-        // Si el agente está "persiguiendo" pero no se ha movido significativamente, 
-        // o si detectamos una colisión frontal constante:
-        bool colisionFrontal = movement.VerificarAtasco(state); 
+        //bool colisionFrontal = movement.VerificarAtasco(state); 
 
-        if (distMov < 0.02f || colisionFrontal) 
+        if (distMov < 0.02f) 
             state.tiempoQuieto += Time.fixedDeltaTime;
         else 
             state.tiempoQuieto = 0f;
 
         // 2. MÁQUINA DE ESTADOS
-        if (!visionDirecta)
+        if (!visionDirecta && distancia <= perception.radioDeteccion)
         {
-            state.persiguiendo = false;
-        }
-        else if (distancia <= perception.radioDeteccion)
-        {
+            // Ve al jugador → perseguir
             state.persiguiendo = true;
-            state.patrullando = false;
+            state.patrullando  = false;
+            Debug.Log("persigue");
+        }
+        else if (state.persiguiendo && !visionDirecta && distancia > perception.radioPerdida)
+        {
+            // Perdió al jugador → volver a patrullar
+            state.persiguiendo = false;
         }
 
         // 3. PRIORIDAD DE EJECUCIÓN
-        
-        // A. Escape (Aseguramos que ultimaAccion sea válida antes de aprender)
-        if (state.persiguiendo && state.tiempoQuieto > 0.5f)
+        if (state.persiguiendo && state.tiempoQuieto > umbralAtasco)
         {
+            // Penaliza la última acción que lo dejó quieto
             if (state.ultimaAccion >= 0)
-            {
                 brain.Aprende(vectorAlJugador, state.ultimaAccion, -1f);
-            }
-            movement.IniciarEscape(state,vectorAlJugador);
+            
+            movement.IniciarEscape(state, vectorAlJugador);
         }
 
         // B. Ejecución
         if (state.patrullando)
         {
             movement.Patrullar(state);
+            return;
         }
         else if (state.persiguiendo)
         {
+           /// Detectar si hay pared en la dirección que va a elegir la IA
+            // (solo para calcular recompensa, NO para cambiar dirección)
             int accion = brain.ElegirAccion(vectorAlJugador);
             state.ultimaAccion = accion;
-            Vector2 dirUsada = movement.MoverPorAccion(accion, state);
-
-            bool huboChoque = movement.VerificarAtasco(state);
-
+ 
+            Vector3 dirElegida = movement.MoverPorAccion(accion, state);
+ 
+            // Recompensa: acercarse al jugador + alineación
             float distActual = perception.Distancia();
-            float recompensa = state.distAnterior - distActual;
-
-            if (huboChoque) recompensa -= 0.5f; 
-            else recompensa += Vector2.Dot(dirUsada.normalized, vectorAlJugador.normalized) * 0.1f;
-            
+            float recompensa  = state.distAnterior - distActual;
+            recompensa += Vector3.Dot(dirElegida.normalized,
+                          new Vector3(vectorAlJugador.x, 0f, vectorAlJugador.z).normalized) * 0.1f;
+ 
+            // Penalización si hay pared al frente de donde se movió
+            if (movement.HayChoqueFrontal(dirElegida))
+                recompensa -= 1f;
+ 
             state.distAnterior = distActual;
             brain.Aprende(vectorAlJugador, accion, recompensa);
         }

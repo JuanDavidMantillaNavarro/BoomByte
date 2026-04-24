@@ -19,13 +19,27 @@ public class CollisionHandler : MonoBehaviour
         jugador = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         // Usamos el jugador encontrado en el start
-        if (collision.gameObject.CompareTag("Player") && gameObject.layer == jugador.layer)
+        if (collision.gameObject.CompareTag("Player"))
         {
             brain.DarRecompensa(+10f); // Se asegura que el cerebro reciba el +10f
             Debug.Log("¡La IA le gana al jugador!");
+            GameController.Instance.OnEnemyCollide();
+            Destroy(gameObject);
         }
+    }*/
+
+    void OnTriggerEnter(Collider other)
+    {
+    // Verificamos si el enemigo tocó el "PlayerTarget"
+    if (other.CompareTag("Player")) 
+    {
+        brain.DarRecompensa(+10f); // Se asegura que el cerebro reciba el +10f
+            Debug.Log("¡La IA le gana al jugador!");
+            GameController.Instance.OnEnemyCollide();
+            Destroy(gameObject);
+    }
     }
 }
