@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{65228142-b2b8-4ca1-9201-ab8c0d5ddee3}">
+		<property name="assetPath">
+			<value>Música ambiente 3.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>24.920816326530613</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f5d8559b-357a-4c9d-8db6-e49dcd516d07}</destination>
+		</relationship>
+	</object>
+</objects>
