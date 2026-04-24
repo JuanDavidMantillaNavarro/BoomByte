@@ -12934,7 +12934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16612,7 +16612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &609599309
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36454,10 +36454,10 @@ MonoBehaviour:
   radioDeteccion: 10
   radioPerdida: 25
   toleranciaAltura: 200
-  usarVisionDirecta: 0
+  usarVisionDirecta: 1
   capasObstaculo:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   jugador: {fileID: 426085145}
 --- !u!114 &1214223191
 MonoBehaviour:
