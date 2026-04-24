@@ -308,8 +308,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   explosionPrefab: {fileID: 4466109608956289259, guid: 41b62d36aca3d3445a697506d6ea0917, type: 3}
-  explosionAnimator: {fileID: 0}
-  explosionAnimator2: {fileID: 0}
+  explosionAnimator: {fileID: 6740968444954674688, guid: b02a4409a6af4854aa6131fa2ffbd261, type: 3}
+  explosionAnimator2: {fileID: 3516804912882737130, guid: 5452b14570120c948a45bd515d88e8c2, type: 3}
 --- !u!135 &1380748546683143235
 SphereCollider:
   m_ObjectHideFlags: 0
