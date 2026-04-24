@@ -6,7 +6,7 @@ using UnityEngine;
 public class MovementModule : MonoBehaviour
 {
     [Header("Velocidad")]
-    public float vel = 3f;
+    public float vel = 1.5f;
 
     [Header("Referencias")]
     public Animator anim;
@@ -35,12 +35,9 @@ public class MovementModule : MonoBehaviour
             ? AccionADir[accion]
             : Vector3.zero;
 
-        ActualizarAnimacion(mov);
-        state.dirPatrulla = mov; 
-
-        VerificarAtasco(state);
         rb.MovePosition(rb.position + mov * vel * Time.fixedDeltaTime);
-
+        ActualizarAnimacion(mov);
+        Debug.Log ("Mover accion");
         return mov;
     }
 
@@ -48,6 +45,7 @@ public class MovementModule : MonoBehaviour
     {
         if (!state.patrullando)
         {
+            Debug.Log ("Patrullando temporal 2 a 4seg");
             state.tiempoPatrulla = Random.Range(2f, 4f);
             Vector3[] dirs = { Vector3.forward, Vector3.back, Vector3.left, Vector3.right };
             state.dirPatrulla = dirs[Random.Range(0, dirs.Length)];
@@ -57,6 +55,15 @@ public class MovementModule : MonoBehaviour
         }
 
         state.tiempoPatrulla -= Time.fixedDeltaTime;
+
+        // Durante patrulla SÍ redirigimos si hay pared al frente
+        if (DetectarColisionFrontal(state.dirPatrulla))
+        {
+            Debug.Log ("Pared patrullando");
+            state.dirPatrulla = Quaternion.Euler(0, 90f, 0) * state.dirPatrulla;
+            state.tiempoPatrulla = Random.Range(1f, 2f); // nuevo segmento
+        }
+
         rb.MovePosition(rb.position + state.dirPatrulla.normalized * vel * 0.7f * Time.fixedDeltaTime);
         ActualizarAnimacion(state.dirPatrulla);
 
@@ -68,29 +75,34 @@ public class MovementModule : MonoBehaviour
 
     public void IniciarEscape(AgentState state, Vector3 vectorAlJugador)
     {
-        state.patrullando = true;
-        state.persiguiendo = false;
-        state.tiempoPatrulla = Random.Range(1.0f, 2.0f);
+        Debug.Log ("Escape");
+        // Elige una dirección perpendicular al jugador para rodear obstáculos
+        Vector3 dirHaciaJugador = new Vector3(vectorAlJugador.x, 0f, vectorAlJugador.z).normalized;
+        Vector3 perpendicular   = Quaternion.Euler(0, 90f, 0) * dirHaciaJugador;
+ 
+        state.patrullando    = true;
+        state.tiempoPatrulla = Random.Range(1f, 2f);
+        state.dirPatrulla    = perpendicular;
+        state.tiempoQuieto   = 0f;
+    }
 
-        Vector3 dirHaciaJugador = vectorAlJugador.normalized;
-        // Rotación de 90 grados en el eje Y para buscar tangente
-        state.dirPatrulla = Quaternion.Euler(0, 90f, 0) * dirHaciaJugador;
-        state.tiempoQuieto = 0f;
+    //VERIFICAR CHOQUE FRONTAL
+    //  Solo se usa para DETECTAR — no modifica dirPatrulla.
+    //  Retorna true si hay obstáculo en la dirección dada.
+
+     public bool HayChoqueFrontal(Vector3 dir)
+    {
+        float distRaycast = 0.5f; 
+        int mask = LayerMask.GetMask("Walls", "P");
+        return Physics.Raycast(
+            transform.position + Vector3.up * 0.5f,
+            dir, distRaycast, mask);
     }
 
     public bool VerificarAtasco(AgentState state)
     {
-        float distRaycast = 0.5f;
-        int mask = LayerMask.GetMask("Walls", "P");
-        
-        // Raycast 3D
-        if (Physics.Raycast(transform.position + Vector3.up * 0.5f, state.dirPatrulla, distRaycast, mask))
-        {
-            state.dirPatrulla = Quaternion.Euler(0, 90f, 0) * state.dirPatrulla;
-            state.tiempoPatrulla = 0.3f;
-            return true;
-        }
-        return false;
+        Debug.Log ("Atasco");
+        return HayChoqueFrontal(state.dirPatrulla);
     }
 
     private bool DetectarColisionFrontal(Vector3 dir)
