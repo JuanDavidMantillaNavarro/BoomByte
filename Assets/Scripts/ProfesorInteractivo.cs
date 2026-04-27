@@ -7,13 +7,13 @@ using XRNode = UnityEngine.XR.XRNode;
 using XRCommonUsages = UnityEngine.XR.CommonUsages;
 using UnityEngine.XR;
 
-public class ProfesorInteractivoReusable : MonoBehaviour
+public class ProfesorInteractivo : MonoBehaviour
 {
-    [Header("Canvas del diálogo")]
+    [Header("Canvas del diï¿½logo")]
     public GameObject canvasProfesor;
     public CanvasGroup fadeCanvas;
 
-    [Header("Detección")]
+    [Header("Detecciï¿½n")]
     public Transform jugador;
     public float distanciaActivacion = 2f;
 
@@ -85,7 +85,7 @@ public class ProfesorInteractivoReusable : MonoBehaviour
 
         StartCoroutine(FadeInDialogo());
 
-        Debug.Log("DIÁLOGO ACTIVADO");
+        Debug.Log("DIï¿½LOGO ACTIVADO");
     }
 
     IEnumerator DesactivarDialogo()
@@ -104,7 +104,7 @@ public class ProfesorInteractivoReusable : MonoBehaviour
         if (powerUpAlCerrar != null)
             powerUpAlCerrar.ActivarBeneficio();
 
-        Debug.Log("DIÁLOGO CERRADO");
+        Debug.Log("DIï¿½LOGO CERRADO");
     }
 
     IEnumerator FadeInDialogo()
