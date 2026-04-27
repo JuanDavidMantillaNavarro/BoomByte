@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,12 +24,12 @@ public class ProfesorInteractivo : MonoBehaviour
     [Header("Power Up")]
     public ProfesorPowerUp powerUpAlCerrar;
 
-    private bool activo = false, EfectoYa = false;
+    private bool activo = false, yaSeActivo = false;
     private float tiempoInicio;
 
     void Start()
     {
-        EfectoYa = false;
+        yaSeActivo = false;
         canvasProfesor.SetActive(false);
         Debug.Log("Script iniciado");
     }
