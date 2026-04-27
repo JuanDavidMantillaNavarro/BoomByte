@@ -1,21 +1,36 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
+using TMPro;
 
 using XRInputDevice = UnityEngine.XR.InputDevice;
 using XRNode = UnityEngine.XR.XRNode;
 using XRCommonUsages = UnityEngine.XR.CommonUsages;
-using UnityEngine.XR;
 
 public class ProfesorInteractivo : MonoBehaviour
 {
-    [Header("Canvas del di�logo")]
+    [Header("Canvas del diálogo")]
     public GameObject canvasProfesor;
     public CanvasGroup fadeCanvas;
 
-    [Header("Detecci�n")]
+    [Header("Texto diálogo")]
+    public TMP_Text textoDialogo;
+    [TextArea(3, 6)]
+    public string mensaje =
+        "Hola, soy Freddy. Bienvenido al laboratorio. Sigue las instrucciones para continuar.";
+
+    public float velocidadEscritura = 0.03f;
+
+    [Header("Detección")]
     public Transform jugador;
     public float distanciaActivacion = 2f;
+
+    [Header("Movimiento XR")]
+    public ContinuousMoveProvider moveProvider;
+    public ContinuousTurnProvider turnProvider;
 
     [Header("Tiempo")]
     public float duracionMaxima = 10f;
@@ -24,14 +39,43 @@ public class ProfesorInteractivo : MonoBehaviour
     [Header("Power Up")]
     public ProfesorPowerUp powerUpAlCerrar;
 
-    private bool activo = false, EfectoYa = false;
+    private bool activo = false;
+    private bool yaSeActivo = false;
     private float tiempoInicio;
+
+    private float velocidadOriginal;
 
     void Start()
     {
-        EfectoYa = false;
-        canvasProfesor.SetActive(false);
-        Debug.Log("Script iniciado");
+        // REFERENCIAS AUTOMÁTICAS
+        GameObject canvasPadre = GameObject.Find("CanvaProfesores");
+
+        if (canvasPadre != null)
+        {
+            if (canvasProfesor == null)
+                canvasProfesor = canvasPadre;
+
+            if (textoDialogo == null)
+            {
+                Transform txt = canvasPadre.transform.Find("TextoDialogo");
+                if (txt != null)
+                    textoDialogo = txt.GetComponent<TMP_Text>();
+            }
+
+            if (fadeCanvas == null)
+                fadeCanvas = canvasPadre.GetComponent<CanvasGroup>();
+        }
+
+        if (canvasProfesor != null)
+            canvasProfesor.SetActive(false);
+
+        if (fadeCanvas != null)
+            fadeCanvas.alpha = 0f;
+
+        if (moveProvider != null)
+            velocidadOriginal = moveProvider.moveSpeed;
+
+        Debug.Log("Profesor reutilizable listo");
     }
 
     void Update()
@@ -73,14 +117,15 @@ public class ProfesorInteractivo : MonoBehaviour
         yaSeActivo = true;
         tiempoInicio = Time.unscaledTime;
 
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        if (moveProvider != null)
+            moveProvider.moveSpeed = 0f;
 
-        Time.timeScale = 0f;
+        if (turnProvider != null)
+            turnProvider.enabled = false;
 
         StartCoroutine(FadeInDialogo());
 
-        Debug.Log("DI�LOGO ACTIVADO");
+        Debug.Log("DIÁLOGO ACTIVADO");
     }
 
     IEnumerator DesactivarDialogo()
@@ -91,15 +136,16 @@ public class ProfesorInteractivo : MonoBehaviour
 
         yield return StartCoroutine(FadeOutDialogo());
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (moveProvider != null)
+            moveProvider.moveSpeed = velocidadOriginal;
 
-        Time.timeScale = 1f;
+        if (turnProvider != null)
+            turnProvider.enabled = true;
 
         if (powerUpAlCerrar != null)
             powerUpAlCerrar.ActivarBeneficio();
 
-        Debug.Log("DI�LOGO CERRADO");
+        Debug.Log("DIÁLOGO CERRADO");
     }
 
     IEnumerator FadeInDialogo()
@@ -119,6 +165,21 @@ public class ProfesorInteractivo : MonoBehaviour
         }
 
         fadeCanvas.alpha = 1f;
+
+        // TEXTO ESCRIBIÉNDOSE
+        if (textoDialogo != null)
+            StartCoroutine(EscribirTexto());
+    }
+
+    IEnumerator EscribirTexto()
+    {
+        textoDialogo.text = "";
+
+        foreach (char letra in mensaje)
+        {
+            textoDialogo.text += letra;
+            yield return new WaitForSecondsRealtime(velocidadEscritura);
+        }
     }
 
     IEnumerator FadeOutDialogo()
