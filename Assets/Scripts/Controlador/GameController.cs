@@ -99,6 +99,8 @@ public class GameController : MonoBehaviour
     public void OnBallGrab()
     {
         letrerosController.agarrarBola = true;
+
+        TutorialHintManager.Instance.DetectarAgarre();
     }
 
     // Se llama por la clase EnergyByte cuando la bola explota
@@ -139,5 +141,18 @@ public class GameController : MonoBehaviour
     public void RegisterBallDestroyed()
     {
         BolasActivas--;
+    }
+
+    public void ReiniciarEstado()
+    {
+        currentTime = gameTime;
+        gameEnded = false;
+        isPaused = false;
+
+        Time.timeScale = 1f;
+
+        uiManager.UpdateTimer(currentTime);
+
+        Debug.Log("Juego reiniciado + timer reseteado");
     }
 }
