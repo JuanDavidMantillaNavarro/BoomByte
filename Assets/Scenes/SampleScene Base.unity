@@ -12438,7 +12438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &628883503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32365,6 +32365,8 @@ MonoBehaviour:
   fadeCanvas: {fileID: 628883506}
   jugador: {fileID: 64579887}
   distanciaActivacion: 2
+  moveProvider: {fileID: 185377733}
+  turnProvider: {fileID: 1523836706}
   duracionMaxima: 9
   duracionFade: 0.5
   powerUpAlCerrar: {fileID: 53158771}
@@ -35223,6 +35225,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518415418}
   m_CullTransparentMesh: 1
+--- !u!114 &1523836706 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3752030747713321391, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+  m_PrefabInstance: {fileID: 1373153106}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b29b6c6428c984a8a73ffc2d58063b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1532808187
 GameObject:
   m_ObjectHideFlags: 0
