@@ -594,6 +594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: maquinA (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 927507640244551922, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -5918,6 +5922,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
       propertyPath: m_Name
       value: maquinA
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 927507640244551922, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -19131,12 +19139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da3995d759396747a6ef4a14b53b343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnapToGrid
-  gridSize: 0.5
-  gridOffset: {x: 0.25, y: 0, z: 0}
-  magnetForce: 5
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!135 &1861262702
 SphereCollider:
   m_ObjectHideFlags: 0

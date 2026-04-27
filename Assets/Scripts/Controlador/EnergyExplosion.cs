@@ -16,7 +16,7 @@ public class EnergyExplosion : MonoBehaviour
     public void Initialize(float gridRadius)
     {
         gridRange = gridRadius + GameController.Instance.explosionRadiusModifier;
-        GameController.Instance.effectManager.ApplyEffect(RadioExplosionEffect);
+        //GameController.Instance.effectManager.ApplyEffect(RadioExplosionEffect);
         // Ejecutamos ambas lógicas
         ApplySlowEffect();
         DestroyWallsInRange();
@@ -60,8 +60,6 @@ public class EnergyExplosion : MonoBehaviour
             if (hit.CompareTag(destructibleTag))
             {
                 Debug.Log("<color=orange>Pared destruida: </color>" + hit.name);
-
-                FindObjectOfType<SlowUIFeedback>().MostrarSlow(); 
                 //animacion destruir?
                 Destroy(hit.gameObject);
             }

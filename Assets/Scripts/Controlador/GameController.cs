@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
     [Header("Vistas")]
     public LetrerosController letrerosController;
     public UIManagerVR uiManager;
+    public CameraViewManager cameraViewManager;
 
     [Header("Controladores")]
     public EffectManager effectManager;
@@ -16,19 +17,35 @@ public class GameController : MonoBehaviour
     public int MaxBolas = 1; //Limite Max de Bolas permitidas para spawn
     public float speedMulti = 1f; //Multiplicador de velocidad
     public float explosionRadiusModifier = 0f; //Modificador de radio de explosion de EnergyByte
+     public float RadioExplosion;
 
     public bool abilitiesDisabled = false; //Desabilitar habilidades
 
     [Header("Variables de Tiempo")]
     public float gameTime = 120f; // 2 minutos
     private float currentTime;
+    public int cameraUses = 3;
 
     public bool isPaused = false;
     public bool gameEnded = false;
+
+    [Header("Efectos")]
+    public RadioExplosion radioExplosionDebuff;
+    public RadioExplosion radioExplosionBuff;
+
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+    }
+
+    public void ActivateCameraView()
+    {
+        if (cameraUses <= 0 || abilitiesDisabled) return;
+
+        cameraUses--;
+
+        cameraViewManager.ShowSecondaryView(5f);
     }
 
     void Start()
@@ -62,7 +79,7 @@ public class GameController : MonoBehaviour
     {
         if (gameEnded) return;
 
-        gameEnded = true;
+        //gameEnded = true;
         Debug.Log("GANASTE");
 
         uiManager.MostrarVictoria();
@@ -92,6 +109,18 @@ public class GameController : MonoBehaviour
         GameObject fxEplosion = Instantiate(explosionPrefab, position, Quaternion.identity);
         var expScript = fxEplosion.GetComponent<EnergyExplosion>();
         if (expScript != null) expScript.Initialize(Radio);
+    }
+
+    //Se llama cuando choca con el Enemigo
+    public void OnEnemyCollide()
+    {
+        effectManager.ApplyEffect(radioExplosionDebuff);
+    }
+
+    //Se llama cuando choca con el Profesor
+    public void OnNpcCollide()
+    {
+        effectManager.ApplyEffect(radioExplosionBuff);
     }
 
     public void OnPlayerExplosion()

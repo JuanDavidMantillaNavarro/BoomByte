@@ -43,6 +43,7 @@ public class VRMenuManager : MonoBehaviour
     void Update()
     {
         DetectarInputMenu();
+
     }
 
     // ================= INPUT =================
@@ -88,6 +89,24 @@ public class VRMenuManager : MonoBehaviour
         ) && botonX;
     }
 
+    bool BotonXVR()
+    {
+        UnityEngine.XR.InputDevice leftHand =
+            UnityEngine.XR.InputDevices.GetDeviceAtXRNode(UnityEngine.XR.XRNode.LeftHand);
+
+        if (!leftHand.isValid)
+            return false;
+
+        bool botonX = false;
+
+        if (leftHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out botonX))
+        {
+            return botonX;
+        }
+
+        return false;
+    }
+
     void DetectarInputMenu()
     {
         if (animando) return;
@@ -110,17 +129,12 @@ public class VRMenuManager : MonoBehaviour
             ToggleMenu();
         }
 
-        // Cámara secundaria
-        bool tecladoM =
-            Keyboard.current != null &&
-            Keyboard.current.mKey.wasPressedThisFrame;
+        // teclado simulador para menu radial
+        bool tecladoM = Keyboard.current != null && Keyboard.current.mKey.wasPressedThisFrame;
 
         if (tecladoM || BotonXVR())
         {
-            Debug.Log("Activar vista cámara");
-            if (GameController.Instance != null)
-            {;}
-                //GameController.Instance.ActivateCameraView();
+           GameController.Instance.ActivateCameraView();
         }
     }
 

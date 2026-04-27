@@ -24,19 +24,14 @@ public class ProfesorInteractivo : MonoBehaviour
     [Header("Power Up")]
     public ProfesorPowerUp powerUpAlCerrar;
 
-    private bool activo = false;
-    private bool yaSeActivo = false;
+    private bool activo = false, EfectoYa = false;
     private float tiempoInicio;
 
     void Start()
     {
-        if (canvasProfesor != null)
-            canvasProfesor.SetActive(false);
-
-        if (fadeCanvas != null)
-            fadeCanvas.alpha = 0f;
-
-        Debug.Log("Profesor reutilizable listo");
+        EfectoYa = false;
+        canvasProfesor.SetActive(false);
+        Debug.Log("Script iniciado");
     }
 
     void Update()

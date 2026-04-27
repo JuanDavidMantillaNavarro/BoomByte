@@ -3,11 +3,13 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.InputSystem;
 
 public class EnergyByteGenerator : MonoBehaviour
 {
     [Header("Prefab")]
     public GameObject energyBytePrefab;
+    public GameObject Cam;
 
     [Header("Referencias")]
     public XRInteractionManager interactionManager;
@@ -46,6 +48,15 @@ public class EnergyByteGenerator : MonoBehaviour
             {
                 CreateAndGrabBall(interactor);
             }
+        }
+
+        if (Keyboard.current.pKey.wasPressedThisFrame)
+        {
+        GameObject newBall = Instantiate(energyBytePrefab, Cam.transform.position, Quaternion.identity);
+        GameController.Instance.RegisterBallSpawned();
+        
+        EnergyByte ballInteractable = newBall.GetComponent<EnergyByte>();
+        Rigidbody ballRb = newBall.GetComponent<Rigidbody>();
         }
     }
 
