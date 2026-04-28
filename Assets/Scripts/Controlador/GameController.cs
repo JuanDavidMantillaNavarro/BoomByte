@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     public bool abilitiesDisabled = false; //Desabilitar habilidades
 
     [Header("Variables de Tiempo")]
-    public float gameTime = 120f; // 2 minutos
+    public float gameTime = 600f; // 2 minutos
     private float currentTime;
     public int cameraUses = 3;
 

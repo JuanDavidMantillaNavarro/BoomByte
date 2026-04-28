@@ -13708,7 +13708,7 @@ MonoBehaviour:
   explosionRadiusModifier: 0
   RadioExplosion: 0
   abilitiesDisabled: 0
-  gameTime: 120
+  gameTime: 600
   cameraUses: 3
   isPaused: 0
   gameEnded: 0
@@ -25631,6 +25631,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: -3077123753452698092, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
     - {fileID: -6019171888494507410, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
+    - {fileID: 825894089210680117, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 637075775725834555, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
       insertIndex: 18
@@ -49095,6 +49096,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: -3077123753452698092, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
     - {fileID: -6019171888494507410, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
+    - {fileID: 825894089210680117, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 637075775725834555, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
       insertIndex: 18
@@ -57623,6 +57625,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: -3077123753452698092, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
     - {fileID: -6019171888494507410, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
+    - {fileID: 825894089210680117, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 637075775725834555, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
       insertIndex: 18
@@ -65830,6 +65833,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: -3077123753452698092, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
     - {fileID: -6019171888494507410, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
+    - {fileID: 825894089210680117, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 637075775725834555, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
       insertIndex: 18
@@ -67883,6 +67887,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: -3077123753452698092, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
     - {fileID: -6019171888494507410, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
+    - {fileID: 825894089210680117, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 637075775725834555, guid: e2de111a353b33840a98b69eef0f3458, type: 3}
       insertIndex: 18
