@@ -1,4 +1,5 @@
 using UnityEngine;
+using FMODUnity;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
@@ -10,6 +11,9 @@ public class EnergyByte : XRGrabInteractable
     [Header("Config")]
     public LayerMask wallLayer;
     public GameObject explosionPrefab;
+    
+    [Header("FMOD - Audio")]
+    [SerializeField] private EventReference grabSound;
 
     private Rigidbody rb;
     private bool isFlying = false;
@@ -37,6 +41,7 @@ public class EnergyByte : XRGrabInteractable
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
+        RuntimeManager.PlayOneShot(grabSound, transform.position);
         isFlying = false;
         GameController.Instance.OnBallGrab();
     }

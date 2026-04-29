@@ -40,7 +40,7 @@ public class AudioSettingsController : MonoBehaviour
             musicaSource.volume = valor;
         }
 
-        Debug.Log("Volumen música: " + valor);
+        Debug.Log("Volumen mï¿½sica: " + valor);
     }
 
     public void CambiarEfectos(float valor)
