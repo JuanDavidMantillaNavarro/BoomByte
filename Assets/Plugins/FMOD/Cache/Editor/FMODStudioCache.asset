@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8015662770207097238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Caminata 1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Caminata 1
+  Guid:
+    Data1: -1077648432
+    Data2: 1141343260
+    Data3: 1540690063
+    Data4: 847252673
+  Banks:
+  - {fileID: -2555569237335129505}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7896533482974730998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,10 +96,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/FMOD/Sonidos/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639130957171296778
+  lastModified: 639130975517995612
   FileSizes:
   - Name: Desktop
-    Value: 1094
+    Value: 1182
   Exists: 1
 --- !u!114 &-3827274302379604380
 MonoBehaviour:
@@ -116,10 +143,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/FMOD/Sonidos/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639130957320785745
+  lastModified: 639130975663277752
   FileSizes:
   - Name: Desktop
-    Value: 230496
+    Value: 357632
   Exists: 1
 --- !u!114 &-1853050526634971106
 MonoBehaviour:
@@ -225,13 +252,15 @@ MonoBehaviour:
   - {fileID: -1160611342569815858}
   - {fileID: 8723054097705116987}
   - {fileID: -7896533482974730998}
+  - {fileID: -8015662770207097238}
+  - {fileID: 4851938945034202294}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4610699537375603232}
   StringsBanks:
   - {fileID: -4638345518409988812}
   cacheVersion: 131859
-  cacheTime: 639130957320785745
+  cacheTime: 639130975663277752
   SerializableEventsDict:
   - key: "event:/M\xFAsica ambiente 1"
     index: 0
@@ -245,6 +274,10 @@ MonoBehaviour:
     index: 4
   - key: event:/Enemigo
     index: 5
+  - key: event:/Caminata 1
+    index: 6
+  - key: event:/Enemigo cerca
+    index: 7
 --- !u!114 &4610699537375603232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,11 +293,38 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/FMOD/Sonidos/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639130957171280625
+  lastModified: 639130975517985560
   FileSizes:
   - Name: Desktop
     Value: 123552
   Exists: 1
+--- !u!114 &4851938945034202294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigo cerca
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Enemigo cerca
+  Guid:
+    Data1: -313565566
+    Data2: 1259210176
+    Data3: -1816406104
+    Data4: -831902556
+  Banks:
+  - {fileID: -2555569237335129505}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6013168926439839061
 MonoBehaviour:
   m_ObjectHideFlags: 0

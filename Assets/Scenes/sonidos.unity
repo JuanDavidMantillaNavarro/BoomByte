@@ -13736,6 +13736,13 @@ MonoBehaviour:
   uiManager: {fileID: 148404792}
   cameraViewManager: {fileID: 148404793}
   effectManager: {fileID: 439260411}
+  enemigoSound:
+    Guid:
+      Data1: 739304179
+      Data2: 1293057134
+      Data3: 1104688810
+      Data4: 812522634
+    Path: event:/Enemigo
   BolasActivas: 0
   MaxBolas: 1
   speedMulti: 1
