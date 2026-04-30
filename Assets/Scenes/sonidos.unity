@@ -1490,6 +1490,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
   nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 0}
+  lastFramePosition: {x: 0, y: 0, z: 0}
+  rigidBody: {fileID: 0}
+  rigidBody2D: {fileID: 0}
 --- !u!1001 &69493932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6025,6 +6028,8 @@ MonoBehaviour:
   volumenGeneralSlider: {fileID: 21052290}
   musicaSlider: {fileID: 1536805505}
   efectosSlider: {fileID: 2014760848}
+  musicaSource: {fileID: 0}
+  efectosSources: []
 --- !u!1 &253126701
 GameObject:
   m_ObjectHideFlags: 0
@@ -37912,6 +37917,7 @@ MonoBehaviour:
     Path: event:/Enemigo cerca
   player: {fileID: 0}
   detectionRange: 4
+  isPlaying: 0
 --- !u!1 &1222540179
 GameObject:
   m_ObjectHideFlags: 0
@@ -39302,6 +39308,7 @@ MonoBehaviour:
       Data3: 1540690063
       Data4: 847252673
     Path: event:/Caminata 1
+  isPlaying: 0
 --- !u!1 &1290100729
 GameObject:
   m_ObjectHideFlags: 0
@@ -40066,6 +40073,8 @@ MonoBehaviour:
   volumenGeneralSlider: {fileID: 21052290}
   musicaSlider: {fileID: 0}
   efectosSlider: {fileID: 0}
+  musicaSource: {fileID: 0}
+  efectosSources: []
 --- !u!1 &1314531067
 GameObject:
   m_ObjectHideFlags: 0
