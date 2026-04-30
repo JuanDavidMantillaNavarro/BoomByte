@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7896533482974730998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigo
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Enemigo
+  Guid:
+    Data1: 739304179
+    Data2: 1293057134
+    Data3: 1104688810
+    Data4: 812522634
+  Banks:
+  - {fileID: -2555569237335129505}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5861752637347744851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,11 +69,38 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/FMOD/Sonidos/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639130919219326930
+  lastModified: 639130957171296778
   FileSizes:
   - Name: Desktop
-    Value: 912
+    Value: 1094
   Exists: 1
+--- !u!114 &-3827274302379604380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Explosi\xF3n"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/Explosi\xF3n"
+  Guid:
+    Data1: -919196356
+    Data2: 1323034144
+    Data3: -959009612
+    Data4: 1963890085
+  Banks:
+  - {fileID: -2555569237335129505}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2555569237335129505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,10 +116,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/FMOD/Sonidos/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639130927200248936
+  lastModified: 639130957320785745
   FileSizes:
   - Name: Desktop
-    Value: 16608
+    Value: 230496
   Exists: 1
 --- !u!114 &-1853050526634971106
 MonoBehaviour:
@@ -90,6 +144,33 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1160611342569815858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Lanzar
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Lanzar
+  Guid:
+    Data1: 1927574741
+    Data2: 1221989405
+    Data3: -1577042779
+    Data4: -492400630
+  Banks:
+  - {fileID: -2555569237335129505}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -140,18 +221,30 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -1853050526634971106}
   - {fileID: -285690345831693457}
+  - {fileID: -3827274302379604380}
+  - {fileID: -1160611342569815858}
+  - {fileID: 8723054097705116987}
+  - {fileID: -7896533482974730998}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4610699537375603232}
   StringsBanks:
   - {fileID: -4638345518409988812}
   cacheVersion: 131859
-  cacheTime: 639130927200248936
+  cacheTime: 639130957320785745
   SerializableEventsDict:
   - key: "event:/M\xFAsica ambiente 1"
     index: 0
   - key: event:/Agarrar 1
     index: 1
+  - key: "event:/Explosi\xF3n"
+    index: 2
+  - key: event:/Lanzar
+    index: 3
+  - key: event:/Desbloquear nueva zona 1
+    index: 4
+  - key: event:/Enemigo
+    index: 5
 --- !u!114 &4610699537375603232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +260,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/FMOD/Sonidos/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639130919219310365
+  lastModified: 639130957171280625
   FileSizes:
   - Name: Desktop
     Value: 123552
@@ -212,3 +305,30 @@ MonoBehaviour:
   - Name: Desktop
     Value: 780
   Exists: 1
+--- !u!114 &8723054097705116987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Desbloquear nueva zona 1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Desbloquear nueva zona 1
+  Guid:
+    Data1: 1112243215
+    Data2: 1094428500
+    Data3: -1922851155
+    Data4: -1691540135
+  Banks:
+  - {fileID: -2555569237335129505}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

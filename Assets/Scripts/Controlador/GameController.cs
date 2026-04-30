@@ -1,4 +1,5 @@
 using UnityEngine;
+using FMODUnity;
 
 public class GameController : MonoBehaviour
 {
@@ -12,17 +13,20 @@ public class GameController : MonoBehaviour
     [Header("Controladores")]
     public EffectManager effectManager;
 
-    [Header("Variables de estado")]
-    public int BolasActivas = 0; //Bolas actualmente en el mundo
-    public int MaxBolas = 1; //Limite Max de Bolas permitidas para spawn
-    public float speedMulti = 1f; //Multiplicador de velocidad
-    public float explosionRadiusModifier = 0f; //Modificador de radio de explosion de EnergyByte
-     public float RadioExplosion;
+    [Header("FMOD - Audio")]
+    [SerializeField] private EventReference enemigoSound;
 
-    public bool abilitiesDisabled = false; //Desabilitar habilidades
+    [Header("Variables de estado")]
+    public int BolasActivas = 0;
+    public int MaxBolas = 1;
+    public float speedMulti = 1f;
+    public float explosionRadiusModifier = 0f;
+    public float RadioExplosion;
+
+    public bool abilitiesDisabled = false;
 
     [Header("Variables de Tiempo")]
-    public float gameTime = 600f; // 2 minutos
+    public float gameTime = 600f;
     private float currentTime;
     public int cameraUses = 3;
 
@@ -37,15 +41,6 @@ public class GameController : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-    }
-
-    public void ActivateCameraView()
-    {
-        if (cameraUses <= 0 || abilitiesDisabled) return;
-
-        cameraUses--;
-
-        cameraViewManager.ShowSecondaryView(5f);
     }
 
     void Start()
@@ -71,7 +66,6 @@ public class GameController : MonoBehaviour
     public void TogglePause()
     {
         isPaused = !isPaused;
-
         Time.timeScale = isPaused ? 0f : 1f;
     }
 
@@ -79,9 +73,7 @@ public class GameController : MonoBehaviour
     {
         if (gameEnded) return;
 
-        //gameEnded = true;
         Debug.Log("GANASTE");
-
         uiManager.MostrarVictoria();
     }
 
@@ -91,33 +83,42 @@ public class GameController : MonoBehaviour
 
         gameEnded = true;
         Debug.Log("PERDISTE");
-
         uiManager.MostrarDerrota();
     }
 
-    // Se llama por la clase EnergyByte cuando se agarra la bola
+    public void ActivateCameraView()
+    {
+        if (cameraUses <= 0 || abilitiesDisabled) return;
+
+        cameraUses--;
+        cameraViewManager.ShowSecondaryView(5f);
+    }
+
     public void OnBallGrab()
     {
         letrerosController.agarrarBola = true;
-
         TutorialHintManager.Instance.DetectarAgarre();
     }
 
-    // Se llama por la clase EnergyByte cuando la bola explota
     public void OnBallExploded(Vector3 position, float Radio, GameObject explosionPrefab)
     {
-        GameObject fxEplosion = Instantiate(explosionPrefab, position, Quaternion.identity);
-        var expScript = fxEplosion.GetComponent<EnergyExplosion>();
-        if (expScript != null) expScript.Initialize(Radio);
+        GameObject fxExplosion = Instantiate(explosionPrefab, position, Quaternion.identity);
+
+        var expScript = fxExplosion.GetComponent<EnergyExplosion>();
+        if (expScript != null)
+            expScript.Initialize(Radio);
     }
 
-    //Se llama cuando choca con el Enemigo
-    public void OnEnemyCollide()
+    // 🔥 AQUÍ VA EL SONIDO DEL ENEMIGO
+    public void OnEnemyCollide(Vector3 position)
     {
+        RuntimeManager.PlayOneShot(enemigoSound, position);
+
         effectManager.ApplyEffect(radioExplosionDebuff);
+
+        Debug.Log("Sonido enemigo + debuff aplicado");
     }
 
-    //Se llama cuando choca con el Profesor
     public void OnNpcCollide()
     {
         effectManager.ApplyEffect(radioExplosionBuff);
