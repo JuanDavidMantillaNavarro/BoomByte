@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/FMOD/Sonidos/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639130163197322152
+  lastModified: 639130919219326930
   FileSizes:
   - Name: Desktop
-    Value: 878
+    Value: 912
   Exists: 1
 --- !u!114 &-2555569237335129505
 MonoBehaviour:
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/FMOD/Sonidos/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639130163197818180
+  lastModified: 639130927200248936
   FileSizes:
   - Name: Desktop
     Value: 16608
@@ -89,7 +89,7 @@ MonoBehaviour:
   - {fileID: 4610699537375603232}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -146,7 +146,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -4638345518409988812}
   cacheVersion: 131859
-  cacheTime: 639130163197818180
+  cacheTime: 639130927200248936
   SerializableEventsDict:
   - key: "event:/M\xFAsica ambiente 1"
     index: 0
@@ -167,10 +167,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/FMOD/Sonidos/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639130163197302208
+  lastModified: 639130919219310365
   FileSizes:
   - Name: Desktop
-    Value: 123392
+    Value: 123552
   Exists: 1
 --- !u!114 &6013168926439839061
 MonoBehaviour:

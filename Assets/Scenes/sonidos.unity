@@ -1839,69 +1839,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100.000015, y: 0, z: 100.00002}
   m_Center: {x: 0.000091552734, y: -0.0000019073486, z: -0.000030517578}
---- !u!1 &81025317
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 81025319}
-  - component: {fileID: 81025318}
-  m_Layer: 0
-  m_Name: Audio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &81025318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81025317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1879710222
-      Data2: 1142107740
-      Data3: -1244136054
-      Data4: 1386100266
-    Path: "event:/M\xFAsica ambiente 1"
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!4 &81025319
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81025317}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.81049, y: 2.06375, z: 7.67713}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &81831260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5969,6 +5906,7 @@ GameObject:
   - component: {fileID: 250830521}
   - component: {fileID: 250830520}
   - component: {fileID: 250830519}
+  - component: {fileID: 250830523}
   m_Layer: 5
   m_Name: 'panel sonido '
   m_TagString: Untagged
@@ -6048,6 +5986,28 @@ RectTransform:
   m_AnchoredPosition: {x: 478.1, y: -5.529996}
   m_SizeDelta: {x: 129.79, y: 88.95}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &250830523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250830518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1415834b7de744bacd9c206b14af35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioSettingsController
+  volumenGeneralSlider: {fileID: 21052290}
+  musicaSlider: {fileID: 1536805505}
+  efectosSlider: {fileID: 2014760848}
+  musicaAmbienteEvent:
+    Guid:
+      Data1: -1679580139
+      Data2: 1237234846
+      Data3: -335058806
+      Data4: -547557727
+    Path: "event:/M\xFAsica ambiente 1"
 --- !u!1 &253126701
 GameObject:
   m_ObjectHideFlags: 0
@@ -13313,7 +13273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32474,7 +32434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &1028036734
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32563,7 +32523,7 @@ Transform:
   m_GameObject: {fileID: 1028036733}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 0, z: 0.155}
+  m_LocalPosition: {x: -0.25, y: 0, z: 11.35}
   m_LocalScale: {x: 12.513, y: 12.513, z: 12.513}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -39970,8 +39930,13 @@ MonoBehaviour:
   volumenGeneralSlider: {fileID: 21052290}
   musicaSlider: {fileID: 1536805505}
   efectosSlider: {fileID: 2014760848}
-  musicaSource: {fileID: 0}
-  efectosSources: []
+  musicaAmbienteEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &1314531067
 GameObject:
   m_ObjectHideFlags: 0
@@ -58139,7 +58104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635580913397832359, guid: 9b4a657c7df58fb4fa21624fe730efa2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 9.25
       objectReference: {fileID: 0}
     - target: {fileID: 8635580913397832359, guid: 9b4a657c7df58fb4fa21624fe730efa2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -72973,4 +72938,3 @@ SceneRoots:
   - {fileID: 1067208393}
   - {fileID: 1585581750}
   - {fileID: 1687453516}
-  - {fileID: 81025319}

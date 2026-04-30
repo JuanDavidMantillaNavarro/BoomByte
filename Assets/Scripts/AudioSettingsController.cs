@@ -8,51 +8,22 @@ public class AudioSettingsController : MonoBehaviour
     public Slider musicaSlider;
     public Slider efectosSlider;
 
-    [Header("Audio Sources")]
-    public AudioSource musicaSource;
-    public AudioSource[] efectosSources;
-
     void Start()
     {
-        volumenGeneralSlider.value = AudioListener.volume;
+        volumenGeneralSlider.value = AudioManagerFMOD.Instance.volumenMusicaActual;
 
-        if (musicaSource != null)
-            musicaSlider.value = musicaSource.volume;
+        musicaSlider.minValue = 0f;
+        musicaSlider.maxValue = 1f;
+        musicaSlider.wholeNumbers = true;
+        musicaSlider.value = AudioManagerFMOD.Instance.musicaActiva ? 1f : 0f;
 
-        if (efectosSources.Length > 0)
-            efectosSlider.value = efectosSources[0].volume;
+        efectosSlider.minValue = 0f;
+        efectosSlider.maxValue = 1f;
+        efectosSlider.wholeNumbers = true;
+        efectosSlider.value = AudioManagerFMOD.Instance.efectosActivos ? 1f : 0f;
 
-        volumenGeneralSlider.onValueChanged.AddListener(CambiarVolumenGeneral);
-        musicaSlider.onValueChanged.AddListener(CambiarMusica);
-        efectosSlider.onValueChanged.AddListener(CambiarEfectos);
-    }
-
-    public void CambiarVolumenGeneral(float valor)
-    {
-        AudioListener.volume = valor;
-        Debug.Log("Volumen general: " + valor);
-    }
-
-    public void CambiarMusica(float valor)
-    {
-        if (musicaSource != null)
-        {
-            musicaSource.volume = valor;
-        }
-
-        Debug.Log("Volumen m�sica: " + valor);
-    }
-
-    public void CambiarEfectos(float valor)
-    {
-        foreach (AudioSource efecto in efectosSources)
-        {
-            if (efecto != null)
-            {
-                efecto.volume = valor;
-            }
-        }
-
-        Debug.Log("Volumen efectos: " + valor);
+        volumenGeneralSlider.onValueChanged.AddListener(AudioManagerFMOD.Instance.CambiarVolumenMusica);
+        musicaSlider.onValueChanged.AddListener(valor => AudioManagerFMOD.Instance.ActivarMusica(valor >= 1f));
+        efectosSlider.onValueChanged.AddListener(valor => AudioManagerFMOD.Instance.ActivarEfectos(valor >= 1f));
     }
 }
