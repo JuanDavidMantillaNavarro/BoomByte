@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMODUnity;
 
 using XRInputDevice = UnityEngine.XR.InputDevice;
 using XRNode = UnityEngine.XR.XRNode;
@@ -9,11 +10,11 @@ using UnityEngine.XR;
 
 public class ProfesorInteractivo : MonoBehaviour
 {
-    [Header("Canvas del di�logo")]
+    [Header("Canvas del diálogo")]
     public GameObject canvasProfesor;
     public CanvasGroup fadeCanvas;
 
-    [Header("Detecci�n")]
+    [Header("Detección")]
     public Transform jugador;
     public float distanciaActivacion = 2f;
 
@@ -23,6 +24,9 @@ public class ProfesorInteractivo : MonoBehaviour
 
     [Header("Power Up")]
     public ProfesorPowerUp powerUpAlCerrar;
+
+    [Header("FMOD - Audio")]
+    [SerializeField] private EventReference profesorInteractSound;
 
     private bool activo = false, yaSeActivo = false;
     private float tiempoInicio;
@@ -38,10 +42,7 @@ public class ProfesorInteractivo : MonoBehaviour
     {
         if (jugador == null) return;
 
-        float distancia = Vector3.Distance(
-            jugador.position,
-            transform.position
-        );
+        float distancia = Vector3.Distance(jugador.position, transform.position);
 
         if (distancia <= distanciaActivacion && !activo && !yaSeActivo)
         {
@@ -73,6 +74,8 @@ public class ProfesorInteractivo : MonoBehaviour
         yaSeActivo = true;
         tiempoInicio = Time.unscaledTime;
 
+        RuntimeManager.PlayOneShot(profesorInteractSound, transform.position);
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
@@ -80,7 +83,7 @@ public class ProfesorInteractivo : MonoBehaviour
 
         StartCoroutine(FadeInDialogo());
 
-        Debug.Log("DI�LOGO ACTIVADO");
+        Debug.Log("DIÁLOGO ACTIVADO");
     }
 
     IEnumerator DesactivarDialogo()
@@ -99,7 +102,7 @@ public class ProfesorInteractivo : MonoBehaviour
         if (powerUpAlCerrar != null)
             powerUpAlCerrar.ActivarBeneficio();
 
-        Debug.Log("DI�LOGO CERRADO");
+        Debug.Log("DIÁLOGO CERRADO");
     }
 
     IEnumerator FadeInDialogo()
@@ -111,10 +114,7 @@ public class ProfesorInteractivo : MonoBehaviour
         while (tiempo < duracionFade)
         {
             tiempo += Time.unscaledDeltaTime;
-
-            fadeCanvas.alpha =
-                Mathf.Lerp(0f, 1f, tiempo / duracionFade);
-
+            fadeCanvas.alpha = Mathf.Lerp(0f, 1f, tiempo / duracionFade);
             yield return null;
         }
 
@@ -128,10 +128,7 @@ public class ProfesorInteractivo : MonoBehaviour
         while (tiempo < duracionFade)
         {
             tiempo += Time.unscaledDeltaTime;
-
-            fadeCanvas.alpha =
-                Mathf.Lerp(1f, 0f, tiempo / duracionFade);
-
+            fadeCanvas.alpha = Mathf.Lerp(1f, 0f, tiempo / duracionFade);
             yield return null;
         }
 

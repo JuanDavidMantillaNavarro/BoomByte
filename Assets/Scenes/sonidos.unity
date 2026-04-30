@@ -5013,6 +5013,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215345812}
   m_CullTransparentMesh: 1
+--- !u!1 &218829425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7917674758246323946, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+  m_PrefabInstance: {fileID: 1373153106}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &218829427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218829425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602eddff76dd13442a4092a3e26bfb89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FootstepsController
+  footstepsEvent:
+    Guid:
+      Data1: -1077648432
+      Data2: 1141343260
+      Data3: 1540690063
+      Data4: 847252673
+    Path: event:/Caminata 1
 --- !u!1 &221693575
 GameObject:
   m_ObjectHideFlags: 0
@@ -37659,6 +37683,7 @@ GameObject:
   - component: {fileID: 1214223188}
   - component: {fileID: 1214223197}
   - component: {fileID: 1214223198}
+  - component: {fileID: 1214223199}
   m_Layer: 0
   m_Name: Enemigo (Bloqueo creativo)
   m_TagString: Player
@@ -37859,6 +37884,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1214223199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214223186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21cf22eeb7fc1a44db052b8d0259d411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyProximitySound
+  proximitySound:
+    Guid:
+      Data1: -313565566
+      Data2: 1259210176
+      Data3: -1816406104
+      Data4: -831902556
+    Path: event:/Enemigo cerca
+  player: {fileID: 0}
+  detectionRange: 4
 --- !u!1 &1222540179
 GameObject:
   m_ObjectHideFlags: 0
@@ -39225,6 +39271,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100.00002, y: 0, z: 100.00002}
   m_Center: {x: 0, y: -0.0000009536743, z: 0.000061035156}
+--- !u!1 &1283765640 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8806329115733545877, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+  m_PrefabInstance: {fileID: 1373153106}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1283765647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283765640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e2b0717678a6744cb813b0bb6088d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FootstepsController
+  footstepsEvent:
+    Guid:
+      Data1: -1077648432
+      Data2: 1141343260
+      Data3: 1540690063
+      Data4: 847252673
+    Path: event:/Caminata 1
 --- !u!1 &1290100729
 GameObject:
   m_ObjectHideFlags: 0
@@ -41971,6 +42041,12 @@ PrefabInstance:
       insertIndex: 0
       addedObject: {fileID: 1293005738}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8806329115733545877, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1283765647}
+    - targetCorrespondingSourceObject: {fileID: 7917674758246323946, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 218829427}
     - targetCorrespondingSourceObject: {fileID: 7917674758326848201, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       insertIndex: -1
       addedObject: {fileID: 64579882}
