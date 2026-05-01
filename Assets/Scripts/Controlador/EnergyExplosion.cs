@@ -1,23 +1,26 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
+using FMODUnity;
 
 public class EnergyExplosion : MonoBehaviour
 {
     private float gridRange;
     private float heightRange = 4f; 
-    private float slowAmount = 0.4f; // 40%
+    private float slowAmount = 0.4f;
     private float duration = 3f;
     public string destructibleTag = "Destructible";
 
     [Header("Efectos")]
     public EffectData RadioExplosionEffect;
 
+    [Header("FMOD - Audio")]
+    [SerializeField] private EventReference zonaDesbloqueadaSound;
+
     public void Initialize(float gridRadius)
     {
         gridRange = gridRadius + GameController.Instance.explosionRadiusModifier;
-        //GameController.Instance.effectManager.ApplyEffect(RadioExplosionEffect);
-        // Ejecutamos ambas lógicas
+
         ApplySlowEffect();
         DestroyWallsInRange();
     }
@@ -31,7 +34,6 @@ public class EnergyExplosion : MonoBehaviour
         Vector3 explosionPos = transform.position;
         Vector3 diff = playerPos - explosionPos;
 
-        // Verificamos si el jugador está en el cubo
         bool inHorizontalRange = Mathf.Abs(diff.x) <= gridRange && Mathf.Abs(diff.z) <= gridRange;
         bool inVerticalRange = diff.y >= -1f && diff.y <= heightRange;
 
@@ -48,23 +50,27 @@ public class EnergyExplosion : MonoBehaviour
 
     private void DestroyWallsInRange()
     {
-        // Definimos el centro y el tamaño de la caja de detección (el mismo del Gizmo)
         Vector3 center = transform.position + new Vector3(0, heightRange / 2, 0);
         Vector3 halfExtents = new Vector3(gridRange, heightRange / 2, gridRange);
 
-        // Detectamos todos los colisionadores dentro de esa caja
         Collider[] hitColliders = Physics.OverlapBox(center, halfExtents, Quaternion.identity);
+
+        bool destruyoPared = false;
 
         foreach (Collider hit in hitColliders)
         {
             if (hit.CompareTag(destructibleTag))
             {
                 Debug.Log("<color=orange>Pared destruida: </color>" + hit.name);
-
-                FindObjectOfType<SlowUIFeedback>().MostrarSlow(); 
-                //animacion destruir?
                 Destroy(hit.gameObject);
+                destruyoPared = true;
             }
+        }
+
+        if (destruyoPared)
+        {
+            RuntimeManager.PlayOneShot(zonaDesbloqueadaSound, transform.position);
+            Debug.Log("Sonido zona desbloqueada");
         }
     }
 
@@ -90,7 +96,7 @@ public class EnergyExplosion : MonoBehaviour
         }
 
         moveProvider.moveSpeed = originalSpeed;
-        
+
         Destroy(gameObject, 0.5f);
     }
 

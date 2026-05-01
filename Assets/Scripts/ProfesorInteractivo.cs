@@ -1,112 +1,153 @@
-﻿using UnityEngine;
-using UnityEngine.XR;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using FMODUnity;
+
+using XRInputDevice = UnityEngine.XR.InputDevice;
+using XRNode = UnityEngine.XR.XRNode;
+using XRCommonUsages = UnityEngine.XR.CommonUsages;
+using UnityEngine.XR;
 
 public class ProfesorInteractivo : MonoBehaviour
 {
-    public Transform playerCamera;
+    [Header("Canvas del diálogo")]
     public GameObject canvasProfesor;
+    public CanvasGroup fadeCanvas;
 
+    [Header("Detección")]
+    public Transform jugador;
     public float distanciaActivacion = 2f;
-    public float duracionMaxima = 10f;
 
-    private bool activo = false, EfectoYa = false;
+    [Header("Tiempo")]
+    public float duracionMaxima = 10f;
+    public float duracionFade = 0.5f;
+
+    [Header("Power Up")]
+    public ProfesorPowerUp powerUpAlCerrar;
+
+    [Header("FMOD - Audio")]
+    [SerializeField] private EventReference profesorInteractSound;
+
+    private bool activo = false, yaSeActivo = false;
     private float tiempoInicio;
 
     void Start()
     {
-        EfectoYa = false;
+        yaSeActivo = false;
         canvasProfesor.SetActive(false);
         Debug.Log("Script iniciado");
     }
 
     void Update()
     {
-        if (playerCamera == null || canvasProfesor == null)
-        {
-            Debug.Log("Faltan referencias");
-            return;
-        }
+        if (jugador == null) return;
 
-        float distancia = Vector3.Distance(playerCamera.position, transform.position);
+        float distancia = Vector3.Distance(jugador.position, transform.position);
 
-        if (distancia <= distanciaActivacion && !activo)
+        if (distancia <= distanciaActivacion && !activo && !yaSeActivo)
         {
             ActivarDialogo();
-            if(!EfectoYa)
-            {GameController.Instance.OnNpcCollide();}
-            EfectoYa = true;
         }
 
-        if (activo)
+        if (!activo) return;
+
+        bool teclaCerrar =
+            Keyboard.current != null &&
+            Keyboard.current.tKey.wasPressedThisFrame;
+
+        bool botonA = BotonAVR();
+
+        if (teclaCerrar || botonA)
         {
-            // cerrar con tecla T
-            if (Keyboard.current != null && Keyboard.current.tKey.wasPressedThisFrame)
-            {
-                Debug.Log("Cierre manual con T");
-                DesactivarDialogo();
-            }
+            StartCoroutine(DesactivarDialogo());
+        }
 
-            // cerrar con botón A VR
-            if (BotonAVR())
-            {
-                Debug.Log("Cierre con botón A (VR)");
-                DesactivarDialogo();
-            }
-
-            // cierre automático real
-            if (Time.time - tiempoInicio >= duracionMaxima)
-            {
-                Debug.Log("Se desactivó el diálogo por tiempo");
-                DesactivarDialogo();
-            }
+        if (Time.unscaledTime - tiempoInicio >= duracionMaxima)
+        {
+            StartCoroutine(DesactivarDialogo());
         }
     }
 
     void ActivarDialogo()
     {
         activo = true;
-        tiempoInicio = Time.time;
+        yaSeActivo = true;
+        tiempoInicio = Time.unscaledTime;
 
-        Debug.Log("Se activó el diálogo");
+        RuntimeManager.PlayOneShot(profesorInteractSound, transform.position);
 
-        canvasProfesor.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
-        // siempre delante del profesor
-        Vector3 frente = transform.position + transform.forward * 1.0f;
+        Time.timeScale = 0f;
 
-        canvasProfesor.transform.position = frente;
+        StartCoroutine(FadeInDialogo());
 
-        canvasProfesor.transform.LookAt(playerCamera);
-        canvasProfesor.transform.Rotate(0, 180, 0);
-
-        // tamaño visible
-        canvasProfesor.transform.localScale = Vector3.one * 1f;
+        Debug.Log("DIÁLOGO ACTIVADO");
     }
 
-    void DesactivarDialogo()
+    IEnumerator DesactivarDialogo()
     {
-        Debug.Log("Se desactivó el diálogo");
+        if (!activo) yield break;
 
         activo = false;
+
+        yield return StartCoroutine(FadeOutDialogo());
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        Time.timeScale = 1f;
+
+        if (powerUpAlCerrar != null)
+            powerUpAlCerrar.ActivarBeneficio();
+
+        Debug.Log("DIÁLOGO CERRADO");
+    }
+
+    IEnumerator FadeInDialogo()
+    {
+        canvasProfesor.SetActive(true);
+
+        float tiempo = 0f;
+
+        while (tiempo < duracionFade)
+        {
+            tiempo += Time.unscaledDeltaTime;
+            fadeCanvas.alpha = Mathf.Lerp(0f, 1f, tiempo / duracionFade);
+            yield return null;
+        }
+
+        fadeCanvas.alpha = 1f;
+    }
+
+    IEnumerator FadeOutDialogo()
+    {
+        float tiempo = 0f;
+
+        while (tiempo < duracionFade)
+        {
+            tiempo += Time.unscaledDeltaTime;
+            fadeCanvas.alpha = Mathf.Lerp(1f, 0f, tiempo / duracionFade);
+            yield return null;
+        }
+
         canvasProfesor.SetActive(false);
     }
 
     bool BotonAVR()
     {
-        UnityEngine.XR.InputDevice rightHand =
-            UnityEngine.XR.InputDevices.GetDeviceAtXRNode(UnityEngine.XR.XRNode.RightHand);
+        XRInputDevice rightHand =
+            InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
         if (!rightHand.isValid)
             return false;
 
         bool botonA = false;
 
-        if (rightHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out botonA))
-        {
-            return botonA;
-        }
-
-        return false;
+        return rightHand.TryGetFeatureValue(
+            XRCommonUsages.primaryButton,
+            out botonA
+        ) && botonA;
     }
 }

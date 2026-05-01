@@ -38,7 +38,7 @@ public class CollisionHandler : MonoBehaviour
     {
         brain.DarRecompensa(+10f); // Se asegura que el cerebro reciba el +10f
             Debug.Log("¡La IA le gana al jugador!");
-            GameController.Instance.OnEnemyCollide();
+            GameController.Instance.OnEnemyCollide(transform.position);
             Destroy(gameObject);
     }
     }
