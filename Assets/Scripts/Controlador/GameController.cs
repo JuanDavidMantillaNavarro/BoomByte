@@ -1,5 +1,6 @@
 using UnityEngine;
 using FMODUnity;
+using System;
 
 public class GameController : MonoBehaviour
 {
@@ -110,11 +111,18 @@ public class GameController : MonoBehaviour
     }
 
     // 🔥 AQUÍ VA EL SONIDO DEL ENEMIGO
-    public void OnEnemyCollide(Vector3 position)
+    public void OnEnemyCollide(Vector3 position, String ENEMY)
     {
         RuntimeManager.PlayOneShot(enemigoSound, position);
 
-        effectManager.ApplyEffect(radioExplosionDebuff);
+        if(ENEMY=="IA")
+        {
+            effectManager.ApplyEffect(radioExplosionDebuff);
+        }
+        if(ENEMY=="ERROR")
+        {
+            effectManager.ApplyEffect(radioExplosionDebuff);
+        }
 
         Debug.Log("Sonido enemigo + debuff aplicado");
     }
