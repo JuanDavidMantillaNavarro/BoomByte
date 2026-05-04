@@ -16,28 +16,7 @@ public class UIManagerVR : MonoBehaviour
     [Header("Panels")]
     public GameObject winPanel;
     public GameObject losePanel;
-    [Header("Easter Egg UI")]
-    public TextMeshProUGUI easterEggText;
 
-    public void ShowEasterEggMessage(string msg)
-    {
-        if (easterEggText == null)
-        {
-            Debug.LogError("No hay texto asignado en UIManagerVR");
-            return;
-        }
-
-        easterEggText.text = msg;
-        easterEggText.gameObject.SetActive(true);
-
-        CancelInvoke(nameof(HideMessage));
-        Invoke(nameof(HideMessage), 3f);
-    }
-
-    void HideMessage()
-    {
-        easterEggText.gameObject.SetActive(false);
-    }
     public void UpdateTimer(float time)
     {
         int minutes = Mathf.FloorToInt(time / 60);
@@ -45,7 +24,6 @@ public class UIManagerVR : MonoBehaviour
 
         timerText.text = $"{minutes:00}:{seconds:00}";
     }
-
     public void MostrarVictoria()
     {
         if (winPanel != null)

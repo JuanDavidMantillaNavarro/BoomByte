@@ -16,7 +16,6 @@ public class EnergyByte : XRGrabInteractable
     private Animator animator;
     [SerializeField] private Animator explosionAnimator;
     [SerializeField] private Animator explosionAnimator2;
-    [SerializeField] private Animator explosionAnimator3;
     protected override void Awake()
     {
         base.Awake();
@@ -29,10 +28,9 @@ public class EnergyByte : XRGrabInteractable
             // Buscamos sus hijos aunque estén desactivados
             Transform child1 = globalExplosion.transform.Find("explocion");
             Transform child2 = globalExplosion.transform.Find("explocion (1)");
-            Transform child3 = globalExplosion.transform.Find("lateral");
+            
             if (child1) explosionAnimator = child1.GetComponent<Animator>();
             if (child2) explosionAnimator2 = child2.GetComponent<Animator>();
-            if (child3) explosionAnimator3 = child3.GetComponent<Animator>();
         }
     }
 
@@ -106,9 +104,6 @@ public class EnergyByte : XRGrabInteractable
             explosionAnimator2.SetTrigger("Explode");
             explosionAnimator2.transform.position = pos; // mover al lugar de la bomba
             explosionAnimator2.gameObject.SetActive(true);
-            explosionAnimator3.transform.position = pos;
-            explosionAnimator3.gameObject.SetActive(true);
-            explosionAnimator3.SetTrigger("Explode");
         }
         Destroy(gameObject);
     }
