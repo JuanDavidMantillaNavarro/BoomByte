@@ -79,7 +79,7 @@ public class GameController : MonoBehaviour
     {
         if (gameEnded) return;
 
-        gameEnded = true;
+        //gameEnded = true;
         Debug.Log("GANASTE");
 
         uiManager.MostrarVictoria();
