@@ -18,10 +18,23 @@ public class EnergyExplosion : MonoBehaviour
         gridRange = gridRadius + GameController.Instance.explosionRadiusModifier;
         //GameController.Instance.effectManager.ApplyEffect(RadioExplosionEffect);
         // Ejecutamos ambas lógicas
+        AjustarSprite();
         ApplySlowEffect();
         DestroyWallsInRange();
     }
+    void AjustarSprite()
+    {
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+        if (sr == null) return;
+            AjustarSprite();
+        float spriteSize = sr.bounds.size.x;
 
+        float targetSize = gridRange * 2f; // diámetro (no radio)
+
+        float scaleFactor = targetSize / spriteSize;
+
+        sr.transform.localScale = new Vector3(scaleFactor, scaleFactor, 1f);
+    }
     private void ApplySlowEffect()
     {
         Camera mainCam = Camera.main;
