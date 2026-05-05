@@ -1,28 +1,42 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
-using FMODUnity;
+using FMODUnity; 
 
 public class EnergyExplosion : MonoBehaviour
 {
     private float gridRange;
     private float heightRange = 4f; 
-    private float slowAmount = 0.4f;
+    private float slowAmount = 0.4f; // 40%
     private float duration = 3f;
     public string destructibleTag = "Destructible";
 
     [Header("Efectos")]
     public EffectData RadioExplosionEffect;
 
-    [Header("FMOD - Audio")]
+    [Header("FMOD - Audio")] // Mantenido de Main
     [SerializeField] private EventReference zonaDesbloqueadaSound;
 
     public void Initialize(float gridRadius)
     {
         gridRange = gridRadius + GameController.Instance.explosionRadiusModifier;
-
+        
+        // Ejecutamos todas las lógicas combinadas
+        AjustarSprite(); 
         ApplySlowEffect();
         DestroyWallsInRange();
+    }
+
+    void AjustarSprite() 
+    {
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+        if (sr == null) return;
+        
+        float spriteSize = sr.bounds.size.x;
+        float targetSize = gridRange * 2f; // diámetro (no radio)
+        float scaleFactor = targetSize / spriteSize;
+
+        sr.transform.localScale = new Vector3(scaleFactor, scaleFactor, 1f);
     }
 
     private void ApplySlowEffect()
@@ -34,6 +48,7 @@ public class EnergyExplosion : MonoBehaviour
         Vector3 explosionPos = transform.position;
         Vector3 diff = playerPos - explosionPos;
 
+        // Verificamos si el jugador está en el cubo
         bool inHorizontalRange = Mathf.Abs(diff.x) <= gridRange && Mathf.Abs(diff.z) <= gridRange;
         bool inVerticalRange = diff.y >= -1f && diff.y <= heightRange;
 
@@ -55,7 +70,7 @@ public class EnergyExplosion : MonoBehaviour
 
         Collider[] hitColliders = Physics.OverlapBox(center, halfExtents, Quaternion.identity);
 
-        bool destruyoPared = false;
+        bool destruyoPared = false; 
 
         foreach (Collider hit in hitColliders)
         {
@@ -67,6 +82,7 @@ public class EnergyExplosion : MonoBehaviour
             }
         }
 
+        // Si se destruyó algo, suena el FMOD
         if (destruyoPared)
         {
             RuntimeManager.PlayOneShot(zonaDesbloqueadaSound, transform.position);
@@ -96,12 +112,13 @@ public class EnergyExplosion : MonoBehaviour
         }
 
         moveProvider.moveSpeed = originalSpeed;
-
+        
         Destroy(gameObject, 0.5f);
     }
 
     private void OnDrawGizmos()
     {
+        if (gridRange <= 0) return; // Seguridad para que no ensucie el editor si no se ha inicializado
         Gizmos.color = Color.cyan;
         Vector3 center = transform.position + new Vector3(0, heightRange / 2, 0);
         Vector3 size = new Vector3(gridRange * 2, heightRange, gridRange * 2);
