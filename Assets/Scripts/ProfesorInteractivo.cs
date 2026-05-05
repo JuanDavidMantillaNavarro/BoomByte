@@ -1,112 +1,213 @@
-﻿using UnityEngine;
-using UnityEngine.XR;
+using System.Collections;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
+using TMPro;
+using FMODUnity;
+
+using XRInputDevice = UnityEngine.XR.InputDevice;
+using XRNode = UnityEngine.XR.XRNode;
+using XRCommonUsages = UnityEngine.XR.CommonUsages;
 
 public class ProfesorInteractivo : MonoBehaviour
 {
-    public Transform playerCamera;
+    [Header("Canvas del diálogo")]
     public GameObject canvasProfesor;
+    public CanvasGroup fadeCanvas;
 
+    [Header("Texto diálogo")]
+    public TMP_Text textoDialogo;
+    [TextArea(3, 6)]
+    public string mensaje = "Hola, soy Freddy. Bienvenido al laboratorio. Sigue las instrucciones para continuar.";
+
+    public float velocidadEscritura = 0.03f;
+
+    [Header("Detección")]
+    public Transform jugador;
     public float distanciaActivacion = 2f;
-    public float duracionMaxima = 10f;
 
-    private bool activo = false, EfectoYa = false;
+    [Header("Movimiento XR")]
+    public ContinuousMoveProvider moveProvider;
+    public ContinuousTurnProvider turnProvider;
+
+    [Header("Tiempo")]
+    public float duracionMaxima = 10f;
+    public float duracionFade = 0.5f;
+
+    [Header("Power Up")]
+    public ProfesorPowerUp powerUpAlCerrar;
+
+    [Header("FMOD - Audio")]
+    [SerializeField] private EventReference profesorInteractSound;
+
+    private bool activo = false;
+    private bool yaSeActivo = false;
     private float tiempoInicio;
+    private float velocidadOriginal;
 
     void Start()
     {
-        EfectoYa = false;
-        canvasProfesor.SetActive(false);
-        Debug.Log("Script iniciado");
+        // REFERENCIAS AUTOMÁTICAS
+        GameObject canvasPadre = GameObject.Find("CanvaProfesores");
+
+        if (canvasPadre != null)
+        {
+            if (canvasProfesor == null)
+                canvasProfesor = canvasPadre;
+
+            if (textoDialogo == null)
+            {
+                Transform txt = canvasPadre.transform.Find("TextoDialogo");
+                if (txt != null)
+                    textoDialogo = txt.GetComponent<TMP_Text>();
+            }
+
+            if (fadeCanvas == null)
+                fadeCanvas = canvasPadre.GetComponent<CanvasGroup>();
+        }
+
+        if (canvasProfesor != null)
+            canvasProfesor.SetActive(false);
+
+        if (fadeCanvas != null)
+            fadeCanvas.alpha = 0f;
+
+        if (moveProvider != null)
+            velocidadOriginal = moveProvider.moveSpeed;
+
+        yaSeActivo = false;
+        Debug.Log("Profesor reutilizable listo con soporte FMOD");
     }
 
     void Update()
     {
-        if (playerCamera == null || canvasProfesor == null)
-        {
-            Debug.Log("Faltan referencias");
-            return;
-        }
+        if (jugador == null) return;
 
-        float distancia = Vector3.Distance(playerCamera.position, transform.position);
+        float distancia = Vector3.Distance(jugador.position, transform.position);
 
-        if (distancia <= distanciaActivacion && !activo)
+        if (distancia <= distanciaActivacion && !activo && !yaSeActivo)
         {
             ActivarDialogo();
-            if(!EfectoYa)
-            {GameController.Instance.OnNpcCollide();}
-            EfectoYa = true;
         }
 
-        if (activo)
+        if (!activo) return;
+
+        bool teclaCerrar = Keyboard.current != null && Keyboard.current.tKey.wasPressedThisFrame;
+        bool botonA = BotonAVR();
+
+        if (teclaCerrar || botonA)
         {
-            // cerrar con tecla T
-            if (Keyboard.current != null && Keyboard.current.tKey.wasPressedThisFrame)
-            {
-                Debug.Log("Cierre manual con T");
-                DesactivarDialogo();
-            }
+            StartCoroutine(DesactivarDialogo());
+        }
 
-            // cerrar con botón A VR
-            if (BotonAVR())
-            {
-                Debug.Log("Cierre con botón A (VR)");
-                DesactivarDialogo();
-            }
-
-            // cierre automático real
-            if (Time.time - tiempoInicio >= duracionMaxima)
-            {
-                Debug.Log("Se desactivó el diálogo por tiempo");
-                DesactivarDialogo();
-            }
+        if (Time.unscaledTime - tiempoInicio >= duracionMaxima)
+        {
+            StartCoroutine(DesactivarDialogo());
         }
     }
 
     void ActivarDialogo()
     {
         activo = true;
-        tiempoInicio = Time.time;
+        yaSeActivo = true;
+        tiempoInicio = Time.unscaledTime;
 
-        Debug.Log("Se activó el diálogo");
+        // Sonido FMOD
+        RuntimeManager.PlayOneShot(profesorInteractSound, transform.position);
 
-        canvasProfesor.SetActive(true);
+        // Control de Cursor y Tiempo (Main Logic)
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
 
-        // siempre delante del profesor
-        Vector3 frente = transform.position + transform.forward * 1.0f;
+        // Detener Movimiento (Rama Logic)
+        if (moveProvider != null)
+            moveProvider.moveSpeed = 0f;
 
-        canvasProfesor.transform.position = frente;
+        if (turnProvider != null)
+            turnProvider.enabled = false;
 
-        canvasProfesor.transform.LookAt(playerCamera);
-        canvasProfesor.transform.Rotate(0, 180, 0);
+        StartCoroutine(FadeInDialogo());
 
-        // tamaño visible
-        canvasProfesor.transform.localScale = Vector3.one * 1f;
+        Debug.Log("DIÁLOGO ACTIVADO");
     }
 
-    void DesactivarDialogo()
+    IEnumerator DesactivarDialogo()
     {
-        Debug.Log("Se desactivó el diálogo");
+        if (!activo) yield break;
 
         activo = false;
+
+        yield return StartCoroutine(FadeOutDialogo());
+
+        // Restaurar Cursor y Tiempo
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+
+        // Restaurar Movimiento
+        if (moveProvider != null)
+            moveProvider.moveSpeed = velocidadOriginal;
+
+        if (turnProvider != null)
+            turnProvider.enabled = true;
+
+        if (powerUpAlCerrar != null)
+            powerUpAlCerrar.ActivarBeneficio();
+
+        Debug.Log("DIÁLOGO CERRADO");
+    }
+
+    IEnumerator FadeInDialogo()
+    {
+        canvasProfesor.SetActive(true);
+
+        float tiempo = 0f;
+        while (tiempo < duracionFade)
+        {
+            tiempo += Time.unscaledDeltaTime;
+            fadeCanvas.alpha = Mathf.Lerp(0f, 1f, tiempo / duracionFade);
+            yield return null;
+        }
+        fadeCanvas.alpha = 1f;
+
+        // TEXTO ESCRIBIÉNDOSE (Solo si hay referencia)
+        if (textoDialogo != null)
+            StartCoroutine(EscribirTexto());
+    }
+
+    IEnumerator EscribirTexto()
+    {
+        textoDialogo.text = "";
+        foreach (char letra in mensaje)
+        {
+            textoDialogo.text += letra;
+            yield return new WaitForSecondsRealtime(velocidadEscritura);
+        }
+    }
+
+    IEnumerator FadeOutDialogo()
+    {
+        float tiempo = 0f;
+        while (tiempo < duracionFade)
+        {
+            tiempo += Time.unscaledDeltaTime;
+            fadeCanvas.alpha = Mathf.Lerp(1f, 0f, tiempo / duracionFade);
+            yield return null;
+        }
         canvasProfesor.SetActive(false);
     }
 
     bool BotonAVR()
     {
-        UnityEngine.XR.InputDevice rightHand =
-            UnityEngine.XR.InputDevices.GetDeviceAtXRNode(UnityEngine.XR.XRNode.RightHand);
+        XRInputDevice rightHand = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
         if (!rightHand.isValid)
             return false;
 
         bool botonA = false;
-
-        if (rightHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out botonA))
-        {
-            return botonA;
-        }
-
-        return false;
+        return rightHand.TryGetFeatureValue(XRCommonUsages.primaryButton, out botonA) && botonA;
     }
 }

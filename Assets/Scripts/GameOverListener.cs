@@ -10,15 +10,23 @@ public class GameOverListener : MonoBehaviour
     {
         if (GameController.Instance == null) return;
 
+        // detectar derrota
         if (GameController.Instance.gameEnded && !yaMostrado)
         {
             yaMostrado = true;
 
-            // si perdió (no ganó)
+            Debug.Log("Game Over detectado en listener");
+
             if (!GameController.Instance.isPaused)
             {
                 defeatUI.MostrarDerrota();
             }
+        }
+
+        // resetear bandera cuando el juego reinicia
+        if (!GameController.Instance.gameEnded)
+        {
+            yaMostrado = false;
         }
     }
 }

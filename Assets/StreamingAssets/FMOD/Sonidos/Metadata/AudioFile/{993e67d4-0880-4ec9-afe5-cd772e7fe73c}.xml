@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{993e67d4-0880-4ec9-afe5-cd772e7fe73c}">
+		<property name="assetPath">
+			<value>Mientras haya un enemigo cerca 2.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.5359999999999996</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{cd07a620-2e5e-472f-80b0-21959ec3cbab}</destination>
+		</relationship>
+	</object>
+</objects>

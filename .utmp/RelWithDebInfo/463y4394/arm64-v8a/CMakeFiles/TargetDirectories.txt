@@ -1,0 +1,5 @@
+D:/REPOSITORIOS GITHUB/Bomberman VR/Bomberman_VR/.utmp/RelWithDebInfo/463y4394/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/REPOSITORIOS GITHUB/Bomberman VR/Bomberman_VR/.utmp/RelWithDebInfo/463y4394/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/REPOSITORIOS GITHUB/Bomberman VR/Bomberman_VR/.utmp/RelWithDebInfo/463y4394/arm64-v8a/GameActivity/CMakeFiles/game.dir
+D:/REPOSITORIOS GITHUB/Bomberman VR/Bomberman_VR/.utmp/RelWithDebInfo/463y4394/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+D:/REPOSITORIOS GITHUB/Bomberman VR/Bomberman_VR/.utmp/RelWithDebInfo/463y4394/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
