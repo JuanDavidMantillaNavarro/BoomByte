@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
     [Header("Efectos")]
     public RadioExplosion radioExplosionDebuff;
     public RadioExplosion radioExplosionBuff;
+    public InvControls InvControls;
 
     [Header("Easter Eggs")]
     public int eggsFound = 0;
@@ -153,10 +154,17 @@ public class GameController : MonoBehaviour
     }
 
     // Se llama cuando choca con el Enemigo (Combinado con Main para Audio)
-    public void OnEnemyCollide(Vector3 position)
+    public void OnEnemyCollide(Vector3 position, string ENEMY)
     {
         RuntimeManager.PlayOneShot(enemigoSound, position);
-        effectManager.ApplyEffect(radioExplosionDebuff);
+        if(ENEMY== "IA")
+        {
+            effectManager.ApplyEffect(radioExplosionDebuff);
+        }else if (ENEMY == "Error 404")
+        {
+            effectManager.ApplyEffect(InvControls);
+        }
+        
         Debug.Log("Sonido enemigo + debuff aplicado");
     }
 
