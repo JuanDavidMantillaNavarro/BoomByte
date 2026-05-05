@@ -1,13 +1,18 @@
 ﻿<Solution>
   <Project Path="Unity.XR.AndroidOpenXR.csproj" />
   <Project Path="Unity.XR.Hands.Samples.VisualizerSample.csproj" />
+  <Project Path="FMODUnityResonanceEditor.csproj" />
   <Project Path="Unity.XR.AndroidOpenXR.Editor.csproj" />
   <Project Path="Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="FMODUnityEditor.csproj" />
+  <Project Path="FMODUnity.csproj" />
   <Project Path="Unity.XR.AndroidXROpenXR.Editor.Tests.csproj" />
   <Project Path="Unity.XR.AndroidXROpenXR.CodeSamples.Tests.csproj" />
   <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
+  <Project Path="FMODUnityHaptics.csproj" />
   <Project Path="Unity.XR.Interaction.Toolkit.Samples.Hands.csproj" />
+  <Project Path="FMODUnityResonance.csproj" />
   <Project Path="Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj" />
   <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj" />
 </Solution>

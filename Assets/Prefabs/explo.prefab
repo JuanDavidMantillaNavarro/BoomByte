@@ -423,3 +423,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnergyExplosion
   destructibleTag: Destructible
   RadioExplosionEffect: {fileID: 11400000, guid: a80f0d32d58905047a0392b59583fee8, type: 2}
+  zonaDesbloqueadaSound:
+    Guid:
+      Data1: 1112243215
+      Data2: 1094428500
+      Data3: -1922851155
+      Data4: -1691540135
+    Path: event:/Desbloquear nueva zona 1
