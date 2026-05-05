@@ -5,6 +5,7 @@ using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 using TMPro;
+using FMODUnity;
 
 using XRInputDevice = UnityEngine.XR.InputDevice;
 using XRNode = UnityEngine.XR.XRNode;
@@ -19,8 +20,7 @@ public class ProfesorInteractivo : MonoBehaviour
     [Header("Texto diálogo")]
     public TMP_Text textoDialogo;
     [TextArea(3, 6)]
-    public string mensaje =
-        "Hola, soy Freddy. Bienvenido al laboratorio. Sigue las instrucciones para continuar.";
+    public string mensaje = "Hola, soy Freddy. Bienvenido al laboratorio. Sigue las instrucciones para continuar.";
 
     public float velocidadEscritura = 0.03f;
 
@@ -39,10 +39,12 @@ public class ProfesorInteractivo : MonoBehaviour
     [Header("Power Up")]
     public ProfesorPowerUp powerUpAlCerrar;
 
+    [Header("FMOD - Audio")]
+    [SerializeField] private EventReference profesorInteractSound;
+
     private bool activo = false;
     private bool yaSeActivo = false;
     private float tiempoInicio;
-
     private float velocidadOriginal;
 
     void Start()
@@ -75,17 +77,15 @@ public class ProfesorInteractivo : MonoBehaviour
         if (moveProvider != null)
             velocidadOriginal = moveProvider.moveSpeed;
 
-        Debug.Log("Profesor reutilizable listo");
+        yaSeActivo = false;
+        Debug.Log("Profesor reutilizable listo con soporte FMOD");
     }
 
     void Update()
     {
         if (jugador == null) return;
 
-        float distancia = Vector3.Distance(
-            jugador.position,
-            transform.position
-        );
+        float distancia = Vector3.Distance(jugador.position, transform.position);
 
         if (distancia <= distanciaActivacion && !activo && !yaSeActivo)
         {
@@ -94,10 +94,7 @@ public class ProfesorInteractivo : MonoBehaviour
 
         if (!activo) return;
 
-        bool teclaCerrar =
-            Keyboard.current != null &&
-            Keyboard.current.tKey.wasPressedThisFrame;
-
+        bool teclaCerrar = Keyboard.current != null && Keyboard.current.tKey.wasPressedThisFrame;
         bool botonA = BotonAVR();
 
         if (teclaCerrar || botonA)
@@ -117,6 +114,15 @@ public class ProfesorInteractivo : MonoBehaviour
         yaSeActivo = true;
         tiempoInicio = Time.unscaledTime;
 
+        // Sonido FMOD
+        RuntimeManager.PlayOneShot(profesorInteractSound, transform.position);
+
+        // Control de Cursor y Tiempo (Main Logic)
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
+
+        // Detener Movimiento (Rama Logic)
         if (moveProvider != null)
             moveProvider.moveSpeed = 0f;
 
@@ -136,6 +142,12 @@ public class ProfesorInteractivo : MonoBehaviour
 
         yield return StartCoroutine(FadeOutDialogo());
 
+        // Restaurar Cursor y Tiempo
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+
+        // Restaurar Movimiento
         if (moveProvider != null)
             moveProvider.moveSpeed = velocidadOriginal;
 
@@ -153,20 +165,15 @@ public class ProfesorInteractivo : MonoBehaviour
         canvasProfesor.SetActive(true);
 
         float tiempo = 0f;
-
         while (tiempo < duracionFade)
         {
             tiempo += Time.unscaledDeltaTime;
-
-            fadeCanvas.alpha =
-                Mathf.Lerp(0f, 1f, tiempo / duracionFade);
-
+            fadeCanvas.alpha = Mathf.Lerp(0f, 1f, tiempo / duracionFade);
             yield return null;
         }
-
         fadeCanvas.alpha = 1f;
 
-        // TEXTO ESCRIBIÉNDOSE
+        // TEXTO ESCRIBIÉNDOSE (Solo si hay referencia)
         if (textoDialogo != null)
             StartCoroutine(EscribirTexto());
     }
@@ -174,7 +181,6 @@ public class ProfesorInteractivo : MonoBehaviour
     IEnumerator EscribirTexto()
     {
         textoDialogo.text = "";
-
         foreach (char letra in mensaje)
         {
             textoDialogo.text += letra;
@@ -185,33 +191,23 @@ public class ProfesorInteractivo : MonoBehaviour
     IEnumerator FadeOutDialogo()
     {
         float tiempo = 0f;
-
         while (tiempo < duracionFade)
         {
             tiempo += Time.unscaledDeltaTime;
-
-            fadeCanvas.alpha =
-                Mathf.Lerp(1f, 0f, tiempo / duracionFade);
-
+            fadeCanvas.alpha = Mathf.Lerp(1f, 0f, tiempo / duracionFade);
             yield return null;
         }
-
         canvasProfesor.SetActive(false);
     }
 
     bool BotonAVR()
     {
-        XRInputDevice rightHand =
-            InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+        XRInputDevice rightHand = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
         if (!rightHand.isValid)
             return false;
 
         bool botonA = false;
-
-        return rightHand.TryGetFeatureValue(
-            XRCommonUsages.primaryButton,
-            out botonA
-        ) && botonA;
+        return rightHand.TryGetFeatureValue(XRCommonUsages.primaryButton, out botonA) && botonA;
     }
 }

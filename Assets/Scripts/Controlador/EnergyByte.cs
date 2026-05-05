@@ -1,4 +1,5 @@
 using UnityEngine;
+using FMODUnity;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
@@ -11,17 +12,25 @@ public class EnergyByte : XRGrabInteractable
     public LayerMask wallLayer;
     public GameObject explosionPrefab;
 
+    [Header("FMOD - Audio")]
+    [SerializeField] private EventReference grabSound;
+    [SerializeField] private EventReference throwSound;
+    [SerializeField] private EventReference explosionSound;
+
     private Rigidbody rb;
     private bool isFlying = false;
     private Animator animator;
+
     [SerializeField] private Animator explosionAnimator;
     [SerializeField] private Animator explosionAnimator2;
     [SerializeField] private Animator explosionAnimator3;
+
     protected override void Awake()
     {
         base.Awake();
         rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+
         // Buscamos el objeto por nombre en toda la escena al nacer
         GameObject globalExplosion = GameObject.Find("explo");
         if (globalExplosion != null)
@@ -30,6 +39,7 @@ public class EnergyByte : XRGrabInteractable
             Transform child1 = globalExplosion.transform.Find("explocion");
             Transform child2 = globalExplosion.transform.Find("explocion (1)");
             Transform child3 = globalExplosion.transform.Find("lateral");
+
             if (child1) explosionAnimator = child1.GetComponent<Animator>();
             if (child2) explosionAnimator2 = child2.GetComponent<Animator>();
             if (child3) explosionAnimator3 = child3.GetComponent<Animator>();
@@ -39,6 +49,9 @@ public class EnergyByte : XRGrabInteractable
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
+        
+        RuntimeManager.PlayOneShot(grabSound, transform.position);
+
         isFlying = false;
         GameController.Instance.OnBallGrab();
     }
@@ -47,6 +60,9 @@ public class EnergyByte : XRGrabInteractable
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
         base.OnSelectExited(args);
+        
+        RuntimeManager.PlayOneShot(throwSound, transform.position);
+
         isFlying = true;
 
         Vector3 rawVelocity = rb.linearVelocity;
@@ -56,6 +72,7 @@ public class EnergyByte : XRGrabInteractable
         Vector3 correctedVelocity = rawVelocity;
         correctedVelocity.x = Mathf.Lerp(rawVelocity.x, directionToCenter.x * 5f, 0.5f);
         correctedVelocity.z = Mathf.Lerp(rawVelocity.z, directionToCenter.z * 5f, 0.5f);
+        
         rb.linearVelocity = correctedVelocity * model.extraThrowForce;
     }
 
@@ -86,30 +103,40 @@ public class EnergyByte : XRGrabInteractable
             {
                 animator.enabled = true;
             }
-            
         }
     }
 
     private void ExecuteExplosion()
     {
-        // Se da para el GameController para que el maneje la logica de explosión
-        GameController.Instance.OnBallExploded(transform.position, model.explosionGridRadius, explosionPrefab);
         Vector3 pos = transform.position;
+
+        RuntimeManager.PlayOneShot(explosionSound, pos);
+
+        // Se da para el GameController para que el maneje la logica de explosión
+        GameController.Instance.OnBallExploded(pos, model.explosionGridRadius, explosionPrefab);
         GameController.Instance.RegisterBallDestroyed();
-        
 
         if (explosionAnimator != null)
         {
             explosionAnimator.transform.position = pos; // mover al lugar de la bomba
             explosionAnimator.gameObject.SetActive(true);
             explosionAnimator.SetTrigger("Explode");
-            explosionAnimator2.SetTrigger("Explode");
+        }
+
+        if (explosionAnimator2 != null)
+        {
             explosionAnimator2.transform.position = pos; // mover al lugar de la bomba
             explosionAnimator2.gameObject.SetActive(true);
+            explosionAnimator2.SetTrigger("Explode");
+        }
+
+        if (explosionAnimator3 != null)
+        {
             explosionAnimator3.transform.position = pos;
             explosionAnimator3.gameObject.SetActive(true);
             explosionAnimator3.SetTrigger("Explode");
         }
+
         Destroy(gameObject);
     }
 
