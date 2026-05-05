@@ -197,3 +197,14 @@ public class GameController : MonoBehaviour
         Debug.Log("Juego reiniciado + timer reseteado");
     }
 }
+
+
+/*public void OnBallExploded(Vector3 position, float Radio, GameObject explosionPrefab)
+    {
+        GameObject fxExplosion = Instantiate(explosionPrefab, position, Quaternion.identity);
+
+        var expScript = fxExplosion.GetComponent<EnergyExplosion>();
+        if (expScript != null)
+            expScript.Initialize(Radio);
+    }
+*/
