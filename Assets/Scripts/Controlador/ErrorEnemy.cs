@@ -19,6 +19,16 @@ public class ErrorEnemy : MonoBehaviour
     void Move()
     {
         transform.position += model.direction * model.speedError * Time.deltaTime;
+        // 🔥 ROTACIÓN SUAVE HACIA LA DIRECCIÓN
+        if (model.direction != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(model.direction);
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                targetRotation,
+                model.rotationSpeed * Time.deltaTime
+            );
+        }
     }
 
     void CheckWallAndRotate()
@@ -27,7 +37,7 @@ public class ErrorEnemy : MonoBehaviour
         RaycastHit hit;
 
         Debug.DrawRay(transform.position, model.direction * model.detectionDistance, Color.red);
-
+        combinedMask = 0;
        foreach (LayerMask layer in model.wallLayer)
         {
             combinedMask |= layer;
@@ -69,7 +79,8 @@ public class ErrorEnemy : MonoBehaviour
     if (other.CompareTag("Player")) 
     {
             Debug.Log("Error 404");
-            GameController.Instance.OnEnemyCollide(transform.position, "ERROR");
+            EnemySpawnPoint spawnData = gameObject.GetComponent<EnemySpawnPoint>();
+            GameController.Instance.OnEnemyCollide(transform.position, "Error 404", spawnData);
             Destroy(gameObject);
     }
     }

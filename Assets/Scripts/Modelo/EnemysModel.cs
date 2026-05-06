@@ -12,6 +12,7 @@ public class EnemysModel
 
     // Distancia para detectar pared
     public float detectionDistance = 0.5f;
+    public float rotationSpeed = 5f;
 
     // Layer de paredes
     public LayerMask [] wallLayer;

@@ -7,6 +7,7 @@ public class ZonaVictoria : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameController.Instance.Victoria();
+            GameController.Instance.ManejoTiempo(true);
         }
     }
 }

@@ -8,12 +8,13 @@ public class TutorialExitTrigger : MonoBehaviour
     {
         if (yaActivado) return;
 
-        Debug.Log("Algo entró al trigger: " + other.name);
+        Debug.Log("Algo entrï¿½ al trigger: " + other.name);
 
         // SOLO jugador
         if (!other.CompareTag("Player")) return;
 
         yaActivado = true;
+        GameController.Instance.ManejoTiempo(false);
 
         if (TutorialHintManager.Instance != null)
         {
