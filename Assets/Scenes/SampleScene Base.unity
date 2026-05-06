@@ -42273,7 +42273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4824848246584963323, guid: 1484114e1b43ef741b2ae5d3222b3129, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4824848246584963323, guid: 1484114e1b43ef741b2ae5d3222b3129, type: 3}
       propertyPath: m_VertexColorAlwaysGammaSpace
