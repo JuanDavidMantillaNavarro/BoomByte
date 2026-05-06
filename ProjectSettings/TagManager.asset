@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Destructible
   - Hand
+  - Enemy
   layers:
   - Default
   - TransparentFX

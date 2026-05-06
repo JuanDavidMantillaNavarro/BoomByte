@@ -6,22 +6,30 @@ public class CameraViewManager : MonoBehaviour
     [Header("Cámaras")]
     public GameObject mainCameraObject;
     public GameObject secondaryCameraObject;
+    public bool activo = false;
 
-    public void ShowSecondaryView(float duration)
+    public void ShowSecondaryView()
     {
-        StartCoroutine(ViewRoutine(duration));
+        AlternarMapa();
     }
 
-    private IEnumerator ViewRoutine(float duration)
+    private void AlternarMapa()
     {
         // Activar secundaria, desactivar principal
-        mainCameraObject.SetActive(false);
-        secondaryCameraObject.SetActive(true);
-
-        yield return new WaitForSeconds(duration);
+        if(!activo)
+        {
+            mainCameraObject.SetActive(false);
+            secondaryCameraObject.SetActive(true);
+        }
+    
+        //yield return new WaitForSeconds(duration);
 
         // Volver a la normalidad
-        secondaryCameraObject.SetActive(false);
-        mainCameraObject.SetActive(true);
+        if(activo)
+        {
+            secondaryCameraObject.SetActive(false);
+            mainCameraObject.SetActive(true);
+        }
+        activo = !activo;
     }
 }

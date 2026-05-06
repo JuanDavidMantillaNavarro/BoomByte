@@ -80,6 +80,14 @@ public class EnergyExplosion : MonoBehaviour
                 Destroy(hit.gameObject);
                 destruyoPared = true;
             }
+            // ── Enemigos ──────────────────────────────────────────────────
+            if (hit.CompareTag("Enemy"))
+            {
+                EnemySpawnPoint spawnData = hit.gameObject.GetComponent<EnemySpawnPoint>();
+                // Notifica al GameController
+                GameController.Instance.OnEnemyExplosion(hit.gameObject.transform.position, hit.gameObject.name,spawnData);
+                Destroy(hit.gameObject);
+            }
         }
 
         // Si se destruyó algo, suena el FMOD

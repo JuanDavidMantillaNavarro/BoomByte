@@ -1702,6 +1702,28 @@ MonoBehaviour:
   targetOpenXRApiVersion: 
   required: 0
   customRuntimeLoaderName: 
+--- !u!114 &2825334192466824343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 369c18de2bb8eba458fea38b9c7dc289, type: 3}
+  m_Name: FMODHapticsFeature Android
+  m_EditorClassIdentifier: FMODUnityHaptics::FMODUnityHaptics.FMODHapticsFeature
+  m_enabled: 0
+  nameUi: 'FMOD: Haptics'
+  version: 1.0.0
+  featureIdInternal: com.fmod.feature.haptic
+  openxrExtensionStrings: XR_FB_haptic_pcm
+  company: FMOD
+  priority: 0
+  targetOpenXRApiVersion: 
+  required: 0
+  customRuntimeLoaderName: 
 --- !u!114 &2878432545652465716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1980,6 +2002,28 @@ MonoBehaviour:
   featureIdInternal: com.unity.openxr.feature.input.khrsimpleprofile
   openxrExtensionStrings: 
   company: Unity
+  priority: 0
+  targetOpenXRApiVersion: 
+  required: 0
+  customRuntimeLoaderName: 
+--- !u!114 &4875923094493495649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 369c18de2bb8eba458fea38b9c7dc289, type: 3}
+  m_Name: FMODHapticsFeature Android
+  m_EditorClassIdentifier: FMODUnityHaptics::FMODUnityHaptics.FMODHapticsFeature
+  m_enabled: 0
+  nameUi: 'FMOD: Haptics'
+  version: 1.0.0
+  featureIdInternal: com.fmod.feature.haptic
+  openxrExtensionStrings: XR_FB_haptic_pcm
+  company: FMOD
   priority: 0
   targetOpenXRApiVersion: 
   required: 0
@@ -2722,7 +2766,7 @@ MonoBehaviour:
   - {fileID: 2878432545652465716}
   - {fileID: -4630959719802112490}
   - {fileID: -6329726273658767878}
-  - {fileID: 616313845910911907}
+  - {fileID: 4875923094493495649}
   - {fileID: 6735910136599216801}
   - {fileID: 5761929977555360368}
   - {fileID: -7284694735737600418}

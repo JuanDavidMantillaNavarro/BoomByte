@@ -55,12 +55,13 @@ public class VictoryUIController : MonoBehaviour
 
         Time.timeScale = 1f;
 
-        // opcional: reiniciar posición
+        // opcional: reiniciar posiciï¿½n
         if (player != null && puntoInicio != null)
         {
             player.position = puntoInicio.position;
             player.rotation = puntoInicio.rotation;
         }
+        GameController.Instance.ReiniciarEstado();
     }
 }
 

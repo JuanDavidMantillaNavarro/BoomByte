@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using FMODUnity;
+using System.Collections;
 
 public class GameController : MonoBehaviour
 {
@@ -32,10 +33,17 @@ public class GameController : MonoBehaviour
 
     public bool isPaused = false;
     public bool gameEnded = false;
+    public bool TimeStart = false;
 
     [Header("Efectos")]
     public RadioExplosion radioExplosionDebuff;
     public RadioExplosion radioExplosionBuff;
+    public InvControls InvControls;
+
+    [Header("Respawn de enemigos")]
+    [Tooltip("Prefab del enemigo a respawnear. Debe tener el tag 'Enemy' y el componente EnemySpawnPoint.")]
+    public GameObject enemyPrefabBloqueo;
+    public GameObject enemyPrefabError404;
 
     [Header("Easter Eggs")]
     public int eggsFound = 0;
@@ -90,10 +98,10 @@ public class GameController : MonoBehaviour
 
     public void ActivateCameraView()
     {
-        if (cameraUses <= 0 || abilitiesDisabled) return;
+        //if (cameraUses <= 0 || abilitiesDisabled) return;
 
-        cameraUses--;
-        cameraViewManager.ShowSecondaryView(5f);
+        //cameraUses--;
+        cameraViewManager.ShowSecondaryView();
     }
 
     void Start()
@@ -101,9 +109,17 @@ public class GameController : MonoBehaviour
         currentTime = gameTime;
     }
 
+    public void ManejoTiempo(bool final)
+    {
+        if (!final)
+        TimeStart = true;
+        else if (final)
+        gameEnded = true;
+    }
+
     void Update()
     {
-        if (isPaused || gameEnded) return;
+        if (isPaused || gameEnded || !TimeStart) return;
 
         currentTime -= Time.deltaTime;
 
@@ -153,10 +169,21 @@ public class GameController : MonoBehaviour
     }
 
     // Se llama cuando choca con el Enemigo (Combinado con Main para Audio)
-    public void OnEnemyCollide(Vector3 position)
+    public void OnEnemyCollide(Vector3 position, string ENEMY, EnemySpawnPoint spawnData)
     {
         RuntimeManager.PlayOneShot(enemigoSound, position);
-        effectManager.ApplyEffect(radioExplosionDebuff);
+        Vector3    spawnPos = spawnData.spawnPosition;
+        Quaternion spawnRot = spawnData.spawnRotation;
+        if(ENEMY== "IA")
+        {
+            effectManager.ApplyEffect(radioExplosionDebuff);
+            StartCoroutine(RespawnEnemigo(spawnPos, spawnRot,"Bloqueo creativo"));
+        }else if (ENEMY == "Error 404")
+        {
+            effectManager.ApplyEffect(InvControls);
+            StartCoroutine(RespawnEnemigo(spawnPos, spawnRot,"Error 404"));
+        }
+        
         Debug.Log("Sonido enemigo + debuff aplicado");
     }
 
@@ -169,6 +196,30 @@ public class GameController : MonoBehaviour
     public void OnPlayerExplosion()
     {
         uiManager.ActivarVignette(3f);
+    }
+
+    public void OnEnemyExplosion(Vector3 position, string ENEMY, EnemySpawnPoint spawnData)
+    {
+        RuntimeManager.PlayOneShot(enemigoSound, position);
+        Vector3    spawnPos = spawnData.spawnPosition;
+        Quaternion spawnRot = spawnData.spawnRotation;
+        StartCoroutine(RespawnEnemigo(spawnPos, spawnRot,ENEMY));
+    }
+
+    private IEnumerator RespawnEnemigo(Vector3 spawnPos, Quaternion spawnRot, string ENEMY)
+    {
+        yield return new WaitForSeconds(2f);
+        
+        if(ENEMY== "Bloqueo creativo")
+        {
+        Instantiate(enemyPrefabBloqueo, spawnPos, spawnRot);
+        Debug.Log("<color=cyan>Enemigo respawneado en: </color>" + spawnPos);
+        }
+        if(ENEMY== "Error 404")
+        {
+        Instantiate(enemyPrefabError404, spawnPos, spawnRot);
+        Debug.Log("<color=cyan>Enemigo respawneado en: </color>" + spawnPos);
+        }
     }
 
     public bool CanSpawnBall()
@@ -191,9 +242,21 @@ public class GameController : MonoBehaviour
         currentTime = gameTime;
         gameEnded = false;
         isPaused = false;
+        TimeStart = false;
         Time.timeScale = 1f;
 
         uiManager.UpdateTimer(currentTime);
         Debug.Log("Juego reiniciado + timer reseteado");
     }
 }
+
+
+/*public void OnBallExploded(Vector3 position, float Radio, GameObject explosionPrefab)
+    {
+        GameObject fxExplosion = Instantiate(explosionPrefab, position, Quaternion.identity);
+
+        var expScript = fxExplosion.GetComponent<EnergyExplosion>();
+        if (expScript != null)
+            expScript.Initialize(Radio);
+    }
+*/
