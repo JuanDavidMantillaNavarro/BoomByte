@@ -71,7 +71,13 @@ public class LogoEntradaVR : MonoBehaviour
         while (tiempo < duracionFade)
         {
             tiempo += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(inicio, fin, tiempo / duracionFade);
+
+            canvasGroup.alpha = Mathf.Lerp(
+                inicio,
+                fin,
+                tiempo / duracionFade
+            );
+
             yield return null;
         }
 
