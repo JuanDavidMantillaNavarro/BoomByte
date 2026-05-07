@@ -278,7 +278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1e355c45f377054469101c208755f69a, type: 3}
       propertyPath: m_Name
-      value: ceron (WILSON)
+      value: WILSON sarmiento
       objectReference: {fileID: 0}
     - target: {fileID: 1302114712107474353, guid: 1e355c45f377054469101c208755f69a, type: 3}
       propertyPath: m_IsActive
@@ -308,7 +308,7 @@ PrefabInstance:
       addedObject: {fileID: 150425955}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e355c45f377054469101c208755f69a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 150425954}
+      addedObject: {fileID: 150425957}
   m_SourcePrefab: {fileID: 100100000, guid: 1e355c45f377054469101c208755f69a, type: 3}
 --- !u!1001 &6107529
 PrefabInstance:
@@ -3438,32 +3438,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e355c45f377054469101c208755f69a, type: 3}
   m_PrefabInstance: {fileID: 3845529}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &150425954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150425953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae137c8df18d3a8478ac7ca969b258df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ProfesorCambiable
-  canvasProfesor: {fileID: 219920968}
-  fadeCanvas: {fileID: 219920967}
-  textoDialogo: {fileID: 1620199670}
-  mensaje: "En Aplicaciones 3D y Sistemas Inmersivos creamos mundos con realidad
-    virtual y aumentada. Tambi\xE9n investigamos c\xF3mo interactuar con ellos en
-    el grupo GIM. Ponte las gafas y nos vemos del otro lado."
-  velocidadEscritura: 0.03
-  jugador: {fileID: 426085145}
-  distanciaActivacion: 2
-  moveProvider: {fileID: 1373153107}
-  turnProvider: {fileID: 339877722}
-  duracionMaxima: 10
-  duracionFade: 0.5
-  powerUpAlCerrar: {fileID: 1780274365}
 --- !u!136 &150425955
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3492,6 +3466,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e355c45f377054469101c208755f69a, type: 3}
   m_PrefabInstance: {fileID: 3845529}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &150425957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150425953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c6dbfb60566e74198a9df855469129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProfesorInteractivo
+  canvasProfesor: {fileID: 219920968}
+  fadeCanvas: {fileID: 219920967}
+  textoDialogo: {fileID: 1620199670}
+  mensaje: "En Aplicaciones 3D y Sistemas Inmersivos creamos mundos con realidad
+    virtual y aumentada. Tambi\xE9n investigamos c\xF3mo interactuar con ellos en
+    el grupo GIM. Ponte las gafas y nos vemos del otro lado."
+  velocidadEscritura: 0.03
+  jugador: {fileID: 426085145}
+  distanciaActivacion: 2
+  moveProvider: {fileID: 1373153107}
+  turnProvider: {fileID: 339877722}
+  duracionMaxima: 15
+  duracionFade: 0.5
+  powerUpAlCerrar: {fileID: 1780274365}
+  profesorInteractSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1001 &150995549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18458,7 +18465,7 @@ MonoBehaviour:
   distanciaActivacion: 2
   moveProvider: {fileID: 1373153107}
   turnProvider: {fileID: 339877722}
-  duracionMaxima: 11
+  duracionMaxima: 18
   duracionFade: 0.5
   powerUpAlCerrar: {fileID: 0}
   profesorInteractSound:
