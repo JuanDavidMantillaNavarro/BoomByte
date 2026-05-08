@@ -31,7 +31,44 @@ public class TutorialHintManager : MonoBehaviour
         Instance = this;
         tutorialActivo = false;
 
+        // REFERENCIAS AUTOMÁTICAS DESDE EL CANVAS PADRE
+        GameObject canvasTutoriales = GameObject.Find("CanvaTutoriales");
+
+        if (canvasTutoriales != null)
+        {
+            moverUI = canvasTutoriales.transform.Find("tuto4")?.gameObject;
+            rotarUI = canvasTutoriales.transform.Find("tuto8")?.gameObject;
+            agarrarUI = canvasTutoriales.transform.Find("tuto5")?.gameObject;
+            menuUI = canvasTutoriales.transform.Find("tuto6")?.gameObject;
+            vistaSuperiorUI = canvasTutoriales.transform.Find("tuto3")?.gameObject;
+            confirmarUI = canvasTutoriales.transform.Find("tuto7")?.gameObject;
+        }
+        else
+        {
+            Debug.LogError("No se encontró CanvaTutoriales");
+        }
+
+        // DEBUGS
+        Debug.Log("moverUI: " + moverUI);
+        Debug.Log("rotarUI: " + rotarUI);
+        Debug.Log("agarrarUI: " + agarrarUI);
+        Debug.Log("menuUI: " + menuUI);
+        Debug.Log("vistaSuperiorUI: " + vistaSuperiorUI);
+        Debug.Log("confirmarUI: " + confirmarUI);
+
+        OcultarTodos();
+
         Debug.Log("TutorialHintManager iniciado - BLOQUEADO");
+    }
+
+    void OcultarTodos()
+    {
+        if (moverUI != null) moverUI.SetActive(false);
+        if (rotarUI != null) rotarUI.SetActive(false);
+        if (agarrarUI != null) agarrarUI.SetActive(false);
+        if (menuUI != null) menuUI.SetActive(false);
+        if (vistaSuperiorUI != null) vistaSuperiorUI.SetActive(false);
+        if (confirmarUI != null) confirmarUI.SetActive(false);
     }
 
     public void ActivarTutorialContextual()
@@ -83,7 +120,6 @@ public class TutorialHintManager : MonoBehaviour
         ) && botonB;
     }
 
-    // DETECCIONES
     void DetectarMovimiento()
     {
         if (movimientoMostrado) return;
@@ -173,7 +209,6 @@ public class TutorialHintManager : MonoBehaviour
         agarreMostrado = true;
     }
 
-    // UI
     void MostrarUI(GameObject panel)
     {
         if (panel == null)

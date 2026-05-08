@@ -16,7 +16,7 @@ namespace UnityEditor.XR.OpenXR.Features.Android
     static class AndroidXRProjectValidationRules
     {
         const string k_Category = "Android XR";
-        const AndroidSdkVersions k_MinSupportedSdkVersion = AndroidSdkVersions.AndroidApiLevel24;
+        const AndroidSdkVersions k_MinSupportedSdkVersion = AndroidSdkVersions.AndroidApiLevel25;
 
 #if UNITY_ANDROID
         [InitializeOnLoadMethod]

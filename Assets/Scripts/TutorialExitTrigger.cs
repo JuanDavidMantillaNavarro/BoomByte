@@ -8,20 +8,18 @@ public class TutorialExitTrigger : MonoBehaviour
     {
         if (yaActivado) return;
 
-        Debug.Log("Algo entró al trigger: " + other.name);
+        Debug.Log("Algo entrï¿½ al trigger: " + other.name);
 
-        // detectar cámara, player o XR origin
-        if (
-            other.CompareTag("Player") ||
-            other.name.Contains("Camera") ||
-            other.name.Contains("XR")
-        )
+        // SOLO jugador
+        if (!other.CompareTag("Player")) return;
+
+        yaActivado = true;
+        GameController.Instance.ManejoTiempo(false);
+
+        if (TutorialHintManager.Instance != null)
         {
-            yaActivado = true;
-
             TutorialHintManager.Instance.ActivarTutorialContextual();
-
-            Debug.Log("TUTORIAL ACTIVADO AL SALIR DEL CUBO");
+            Debug.Log("TUTORIAL ACTIVADO AL ENTRAR AL CUBO");
         }
     }
 }
