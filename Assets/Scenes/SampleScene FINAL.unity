@@ -72472,7 +72472,7 @@ MonoBehaviour:
   panelMensaje: {fileID: 941236119}
   textoMensaje: {fileID: 1569988057}
   tagDestructible: Destructible
-  tiempoMensaje: 10
+  tiempoMensaje: 7
   intervaloRevision: 0.5
   mensajePrimeraPared: Destruiste la primera pared destructible
   mensajeFinal: "Ya destruiste todas las paredes del laboratorio MAC\nLa terminal
