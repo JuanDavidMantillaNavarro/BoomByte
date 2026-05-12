@@ -3680,7 +3680,7 @@ MonoBehaviour:
       Data3: 1576955529
       Data4: -381452545
     Path: event:/Balbuceo cartoon
-  uiPowerUp: {fileID: 0}
+  uiPowerUp: {fileID: 962013200}
 --- !u!1001 &150995549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5365,11 +5365,11 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7511476578718487741, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1887940583}
-    - targetCorrespondingSourceObject: {fileID: 7511476578718487741, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
-      insertIndex: -1
+      insertIndex: 3
       addedObject: {fileID: 962013199}
+    - targetCorrespondingSourceObject: {fileID: 7511476578718487741, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1887940583}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
 --- !u!225 &219920967 stripped
@@ -63380,7 +63380,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887940582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5088817, y: 0.5088817, z: 0.5088817}
   m_ConstrainProportionsScale: 0
   m_Children: []
