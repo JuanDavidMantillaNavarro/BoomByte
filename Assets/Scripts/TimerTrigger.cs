@@ -1,16 +1,28 @@
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 public class TimerTrigger : MonoBehaviour
 {
+    [Header("UI")]
     public UIManagerVR uiManager;
-    public float tiempoInicial = 120f; // 2 minutos
+
+    [Header("Tiempo")]
+    public float tiempoInicial = 120f;
+
+    [Header("FMOD - MÃºsica 2")]
+    [SerializeField] private EventReference musicaTiempoEvent;
+
+    private EventInstance musicaTiempoInstance;
 
     private float tiempoRestante;
     private bool timerActivo = false;
+    private bool musicaIniciada = false;
 
     private void Start()
     {
         tiempoRestante = tiempoInicial;
+        musicaTiempoInstance = RuntimeManager.CreateInstance(musicaTiempoEvent);
     }
 
     private void Update()
@@ -19,24 +31,54 @@ public class TimerTrigger : MonoBehaviour
 
         tiempoRestante -= Time.deltaTime;
 
-        if (tiempoRestante < 0)
+        if (tiempoRestante <= 0)
         {
             tiempoRestante = 0;
             timerActivo = false;
 
-            // Aquí decides qué pasa al perder
+            DetenerMusicaTiempo();
+
             uiManager.MostrarDerrota();
         }
 
         uiManager.UpdateTimer(tiempoRestante);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void IniciarTemporizador()
     {
-        // Ajusta esto según tu XR Rig
-        if (other.CompareTag("MainCamera"))
-        {
-            timerActivo = true;
-        }
+        if (timerActivo) return;
+
+        timerActivo = true;
+
+        Debug.Log("TEMPORIZADOR INICIADO DESDE FUNCIÃ“N");
+
+        IniciarMusicaTiempo();
+    }
+
+    private void IniciarMusicaTiempo()
+    {
+        if (musicaIniciada) return;
+
+        musicaIniciada = true;
+
+        musicaTiempoInstance.start();
+
+        Debug.Log("MÃšSICA 2 INICIADA");
+    }
+
+    private void DetenerMusicaTiempo()
+    {
+        if (!musicaIniciada) return;
+
+        musicaIniciada = false;
+
+        musicaTiempoInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+        Debug.Log("MÃšSICA 2 DETENIDA");
+    }
+
+    private void OnDestroy()
+    {
+        musicaTiempoInstance.release();
     }
 }
