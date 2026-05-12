@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{56d74c25-eb2b-4c44-9796-16688a3595c4}">
+		<property name="assetPath">
+			<value>freesound_community-duck-quacking-37392.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.8</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{de1dbe8a-2a99-48a9-b8ad-6a1d1697b3bd}</destination>
+		</relationship>
+	</object>
+</objects>

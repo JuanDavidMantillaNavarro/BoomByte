@@ -23,7 +23,7 @@ public class AudioSettingsController : MonoBehaviour
         efectosSlider.value = AudioManagerFMOD.Instance.efectosActivos ? 1f : 0f;
 
         volumenGeneralSlider.onValueChanged.AddListener(AudioManagerFMOD.Instance.CambiarVolumenMusica);
-        musicaSlider.onValueChanged.AddListener(valor => AudioManagerFMOD.Instance.ActivarMusica(valor >= 1f));
+        musicaSlider.onValueChanged.AddListener(valor => AudioManagerFMOD.Instance.ActivarMusicaa(valor >= 1f));
         efectosSlider.onValueChanged.AddListener(valor => AudioManagerFMOD.Instance.ActivarEfectos(valor >= 1f));
     }
 }

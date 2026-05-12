@@ -106,39 +106,42 @@ public class EnergyByte : XRGrabInteractable
         }
     }
 
-    private void ExecuteExplosion()
+private void ExecuteExplosion()
+{
+    Vector3 pos = transform.position;
+
+    RuntimeManager.PlayOneShot(explosionSound, pos);
+
+    // 🔥 INICIAR MÚSICA 2 DESPUÉS DE LA PRIMERA EXPLOSIÓN
+   MusicaGameplayFMOD.Instance.RegistrarParedDestruida();
+
+    // Se da para el GameController para que el maneje la logica de explosión
+    GameController.Instance.OnBallExploded(pos, model.explosionGridRadius, explosionPrefab);
+    GameController.Instance.RegisterBallDestroyed();
+
+    if (explosionAnimator != null)
     {
-        Vector3 pos = transform.position;
-
-        RuntimeManager.PlayOneShot(explosionSound, pos);
-
-        // Se da para el GameController para que el maneje la logica de explosión
-        GameController.Instance.OnBallExploded(pos, model.explosionGridRadius, explosionPrefab);
-        GameController.Instance.RegisterBallDestroyed();
-
-        if (explosionAnimator != null)
-        {
-            explosionAnimator.transform.position = pos; // mover al lugar de la bomba
-            explosionAnimator.gameObject.SetActive(true);
-            explosionAnimator.SetTrigger("Explode");
-        }
-
-        if (explosionAnimator2 != null)
-        {
-            explosionAnimator2.transform.position = pos; // mover al lugar de la bomba
-            explosionAnimator2.gameObject.SetActive(true);
-            explosionAnimator2.SetTrigger("Explode");
-        }
-
-        if (explosionAnimator3 != null)
-        {
-            explosionAnimator3.transform.position = pos;
-            explosionAnimator3.gameObject.SetActive(true);
-            explosionAnimator3.SetTrigger("Explode");
-        }
-
-        Destroy(gameObject);
+        explosionAnimator.transform.position = pos;
+        explosionAnimator.gameObject.SetActive(true);
+        explosionAnimator.SetTrigger("Explode");
     }
+
+    if (explosionAnimator2 != null)
+    {
+        explosionAnimator2.transform.position = pos;
+        explosionAnimator2.gameObject.SetActive(true);
+        explosionAnimator2.SetTrigger("Explode");
+    }
+
+    if (explosionAnimator3 != null)
+    {
+        explosionAnimator3.transform.position = pos;
+        explosionAnimator3.gameObject.SetActive(true);
+        explosionAnimator3.SetTrigger("Explode");
+    }
+
+    Destroy(gameObject);
+}
 
     private void SnapCentro()
     {
