@@ -34400,7 +34400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIIconoPowerUp
   imagenPowerUp: {fileID: 1887940585}
   iconoPowerUp: {fileID: 21300000, guid: 1cdb2a0701b7ed54399cc0d48dd894f2, type: 3}
-  duracionVisible: 8
+  duracionVisible: 9
 --- !u!114 &962013201
 MonoBehaviour:
   m_ObjectHideFlags: 0
