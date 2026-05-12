@@ -11,7 +11,7 @@ public class LogoEntradaVR : MonoBehaviour
     [Header("Movimiento")]
     public float velocidad = 5f;
 
-    public float crecimiento = 1.5f;
+    public float crecimiento = 0.05f;
 
     public float distanciaDesaparecer = 0.5f;
 
