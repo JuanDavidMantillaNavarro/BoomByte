@@ -718,10 +718,6 @@ PrefabInstance:
       propertyPath: jugador
       value: 
       objectReference: {fileID: 426085145}
-    - target: {fileID: 8936734606078435011, guid: 377912155c2810d49be3a828765faca4, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
     - target: {fileID: 9030460334835912027, guid: 377912155c2810d49be3a828765faca4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.155762
@@ -16679,7 +16675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -73100,10 +73096,6 @@ PrefabInstance:
       propertyPath: jugador
       value: 
       objectReference: {fileID: 426085145}
-    - target: {fileID: 8936734606078435011, guid: 377912155c2810d49be3a828765faca4, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
     - target: {fileID: 9030460334835912027, guid: 377912155c2810d49be3a828765faca4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.53
@@ -92344,10 +92336,6 @@ PrefabInstance:
       propertyPath: jugador
       value: 
       objectReference: {fileID: 426085145}
-    - target: {fileID: 8936734606078435011, guid: 377912155c2810d49be3a828765faca4, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
     - target: {fileID: 9030460334835912027, guid: 377912155c2810d49be3a828765faca4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.155762

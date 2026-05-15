@@ -20,6 +20,8 @@ public class ErrorEnemy : MonoBehaviour
     {
         transform.position += model.direction * model.speedError * Time.deltaTime;
         // 🔥 ROTACIÓN SUAVE HACIA LA DIRECCIÓN
+        transform.position = new Vector3(transform.position.x, 0.6552621f, transform.position.z);
+
         if (model.direction != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(model.direction);

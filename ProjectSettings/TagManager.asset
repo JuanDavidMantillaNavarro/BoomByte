@@ -9,6 +9,7 @@ TagManager:
   - Destructible
   - Hand
   - Enemy
+  - Destructible2
   layers:
   - Default
   - TransparentFX

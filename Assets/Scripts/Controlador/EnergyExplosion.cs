@@ -9,7 +9,7 @@ public class EnergyExplosion : MonoBehaviour
     private float heightRange = 4f; 
     private float slowAmount = 0.4f; // 40%
     private float duration = 3f;
-    public string destructibleTag = "Destructible";
+    public string destructibleTag = "Destructible",destructibleTag2 = "Destructible2" ;
 
     [Header("Efectos")]
     public EffectData RadioExplosionEffect;
@@ -74,7 +74,7 @@ public class EnergyExplosion : MonoBehaviour
 
         foreach (Collider hit in hitColliders)
         {
-            if (hit.CompareTag(destructibleTag))
+            if (hit.CompareTag(destructibleTag)||hit.CompareTag(destructibleTag2))
             {
                 Debug.Log("<color=orange>Pared destruida: </color>" + hit.name);
                 Destroy(hit.gameObject);
