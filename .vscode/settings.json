@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "BoomByte.slnx"
+    "dotnet.defaultSolution": "Bomberman_VR.slnx"
 }
