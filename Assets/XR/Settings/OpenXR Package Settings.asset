@@ -2024,3 +2024,78 @@ MonoBehaviour:
   targetOpenXRApiVersion: 
   required: 0
   customRuntimeLoaderName: 
+--- !u!114 &9041711322945166782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a1f07dc5afe854f9f12a4194aca3fb, type: 3}
+  m_Name: Android
+  m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.OpenXRSettings
+  features:
+  - {fileID: -1337720561479815802}
+  - {fileID: -8393732753359964897}
+  - {fileID: -4206423402641096033}
+  - {fileID: -7690728233613594734}
+  - {fileID: 2044025206865931547}
+  - {fileID: 8738919793723662826}
+  - {fileID: 2567887457559184603}
+  - {fileID: -5325730248133826924}
+  - {fileID: 4040739376588719630}
+  - {fileID: -7782260930400581708}
+  - {fileID: 3027282605295794372}
+  - {fileID: -6412010285497255994}
+  - {fileID: -6925520385462158254}
+  - {fileID: -1849633246210399479}
+  - {fileID: -591077544649227625}
+  - {fileID: 7498471236135339340}
+  - {fileID: 2878432545652465716}
+  - {fileID: -4630959719802112490}
+  - {fileID: -6329726273658767878}
+  - {fileID: 4875923094493495649}
+  - {fileID: 6735910136599216801}
+  - {fileID: 5761929977555360368}
+  - {fileID: -7284694735737600418}
+  - {fileID: 3932845236909045147}
+  - {fileID: 1526674641053988337}
+  - {fileID: -2006706127347725437}
+  - {fileID: 4030376817816434090}
+  - {fileID: -8561655691572546270}
+  - {fileID: -7114985357280262723}
+  - {fileID: -6315463598680075581}
+  - {fileID: 5634639736849590201}
+  - {fileID: 2034782680411171575}
+  - {fileID: 1446414562813702999}
+  - {fileID: 8810075071389468924}
+  - {fileID: 6612093027271340515}
+  - {fileID: -5093491103287489184}
+  - {fileID: -4937288678629303338}
+  - {fileID: -3441830982903015535}
+  - {fileID: -1029254783622993593}
+  - {fileID: -4985906183337615064}
+  - {fileID: 7125204998599520649}
+  - {fileID: -7839940807297147909}
+  - {fileID: 7692264981282410813}
+  - {fileID: -1840197378125870362}
+  - {fileID: 5038755228571185054}
+  - {fileID: -7379631043890572803}
+  - {fileID: -8010019501521525875}
+  customLoaderName: 
+  m_renderMode: 1
+  m_latencyOptimization: 1
+  m_autoColorSubmissionMode: 1
+  m_colorSubmissionModes:
+    m_List: 00000000
+  m_depthSubmissionMode: 0
+  m_spacewarpMotionVectorTextureFormat: 0
+  m_optimizeBufferDiscards: 1
+  m_symmetricProjection: 0
+  m_optimizeMultiviewRenderRegions: 0
+  m_multiviewRenderRegionsOptimizationMode: 0
+  m_hasMigratedMultiviewRenderRegionSetting: 1
+  m_foveatedRenderingApi: 0
+  m_useOpenXRPredictedTime: 0
