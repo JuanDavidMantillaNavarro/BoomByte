@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using FMODUnity;
 
 public class PickupBillboard : XRGrabInteractable
 {
@@ -17,17 +18,20 @@ public class PickupBillboard : XRGrabInteractable
     public Color glowColor = Color.yellow;
     public float glowIntensity = 2f;
 
+    [Header("FMOD - Audio")]
+    [SerializeField] private EventReference duckGrabSound;
+
     protected override void Awake()
     {
         base.Awake();
 
-        cam = Camera.main.transform;
+        if (Camera.main != null)
+            cam = Camera.main.transform;
 
         sprite = GetComponentInChildren<SpriteRenderer>();
 
         if (sprite != null)
         {
-        
             materialInstance = sprite.material;
 
             // Guardamos valores originales
@@ -44,7 +48,7 @@ public class PickupBillboard : XRGrabInteractable
             transform.LookAt(transform.position + cam.forward);
     }
 
-    //  HOVER ENTER
+    // HOVER ENTER
     protected override void OnHoverEntered(HoverEnterEventArgs args)
     {
         base.OnHoverEntered(args);
@@ -60,7 +64,7 @@ public class PickupBillboard : XRGrabInteractable
         transform.localScale = originalScale * hoverScale;
     }
 
-    //  HOVER EXIT
+    // HOVER EXIT
     protected override void OnHoverExited(HoverExitEventArgs args)
     {
         base.OnHoverExited(args);
@@ -73,13 +77,21 @@ public class PickupBillboard : XRGrabInteractable
         transform.localScale = originalScale;
     }
 
-    //  SELECT
+    // SELECT
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
 
+        // Sonido del pato
+        RuntimeManager.PlayOneShot(
+            duckGrabSound,
+            transform.position
+        );
+
+        // Collectible
         GameController.Instance.CollectEasterEgg();
 
+        // Destruir objeto
         Destroy(gameObject);
     }
 }

@@ -42,6 +42,9 @@ public class ProfesorInteractivo : MonoBehaviour
     [Header("FMOD - Audio")]
     [SerializeField] private EventReference profesorInteractSound;
 
+    [Header("UI PowerUp")]
+    public UIIconoPowerUp uiPowerUp;
+
     private bool activo = false;
     private bool yaSeActivo = false;
     private float tiempoInicio;
@@ -140,22 +143,36 @@ public class ProfesorInteractivo : MonoBehaviour
 
         activo = false;
 
+        // Fade out del diálogo
         yield return StartCoroutine(FadeOutDialogo());
 
-        // Restaurar Cursor y Tiempo
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // Desactivar canvas diálogo
+        if (canvasProfesor != null)
+            canvasProfesor.SetActive(false);
+
+        // Restaurar tiempo
         Time.timeScale = 1f;
 
-        // Restaurar Movimiento
+        // Restaurar movimiento
         if (moveProvider != null)
             moveProvider.moveSpeed = velocidadOriginal;
 
         if (turnProvider != null)
             turnProvider.enabled = true;
 
+        // Esperar 1 frame REAL
+        yield return null;
+
+        // Activar beneficio
         if (powerUpAlCerrar != null)
             powerUpAlCerrar.ActivarBeneficio();
+
+        // Mostrar icono
+        if (uiPowerUp != null)
+        {
+            Debug.Log("INTENTANDO MOSTRAR ICONO");
+            uiPowerUp.MostrarPowerUp();
+        }
 
         Debug.Log("DIÁLOGO CERRADO");
     }

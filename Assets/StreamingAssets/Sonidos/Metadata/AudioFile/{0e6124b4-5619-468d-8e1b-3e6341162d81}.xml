@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{0e6124b4-5619-468d-8e1b-3e6341162d81}">
+		<property name="assetPath">
+			<value>Caminata 1.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.1012244897959187</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{de1dbe8a-2a99-48a9-b8ad-6a1d1697b3bd}</destination>
+		</relationship>
+	</object>
+</objects>

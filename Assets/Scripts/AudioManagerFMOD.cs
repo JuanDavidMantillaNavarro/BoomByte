@@ -19,38 +19,69 @@ public class AudioManagerFMOD : MonoBehaviour
     public bool musicaActiva = true;
     public bool efectosActivos = true;
 
+    private bool musicaDetenida = false;
+
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
     }
 
     private void Start()
     {
-        musicaAmbienteInstance = RuntimeManager.CreateInstance(musicaAmbienteEvent);
+        musicaAmbienteInstance =
+            RuntimeManager.CreateInstance(musicaAmbienteEvent);
+
         musicaAmbienteInstance.start();
+        musicaAmbienteInstance.setVolume(volumenMusicaActual);
 
         sfxBus = RuntimeManager.GetBus(sfxBusPath);
         sfxBus.setVolume(1f);
+
+        Debug.Log("AudioManager iniciado");
     }
 
     public void CambiarVolumenMusica(float valor)
     {
         volumenMusicaActual = valor;
 
-        if (musicaActiva)
+        if (!musicaDetenida && musicaActiva)
             musicaAmbienteInstance.setVolume(valor);
     }
 
-    public void ActivarMusica(bool activa)
+    public void ActivarMusicaa(bool activa)
     {
         musicaActiva = activa;
+
+        if (musicaDetenida)
+            return;
+
         musicaAmbienteInstance.setVolume(activa ? volumenMusicaActual : 0f);
+
+        Debug.Log("Música activa: " + activa);
+    }
+
+    public void DetenerMusicaAmbiente()
+    {
+        if (musicaDetenida) return;
+
+        musicaDetenida = true;
+        musicaActiva = false;
+
+        musicaAmbienteInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+        Debug.Log("Música ambiente detenida definitivamente");
     }
 
     public void ActivarEfectos(bool activos)
     {
         efectosActivos = activos;
+
         sfxBus.setVolume(activos ? 1f : 0f);
+
+        Debug.Log("Efectos: " + activos);
     }
 
     private void OnDestroy()
@@ -58,11 +89,4 @@ public class AudioManagerFMOD : MonoBehaviour
         musicaAmbienteInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         musicaAmbienteInstance.release();
     }
-    public void CambiarEfectosSlider(float valor)
-{
-    bool activos = valor >= 1f;
-
-    FMOD.RESULT result = sfxBus.setVolume(activos ? 1f : 0f);
-    Debug.Log("SFX activo: " + activos + " / Resultado FMOD: " + result);
-}
 }

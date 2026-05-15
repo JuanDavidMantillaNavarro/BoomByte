@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{c82b67c5-e447-4ddd-ac18-d0f6b7ee9f80}">
+		<property name="assetPath">
+			<value>Enemigo.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>11.206530612244897</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{de1dbe8a-2a99-48a9-b8ad-6a1d1697b3bd}</destination>
+		</relationship>
+	</object>
+</objects>
