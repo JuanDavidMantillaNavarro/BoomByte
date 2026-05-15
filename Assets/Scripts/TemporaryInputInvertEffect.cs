@@ -23,7 +23,7 @@ public class TemporaryInputInvertEffect : MonoBehaviour
         if (panelEfecto != null)
             panelEfecto.SetActive(false);
 
-        Debug.Log("Sistema de inversión listo");
+        Debug.Log("Sistema de inversiï¿½n listo");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -32,7 +32,7 @@ public class TemporaryInputInvertEffect : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("JUGADOR TOCÓ ENEMIGO");
+            Debug.Log("JUGADOR TOCï¿½ ENEMIGO");
 
             StartCoroutine(InvertirTemporalmente());
         }
@@ -113,7 +113,7 @@ public class TemporaryInputInvertEffect : MonoBehaviour
                 }
             );
 
-            Debug.Log("Rotación invertida");
+            Debug.Log("Rotaciï¿½n invertida");
         }
     }
 

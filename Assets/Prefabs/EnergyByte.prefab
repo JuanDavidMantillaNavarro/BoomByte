@@ -310,27 +310,28 @@ MonoBehaviour:
   explosionPrefab: {fileID: 4466109608956289259, guid: 41b62d36aca3d3445a697506d6ea0917, type: 3}
   grabSound:
     Guid:
-      Data1: -2093416467
-      Data2: 1204361098
-      Data3: -233353034
-      Data4: 1765009354
+      Data1: -725827864
+      Data2: 1148641519
+      Data3: 255679892
+      Data4: -1367927489
     Path: event:/Agarrar 1
   throwSound:
     Guid:
-      Data1: 1927574741
-      Data2: 1221989405
-      Data3: -1577042779
-      Data4: -492400630
+      Data1: -1171139177
+      Data2: 1140672456
+      Data3: 1422878353
+      Data4: 838473759
     Path: event:/Lanzar
   explosionSound:
     Guid:
-      Data1: -919196356
-      Data2: 1323034144
-      Data3: -959009612
-      Data4: 1963890085
-    Path: "event:/Explosi\xF3n"
+      Data1: 598181370
+      Data2: 1317512110
+      Data3: -1380487252
+      Data4: 1434055281
+    Path: "event:/_explosi\xF3n_"
   explosionAnimator: {fileID: 6740968444954674688, guid: b02a4409a6af4854aa6131fa2ffbd261, type: 3}
   explosionAnimator2: {fileID: 3516804912882737130, guid: 5452b14570120c948a45bd515d88e8c2, type: 3}
+  explosionAnimator3: {fileID: 0}
 --- !u!135 &1380748546683143235
 SphereCollider:
   m_ObjectHideFlags: 0

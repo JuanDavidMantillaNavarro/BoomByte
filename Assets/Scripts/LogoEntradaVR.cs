@@ -1,31 +1,36 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LogoEntradaVR : MonoBehaviour
 {
     [Header("Referencias")]
-    public Transform mainCamera;
+    public Transform logo;
+
     public CanvasGroup canvasGroup;
-    public RectTransform logo;
 
     [Header("Movimiento")]
-    public float distanciaInicial = 4f;
-    public float velocidad = 2f;
-    public float puntoDesaparicion = -0.5f;
+    public float velocidad = 5f;
+
+    public float crecimiento = 0.05f;
+
+    public float distanciaDesaparecer = 0.5f;
 
     [Header("Fade")]
-    public float duracionFade = 0.5f;
+    public float duracionFade = 0.4f;
 
     private bool activado = false;
 
+    private Transform camaraVR;
+
+    private Vector3 direccion;
+
     void Start()
     {
-        if (canvasGroup != null)
-        {
-            canvasGroup.alpha = 0f;
-            canvasGroup.gameObject.SetActive(false);
-        }
+        camaraVR = Camera.main.transform;
+
+        canvasGroup.alpha = 0f;
+
+        logo.gameObject.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -34,34 +39,65 @@ public class LogoEntradaVR : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            StartCoroutine(SecuenciaLogo());
+            activado = true;
+
+            direccion =
+                (camaraVR.position - logo.position).normalized;
+
+            StartCoroutine(AnimacionLogo());
         }
     }
 
-    IEnumerator SecuenciaLogo()
+    IEnumerator AnimacionLogo()
     {
-        activado = true;
+        // BLOQUEAR TODO
+        Time.timeScale = 0f;
 
-        // Activar canvas
-        canvasGroup.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
 
-        // Posición inicial del logo (frente a la cámara)
-        logo.localPosition = new Vector3(0, 0, distanciaInicial);
+        logo.gameObject.SetActive(true);
 
-        // Fade In
+        // FADE IN
         yield return StartCoroutine(Fade(0f, 1f));
 
-        // Movimiento hacia el jugador
-        while (logo.localPosition.z > puntoDesaparicion)
+        while (true)
         {
-            logo.localPosition += Vector3.back * velocidad * Time.deltaTime;
+            // Movimiento usando unscaledDeltaTime
+            logo.position +=
+                direccion *
+                velocidad *
+                Time.unscaledDeltaTime;
+
+            // Escala
+            logo.localScale +=
+                Vector3.one *
+                crecimiento *
+                Time.unscaledDeltaTime;
+
+            float distancia =
+                Vector3.Distance(
+                    logo.position,
+                    camaraVR.position
+                );
+
+            // Cuando atraviesa jugador
+            if (distancia <= distanciaDesaparecer)
+            {
+                break;
+            }
+
             yield return null;
         }
 
-        // Fade Out cuando atraviesa
+        // FADE OUT
         yield return StartCoroutine(Fade(1f, 0f));
 
-        canvasGroup.gameObject.SetActive(false);
+        logo.gameObject.SetActive(false);
+
+        // RESTAURAR
+        Time.timeScale = 1f;
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     IEnumerator Fade(float inicio, float fin)
@@ -70,8 +106,15 @@ public class LogoEntradaVR : MonoBehaviour
 
         while (tiempo < duracionFade)
         {
-            tiempo += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(inicio, fin, tiempo / duracionFade);
+            tiempo += Time.unscaledDeltaTime;
+
+            canvasGroup.alpha =
+                Mathf.Lerp(
+                    inicio,
+                    fin,
+                    tiempo / duracionFade
+                );
+
             yield return null;
         }
 

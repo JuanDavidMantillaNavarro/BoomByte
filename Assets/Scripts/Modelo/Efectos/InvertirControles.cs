@@ -33,7 +33,7 @@ public class InvControls : EffectData
                 }
             );
 
-            Debug.Log("Rotaci�n invertida");
+            Debug.Log("Rotación invertida");
         }
     }
 

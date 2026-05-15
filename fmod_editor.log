@@ -9,13 +9,70 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 0
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000170CAC64A18 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000014A0FF1E7A8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
+[LOG] BankLoader::serializeBank                : fileversion = 146, compatVersion = 146 (oldest = 44, newest = 146)
+[LOG] BankLoader::serializeBank                : fileversion = 146, compatVersion = 146 (oldest = 44, newest = 146)
+[LOG] BankLoader::serializeBank                : fileversion = 146, compatVersion = 146 (oldest = 44, newest = 146)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] BankLoader::serializeBank                : fileversion = 146, compatVersion = 146 (oldest = 44, newest = 146)
+[LOG] SoundI::release                          : Música ambiente 3 (0000014A0CAB1948)
+[LOG] SoundI::release                          :     Música ambiente 3 (0000014A0CB48288)
+[LOG] SoundI::release                          :     Música ambiente 3 (0000014A0CAAE5B8)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 494432
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 10688
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000003FC31FF1D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE4A8EDA70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE4A8EDA30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE4A8EDB50
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE4A8EDC10
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000014951A20B38
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 4
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='freesound_community-duck-quacking-37392', format=5, channels=2, frequency=48000, lengthbytes=23200, lengthpcm=86400, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.941803.
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Sonidos/Build/Desktop/SFX.bank : mode 02010081
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::getAsyncThread              : index = 0 / 5
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000149A054B1C8, queue head = 0000014A0CAB12C8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000149A054B1C8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Sonidos/Build/Desktop/SFX.bank', mode=0x02010081
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 494432
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 10688
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000014A11EF36C8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Balbuceo cartoon', format=5, channels=2, frequency=48000, lengthbytes=104800, lengthpcm=796212, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.944702.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000149A054B1C8
+[LOG] SoundI::release                          : Balbuceo cartoon (00000149A054B1C8)
+[LOG] SoundI::release                          :     Balbuceo cartoon (0000014951E31048)
+[LOG] SoundI::release                          :     Balbuceo cartoon (00000149A0548C48)
+[LOG] SoundI::release                          :  (00000149A01CB408)
+[LOG] SoundI::release                          :     freesound_community-duck-quacking-37392 (00000148E4E71398)
+[LOG] SoundI::release                          :  (000001487DDC4A08)
+[LOG] SoundI::release                          :     Cuack (00000148E5D5AE68)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::closeInternal                   : Closed.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
@@ -23,3 +80,5 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::closeInternal                   : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
