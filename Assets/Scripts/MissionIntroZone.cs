@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
@@ -9,43 +10,46 @@ using XRCommonUsages = UnityEngine.XR.CommonUsages;
 public class MissionIntroZone : MonoBehaviour
 {
     [Header("Panels")]
+    public GameObject bienvenida;
     public GameObject mensajePatroclo;
     public GameObject panelObjetivo;
     public GameObject panelContinuar;
     public GameObject imagenPatroclo;
 
-    private bool introduccionActiva = false;
+    [Header("Duraciones")]
+    public float duracionBienvenida = 8f;
+    public float duracionMensaje = 13f;
+    public float duracionFade = 1f;
+
     private bool yaSeMostro = false;
 
     private Collider zonaCollider;
 
     void Start()
     {
-        // BUSCAR DESDE EL CANVAS PADRE
         GameObject canvasPadre = GameObject.Find("CanvaPatrocloInfo");
 
         if (canvasPadre != null)
         {
-            mensajePatroclo = canvasPadre.transform.Find("mensajePatroclo")?.gameObject;
-            panelObjetivo = canvasPadre.transform.Find("panelObjetivo")?.gameObject;
-            panelContinuar = canvasPadre.transform.Find("panelContinuar")?.gameObject;
-            imagenPatroclo = canvasPadre.transform.Find("imagenPatroclo")?.gameObject;
-        }
-        else
-        {
-            Debug.LogError("No se encontró CanvaPatrocloInfo");
+            bienvenida =
+                canvasPadre.transform.Find("bienvenida")?.gameObject;
+
+            mensajePatroclo =
+                canvasPadre.transform.Find("mensajePatroclo")?.gameObject;
+
+            panelObjetivo =
+                canvasPadre.transform.Find("panelObjetivo")?.gameObject;
+
+            panelContinuar =
+                canvasPadre.transform.Find("panelContinuar")?.gameObject;
+
+            imagenPatroclo =
+                canvasPadre.transform.Find("imagenPatroclo")?.gameObject;
         }
 
-        Debug.Log("mensajePatroclo: " + mensajePatroclo);
-        Debug.Log("panelObjetivo: " + panelObjetivo);
-        Debug.Log("panelContinuar: " + panelContinuar);
-        Debug.Log("imagenPatroclo: " + imagenPatroclo);
-
-        OcultarPanels();
+        OcultarTodos();
 
         zonaCollider = GetComponent<Collider>();
-
-        Debug.Log("Sistema intro listo");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,24 +58,79 @@ public class MissionIntroZone : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            MostrarInicioFase();
+            StartCoroutine(SecuenciaIntro());
         }
     }
 
-    void Update()
+    IEnumerator SecuenciaIntro()
     {
-        if (!introduccionActiva) return;
+        yaSeMostro = true;
 
-        bool teclaCerrar =
-            Keyboard.current != null &&
-            Keyboard.current.pKey.wasPressedThisFrame;
+        Cursor.lockState = CursorLockMode.None;
 
-        bool botonA = BotonAVR();
+        Time.timeScale = 0f;
 
-        if (teclaCerrar || botonA)
+        if (GameController.Instance != null)
+            GameController.Instance.isPaused = true;
+
+        // ================= BIENVENIDA =================
+
+        yield return StartCoroutine(
+            MostrarPanelTemporal(
+                bienvenida,
+                duracionBienvenida
+            )
+        );
+
+        // ================= MENSAJE PATROCLO =================
+
+        SetPanelActivo(imagenPatroclo, true);
+
+        yield return StartCoroutine(
+            MostrarPanelTemporal(
+                mensajePatroclo,
+                duracionMensaje
+            )
+        );
+
+        SetPanelActivo(imagenPatroclo, false);
+
+        // ================= OBJETIVO =================
+
+        yield return StartCoroutine(FadeIn(panelObjetivo));
+
+        yield return StartCoroutine(FadeIn(panelContinuar));
+
+        EsperarContinuar();
+    }
+
+    void EsperarContinuar()
+    {
+        StartCoroutine(EsperarInputContinuar());
+    }
+
+    IEnumerator EsperarInputContinuar()
+    {
+        while (true)
         {
-            IniciarFase();
+            bool teclaCerrar =
+                Keyboard.current != null &&
+                Keyboard.current.pKey.wasPressedThisFrame;
+
+            bool botonA = BotonAVR();
+
+            if (teclaCerrar || botonA)
+            {
+                break;
+            }
+
+            yield return null;
         }
+
+        yield return StartCoroutine(FadeOut(panelObjetivo));
+        yield return StartCoroutine(FadeOut(panelContinuar));
+
+        FinalizarIntro();
     }
 
     bool BotonAVR()
@@ -90,32 +149,11 @@ public class MissionIntroZone : MonoBehaviour
         ) && botonA;
     }
 
-    void MostrarInicioFase()
+    void FinalizarIntro()
     {
-        yaSeMostro = true;
-        introduccionActiva = true;
-
-        Cursor.lockState = CursorLockMode.None;
-
-        MostrarPanels();
-
-        Time.timeScale = 0f;
-
-        if (GameController.Instance != null)
-            GameController.Instance.isPaused = true;
-
-        Debug.Log("INTRO PAUSADA");
-    }
-
-    void IniciarFase()
-    {
-        introduccionActiva = false;
 
         Cursor.lockState = CursorLockMode.Locked;
 
-        OcultarPanels();
-
-        // SOLO REANUDAR, NO MOVER JUGADOR
         Time.timeScale = 1f;
 
         if (GameController.Instance != null)
@@ -124,22 +162,106 @@ public class MissionIntroZone : MonoBehaviour
         if (zonaCollider != null)
             zonaCollider.enabled = false;
 
-        Debug.Log("FASE REANUDADA - jugador permanece en su posición");
+        OcultarTodos();
+
+        Debug.Log("INTRO FINALIZADA");
     }
 
-    void MostrarPanels()
+    IEnumerator MostrarPanelTemporal(GameObject panel, float duracion)
     {
-        if (mensajePatroclo != null) mensajePatroclo.SetActive(true);
-        if (panelObjetivo != null) panelObjetivo.SetActive(true);
-        if (panelContinuar != null) panelContinuar.SetActive(true);
-        if (imagenPatroclo != null) imagenPatroclo.SetActive(true);
+        yield return StartCoroutine(FadeIn(panel));
+
+        float tiempo = 0f;
+
+        while (tiempo < duracion)
+        {
+            tiempo += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        yield return StartCoroutine(FadeOut(panel));
     }
 
-    void OcultarPanels()
+    IEnumerator FadeIn(GameObject panel)
     {
-        if (mensajePatroclo != null) mensajePatroclo.SetActive(false);
-        if (panelObjetivo != null) panelObjetivo.SetActive(false);
-        if (panelContinuar != null) panelContinuar.SetActive(false);
-        if (imagenPatroclo != null) imagenPatroclo.SetActive(false);
+        if (panel == null) yield break;
+
+        panel.SetActive(true);
+
+        CanvasGroup cg = panel.GetComponent<CanvasGroup>();
+
+        if (cg == null)
+            cg = panel.AddComponent<CanvasGroup>();
+
+        cg.alpha = 0f;
+
+        float tiempo = 0f;
+
+        while (tiempo < duracionFade)
+        {
+            tiempo += Time.unscaledDeltaTime;
+
+            cg.alpha = Mathf.Lerp(
+                0f,
+                1f,
+                tiempo / duracionFade
+            );
+
+            yield return null;
+        }
+
+        cg.alpha = 1f;
+    }
+
+    IEnumerator FadeOut(GameObject panel)
+    {
+        if (panel == null) yield break;
+
+        CanvasGroup cg = panel.GetComponent<CanvasGroup>();
+
+        if (cg == null)
+            cg = panel.AddComponent<CanvasGroup>();
+
+        float tiempo = 0f;
+
+        while (tiempo < duracionFade)
+        {
+            tiempo += Time.unscaledDeltaTime;
+
+            cg.alpha = Mathf.Lerp(
+                1f,
+                0f,
+                tiempo / duracionFade
+            );
+
+            yield return null;
+        }
+
+        cg.alpha = 0f;
+
+        panel.SetActive(false);
+    }
+
+    void SetPanelActivo(GameObject panel, bool estado)
+    {
+        if (panel == null) return;
+
+        panel.SetActive(estado);
+
+        CanvasGroup cg = panel.GetComponent<CanvasGroup>();
+
+        if (cg == null)
+            cg = panel.AddComponent<CanvasGroup>();
+
+        cg.alpha = estado ? 1f : 0f;
+    }
+
+    void OcultarTodos()
+    {
+        SetPanelActivo(bienvenida, false);
+        SetPanelActivo(mensajePatroclo, false);
+        SetPanelActivo(panelObjetivo, false);
+        SetPanelActivo(panelContinuar, false);
+        SetPanelActivo(imagenPatroclo, false);
     }
 }
