@@ -16700,7 +16700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16977,7 +16977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0718601ecacd1042b9b0be0419d17f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
-  letrerosController: {fileID: 1170476755}
+  letrerosController: {fileID: 0}
   uiManager: {fileID: 1695170480}
   cameraViewManager: {fileID: 1695170479}
   effectManager: {fileID: 439260411}
@@ -19825,6 +19825,7 @@ MonoBehaviour:
   vrCamera: {fileID: 64579886}
   mirarALaCamara: 1
   sortingOrder: 1000
+  ignorarParedes: 1
 --- !u!1001 &530161143
 PrefabInstance:
   m_ObjectHideFlags: 0
