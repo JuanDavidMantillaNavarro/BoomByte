@@ -1,19 +1,19 @@
 # ninja log v5
-1749	6929	8002986544889945	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	e464e473750ae153
-912	6927	8002986538831804	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	2bf72b6b21a6ace1
-4330	6935	8002986567082477	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	68b57cb78b81b0ae
-75	6925	8002986537316964	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	3ecaa7f13f408e4
-6060	8178	8002986587020569	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	4205f2f05ab092c6
-5195	7272	8002986577964467	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	760fdd45a9a75938
-3466	6933	8002986558103690	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	5d8787b5e1118ac5
-2601	6931	8002986549625746	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	65efda61c6616ba6
-8178	9851	8002986603775023	D:/REPOSITORIOS GITHUB/Bomberman VR/Bomberman_VR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/463y4394/obj/arm64-v8a/libgame.so	3c3e9406c6b51465
 238	7246	8005168779388998	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	e464e473750ae153
-1085	7248	8005168774919923	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	65efda61c6616ba6
-1938	7251	8005168777019611	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	2bf72b6b21a6ace1
-2815	7254	8005168789447194	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	3ecaa7f13f408e4
 3692	7257	8005168794018029	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	68b57cb78b81b0ae
+1938	7251	8005168777019611	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	2bf72b6b21a6ace1
+6359	8553	8005168822564939	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	4205f2f05ab092c6
+2815	7254	8005168789447194	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	3ecaa7f13f408e4
 4602	7260	8005168805167037	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	760fdd45a9a75938
 5494	7416	8005168811021753	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	5d8787b5e1118ac5
-6359	8553	8005168822564939	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	4205f2f05ab092c6
 8554	10360	8005168840670129	D:/REPOSITORIOS GITHUB/Bomberman VR/Bomberman_VR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/463y4394/obj/arm64-v8a/libgame.so	3c3e9406c6b51465
+1085	7248	8005168774919923	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	65efda61c6616ba6
+62	6881	8008993852206488	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	65efda61c6616ba6
+891	6883	8008993856158417	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	e464e473750ae153
+1729	6885	8008993857629620	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	2bf72b6b21a6ace1
+2576	6887	8008993864566636	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	3ecaa7f13f408e4
+3452	6889	8008993875568758	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	760fdd45a9a75938
+4322	6891	8008993881794391	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	68b57cb78b81b0ae
+5174	6980	8008993889899567	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	5d8787b5e1118ac5
+6026	8123	8008993901269156	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	4205f2f05ab092c6
+8123	9878	8008993918848918	D:/REPOSITORIOS GITHUB/Bomberman VR/Bomberman_VR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/463y4394/obj/arm64-v8a/libgame.so	3c3e9406c6b51465
