@@ -9,6 +9,13 @@ using XRCommonUsages = UnityEngine.XR.CommonUsages;
 
 public class VRMenuManager : MonoBehaviour
 {
+    public GameObject panelManual;
+    public GameObject fondoOscuro;
+
+    [Header("Movimiento")]
+    public CharacterController characterController;
+    public MonoBehaviour movimientoScript;
+
     [Header("Panels")]
     public GameObject radialMenu;
     public GameObject panelSonido;
@@ -135,12 +142,21 @@ public class VRMenuManager : MonoBehaviour
         animando = true;
 
         MostrarRadial();
+        if (fondoOscuro != null)
+            fondoOscuro.SetActive(true);
+
         PosicionarMenuFrenteJugador();
 
         if (GameController.Instance != null)
             GameController.Instance.isPaused = true;
 
         Time.timeScale = 0f;
+
+        if (movimientoScript != null)
+            movimientoScript.enabled = false;
+
+        if (characterController != null)
+            characterController.enabled = false;
 
         if (menuRayInteractor != null)
             menuRayInteractor.SetActive(true);
@@ -189,8 +205,17 @@ public class VRMenuManager : MonoBehaviour
 
         Time.timeScale = 1f;
 
+        if (movimientoScript != null)
+            movimientoScript.enabled = true;
+
+        if (characterController != null)
+            characterController.enabled = true;
+
         if (menuRayInteractor != null)
             menuRayInteractor.SetActive(false);
+
+        if (fondoOscuro != null)
+            fondoOscuro.SetActive(false);
 
         animando = false;
         Debug.Log("MENÚ CERRADO");
@@ -246,6 +271,16 @@ public class VRMenuManager : MonoBehaviour
         if (panelSalir != null) panelSalir.SetActive(false);
 
         PosicionarPanel(panelSonido);
+    }
+
+    public void MostrarManual()
+    {
+        if (radialMenu != null) radialMenu.SetActive(false);
+        if (panelSonido != null) panelSonido.SetActive(false);
+        if (panelSalir != null) panelSalir.SetActive(false);
+        if (panelManual != null) panelManual.SetActive(true);
+
+        PosicionarPanel(panelManual);
     }
 
     public void MostrarSalirConfirmacion()
@@ -306,7 +341,9 @@ public class VRMenuManager : MonoBehaviour
         if (radialMenu != null) radialMenu.SetActive(false);
         if (panelSonido != null) panelSonido.SetActive(false);
         if (panelSalir != null) panelSalir.SetActive(false);
-        
+        if (panelManual != null) panelManual.SetActive(false);
+        if (fondoOscuro != null) fondoOscuro.SetActive(false);
+
         if (fadeMenu != null)
             fadeMenu.alpha = 0f;
     }

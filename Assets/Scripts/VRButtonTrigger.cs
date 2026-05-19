@@ -7,6 +7,8 @@ public class VRButtonTrigger : MonoBehaviour
         Reanudar,
         Salir,
         Sonido,
+        Manual,
+        VolverMenu,
         Pausa,
         ConfirmarSalir,
         CancelarSalir
@@ -42,6 +44,14 @@ public class VRButtonTrigger : MonoBehaviour
 
             case TipoBoton.Sonido:
                 manager.MostrarSonido();
+                break;
+
+            case TipoBoton.Manual:
+                manager.MostrarManual();
+                break;
+
+            case TipoBoton.VolverMenu:
+                manager.MostrarRadial();
                 break;
 
             case TipoBoton.Salir:

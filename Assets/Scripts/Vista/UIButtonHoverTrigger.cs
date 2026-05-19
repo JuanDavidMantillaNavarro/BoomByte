@@ -23,6 +23,14 @@ public class UIButtonHoverTrigger : MonoBehaviour, IPointerEnterHandler
             case "Reanudar":
                 menuManager.ReanudarJuego();
                 break;
+
+            case "Manual":
+                menuManager.MostrarManual();
+                break;
+
+            case "Volver":
+                menuManager.MostrarRadial();
+                break;
         }
     }
 }
