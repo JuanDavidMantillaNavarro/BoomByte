@@ -9,18 +9,18 @@ using XRCommonUsages = UnityEngine.XR.CommonUsages;
 
 public class VRMenuManager : MonoBehaviour
 {
-    public GameObject panelManual;
-    public GameObject fondoOscuro;
-
+ 
     [Header("Movimiento")]
     public CharacterController characterController;
     public MonoBehaviour movimientoScript;
 
     [Header("Panels")]
+    public GameObject panelManual;
     public GameObject radialMenu;
     public GameObject panelSonido;
     public GameObject panelSalir;
     public Transform puntoInicio;
+    public GameObject fondoOscuro;
 
     [Header("Fade")]
     public CanvasGroup fadeMenu;
@@ -260,6 +260,7 @@ public class VRMenuManager : MonoBehaviour
         if (radialMenu != null) radialMenu.SetActive(true);
         if (panelSonido != null) panelSonido.SetActive(false);
         if (panelSalir != null) panelSalir.SetActive(false);
+        if (panelManual != null) panelManual.SetActive(false);
 
         PosicionarPanel(radialMenu);
     }
@@ -269,6 +270,7 @@ public class VRMenuManager : MonoBehaviour
         if (radialMenu != null) radialMenu.SetActive(false);
         if (panelSonido != null) panelSonido.SetActive(true);
         if (panelSalir != null) panelSalir.SetActive(false);
+        if (panelManual != null) panelManual.SetActive(false);
 
         PosicionarPanel(panelSonido);
     }
@@ -288,6 +290,7 @@ public class VRMenuManager : MonoBehaviour
         if (radialMenu != null) radialMenu.SetActive(false);
         if (panelSonido != null) panelSonido.SetActive(false);
         if (panelSalir != null) panelSalir.SetActive(true);
+        if (panelManual != null) panelManual.SetActive(false);
 
         PosicionarPanel(panelSalir);
     }

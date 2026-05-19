@@ -27,10 +27,6 @@ public class UIButtonHoverTrigger : MonoBehaviour, IPointerEnterHandler
             case "Manual":
                 menuManager.MostrarManual();
                 break;
-
-            case "Volver":
-                menuManager.MostrarRadial();
-                break;
         }
     }
 }
