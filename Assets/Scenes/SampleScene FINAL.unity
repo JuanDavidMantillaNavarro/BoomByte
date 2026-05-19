@@ -47915,7 +47915,7 @@ GameObject:
   - component: {fileID: 1167565299}
   - component: {fileID: 1167565298}
   m_Layer: 5
-  m_Name: volver al menu (2)
+  m_Name: volver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50836,7 +50836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!225 &1237182581
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -51,6 +51,8 @@ public class VRMenuManager : MonoBehaviour
     void Update()
     {
         DetectarInputMenu();
+        DetectarInputMenu();
+        ActualizarFondoOscuro();
     }
 
     // ================= INPUT =================
@@ -251,6 +253,22 @@ public class VRMenuManager : MonoBehaviour
         panel.transform.position = targetPosition;
         panel.transform.rotation =
             Quaternion.LookRotation(playerCamera.forward);
+    }
+
+    void ActualizarFondoOscuro()
+    {
+        if (!menuAbierto) return;
+
+        if (fondoOscuro == null) return;
+
+        if (playerCamera == null) return;
+
+        fondoOscuro.transform.position =
+            playerCamera.position +
+            playerCamera.forward * 0.3f;
+
+        fondoOscuro.transform.rotation =
+            playerCamera.rotation;
     }
 
     // ================= UI =================
