@@ -71,11 +71,22 @@ public class MensajesMurosVR : MonoBehaviour
             // Mensaje de restantes
             if (cantidadActual > 0)
             {
-                MostrarMensaje(
-                    "Destruiste una pared.\nRestan "
-                    + cantidadActual +
-                    " paredes destructibles"
-                );
+                string mensajeRestante;
+
+                if (cantidadActual == 1)
+                {
+                    mensajeRestante =
+                        "Destruiste una pared.\nResta 1 pared destructible";
+                }
+                else
+                {
+                    mensajeRestante =
+                        "Destruiste una pared.\nRestan "
+                        + cantidadActual +
+                        " paredes destructibles";
+                }
+
+                MostrarMensaje(mensajeRestante);
             }
             else
             {
