@@ -8,110 +8,255 @@ public class MensajesMurosVR : MonoBehaviour
     public GameObject panelMensaje;
     public TextMeshProUGUI textoMensaje;
 
-    [Header("Configuración")]
-    public string tagDestructible = "Destructible";
-    public float tiempoMensaje = 3f;
+    [Header("Configuración Nivel 1")]
+    public string tagDestructibleNivel1 = "Destructible";
+
+    [Header("Configuración Nivel 2")]
+    public string tagDestructibleNivel2 = "Destructible2";
+
+    [Header("Tiempo")]
+    public float tiempoMensaje = 4f;
     public float intervaloRevision = 0.5f;
 
-    [Header("Mensajes")]
-    [TextArea]
-    public string mensajePrimeraPared =
-        "Destruiste la primera pared destructible.";
+    // ================= NIVEL 1 =================
 
-    [TextArea]
-    public string mensajeFinal =
-        "Ya destruiste todas las paredes del laboratorio MAC\nLa terminal fue desbloqueada\nEncuéntrala para llegar al final del nivel";
+    private int cantidadAnteriorNivel1;
+    private bool primerMensajeNivel1 = false;
+    private bool nivel1Completado = false;
 
-    private int cantidadInicial;
-    private int cantidadAnterior;
+    // ================= NIVEL 2 =================
 
-    private bool primerMensajeMostrado = false;
-    private bool mensajeFinalMostrado = false;
+    private int cantidadAnteriorNivel2;
+    private bool primerMensajeNivel2 = false;
+    private bool nivel2Completado = false;
 
     void Start()
     {
-        GameObject[] destructibles =
-            GameObject.FindGameObjectsWithTag(tagDestructible);
+        // Nivel 1
+        GameObject[] destructiblesNivel1 =
+            GameObject.FindGameObjectsWithTag(
+                tagDestructibleNivel1
+            );
 
-        cantidadInicial = destructibles.Length;
-        cantidadAnterior = cantidadInicial;
+        cantidadAnteriorNivel1 =
+            destructiblesNivel1.Length;
+
+        // Nivel 2
+        GameObject[] destructiblesNivel2 =
+            GameObject.FindGameObjectsWithTag(
+                tagDestructibleNivel2
+            );
+
+        cantidadAnteriorNivel2 =
+            destructiblesNivel2.Length;
 
         if (panelMensaje != null)
             panelMensaje.SetActive(false);
 
-        Debug.Log("Cantidad inicial de muros: " + cantidadInicial);
+        Debug.Log(
+            "Nivel 1 paredes: " +
+            cantidadAnteriorNivel1
+        );
 
-        InvokeRepeating(nameof(RevisarMuros), 0f, intervaloRevision);
+        Debug.Log(
+            "Nivel 2 paredes: " +
+            cantidadAnteriorNivel2
+        );
+
+        InvokeRepeating(
+            nameof(RevisarMuros),
+            0f,
+            intervaloRevision
+        );
     }
 
     void RevisarMuros()
     {
-        if (mensajeFinalMostrado) return;
+        RevisarNivel1();
+        RevisarNivel2();
+    }
+
+    // =====================================================
+    // NIVEL 1
+    // =====================================================
+
+    void RevisarNivel1()
+    {
+        if (nivel1Completado) return;
 
         GameObject[] destructibles =
-            GameObject.FindGameObjectsWithTag(tagDestructible);
+            GameObject.FindGameObjectsWithTag(
+                tagDestructibleNivel1
+            );
 
-        int cantidadActual = destructibles.Length;
+        int cantidadActual =
+            destructibles.Length;
 
-        // Detecta destrucción
-        if (cantidadActual < cantidadAnterior)
+        if (cantidadActual < cantidadAnteriorNivel1)
         {
-            cantidadAnterior = cantidadActual;
+            cantidadAnteriorNivel1 =
+                cantidadActual;
 
-            Debug.Log("Muros restantes: " + cantidadActual);
+            Debug.Log(
+                "Nivel 1 restantes: " +
+                cantidadActual
+            );
 
-            // Primera pared destruida
-            if (!primerMensajeMostrado)
+            // Primera pared
+            if (!primerMensajeNivel1)
             {
-                primerMensajeMostrado = true;
+                primerMensajeNivel1 = true;
 
-                MostrarMensaje(mensajePrimeraPared);
+                MostrarMensaje(
+                    "Destruiste la primera pared destructible del laboratorio MAC."
+                );
+
+                return;
             }
 
-            // Mensaje de restantes
+            // Restantes
             if (cantidadActual > 0)
             {
-                string mensajeRestante;
+                string mensaje;
 
                 if (cantidadActual == 1)
                 {
-                    mensajeRestante =
-                        "Destruiste una pared.\nResta 1 pared destructible";
+                    mensaje =
+                        "Destruiste una pared.\n" +
+                        "Resta 1 pared destructible.";
                 }
                 else
                 {
-                    mensajeRestante =
-                        "Destruiste una pared.\nRestan "
-                        + cantidadActual +
-                        " paredes destructibles";
+                    mensaje =
+                        "Destruiste una pared.\n" +
+                        "Restan " +
+                        cantidadActual +
+                        " paredes destructibles.";
                 }
 
-                MostrarMensaje(mensajeRestante);
+                MostrarMensaje(mensaje);
             }
             else
             {
-                mensajeFinalMostrado = true;
+                nivel1Completado = true;
 
-                MostrarMensaje(mensajeFinal);
+                MostrarMensaje(
+                    "Ya destruiste todas las paredes del laboratorio MAC.\n" +
+                    "La terminal fue desbloqueada.\n" +
+                    "Encuéntrala para llegar al final del nivel."
+                );
 
-                Debug.Log("Todas las paredes fueron destruidas");
+                Debug.Log(
+                    "Nivel 1 completado"
+                );
             }
         }
     }
 
+    // =====================================================
+    // NIVEL 2
+    // =====================================================
+
+    void RevisarNivel2()
+    {
+        if (nivel2Completado) return;
+
+        GameObject[] destructibles =
+            GameObject.FindGameObjectsWithTag(
+                tagDestructibleNivel2
+            );
+
+        int cantidadActual =
+            destructibles.Length;
+
+        if (cantidadActual < cantidadAnteriorNivel2)
+        {
+            cantidadAnteriorNivel2 =
+                cantidadActual;
+
+            Debug.Log(
+                "Nivel 2 restantes: " +
+                cantidadActual
+            );
+
+            // Primera pared
+            if (!primerMensajeNivel2)
+            {
+                primerMensajeNivel2 = true;
+
+                MostrarMensaje(
+                    "Destruiste la primera pared destructible del nivel 2."
+                );
+
+                return;
+            }
+
+            // CASO ESPECIAL:
+            // QUEDA SOLO 1
+            if (cantidadActual == 1)
+            {
+                MostrarMensaje(
+                    "Te queda 1 pared destructible.\n" +
+                    "Busca esa pared.\n" +
+                    "Ahí está la terminal final del salón de dibujo."
+                );
+
+                return;
+            }
+
+            // MÁS DE 1
+            if (cantidadActual > 1)
+            {
+                MostrarMensaje(
+                    "Destruiste una pared.\n" +
+                    "Restan " +
+                    cantidadActual +
+                    " paredes destructibles del nivel 2."
+                );
+            }
+            else
+            {
+                // Ya no quedan
+                nivel2Completado = true;
+
+                MostrarMensaje(
+                    "Encontraste la pared final.\n" +
+                    "La terminal del salón de dibujo fue desbloqueada."
+                );
+
+                Debug.Log(
+                    "Nivel 2 completado"
+                );
+            }
+        }
+    }
+
+    // =====================================================
+    // UI
+    // =====================================================
+
     void MostrarMensaje(string mensaje)
     {
         StopAllCoroutines();
-        StartCoroutine(MostrarMensajeCoroutine(mensaje));
+
+        StartCoroutine(
+            MostrarMensajeCoroutine(
+                mensaje
+            )
+        );
     }
 
-    IEnumerator MostrarMensajeCoroutine(string mensaje)
+    IEnumerator MostrarMensajeCoroutine(
+        string mensaje
+    )
     {
         panelMensaje.SetActive(true);
 
         textoMensaje.text = mensaje;
 
-        yield return new WaitForSeconds(tiempoMensaje);
+        yield return new WaitForSeconds(
+            tiempoMensaje
+        );
 
         panelMensaje.SetActive(false);
     }
