@@ -10,8 +10,10 @@ public class VRAlwaysVisibleUI : MonoBehaviour
     [Header("Configuración")]
     public bool mirarALaCamara = true;
 
-    [Tooltip("Mientras más alto, más prioridad visual")]
-    public int sortingOrder = 500;
+    public int sortingOrder = 1000;
+
+    [Header("Always On Top")]
+    public bool ignorarParedes = true;
 
     private Canvas canvas;
 
@@ -19,21 +21,22 @@ public class VRAlwaysVisibleUI : MonoBehaviour
     {
         canvas = GetComponent<Canvas>();
 
-        // Busca automáticamente la Main Camera
         if (vrCamera == null)
         {
             vrCamera = Camera.main;
         }
 
-        // Fuerza el canvas a renderizar encima
         canvas.overrideSorting = true;
         canvas.sortingOrder = sortingOrder;
 
-        // IMPORTANTE:
-        // Hace que el canvas use la cámara VR correcta
         if (canvas.renderMode == RenderMode.WorldSpace)
         {
             canvas.worldCamera = vrCamera;
+        }
+
+        if (ignorarParedes)
+        {
+            AplicarMaterialAlwaysOnTop();
         }
     }
 
@@ -41,18 +44,48 @@ public class VRAlwaysVisibleUI : MonoBehaviour
     {
         if (mirarALaCamara && vrCamera != null)
         {
-            // Hace que siempre mire a la cámara
             transform.forward = transform.position - vrCamera.transform.position;
         }
     }
 
     void OnEnable()
     {
-        // Reaplica por si Unity lo pierde al activarse
         if (canvas != null)
         {
             canvas.overrideSorting = true;
             canvas.sortingOrder = sortingOrder;
+        }
+
+        if (ignorarParedes)
+        {
+            AplicarMaterialAlwaysOnTop();
+        }
+    }
+
+    void AplicarMaterialAlwaysOnTop()
+    {
+        Shader shader = Shader.Find("Custom/AlwaysOnTopUI");
+
+        if (shader == null)
+        {
+            Debug.LogError("NO se encontró el shader Custom/AlwaysOnTopUI");
+            return;
+        }
+
+        Graphic[] graficos = GetComponentsInChildren<Graphic>(true);
+
+        foreach (Graphic g in graficos)
+        {
+            if (g == null) continue;
+
+            Material mat = new Material(shader);
+
+            if (g.mainTexture != null)
+            {
+                mat.SetTexture("_MainTex", g.mainTexture);
+            }
+
+            g.material = mat;
         }
     }
 }
