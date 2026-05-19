@@ -60798,15 +60798,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492275270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.3111863, y: 1.4373436, z: 1.1768}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 3.7540536, y: 2.3346732, z: 1.9114729}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22801488031702079}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 88.3}
+  m_AnchoredPosition: {x: 48.8, y: -13.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492275272
@@ -90141,8 +90141,10 @@ MonoBehaviour:
       Data4: -1404825239
     Path: event:/cuack2
   fondoMensajeUI: {fileID: 1492275270}
+  imagenFondo: {fileID: 1492275272}
   textoMensaje: {fileID: 7102169080002262468}
-  duracionFondo: 8
+  duracionFondo: 10
+  duracionFade: 2
   tiempoExtra: 30
 --- !u!212 &701202059807944999
 SpriteRenderer:
@@ -90525,8 +90527,10 @@ MonoBehaviour:
       Data4: -1404825239
     Path: event:/cuack2
   fondoMensajeUI: {fileID: 1492275270}
+  imagenFondo: {fileID: 1492275272}
   textoMensaje: {fileID: 7102169080002262468}
-  duracionFondo: 8
+  duracionFondo: 10
+  duracionFade: 2
   tiempoExtra: 30
 --- !u!65 &1222702362756905935
 BoxCollider:
@@ -90811,8 +90815,10 @@ MonoBehaviour:
       Data4: -1404825239
     Path: event:/cuack2
   fondoMensajeUI: {fileID: 1492275270}
+  imagenFondo: {fileID: 1492275272}
   textoMensaje: {fileID: 7102169080002262468}
-  duracionFondo: 8
+  duracionFondo: 10
+  duracionFade: 2
   tiempoExtra: 30
 --- !u!1 &1565887663878291440
 GameObject:
@@ -91103,8 +91109,10 @@ MonoBehaviour:
       Data4: -1404825239
     Path: event:/cuack2
   fondoMensajeUI: {fileID: 1492275270}
+  imagenFondo: {fileID: 1492275272}
   textoMensaje: {fileID: 7102169080002262468}
-  duracionFondo: 8
+  duracionFondo: 10
+  duracionFade: 2
   tiempoExtra: 30
 --- !u!65 &1642921829661930327
 BoxCollider:
@@ -91384,15 +91392,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6474660878359504211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.40875676, y: 0.40875676, z: 0.40875676}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000093896}
+  m_LocalScale: {x: 0.6610345, y: 0.6610345, z: 0.6610345}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22801488031702079}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.9, y: 104.9}
+  m_AnchoredPosition: {x: 76.84, y: 26.82}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2757433396989868725
@@ -91618,8 +91626,10 @@ MonoBehaviour:
       Data4: -1404825239
     Path: event:/cuack2
   fondoMensajeUI: {fileID: 1492275270}
+  imagenFondo: {fileID: 1492275272}
   textoMensaje: {fileID: 7102169080002262468}
-  duracionFondo: 8
+  duracionFondo: 10
+  duracionFade: 2
   tiempoExtra: 30
 --- !u!1 &3055924845346635724
 GameObject:
@@ -91979,8 +91989,10 @@ MonoBehaviour:
       Data4: -1404825239
     Path: event:/cuack2
   fondoMensajeUI: {fileID: 1492275270}
+  imagenFondo: {fileID: 1492275272}
   textoMensaje: {fileID: 7102169080002262468}
-  duracionFondo: 8
+  duracionFondo: 10
+  duracionFade: 2
   tiempoExtra: 30
 --- !u!54 &3398502752881773540
 Rigidbody:
@@ -92277,8 +92289,10 @@ MonoBehaviour:
       Data4: -1404825239
     Path: event:/cuack2
   fondoMensajeUI: {fileID: 1492275270}
+  imagenFondo: {fileID: 1492275272}
   textoMensaje: {fileID: 7102169080002262468}
-  duracionFondo: 8
+  duracionFondo: 10
+  duracionFade: 2
   tiempoExtra: 30
 --- !u!1001 &4029767096739082718
 PrefabInstance:
@@ -92539,8 +92553,10 @@ MonoBehaviour:
       Data4: -1404825239
     Path: event:/cuack2
   fondoMensajeUI: {fileID: 1492275270}
+  imagenFondo: {fileID: 1492275272}
   textoMensaje: {fileID: 7102169080002262468}
-  duracionFondo: 8
+  duracionFondo: 10
+  duracionFade: 2
   tiempoExtra: 30
 --- !u!4 &4331599619671851373
 Transform:
@@ -92718,8 +92734,10 @@ MonoBehaviour:
       Data4: -1404825239
     Path: event:/cuack2
   fondoMensajeUI: {fileID: 1492275270}
+  imagenFondo: {fileID: 1492275272}
   textoMensaje: {fileID: 7102169080002262468}
-  duracionFondo: 8
+  duracionFondo: 10
+  duracionFade: 2
   tiempoExtra: 30
 --- !u!114 &4650845797109876015
 MonoBehaviour:
@@ -93331,8 +93349,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -93534,8 +93552,10 @@ MonoBehaviour:
       Data4: -1404825239
     Path: event:/cuack2
   fondoMensajeUI: {fileID: 1492275270}
+  imagenFondo: {fileID: 1492275272}
   textoMensaje: {fileID: 7102169080002262468}
-  duracionFondo: 8
+  duracionFondo: 10
+  duracionFade: 2
   tiempoExtra: 30
 --- !u!4 &7168883886092831448
 Transform:
@@ -94289,8 +94309,10 @@ MonoBehaviour:
       Data4: -1404825239
     Path: event:/cuack2
   fondoMensajeUI: {fileID: 1492275270}
+  imagenFondo: {fileID: 1492275272}
   textoMensaje: {fileID: 7102169080002262468}
-  duracionFondo: 8
+  duracionFondo: 10
+  duracionFade: 2
   tiempoExtra: 30
 --- !u!54 &8650176577323728902
 Rigidbody:

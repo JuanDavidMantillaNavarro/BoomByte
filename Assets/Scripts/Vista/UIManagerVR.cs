@@ -31,7 +31,7 @@ public class UIManagerVR : MonoBehaviour
         easterEggText.gameObject.SetActive(true);
 
         CancelInvoke(nameof(HideMessage));
-        Invoke(nameof(HideMessage), 8f);
+        Invoke(nameof(HideMessage), 10f);
     }
 
     void HideMessage()
