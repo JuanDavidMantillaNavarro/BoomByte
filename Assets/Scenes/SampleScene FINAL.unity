@@ -4356,8 +4356,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TemporaryInputInvertEffect
   moveAction: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   turnAction: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  panelEfecto: {fileID: 0}
-  fadeCanvas: {fileID: 0}
+  panelEfecto: {fileID: 505391298}
+  fadeCanvas: {fileID: 505391299}
   duracionEfecto: 9
   duracionFade: 1
 --- !u!1 &158291229
@@ -18704,7 +18704,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1788673387941717508, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2191656738697622354, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
       propertyPath: m_Pivot.x
@@ -18800,15 +18800,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4292838892266509623, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.045008317
+      value: 0.10993282
       objectReference: {fileID: 0}
     - target: {fileID: 4292838892266509623, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.045487296
+      value: 0.11110272
       objectReference: {fileID: 0}
     - target: {fileID: 4292838892266509623, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.045487296
+      value: 0.11110272
       objectReference: {fileID: 0}
     - target: {fileID: 5200757600723790774, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
       propertyPath: m_Name
@@ -18841,7 +18841,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5200757600723790774, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 505391301}
   m_SourcePrefab: {fileID: 100100000, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
 --- !u!224 &505391297 stripped
 RectTransform:
@@ -18858,6 +18861,27 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 6579656430613814083, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
   m_PrefabInstance: {fileID: 505391296}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &505391300 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5200757600723790774, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
+  m_PrefabInstance: {fileID: 505391296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &505391301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505391300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576a6e118797893469719d3f36b2fdb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
+  vrCamera: {fileID: 0}
+  mirarALaCamara: 1
+  sortingOrder: 1000
+  ignorarParedes: 1
 --- !u!1001 &507996594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46984,8 +47008,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TemporaryInputInvertEffect
   moveAction: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   turnAction: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  panelEfecto: {fileID: 0}
-  fadeCanvas: {fileID: 0}
+  panelEfecto: {fileID: 505391298}
+  fadeCanvas: {fileID: 505391299}
   duracionEfecto: 9
   duracionFade: 1
 --- !u!114 &1119929179
@@ -47870,8 +47894,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TemporaryInputInvertEffect
   moveAction: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   turnAction: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  panelEfecto: {fileID: 0}
-  fadeCanvas: {fileID: 0}
+  panelEfecto: {fileID: 505391298}
+  fadeCanvas: {fileID: 505391299}
   duracionEfecto: 9
   duracionFade: 1
 --- !u!114 &1152850217
@@ -60748,6 +60772,81 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69ca76836a06f9a4499ed6defd057510, type: 3}
+--- !u!1 &1492275270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1492275271}
+  - component: {fileID: 1492275273}
+  - component: {fileID: 1492275272}
+  m_Layer: 0
+  m_Name: fondoMensajeUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1492275271
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492275270}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.6845, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 22801488031702079}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 88.3}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1492275272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492275270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 30203539ad84e204e9fbecbb1082e161, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1492275273
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492275270}
+  m_CullTransparentMesh: 1
 --- !u!65 &1498154550
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70290,8 +70389,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5138364326575161558, guid: 3e4674c7e00542d4b95692d93a19f716, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1714671458}
   m_SourcePrefab: {fileID: 100100000, guid: 3e4674c7e00542d4b95692d93a19f716, type: 3}
+--- !u!1 &1714671457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5138364326575161558, guid: 3e4674c7e00542d4b95692d93a19f716, type: 3}
+  m_PrefabInstance: {fileID: 1714671456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1714671458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714671457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576a6e118797893469719d3f36b2fdb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
+  vrCamera: {fileID: 0}
+  mirarALaCamara: 1
+  sortingOrder: 1000
+  ignorarParedes: 1
 --- !u!65 &1715650374
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89696,6 +89819,7 @@ RectTransform:
   m_LocalScale: {x: 0.001042087, y: 0.001042087, z: 0.001042087}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 1492275271}
   - {fileID: 2733063527264947017}
   m_Father: {fileID: 64579887}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -90016,6 +90140,10 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 1492275270}
+  textoMensaje: {fileID: 7102169080002262468}
+  duracionFondo: 8
+  tiempoExtra: 30
 --- !u!212 &701202059807944999
 SpriteRenderer:
   serializedVersion: 2
@@ -90396,6 +90524,10 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 1492275270}
+  textoMensaje: {fileID: 7102169080002262468}
+  duracionFondo: 8
+  tiempoExtra: 30
 --- !u!65 &1222702362756905935
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -90678,6 +90810,10 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 1492275270}
+  textoMensaje: {fileID: 7102169080002262468}
+  duracionFondo: 8
+  tiempoExtra: 30
 --- !u!1 &1565887663878291440
 GameObject:
   m_ObjectHideFlags: 0
@@ -90966,6 +91102,10 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 1492275270}
+  textoMensaje: {fileID: 7102169080002262468}
+  duracionFondo: 8
+  tiempoExtra: 30
 --- !u!65 &1642921829661930327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -91245,14 +91385,14 @@ RectTransform:
   m_GameObject: {fileID: 6474660878359504211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.64645, y: 0.64645, z: 0.64645}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22801488031702079}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 114.8}
+  m_AnchoredPosition: {x: 0, y: 83.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2757433396989868725
@@ -91477,6 +91617,10 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 1492275270}
+  textoMensaje: {fileID: 7102169080002262468}
+  duracionFondo: 8
+  tiempoExtra: 30
 --- !u!1 &3055924845346635724
 GameObject:
   m_ObjectHideFlags: 0
@@ -91834,6 +91978,10 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 1492275270}
+  textoMensaje: {fileID: 7102169080002262468}
+  duracionFondo: 8
+  tiempoExtra: 30
 --- !u!54 &3398502752881773540
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -92128,6 +92276,10 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 1492275270}
+  textoMensaje: {fileID: 7102169080002262468}
+  duracionFondo: 8
+  tiempoExtra: 30
 --- !u!1001 &4029767096739082718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92386,6 +92538,10 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 1492275270}
+  textoMensaje: {fileID: 7102169080002262468}
+  duracionFondo: 8
+  tiempoExtra: 30
 --- !u!4 &4331599619671851373
 Transform:
   m_ObjectHideFlags: 0
@@ -92561,6 +92717,10 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 1492275270}
+  textoMensaje: {fileID: 7102169080002262468}
+  duracionFondo: 8
+  tiempoExtra: 30
 --- !u!114 &4650845797109876015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93373,6 +93533,10 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 1492275270}
+  textoMensaje: {fileID: 7102169080002262468}
+  duracionFondo: 8
+  tiempoExtra: 30
 --- !u!4 &7168883886092831448
 Transform:
   m_ObjectHideFlags: 0
@@ -94124,6 +94288,10 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 1492275270}
+  textoMensaje: {fileID: 7102169080002262468}
+  duracionFondo: 8
+  tiempoExtra: 30
 --- !u!54 &8650176577323728902
 Rigidbody:
   m_ObjectHideFlags: 0

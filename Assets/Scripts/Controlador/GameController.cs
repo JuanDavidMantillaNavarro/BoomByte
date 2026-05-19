@@ -96,6 +96,13 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void AddExtraTime(float extraTime)
+    {
+        currentTime += extraTime;
+
+        Debug.Log("Tiempo agregado: +" + extraTime);
+    }
+
     public void ActivateCameraView()
     {
         //if (cameraUses <= 0 || abilitiesDisabled) return;
