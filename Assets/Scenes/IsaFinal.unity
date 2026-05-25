@@ -8880,10 +8880,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c915288eaf7f2b94cadd50ab14013cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRMenuManager
+  characterController: {fileID: 0}
+  movimientoScript: {fileID: 0}
+  panelManual: {fileID: 0}
   radialMenu: {fileID: 1237182580}
   panelSonido: {fileID: 2098491345}
   panelSalir: {fileID: 190389093}
   puntoInicio: {fileID: 339559023}
+  fondoOscuro: {fileID: 0}
   fadeMenu: {fileID: 1237182581}
   duracionFade: 0.4
   playerCamera: {fileID: 64579887}
@@ -14508,6 +14512,63 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100.00002, y: 171.41548, z: 179.61813}
   m_Center: {x: -1.1314411e-12, y: 22.614904, z: 39.80899}
+--- !u!1001 &326748067
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: ac5bb1e794aded74c9eb72eab389305d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.021923
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac5bb1e794aded74c9eb72eab389305d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0005000334
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac5bb1e794aded74c9eb72eab389305d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.312351
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac5bb1e794aded74c9eb72eab389305d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac5bb1e794aded74c9eb72eab389305d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac5bb1e794aded74c9eb72eab389305d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac5bb1e794aded74c9eb72eab389305d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac5bb1e794aded74c9eb72eab389305d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac5bb1e794aded74c9eb72eab389305d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac5bb1e794aded74c9eb72eab389305d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ac5bb1e794aded74c9eb72eab389305d, type: 3}
+      propertyPath: m_Name
+      value: objetos
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ac5bb1e794aded74c9eb72eab389305d, type: 3}
 --- !u!1 &328628893
 GameObject:
   m_ObjectHideFlags: 0
@@ -121890,12 +121951,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MensajesMurosVR
   panelMensaje: {fileID: 941236119}
   textoMensaje: {fileID: 1569988057}
-  tagDestructible: Destructible
+  tagDestructibleNivel1: Destructible
+  tagDestructibleNivel2: Destructible2
   tiempoMensaje: 5
   intervaloRevision: 0.5
-  mensajePrimeraPared: Destruiste la primera pared destructible
-  mensajeFinal: "Ya destruiste todas las paredes del laboratorio MAC\nLa terminal
-    fue desbloqueada\nEncu\xE9ntrala para llegar al final del nivel"
 --- !u!4 &2120532713
 Transform:
   m_ObjectHideFlags: 0
@@ -125474,8 +125533,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.330001, y: 13.617951, z: 15}
-  m_Center: {x: -4.0298482e-16, y: -0.59397817, z: -0.4740521}
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: -4.0298482e-16, y: 2, z: -0.4740521}
 --- !u!54 &408138841262859459
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -125759,6 +125818,12 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 0}
+  imagenFondo: {fileID: 0}
+  textoMensaje: {fileID: 0}
+  duracionFondo: 10
+  duracionFade: 2
+  tiempoExtra: 30
 --- !u!212 &701202059807944999
 SpriteRenderer:
   serializedVersion: 2
@@ -126139,6 +126204,12 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 0}
+  imagenFondo: {fileID: 0}
+  textoMensaje: {fileID: 0}
+  duracionFondo: 10
+  duracionFade: 2
+  tiempoExtra: 30
 --- !u!65 &1222702362756905935
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -126158,8 +126229,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.330001, y: 13.617951, z: 15}
-  m_Center: {x: -4.0298482e-16, y: -0.59397817, z: -0.4740521}
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: -4.0298482e-16, y: 2, z: -0.4740521}
 --- !u!1 &1226798114477623521
 GameObject:
   m_ObjectHideFlags: 0
@@ -126421,6 +126492,12 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 0}
+  imagenFondo: {fileID: 0}
+  textoMensaje: {fileID: 0}
+  duracionFondo: 10
+  duracionFade: 2
+  tiempoExtra: 30
 --- !u!1 &1565887663878291440
 GameObject:
   m_ObjectHideFlags: 0
@@ -126709,6 +126786,12 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 0}
+  imagenFondo: {fileID: 0}
+  textoMensaje: {fileID: 0}
+  duracionFondo: 10
+  duracionFade: 2
+  tiempoExtra: 30
 --- !u!65 &1642921829661930327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -126728,8 +126811,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.330001, y: 13.617951, z: 15}
-  m_Center: {x: -4.0298482e-16, y: -0.59397817, z: -0.4740521}
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: -4.0298482e-16, y: 2, z: -0.4740521}
 --- !u!1 &1693576756368870294
 GameObject:
   m_ObjectHideFlags: 0
@@ -127053,8 +127136,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.330001, y: 13.617951, z: 15}
-  m_Center: {x: -4.0298482e-16, y: -0.59397817, z: -0.4740521}
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: -4.0298482e-16, y: 2, z: -0.4740521}
 --- !u!4 &2983262352721207365
 Transform:
   m_ObjectHideFlags: 0
@@ -127220,6 +127303,12 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 0}
+  imagenFondo: {fileID: 0}
+  textoMensaje: {fileID: 0}
+  duracionFondo: 10
+  duracionFade: 2
+  tiempoExtra: 30
 --- !u!1 &3055924845346635724
 GameObject:
   m_ObjectHideFlags: 0
@@ -127577,6 +127666,12 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 0}
+  imagenFondo: {fileID: 0}
+  textoMensaje: {fileID: 0}
+  duracionFondo: 10
+  duracionFade: 2
+  tiempoExtra: 30
 --- !u!54 &3398502752881773540
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127871,6 +127966,12 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 0}
+  imagenFondo: {fileID: 0}
+  textoMensaje: {fileID: 0}
+  duracionFondo: 10
+  duracionFade: 2
+  tiempoExtra: 30
 --- !u!1001 &4029767096739082718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128129,6 +128230,12 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 0}
+  imagenFondo: {fileID: 0}
+  textoMensaje: {fileID: 0}
+  duracionFondo: 10
+  duracionFade: 2
+  tiempoExtra: 30
 --- !u!4 &4331599619671851373
 Transform:
   m_ObjectHideFlags: 0
@@ -128304,6 +128411,12 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 0}
+  imagenFondo: {fileID: 0}
+  textoMensaje: {fileID: 0}
+  duracionFondo: 10
+  duracionFade: 2
+  tiempoExtra: 30
 --- !u!114 &4650845797109876015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128515,8 +128628,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.330001, y: 13.617951, z: 15}
-  m_Center: {x: -4.0298482e-16, y: -0.59397817, z: -0.4740521}
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: -4.0298482e-16, y: 2, z: -0.4740521}
 --- !u!1 &5471132344794427732
 GameObject:
   m_ObjectHideFlags: 0
@@ -129112,6 +129225,12 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 0}
+  imagenFondo: {fileID: 0}
+  textoMensaje: {fileID: 0}
+  duracionFondo: 10
+  duracionFade: 2
+  tiempoExtra: 30
 --- !u!4 &7168883886092831448
 Transform:
   m_ObjectHideFlags: 0
@@ -129146,8 +129265,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.330001, y: 13.617951, z: 15}
-  m_Center: {x: -4.0298482e-16, y: -0.59397817, z: -0.4740521}
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: -4.0298482e-16, y: 2, z: -0.4740521}
 --- !u!212 &7331227692829517969
 SpriteRenderer:
   serializedVersion: 2
@@ -129330,8 +129449,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.330001, y: 13.617951, z: 15}
-  m_Center: {x: -4.0298482e-16, y: -0.59397817, z: -0.4740521}
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: -4.0298482e-16, y: 2, z: -0.4740521}
 --- !u!212 &7630201626880677861
 SpriteRenderer:
   serializedVersion: 2
@@ -129636,8 +129755,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.330001, y: 13.617951, z: 15}
-  m_Center: {x: -4.0298482e-16, y: -0.59397817, z: -0.4740521}
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: -4.0298482e-16, y: 2, z: -0.4740521}
 --- !u!65 &8311160130712691112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -129657,8 +129776,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.330001, y: 13.617951, z: 15}
-  m_Center: {x: -4.0298482e-16, y: -0.59397817, z: -0.4740521}
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: -4.0298482e-16, y: 2, z: -0.4740521}
 --- !u!1001 &8312469332701707593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129863,6 +129982,12 @@ MonoBehaviour:
       Data3: 1267165845
       Data4: -1404825239
     Path: event:/cuack2
+  fondoMensajeUI: {fileID: 0}
+  imagenFondo: {fileID: 0}
+  textoMensaje: {fileID: 0}
+  duracionFondo: 10
+  duracionFade: 2
+  tiempoExtra: 30
 --- !u!54 &8650176577323728902
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129909,8 +130034,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.330001, y: 13.617951, z: 15}
-  m_Center: {x: -4.0298482e-16, y: -0.59397817, z: -0.4740521}
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: -4.0298482e-16, y: 2, z: -0.4740521}
 --- !u!65 &8818326662445002915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -129930,8 +130055,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.330001, y: 13.617951, z: 15}
-  m_Center: {x: -4.0298482e-16, y: -0.59397817, z: -0.4740521}
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: -4.0298482e-16, y: 2, z: -0.4740521}
 --- !u!1 &9001695814572605402
 GameObject:
   m_ObjectHideFlags: 0
@@ -130254,3 +130379,4 @@ SceneRoots:
   - {fileID: 1498153544}
   - {fileID: 1584810404}
   - {fileID: 2077963793}
+  - {fileID: 326748067}
