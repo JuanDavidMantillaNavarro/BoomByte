@@ -3970,6 +3970,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8f507e084058f6c43a783543d2b93e36, type: 2}
+    - target: {fileID: 5866666021909216657, guid: ab612b983e59bc74e936cb94525a5844, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 42289b8a9df01434790cfec15a928140, type: 2}
     - target: {fileID: 6610475079274951152, guid: ab612b983e59bc74e936cb94525a5844, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -12921,6 +12925,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dancing Wilson
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: d15021298b7aa6348971eff18fdea09c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 77b88799953d02a428838fe0cc2ca6a5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -68567,6 +68575,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[8]'
       value: 
       objectReference: {fileID: 2100000, guid: 3f81157f7382ae347ab6d3385987f9a7, type: 2}
+    - target: {fileID: 5866666021909216657, guid: af0e3573371b9394b8789a0c4597586d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 905c8b939f336e74c86e08a12ac9cf95, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -80765,6 +80777,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8f9e47a2ba645e24ebd988aa717757db, type: 2}
+    - target: {fileID: 5866666021909216657, guid: bd1365befa3268d4592477291a5c0565, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e1574628867afca4582947625643cc78, type: 2}
     - target: {fileID: 6674901621935567548, guid: bd1365befa3268d4592477291a5c0565, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -103608,6 +103624,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: fe52bceee71ca804b80a1bcde0131209, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 708f036b66960cf4184fc68dff0d83a9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 96f70ed3c9e559548b383325f07549e3, type: 2}
     - target: {fileID: 6239299163278962104, guid: 708f036b66960cf4184fc68dff0d83a9, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -106949,6 +106969,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[7]'
       value: 
       objectReference: {fileID: 2100000, guid: fe52bceee71ca804b80a1bcde0131209, type: 2}
+    - target: {fileID: 5866666021909216657, guid: e4c70779cfbf74147b8d24d94971a26a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 905c8b939f336e74c86e08a12ac9cf95, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -115825,6 +115849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Talking Wilson NIVEL 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: f7f32ffea5204224c8fc6a344f07a1fd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8d20db4e60b2a004c91c0caa30a7f06f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -117498,6 +117526,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e89437ba17a29d64e8ff5846be1a0816, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 68738be08d9db6942a980dcef8f3e1d7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7bc47a84f31eb6d42af53c6782d06e1b, type: 2}
     - target: {fileID: 5948437869543767120, guid: 68738be08d9db6942a980dcef8f3e1d7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
