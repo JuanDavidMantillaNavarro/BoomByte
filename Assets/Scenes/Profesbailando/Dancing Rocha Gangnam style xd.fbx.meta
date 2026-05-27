@@ -1,0 +1,1245 @@
+fileFormatVersion: 2
+guid: 3f98ce45421a5404c9ae258a35d8aaf7
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: mixamo.com
+      takeName: mixamo.com
+      internalID: -203655887218126122
+      firstFrame: 0
+      lastFrame: 371
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: mixamorig:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Dancing Rocha Gangnam style xd(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface17
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.01114831, y: 0.04632678, z: -0.00042498676}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface25
+      parentName: polySurface17
+      position: {x: -0.01114831, y: -0.04632678, z: 0.00042498676}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform43
+      parentName: polySurface25
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface26
+      parentName: polySurface17
+      position: {x: -0.006454983, y: -0.00063547015, z: -0.0019519202}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform46
+      parentName: polySurface26
+      position: {x: -0.0046933284, y: -0.045691308, z: 0.00006138697}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface27
+      parentName: polySurface17
+      position: {x: 0.006454982, y: -0.00063547015, z: -0.0019519202}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform45
+      parentName: polySurface27
+      position: {x: -0.017603293, y: -0.045691308, z: 0.00006138697}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface28
+      parentName: polySurface17
+      position: {x: -0.01114831, y: -0.04632678, z: 0.00042498676}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform44
+      parentName: polySurface28
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform42
+      parentName: polySurface17
+      position: {x: -0.01114831, y: -0.04632678, z: 0.00042498676}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface15
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.011057337, y: 0.022734225, z: 0.0017298663}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface37
+      parentName: polySurface15
+      position: {x: -0.011057337, y: -0.022734225, z: -0.0017298663}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform56
+      parentName: polySurface37
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface38
+      parentName: polySurface15
+      position: {x: -0.011057337, y: -0.022734225, z: -0.0017298663}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform60
+      parentName: polySurface38
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface39
+      parentName: polySurface15
+      position: {x: -0.011057337, y: -0.022734225, z: -0.0017298663}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform63
+      parentName: polySurface39
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface40
+      parentName: polySurface15
+      position: {x: 0.0024958318, y: -0.015240567, z: 0.00025322265}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform95
+      parentName: polySurface40
+      position: {x: -0.0134551115, y: -0.007493658, z: -0.001983089}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface41
+      parentName: polySurface15
+      position: {x: -0.011057337, y: -0.022734225, z: -0.0017298663}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform57
+      parentName: polySurface41
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface42
+      parentName: polySurface15
+      position: {x: -0.011057337, y: -0.022734225, z: -0.0017298663}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform62
+      parentName: polySurface42
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface43
+      parentName: polySurface15
+      position: {x: -0.0024307217, y: -0.015240567, z: 0.00025322265}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform107
+      parentName: polySurface43
+      position: {x: -0.008724673, y: -0.007493658, z: -0.001983089}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform55
+      parentName: polySurface15
+      position: {x: -0.011057337, y: -0.022734225, z: -0.0017298663}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cabello:Mesh
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.010940039, y: 0.0471887, z: -0.0015650888}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 95.98497, y: 105.67904, z: 109.36552}
+    - name: transform40
+      parentName: Cabello:Mesh
+      position: {x: -0.000102615, y: -0.00060786, z: 0.000007809998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube14
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.005234287, y: 0.046599086, z: -0.0009460307}
+      rotation: {x: -0.24646299, y: 0, z: -0, w: 0.9691522}
+      scale: {x: 0.4554791, y: 0.73201996, z: 0.73201996}
+    - name: transform41
+      parentName: pCube14
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube15
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.010906249, y: 0.04828901, z: -0.0012979943}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface29
+      parentName: pCube15
+      position: {x: -0.0005145065, y: -0.0014562586, z: 0.000305653}
+      rotation: {x: -0.063485906, y: -0.015038255, z: -0.00095675595, w: 0.997869}
+      scale: {x: 1.2553786, y: 1.2553786, z: 1.2553786}
+    - name: transform49
+      parentName: polySurface29
+      position: {x: -0.009292139, y: -0.046832748, z: 0.0009923413}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface31
+      parentName: pCube15
+      position: {x: -0.000030375199, y: -0.0000000026731615, z: 1.7041903e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform48
+      parentName: polySurface31
+      position: {x: -0.010875873, y: -0.048289, z: 0.0012979943}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform47
+      parentName: pCube15
+      position: {x: -0.010906249, y: -0.04828901, z: 0.0012979943}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface261
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.010893116, y: 0.04632678, z: -0.00037629483}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface51
+      parentName: polySurface261
+      position: {x: -0.01114831, y: -0.04632678, z: 0.00037629483}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform82
+      parentName: polySurface51
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface52
+      parentName: polySurface261
+      position: {x: -0.01114831, y: -0.04632678, z: 0.00037629483}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform77
+      parentName: polySurface52
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface53
+      parentName: polySurface261
+      position: {x: -0.0108111985, y: -0.04632678, z: 0.00037629483}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform78
+      parentName: polySurface53
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface54
+      parentName: polySurface261
+      position: {x: -0.0108111985, y: -0.04632678, z: 0.00037629483}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform79
+      parentName: polySurface54
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform72
+      parentName: polySurface261
+      position: {x: -0.01114831, y: -0.04632678, z: 0.00037629483}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface291
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.010949752, y: 0.048289, z: -0.0012979943}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface32
+      parentName: polySurface291
+      position: {x: -0.0059688175, y: -0.0014228368, z: 0.0006266224}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface35
+      parentName: polySurface32
+      position: {x: -0.004980935, y: -0.046866167, z: 0.0010575845}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform54
+      parentName: polySurface35
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface36
+      parentName: polySurface32
+      position: {x: 0.012075673, y: -0.000034019948, z: 0}
+      rotation: {x: 0, y: 0, z: 0.103716545, w: 0.9946069}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform53
+      parentName: polySurface36
+      position: {x: -0.017056609, y: -0.046832144, z: 0.0010575845}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform51
+      parentName: polySurface32
+      position: {x: -0.004980935, y: -0.046866167, z: 0.0010575845}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface34
+      parentName: polySurface291
+      position: {x: -0.00007387774, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform52
+      parentName: polySurface34
+      position: {x: -0.010875873, y: -0.048289, z: 0.0012979943}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform50
+      parentName: polySurface291
+      position: {x: -0.010949752, y: -0.048289, z: 0.0012979943}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface351
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.010859964, y: 0.048752416, z: -0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform76
+      parentName: polySurface351
+      position: {x: -0.010754632, y: -0.048289, z: 0.0015295267}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCylinder1
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.010992063, y: 0.040087193, z: -0.0001879387}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.25709692, y: 0.061884206, z: 0.183292}
+    - name: transform58
+      parentName: pCylinder1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface411
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.011159364, y: 0.017940946, z: -0.00021073609}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform87
+      parentName: polySurface411
+      position: {x: -0.011159364, y: -0.017940946, z: 0.00021073609}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube16
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: -0.0012398, y: 0.028816931, z: -0.0007468157}
+      rotation: {x: 0, y: -0, z: -0.3644883, w: 0.93120795}
+      scale: {x: 0.29506585, y: 0.21910757, z: 0.30761474}
+    - name: transform61
+      parentName: pCube16
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube17
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.023172949, y: 0.028642666, z: -0.0007468157}
+      rotation: {x: 0, y: 0, z: 0.3097946, w: 0.9508035}
+      scale: {x: 0.29506585, y: 0.21910757, z: 0.30761474}
+    - name: transform59
+      parentName: pCube17
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface391
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.011133072, y: 0.033078946, z: 0.000055785178}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface44
+      parentName: polySurface391
+      position: {x: -0.011133072, y: -0.033078946, z: -0.000055785178}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform66
+      parentName: polySurface44
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface45
+      parentName: polySurface391
+      position: {x: -0.011133072, y: -0.033078946, z: -0.000055785178}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform70
+      parentName: polySurface45
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface46
+      parentName: polySurface391
+      position: {x: -0.012234098, y: -0.0042636716, z: -0.0008803392}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform69
+      parentName: polySurface46
+      position: {x: 0.001101026, y: -0.028815273, z: 0.00074681576}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface47
+      parentName: polySurface391
+      position: {x: -0.011133072, y: -0.033078946, z: -0.000055785178}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform67
+      parentName: polySurface47
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface48
+      parentName: polySurface391
+      position: {x: 0.012043984, y: -0.004324945, z: -0.0008803392}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform68
+      parentName: polySurface48
+      position: {x: -0.023177056, y: -0.028754, z: 0.00074681576}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface49
+      parentName: polySurface391
+      position: {x: -0.011133072, y: -0.033078946, z: -0.000055785178}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform65
+      parentName: polySurface49
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform64
+      parentName: polySurface391
+      position: {x: -0.011133072, y: -0.033078946, z: -0.000055785178}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface451
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.011114718, y: 0.033078946, z: 0.000055785178}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface55
+      parentName: polySurface451
+      position: {x: -0.011114718, y: -0.033078946, z: -0.000055785178}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform83
+      parentName: polySurface55
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface56
+      parentName: polySurface451
+      position: {x: -0.011114718, y: -0.033078946, z: -0.000055785178}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform86
+      parentName: polySurface56
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface57
+      parentName: polySurface451
+      position: {x: -0.011114718, y: -0.033078946, z: -0.000055785178}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform74
+      parentName: polySurface57
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface58
+      parentName: polySurface451
+      position: {x: -0.011114718, y: -0.033078946, z: -0.000055785178}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform84
+      parentName: polySurface58
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface59
+      parentName: polySurface451
+      position: {x: -0.011114718, y: -0.033078946, z: -0.000055785178}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform85
+      parentName: polySurface59
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface60
+      parentName: polySurface451
+      position: {x: -0.00012265563, y: 0.0066746543, z: 0.0002499165}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform81
+      parentName: polySurface60
+      position: {x: -0.010992063, y: -0.039753597, z: -0.00006706535}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform73
+      parentName: polySurface451
+      position: {x: -0.011114718, y: -0.033078946, z: -0.000055785178}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube18
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: -0.003287043, y: 0.026375541, z: -0.0007279153}
+      rotation: {x: -0.01988096, y: 0.002427443, z: -0.35170978, w: 0.9358948}
+      scale: {x: 0.3997002, y: 0.36022362, z: 0.3997002}
+    - name: polySurface50
+      parentName: pCube18
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0.67047197, z: -0, w: 0.74193496}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform75
+      parentName: polySurface50
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform71
+      parentName: pCube18
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface61
+      parentName: pCube18
+      position: {x: 0.054521993, y: 0.051833577, z: 0.0013044445}
+      rotation: {x: 0.42889744, y: -0.56422, z: 0.44941133, w: 0.5438127}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform80
+      parentName: polySurface61
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface62
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.010969816, y: 0.032594845, z: -0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface63
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform89
+      parentName: polySurface63
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface64
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform105
+      parentName: polySurface64
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface65
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform94
+      parentName: polySurface65
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface66
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform96
+      parentName: polySurface66
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface67
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform98
+      parentName: polySurface67
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface68
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform99
+      parentName: polySurface68
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface69
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform103
+      parentName: polySurface69
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface70
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform106
+      parentName: polySurface70
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface71
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform93
+      parentName: polySurface71
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface72
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform97
+      parentName: polySurface72
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface73
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform100
+      parentName: polySurface73
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface74
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform90
+      parentName: polySurface74
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface75
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform102
+      parentName: polySurface75
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface76
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform104
+      parentName: polySurface76
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface77
+      parentName: polySurface62
+      position: {x: -0.00023392396, y: 0.016157571, z: 2.484994e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0227283, y: 1, z: 1}
+    - name: transform91
+      parentName: polySurface77
+      position: {x: -0.010735892, y: -0.048752416, z: 0.0013619285}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface78
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform101
+      parentName: polySurface78
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface79
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform92
+      parentName: polySurface79
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform88
+      parentName: polySurface62
+      position: {x: -0.010969816, y: -0.032594845, z: 0.0013619289}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface431
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.011038632, y: 0.17131583, z: -0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 6.587262, y: 6.587262, z: 6.587262}
+    - name: polySurface80
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface81
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface82
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform110
+      parentName: polySurface82
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface83
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface84
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface85
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface86
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface87
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface88
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface89
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface90
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface91
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface92
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface93
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface94
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface95
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface96
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface97
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface98
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform109
+      parentName: polySurface98
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: transform108
+      parentName: polySurface431
+      position: {x: -0.011038632, y: -0.030548126, z: 0.0013335043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: polySurface821
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Hips
+      parentName: Dancing Rocha Gangnam style xd(Clone)
+      position: {x: 0.00041988093, y: 0.1513161, z: 0.00048275068}
+      rotation: {x: 0.000000007069116, y: -0.000000010603676, z: 0.0000000017672794, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1.0000001}
+    - name: mixamorig:RightUpLeg
+      parentName: mixamorig:Hips
+      position: {x: 0.013288277, y: -0.008769407, z: -0.0006614047}
+      rotation: {x: -0.00000024064022, y: -0.00008736536, z: 0.99999654, w: -0.0026259832}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: mixamorig:RightLeg
+      parentName: mixamorig:RightUpLeg
+      position: {x: -0, y: 0.05908544, z: 0}
+      rotation: {x: 0.013205864, y: 0.00024151793, z: 0.018283978, w: 0.9997456}
+      scale: {x: 1.0000013, y: 1.000001, z: 0.9999997}
+    - name: mixamorig:RightFoot
+      parentName: mixamorig:RightLeg
+      position: {x: -0, y: 0.05785561, z: 1.110223e-18}
+      rotation: {x: 0.44783488, y: 0.13126445, z: -0.06665601, w: 0.88191307}
+      scale: {x: 1.0000002, y: 1.0000002, z: 0.99999994}
+    - name: mixamorig:RightToeBase
+      parentName: mixamorig:RightFoot
+      position: {x: -0, y: 0.033696428, z: 0}
+      rotation: {x: 0.30638054, y: 0.13521771, z: -0.044014983, w: 0.94122785}
+      scale: {x: 1.0000004, y: 1.0000006, z: 0.9999998}
+    - name: mixamorig:RightToe_End
+      parentName: mixamorig:RightToeBase
+      position: {x: -0, y: 0.014620476, z: -5.551115e-19}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Spine
+      parentName: mixamorig:Hips
+      position: {x: -0, y: 0.01576005, z: -0.0007939869}
+      rotation: {x: -0.025165906, y: 0.000000010654174, z: -0.0000000018725361, w: 0.9996833}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: mixamorig:Spine1
+      parentName: mixamorig:Spine
+      position: {x: -0, y: 0.018410044, z: 0}
+      rotation: {x: -0.00000006705522, y: 0.0000000034668637, z: 0.000000001432678, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 0.9999999}
+    - name: mixamorig:Spine2
+      parentName: mixamorig:Spine1
+      position: {x: -0, y: 0.021040024, z: 2.220446e-18}
+      rotation: {x: 0.0000000037252899, y: -0.000000008866885, z: 3.8275066e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: mixamorig:LeftShoulder
+      parentName: mixamorig:Spine2
+      position: {x: -0.00969333, y: 0.019687014, z: -0.000059925893}
+      rotation: {x: 0.5741167, y: -0.41143435, z: 0.5769398, w: 0.4101857}
+      scale: {x: 1.0000011, y: 1.0000015, z: 1.0000008}
+    - name: mixamorig:LeftArm
+      parentName: mixamorig:LeftShoulder
+      position: {x: -2.220446e-18, y: 0.020349573, z: 0}
+      rotation: {x: -0.14188898, y: -0.05624713, z: 0.0075155795, w: 0.9882547}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000008}
+    - name: mixamorig:LeftForeArm
+      parentName: mixamorig:LeftArm
+      position: {x: -1.110223e-18, y: 0.032546487, z: -1.7763568e-17}
+      rotation: {x: 0.0038854033, y: 0.000010281801, z: 0.0026241243, w: 0.99998903}
+      scale: {x: 1, y: 1.0000004, z: 1.0000005}
+    - name: mixamorig:LeftHand
+      parentName: mixamorig:LeftForeArm
+      position: {x: -2.220446e-18, y: 0.046046197, z: -1.7763568e-17}
+      rotation: {x: -0.0000000600703, y: 0.000000007844391, z: 0.0000000610706, w: 1}
+      scale: {x: 1.0000005, y: 1.0000007, z: 1.0000006}
+    - name: mixamorig:RightShoulder
+      parentName: mixamorig:Spine2
+      position: {x: 0.00969333, y: 0.019701157, z: -0.00034068618}
+      rotation: {x: -0.5659067, y: -0.41709447, z: 0.584453, w: -0.40521175}
+      scale: {x: 1.0000007, y: 1.000001, z: 1.0000005}
+    - name: mixamorig:RightArm
+      parentName: mixamorig:RightShoulder
+      position: {x: -2.220446e-18, y: 0.020349573, z: 3.5527136e-17}
+      rotation: {x: -0.14167304, y: 0.026559692, z: 0.010299473, w: 0.9895036}
+      scale: {x: 1, y: 1.0000004, z: 1.0000007}
+    - name: mixamorig:RightForeArm
+      parentName: mixamorig:RightArm
+      position: {x: -0, y: 0.032544818, z: 0}
+      rotation: {x: 0.0037904526, y: 0.000024527308, z: 0.006464496, w: 0.999972}
+      scale: {x: 1.0000005, y: 1.0000013, z: 1.0000002}
+    - name: mixamorig:RightHand
+      parentName: mixamorig:RightForeArm
+      position: {x: -0, y: 0.046036623, z: 0}
+      rotation: {x: -0, y: -0, z: 1.6264319e-10, w: 1}
+      scale: {x: 1.0000006, y: 1.0000012, z: 1.0000008}
+    - name: mixamorig:Neck
+      parentName: mixamorig:Spine2
+      position: {x: -0, y: 0.02367006, z: 0.0000000028328546}
+      rotation: {x: 0.025165962, y: 0.0000000034986911, z: 0.0000000014692005, w: 0.9996833}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: mixamorig:Head
+      parentName: mixamorig:Neck
+      position: {x: -0, y: 0.012875652, z: -0.00055849284}
+      rotation: {x: -0, y: 0.0000000035345602, z: -2.623301e-10, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 0.9999999}
+    - name: mixamorig:HeadTop_End
+      parentName: mixamorig:Head
+      position: {x: -0, y: 0.093444385, z: -0.0040532327}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftUpLeg
+      parentName: mixamorig:Hips
+      position: {x: -0.013288277, y: -0.008769407, z: -0.0010427672}
+      rotation: {x: -0.000016887374, y: 0.0064282604, z: 0.9999759, w: 0.0026257033}
+      scale: {x: 1.000001, y: 1.0000012, z: 1}
+    - name: mixamorig:LeftLeg
+      parentName: mixamorig:LeftUpLeg
+      position: {x: -5.551115e-19, y: 0.059090324, z: 0}
+      rotation: {x: 0.028075885, y: -0.00051303324, z: -0.01826168, w: 0.9994389}
+      scale: {x: 1.0000002, y: 0.9999998, z: 1.0000001}
+    - name: mixamorig:LeftFoot
+      parentName: mixamorig:LeftLeg
+      position: {x: -0, y: 0.05797369, z: 0}
+      rotation: {x: 0.4004377, y: -0.15200958, z: 0.0670273, w: 0.9011383}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1}
+    - name: mixamorig:LeftToeBase
+      parentName: mixamorig:LeftFoot
+      position: {x: -0, y: 0.030964851, z: 4.440892e-18}
+      rotation: {x: 0.33343673, y: -0.08958393, z: 0.031846102, w: 0.9379662}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000005}
+    - name: mixamorig:LeftToe_End
+      parentName: mixamorig:LeftToeBase
+      position: {x: -2.220446e-18, y: 0.014365976, z: -1.110223e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
