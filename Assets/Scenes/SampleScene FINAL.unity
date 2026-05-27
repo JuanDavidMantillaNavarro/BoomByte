@@ -96861,7 +96861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1638422326
 RectTransform:
   m_ObjectHideFlags: 0
@@ -121437,7 +121437,7 @@ MonoBehaviour:
   canvasNivel2: {fileID: 606161900}
   movimientoJugador: {fileID: 1373153112}
   duracion: 6
-  velocidadFade: 1
+  velocidadFade: 2
 --- !u!1001 &2000514859
 PrefabInstance:
   m_ObjectHideFlags: 0
