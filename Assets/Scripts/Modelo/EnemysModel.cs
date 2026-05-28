@@ -11,7 +11,7 @@ public class EnemysModel
     public Vector3 direction = Vector3.right;
 
     // Distancia para detectar pared
-    public float detectionDistance = 0.5f;
+    public float detectionDistance = 1f;
     public float rotationSpeed = 5f;
 
     // Layer de paredes

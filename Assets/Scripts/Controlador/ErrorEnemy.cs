@@ -5,15 +5,20 @@ public class ErrorEnemy : MonoBehaviour
     public EnemysModel model;
     int combinedMask = 0;
 
+    private Vector3 lastPosition;
+    private float idleTimer = 0f;
+    private float idleThreshold = 1f; // segundos quieto antes de girar
+
     private void Awake()
     {
-        
+        lastPosition = transform.position;
     }
 
     private void Update()
     {
         Move();
         CheckWallAndRotate();
+        CheckIdleAndRotate();
     }
 
     void Move()
@@ -48,6 +53,31 @@ public class ErrorEnemy : MonoBehaviour
         if (Physics.Raycast(ray, out hit, model.detectionDistance, combinedMask))
         {
             Rotate90();
+        }
+    }
+
+    void CheckIdleAndRotate()
+    {
+        // Ignorar el eje Y para no reaccionar a correcciones de altura
+        Vector3 currentPosFlat = new Vector3(transform.position.x, 0f, transform.position.z);
+        Vector3 lastPosFlat    = new Vector3(lastPosition.x,       0f, lastPosition.z);
+
+        if (Vector3.Distance(currentPosFlat, lastPosFlat) > 0.05f)
+        {
+            // Se movió: actualizar referencia y reiniciar contador
+            lastPosition = transform.position;
+            idleTimer = 0f;
+        }
+        else
+        {
+            // Sigue quieto: acumular tiempo
+            idleTimer += Time.deltaTime;
+
+            if (idleTimer >= idleThreshold)
+            {
+                Rotate90();
+                idleTimer = 0f; // reiniciar para evitar giros en cadena
+            }
         }
     }
 
