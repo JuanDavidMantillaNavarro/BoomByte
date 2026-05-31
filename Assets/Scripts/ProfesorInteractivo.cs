@@ -22,8 +22,6 @@ public class ProfesorInteractivo : MonoBehaviour
     public string mensaje =
         "Hola, soy Freddy. Bienvenido al laboratorio.";
 
-    public float velocidadEscritura = 0.03f;
-
     [Header("Detección")]
     public Transform jugador;
     public float distanciaActivacion = 2f;
@@ -31,6 +29,9 @@ public class ProfesorInteractivo : MonoBehaviour
     [Header("Tiempo")]
     public float duracionMaxima = 10f;
     public float duracionFade = 0.5f;
+
+    [Header("Timer")]
+    public TimerTrigger timerTrigger;
 
     [Header("Power Up")]
     public ProfesorPowerUp powerUpAlCerrar;
@@ -71,6 +72,16 @@ public class ProfesorInteractivo : MonoBehaviour
         if (textoDialogo == null)
         {
             Debug.LogError("textoDialogo es NULL");
+        }
+
+        if (uiPowerUp == null)
+        {
+            Debug.LogWarning("uiPowerUp NO ASIGNADO");
+        }
+
+        if (timerTrigger == null)
+        {
+            Debug.LogWarning("timerTrigger NO ASIGNADO");
         }
     }
 
@@ -128,6 +139,12 @@ public class ProfesorInteractivo : MonoBehaviour
         yaSeActivo = true;
         tiempoDialogo = 0f;
 
+        if (timerTrigger != null)
+        {
+            timerTrigger.PausarTemporizador();
+            Debug.Log("TEMPORIZADOR PAUSADO");
+        }
+
         RuntimeManager.PlayOneShot(
             profesorInteractSound,
             transform.position
@@ -142,8 +159,6 @@ public class ProfesorInteractivo : MonoBehaviour
 
     IEnumerator FadeInDialogo()
     {
-        Debug.Log("=== INICIO FADE ===");
-
         if (canvasProfesor == null)
         {
             Debug.LogError(
@@ -156,55 +171,23 @@ public class ProfesorInteractivo : MonoBehaviour
         canvasProfesor.SetActive(true);
 
         Debug.Log(
-            "SELF: " +
-            canvasProfesor.activeSelf
-        );
-
-        Debug.Log(
-            "HIERARCHY: " +
+            "Canvas activo: " +
             canvasProfesor.activeInHierarchy
-        );
-
-        Debug.Log(
-            "POSICION: " +
-            canvasProfesor.transform.position
-        );
-
-        Debug.Log(
-            "ESCALA LOCAL: " +
-            canvasProfesor.transform.localScale
-        );
-
-        Debug.Log(
-            "ESCALA GLOBAL: " +
-            canvasProfesor.transform.lossyScale
         );
 
         if (fadeCanvas != null)
         {
             fadeCanvas.alpha = 1f;
-
-            Debug.Log(
-                "ALPHA: " +
-                fadeCanvas.alpha
-            );
         }
 
         if (textoDialogo != null)
         {
             textoDialogo.enabled = true;
             textoDialogo.gameObject.SetActive(true);
-
             textoDialogo.text = mensaje;
 
             Debug.Log(
-                "Texto asignado: " +
-                mensaje
-            );
-
-            Debug.Log(
-                "TMP activo: " +
-                textoDialogo.gameObject.activeInHierarchy
+                "Texto cargado correctamente"
             );
         }
 
@@ -225,13 +208,17 @@ public class ProfesorInteractivo : MonoBehaviour
         if (canvasProfesor != null)
             canvasProfesor.SetActive(false);
 
+        if (timerTrigger != null)
+        {
+            timerTrigger.ReanudarTemporizador();
+            Debug.Log("TEMPORIZADOR REANUDADO");
+        }
+
         yield return null;
 
         if (powerUpAlCerrar != null)
         {
-            Debug.Log(
-                "ACTIVANDO POWERUP"
-            );
+            Debug.Log("ACTIVANDO POWERUP");
 
             powerUpAlCerrar
                 .ActivarBeneficio();
@@ -239,25 +226,30 @@ public class ProfesorInteractivo : MonoBehaviour
 
         if (uiPowerUp != null)
         {
-            Debug.Log(
-                "INTENTANDO MOSTRAR ICONO"
-            );
+            Debug.Log("UI POWERUP ENCONTRADO");
 
-            uiPowerUp.gameObject
-                .SetActive(true);
+            uiPowerUp.gameObject.SetActive(true);
 
             Debug.Log(
-                "GameObject icono activo: " +
+                "GAMEOBJECT ACTIVO: " +
                 uiPowerUp.gameObject
                     .activeInHierarchy
             );
 
             uiPowerUp.MostrarPowerUp();
+
+            Debug.Log(
+                "MOSTRAR POWERUP EJECUTADO"
+            );
+        }
+        else
+        {
+            Debug.LogError(
+                "uiPowerUp ES NULL"
+            );
         }
 
-        Debug.Log(
-            "DIÁLOGO CERRADO"
-        );
+        Debug.Log("DIÁLOGO CERRADO");
     }
 
     IEnumerator FadeOutDialogo()

@@ -14,6 +14,12 @@ public class UIIconoPowerUp : MonoBehaviour
 
     void Awake()
     {
+        if (imagenPowerUp == null)
+        {
+            Debug.LogError("imagenPowerUp NO ASIGNADA");
+            return;
+        }
+
         imagenPowerUp.enabled = false;
     }
 
@@ -29,6 +35,18 @@ public class UIIconoPowerUp : MonoBehaviour
 
     IEnumerator RutinaPowerUp()
     {
+        if (imagenPowerUp == null)
+        {
+            Debug.LogError("imagenPowerUp ES NULL");
+            yield break;
+        }
+
+        if (iconoPowerUp == null)
+        {
+            Debug.LogError("iconoPowerUp ES NULL");
+            yield break;
+        }
+
         imagenPowerUp.sprite = iconoPowerUp;
 
         imagenPowerUp.enabled = true;
