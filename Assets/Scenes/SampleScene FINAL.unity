@@ -12757,6 +12757,7 @@ MonoBehaviour:
   distanciaActivacion: 2
   duracionMaxima: 10
   duracionFade: 0.5
+  timerTrigger: {fileID: 0}
   powerUpAlCerrar: {fileID: 0}
   profesorInteractSound:
     Guid:
@@ -12811,6 +12812,7 @@ MonoBehaviour:
   distanciaActivacion: 2
   duracionMaxima: 10
   duracionFade: 0.5
+  timerTrigger: {fileID: 0}
   powerUpAlCerrar: {fileID: 0}
   profesorInteractSound:
     Guid:
@@ -23487,6 +23489,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 64579887}
     m_Modifications:
+    - target: {fileID: 1010148536146824824, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1744335685880193345, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
       propertyPath: m_Name
       value: CanvaProfesores
@@ -23501,11 +23507,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 3d380534f1491ff44a787da60042aa3a, type: 3}
     - target: {fileID: 5331765092629342300, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5651156866593287128, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7132853858058222062, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7511476578718487741, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
       propertyPath: m_Pivot.x
@@ -23605,7 +23615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7614216892849263643, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8020392561229269736, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
       propertyPath: m_LocalScale.x
@@ -23695,9 +23705,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 41.512
       objectReference: {fileID: 0}
+    - target: {fileID: 8652061302573204392, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8904341103300420526, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -63346,6 +63360,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.010000003, y: 0.01, z: 0.01}
   m_Center: {x: -0.000000014901161, y: -0.0000000013969839, z: 0}
+--- !u!114 &556587073 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5801308697858297420, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
+  m_PrefabInstance: {fileID: 219920966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!65 &558188718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -95230,6 +95255,7 @@ MonoBehaviour:
   distanciaActivacion: 2
   duracionMaxima: 11
   duracionFade: 0.5
+  timerTrigger: {fileID: 0}
   powerUpAlCerrar: {fileID: 0}
   profesorInteractSound:
     Guid:
@@ -137457,6 +137483,7 @@ MonoBehaviour:
   distanciaActivacion: 2
   duracionMaxima: 10
   duracionFade: 0.5
+  timerTrigger: {fileID: 0}
   powerUpAlCerrar: {fileID: 0}
   profesorInteractSound:
     Guid:
@@ -142227,6 +142254,7 @@ MonoBehaviour:
   distanciaActivacion: 2
   duracionMaxima: 10
   duracionFade: 0.5
+  timerTrigger: {fileID: 0}
   powerUpAlCerrar: {fileID: 0}
   profesorInteractSound:
     Guid:
@@ -144284,6 +144312,7 @@ MonoBehaviour:
   distanciaActivacion: 2
   duracionMaxima: 9
   duracionFade: 0.5
+  timerTrigger: {fileID: 0}
   powerUpAlCerrar: {fileID: 1780274365}
   profesorInteractSound:
     Guid:
@@ -164235,17 +164264,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c6dbfb60566e74198a9df855469129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProfesorInteractivo
-  canvasProfesor: {fileID: 0}
-  fadeCanvas: {fileID: 0}
-  textoDialogo: {fileID: 0}
+  canvasProfesor: {fileID: 1732290691}
+  fadeCanvas: {fileID: 1732290693}
+  textoDialogo: {fileID: 556587073}
   mensaje: "En Modelado 3D construyes personajes y escenarios desde cero. En Animaci\xF3n
     3D y Din\xE1micas les das movimiento y personalidad. Todo cobra vida cuando aprendes
     a controlar el tiempo y el espacio en tres dimensiones."
   velocidadEscritura: 0.03
-  jugador: {fileID: 0}
+  jugador: {fileID: 426085145}
   distanciaActivacion: 2
   duracionMaxima: 10
   duracionFade: 0.5
+  timerTrigger: {fileID: 447880883}
   powerUpAlCerrar: {fileID: 0}
   profesorInteractSound:
     Guid:
@@ -165206,7 +165236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1415627904
 RectTransform:
   m_ObjectHideFlags: 0
@@ -171364,7 +171394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1442811926
 RectTransform:
   m_ObjectHideFlags: 0
@@ -177785,7 +177815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!154 &1527434234
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -209041,6 +209071,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100.00002, y: 99.99999, z: 100.00002}
   m_Center: {x: -0.000061035156, y: 0.0000038146973, z: 0.00012207031}
+--- !u!1 &1732290691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8652061302573204392, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
+  m_PrefabInstance: {fileID: 219920966}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1732290693 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 2036886007380229765, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
+  m_PrefabInstance: {fileID: 219920966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1733523060 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -114795926800130887, guid: 69ca76836a06f9a4499ed6defd057510, type: 3}
@@ -210020,137 +210060,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751122463}
   m_Mesh: {fileID: 3994454256290933762, guid: 00c9c177e828a57439e290aef2a23b3f, type: 3}
---- !u!1001 &1751561744
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 8.929462
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 8.929462
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 8.929462
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.128944
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.512
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 41.435257
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.713573
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.700581
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 271.053
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      propertyPath: m_Name
-      value: Profesor Ceron NIVEL 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1751561747}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e355c45f377054469101c208755f69a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1751561746}
-  m_SourcePrefab: {fileID: 100100000, guid: 1e355c45f377054469101c208755f69a, type: 3}
---- !u!1 &1751561745 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e355c45f377054469101c208755f69a, type: 3}
-  m_PrefabInstance: {fileID: 1751561744}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &1751561746
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751561745}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.05
-  m_Height: 0.19
-  m_Direction: 1
-  m_Center: {x: -0.095, y: 0.03, z: 0.01}
---- !u!114 &1751561747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751561745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae137c8df18d3a8478ac7ca969b258df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ProfesorCambiable
-  canvasDialogo: {fileID: 0}
-  fadeCanvas: {fileID: 0}
-  textoDialogo: {fileID: 0}
-  mensaje: "Mensaje del di\xE1logo."
-  jugador: {fileID: 0}
-  distanciaActivacion: 6
-  velocidadEscritura: 0.02
-  duracionVisible: 8
-  duracionFade: 0.5
-  sonidoDialogo:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
 --- !u!65 &1752258535
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -222993,6 +222902,7 @@ MonoBehaviour:
   distanciaActivacion: 2
   duracionMaxima: 10
   duracionFade: 0.5
+  timerTrigger: {fileID: 0}
   powerUpAlCerrar: {fileID: 0}
   profesorInteractSound:
     Guid:
@@ -234702,6 +234612,7 @@ MonoBehaviour:
   distanciaActivacion: 2
   duracionMaxima: 10
   duracionFade: 0.5
+  timerTrigger: {fileID: 447880883}
   powerUpAlCerrar: {fileID: 1780274365}
   profesorInteractSound:
     Guid:
@@ -236549,6 +236460,7 @@ MonoBehaviour:
   distanciaActivacion: 2
   duracionMaxima: 10
   duracionFade: 0.5
+  timerTrigger: {fileID: 0}
   powerUpAlCerrar: {fileID: 0}
   profesorInteractSound:
     Guid:
@@ -245194,7 +245106,7 @@ MonoBehaviour:
   canvasNivel2: {fileID: 606161900}
   movimientoJugador: {fileID: 1373153112}
   duracion: 6
-  velocidadFade: 2
+  velocidadFade: 1
 --- !u!1001 &2000514859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -268126,7 +268038,6 @@ SceneRoots:
   - {fileID: 1154655029}
   - {fileID: 821193974}
   - {fileID: 911701316}
-  - {fileID: 1751561744}
   - {fileID: 1396063764}
   - {fileID: 73252244}
   - {fileID: 1901425515}

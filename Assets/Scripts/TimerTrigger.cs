@@ -18,6 +18,7 @@ public class TimerTrigger : MonoBehaviour
     private float tiempoRestante;
     private bool timerActivo = false;
     private bool musicaIniciada = false;
+    private bool pausado = false;
 
     private void Start()
     {
@@ -27,7 +28,7 @@ public class TimerTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (!timerActivo) return;
+        if (!timerActivo || pausado) return;
 
         tiempoRestante -= Time.deltaTime;
 
@@ -75,6 +76,16 @@ public class TimerTrigger : MonoBehaviour
         musicaTiempoInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
         Debug.Log("MÚSICA 2 DETENIDA");
+    }
+
+    public void PausarTemporizador()
+    {
+        pausado = true;
+    }
+
+    public void ReanudarTemporizador()
+    {
+        pausado = false;
     }
 
     private void OnDestroy()
