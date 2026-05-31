@@ -19,6 +19,7 @@ public class ProfesorInteractivo : MonoBehaviour
 
     [Header("Texto diálogo")]
     public TMP_Text textoDialogo;
+
     [TextArea(3, 6)]
     public string mensaje =
         "Hola, soy Freddy. Bienvenido al laboratorio. Sigue las instrucciones para continuar.";
@@ -71,6 +72,7 @@ public class ProfesorInteractivo : MonoBehaviour
             if (textoDialogo == null)
             {
                 Transform txt = canvasPadre.transform.Find("TextoDialogo");
+
                 if (txt != null)
                     textoDialogo = txt.GetComponent<TMP_Text>();
             }
@@ -84,13 +86,9 @@ public class ProfesorInteractivo : MonoBehaviour
 
         if (moveProvider != null)
             velocidadOriginal = moveProvider.moveSpeed;
-<<<<<<< HEAD
 
         yaSeActivo = false;
-=======
->>>>>>> parent of 7eb61c8 (dialogos)
 
-        yaSeActivo = false;
         Debug.Log("Profesor reutilizable listo con soporte FMOD");
     }
 
@@ -144,29 +142,17 @@ public class ProfesorInteractivo : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-<<<<<<< HEAD
         Time.timeScale = 0f;
 
-=======
-        // Control de Cursor y Tiempo (Main Logic)
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        Time.timeScale = 0f;
-
-        // Detener Movimiento (Rama Logic)
->>>>>>> parent of 7eb61c8 (dialogos)
         if (moveProvider != null)
             moveProvider.moveSpeed = 0f;
 
         if (turnProvider != null)
             turnProvider.enabled = false;
 
-<<<<<<< HEAD
         if (timerTrigger != null)
             timerTrigger.PausarTemporizador();
 
-=======
->>>>>>> parent of 7eb61c8 (dialogos)
         StartCoroutine(FadeInDialogo());
 
         Debug.Log("DIÁLOGO ACTIVADO");
@@ -198,20 +184,6 @@ public class ProfesorInteractivo : MonoBehaviour
         if (timerTrigger != null)
             timerTrigger.ReanudarTemporizador();
 
-<<<<<<< HEAD
-=======
-        // Restaurar movimiento
-        if (moveProvider != null)
-            moveProvider.moveSpeed = velocidadOriginal;
-
-        if (turnProvider != null)
-            turnProvider.enabled = true;
-
-        // Esperar 1 frame REAL
-        yield return null;
-
-        // Activar beneficio
->>>>>>> parent of 7eb61c8 (dialogos)
         if (powerUpAlCerrar != null)
             powerUpAlCerrar.ActivarBeneficio();
 
@@ -231,25 +203,19 @@ public class ProfesorInteractivo : MonoBehaviour
         canvasProfesor.SetActive(true);
 
         float tiempo = 0f;
+
         while (tiempo < duracionFade)
         {
             tiempo += Time.unscaledDeltaTime;
-<<<<<<< HEAD
 
             fadeCanvas.alpha =
                 Mathf.Lerp(0f, 1f, tiempo / duracionFade);
 
-=======
-            fadeCanvas.alpha = Mathf.Lerp(0f, 1f, tiempo / duracionFade);
->>>>>>> parent of 7eb61c8 (dialogos)
             yield return null;
         }
+
         fadeCanvas.alpha = 1f;
 
-<<<<<<< HEAD
-=======
-        // TEXTO ESCRIBIÉNDOSE (Solo si hay referencia)
->>>>>>> parent of 7eb61c8 (dialogos)
         if (textoDialogo != null)
             StartCoroutine(EscribirTexto());
     }
@@ -257,36 +223,33 @@ public class ProfesorInteractivo : MonoBehaviour
     IEnumerator EscribirTexto()
     {
         textoDialogo.text = "";
+
         foreach (char letra in mensaje)
         {
             textoDialogo.text += letra;
-<<<<<<< HEAD
 
             yield return new WaitForSecondsRealtime(
                 velocidadEscritura
             );
-=======
-            yield return new WaitForSecondsRealtime(velocidadEscritura);
->>>>>>> parent of 7eb61c8 (dialogos)
         }
     }
 
     IEnumerator FadeOutDialogo()
     {
         float tiempo = 0f;
+
         while (tiempo < duracionFade)
         {
             tiempo += Time.unscaledDeltaTime;
-<<<<<<< HEAD
 
             fadeCanvas.alpha =
                 Mathf.Lerp(1f, 0f, tiempo / duracionFade);
 
-=======
-            fadeCanvas.alpha = Mathf.Lerp(1f, 0f, tiempo / duracionFade);
->>>>>>> parent of 7eb61c8 (dialogos)
             yield return null;
         }
+
+        fadeCanvas.alpha = 0f;
+
         canvasProfesor.SetActive(false);
     }
 
@@ -299,14 +262,10 @@ public class ProfesorInteractivo : MonoBehaviour
             return false;
 
         bool botonA = false;
-<<<<<<< HEAD
 
         return rightHand.TryGetFeatureValue(
             XRCommonUsages.primaryButton,
             out botonA
         ) && botonA;
-=======
-        return rightHand.TryGetFeatureValue(XRCommonUsages.primaryButton, out botonA) && botonA;
->>>>>>> parent of 7eb61c8 (dialogos)
     }
 }
