@@ -25,8 +25,6 @@ public class UIIconoPowerUp : MonoBehaviour
 
     public void MostrarPowerUp()
     {
-        Debug.Log("MOSTRAR POWERUP LLAMADO");
-
         if (rutina != null)
             StopCoroutine(rutina);
 
@@ -36,27 +34,22 @@ public class UIIconoPowerUp : MonoBehaviour
     IEnumerator RutinaPowerUp()
     {
         if (imagenPowerUp == null)
-        {
-            Debug.LogError("imagenPowerUp ES NULL");
             yield break;
-        }
 
         if (iconoPowerUp == null)
-        {
-            Debug.LogError("iconoPowerUp ES NULL");
             yield break;
-        }
 
         imagenPowerUp.sprite = iconoPowerUp;
 
+        imagenPowerUp.gameObject.SetActive(true);
         imagenPowerUp.enabled = true;
 
-        Debug.Log("ICONO ACTIVADO");
-
-        yield return new WaitForSecondsRealtime(duracionVisible);
+        yield return new WaitForSecondsRealtime(
+            duracionVisible
+        );
 
         imagenPowerUp.enabled = false;
 
-        Debug.Log("ICONO DESACTIVADO");
+        imagenPowerUp.gameObject.SetActive(false);
     }
 }

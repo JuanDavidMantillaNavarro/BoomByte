@@ -28,6 +28,12 @@ public class TimerTrigger : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(
+            "Timer activo: " +
+            timerActivo +
+            " | Pausado: " +
+            pausado
+        );
         if (!timerActivo || pausado) return;
 
         tiempoRestante -= Time.deltaTime;
@@ -81,11 +87,21 @@ public class TimerTrigger : MonoBehaviour
     public void PausarTemporizador()
     {
         pausado = true;
+
+        Debug.Log(
+            "PAUSAR LLAMADO - pausado = " +
+            pausado
+        );
     }
 
     public void ReanudarTemporizador()
     {
         pausado = false;
+
+        Debug.Log(
+            "REANUDAR LLAMADO - pausado = " +
+            pausado
+        );
     }
 
     private void OnDestroy()

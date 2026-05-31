@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
+using UnityEngine.UI;
 using TMPro;
 using FMODUnity;
 
@@ -228,19 +229,34 @@ public class ProfesorInteractivo : MonoBehaviour
         {
             Debug.Log("UI POWERUP ENCONTRADO");
 
+            Transform actual = uiPowerUp.transform;
+
+            while (actual != null)
+            {
+                actual.gameObject.SetActive(true);
+                actual = actual.parent;
+            }
+
             uiPowerUp.gameObject.SetActive(true);
 
-            Debug.Log(
-                "GAMEOBJECT ACTIVO: " +
-                uiPowerUp.gameObject
-                    .activeInHierarchy
-            );
+            Image imagen =
+                uiPowerUp.imagenPowerUp;
+
+            if (imagen != null)
+            {
+                imagen.gameObject.SetActive(true);
+                imagen.enabled = true;
+
+                if (uiPowerUp.iconoPowerUp != null)
+                {
+                    imagen.sprite =
+                        uiPowerUp.iconoPowerUp;
+                }
+            }
 
             uiPowerUp.MostrarPowerUp();
 
-            Debug.Log(
-                "MOSTRAR POWERUP EJECUTADO"
-            );
+            Debug.Log("ICONO FORZADO");
         }
         else
         {
