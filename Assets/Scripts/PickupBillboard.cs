@@ -34,7 +34,7 @@ public class PickupBillboard : XRGrabInteractable
     public TMP_Text textoMensaje;
 
     [Header("Duraciones")]
-    public float duracionFondo = 10f;
+    public float duracionFondo = 8f;
     public float duracionFade = 2f;
 
     [Header("Timer")]

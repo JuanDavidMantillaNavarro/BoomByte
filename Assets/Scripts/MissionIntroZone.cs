@@ -17,8 +17,8 @@ public class MissionIntroZone : MonoBehaviour
     public GameObject imagenPatroclo;
 
     [Header("Duraciones")]
-    public float duracionBienvenida = 5f;
-    public float duracionMensaje = 13f;
+    public float duracionBienvenida = 3f;
+    public float duracionMensaje = 9f;
     public float duracionFade = 1f;
 
     private bool yaSeMostro = false;
