@@ -4,179 +4,170 @@ using UnityEngine.UI;
 
 public class PrimerEnemigoTutorial : MonoBehaviour
 {
-    [Header("Canvas Intro")]
-    public GameObject canvasPrimerEnemigo;
+    [Header("Jugador")]
+    public Transform jugador;
 
-    [Header("Canvas Efecto")]
-    public GameObject canvasEfecto;
+    [Header("Distancia")]
+    public float distanciaActivacion = 2f;
 
-    [Header("Fade Negro")]
-    public Image fondoNegro;
+    [Header("Movimiento Real")]
+    public CharacterController characterController;
+    public MonoBehaviour movimientoScript;
 
-    [Header("Duraciones")]
-    public float duracionIntro = 8f;
-    public float duracionEfecto = 5f;
+    [Header("UI")]
+    public GameObject fondoNegro;
+    public GameObject imagenPrimerEnemigo;
+    public GameObject imagenEfecto;
 
-    [Header("Fade")]
-    public float velocidadFade = 2f;
+    [Header("Tiempo")]
+    public float duracionMensajeEnemigo = 6f;
+    public float duracionMensajeEfecto = 4f;
+
+    [Header("Movimiento VR")]
+    public MonoBehaviour locomotionProvider;
+    public MonoBehaviour turnProvider;
 
     private bool activado = false;
 
-    private CanvasGroup introGroup;
-    private CanvasGroup efectoGroup;
-    private CanvasGroup fondoGroup;
-
     void Start()
     {
-        PrepararCanvas(canvasPrimerEnemigo, out introGroup);
-        PrepararCanvas(canvasEfecto, out efectoGroup);
+        Debug.Log("[Tutorial] Start");
 
+        // SOLO ocultar la interfaz al iniciar
         if (fondoNegro != null)
-        {
-            fondoGroup =
-                fondoNegro.GetComponent<CanvasGroup>();
+            fondoNegro.SetActive(false);
 
-            if (fondoGroup == null)
-                fondoGroup =
-                    fondoNegro.gameObject.AddComponent<CanvasGroup>();
+        if (imagenPrimerEnemigo != null)
+            imagenPrimerEnemigo.SetActive(false);
 
-            fondoGroup.alpha = 0f;
-
-            fondoNegro.gameObject.SetActive(false);
-        }
+        if (imagenEfecto != null)
+            imagenEfecto.SetActive(false);
     }
 
-    void PrepararCanvas(
-        GameObject canvas,
-        out CanvasGroup group
-    )
+    void Update()
     {
-        group = null;
-
-        if (canvas == null) return;
-
-        group = canvas.GetComponent<CanvasGroup>();
-
-        if (group == null)
-            group = canvas.AddComponent<CanvasGroup>();
-
-        group.alpha = 0f;
-
-        canvas.SetActive(false);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.CompareTag("Player"))
-            return;
-
         if (activado)
             return;
 
-        activado = true;
+        if (jugador == null)
+            return;
 
-        StartCoroutine(
-            SecuenciaTutorial()
-        );
+        float distancia =
+            Vector3.Distance(
+                transform.position,
+                jugador.position
+            );
+
+        if (distancia <= distanciaActivacion)
+        {
+            Debug.Log(
+                "[Tutorial] Jugador cerca. Distancia = "
+                + distancia
+            );
+
+            activado = true;
+
+            StartCoroutine(
+                SecuenciaTutorial()
+            );
+        }
     }
 
     IEnumerator SecuenciaTutorial()
     {
-        fondoNegro.gameObject.SetActive(true);
+        Debug.Log("PASO 1");
 
-        // =========================
-        // PRIMER ENEMIGO
-        // =========================
-
-        canvasPrimerEnemigo.SetActive(true);
-
-        yield return StartCoroutine(
-            FadeCanvas(
-                introGroup,
-                0f,
-                1f
-            )
-        );
-
-        yield return StartCoroutine(
-            FadeCanvas(
-                fondoGroup,
-                0f,
-                0.8f
-            )
-        );
-
-        yield return new WaitForSeconds(
-            duracionIntro
-        );
-
-        yield return StartCoroutine(
-            FadeCanvas(
-                introGroup,
-                1f,
-                0f
-            )
-        );
-
-        canvasPrimerEnemigo.SetActive(false);
-
-        // =========================
-        // EFECTO BLOQUEO CREATIVO
-        // =========================
-
-        canvasEfecto.SetActive(true);
-
-        yield return StartCoroutine(
-            FadeCanvas(
-                efectoGroup,
-                0f,
-                1f
-            )
-        );
-
-        yield return new WaitForSeconds(
-            duracionEfecto
-        );
-
-        yield return StartCoroutine(
-            FadeCanvas(
-                efectoGroup,
-                1f,
-                0f
-            )
-        );
-
-        yield return StartCoroutine(
-            FadeCanvas(
-                fondoGroup,
-                0.8f,
-                0f
-            )
-        );
-
-        canvasEfecto.SetActive(false);
-
-        fondoNegro.gameObject.SetActive(false);
-    }
-
-    IEnumerator FadeCanvas(
-        CanvasGroup group,
-        float inicio,
-        float final
-    )
-    {
-        float t = 0f;
-
-        while (t < 1f)
+        // Pausar timer del juego
+        if (GameController.Instance != null)
         {
-            t += Time.deltaTime * velocidadFade;
-
-            group.alpha =
-                Mathf.Lerp(inicio, final, t);
-
-            yield return null;
+            GameController.Instance.isPaused = true;
+            Debug.Log("GameController pausado");
         }
 
-        group.alpha = final;
+        // Congelar tiempo global
+        Time.timeScale = 0f;
+
+        Debug.Log("TimeScale = 0");
+
+        // Bloquear locomoción XR
+        if (locomotionProvider != null)
+        {
+            locomotionProvider.enabled = false;
+            Debug.Log("Locomotion desactivada");
+        }
+
+        // Bloquear giro por joystick
+        if (turnProvider != null)
+        {
+            turnProvider.enabled = false;
+            Debug.Log("Turn Provider desactivado");
+        }
+
+        // Bloquear script principal de movimiento
+        if (movimientoScript != null)
+        {
+            movimientoScript.enabled = false;
+            Debug.Log("Movimiento Script desactivado");
+        }
+
+        // Bloquear Character Controller
+        if (characterController != null)
+        {
+            characterController.enabled = false;
+            Debug.Log("Character Controller desactivado");
+        }
+
+        // Mostrar fondo negro
+        fondoNegro.SetActive(true);
+
+        // Mostrar primer mensaje
+        imagenPrimerEnemigo.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(
+            duracionMensajeEnemigo
+        );
+
+        // Ocultar primer mensaje
+        imagenPrimerEnemigo.SetActive(false);
+
+        // Mostrar segundo mensaje
+        imagenEfecto.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(
+            duracionMensajeEfecto
+        );
+
+        // Ocultar segundo mensaje
+        imagenEfecto.SetActive(false);
+
+        // Ocultar fondo
+        fondoNegro.SetActive(false);
+
+        Debug.Log("Reactivando controles");
+
+        // Reactivar locomoción
+        if (locomotionProvider != null)
+            locomotionProvider.enabled = true;
+
+        // Reactivar giro
+        if (turnProvider != null)
+            turnProvider.enabled = true;
+
+        // Reactivar movimiento
+        if (movimientoScript != null)
+            movimientoScript.enabled = true;
+
+        // Reactivar CharacterController
+        if (characterController != null)
+            characterController.enabled = true;
+
+        // Reanudar timer
+        if (GameController.Instance != null)
+            GameController.Instance.isPaused = false;
+
+        // Reanudar tiempo global
+        Time.timeScale = 1f;
+
+        Debug.Log("PASO 10 - FIN");
     }
 }
