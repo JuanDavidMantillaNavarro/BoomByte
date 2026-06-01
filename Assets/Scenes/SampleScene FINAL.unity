@@ -23711,6 +23711,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 182825158681203320, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 39.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1010148536146824824, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -23945,11 +23949,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7284870193903558993, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
       propertyPath: m_text
-      value: 'EFECTO ACTIVO: +1 BLOQUE ALCANCE (12s)
-
-
-
-'
+      value: "EFECTO ACTIVO: GU\xCDA A ZONAS PENDIENTES (60s)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284870193903558993, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
+      propertyPath: m_fontSize
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284870193903558993, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7511476578718487741, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
       propertyPath: m_Pivot.x
@@ -40036,7 +40044,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1cdb2a0701b7ed54399cc0d48dd894f2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9f794782dfd7c045af92edef54d6e0b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -144438,8 +144446,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIIconoPowerUp
   imagenPowerUp: {fileID: 346529084}
-  iconoPowerUp: {fileID: 21300000, guid: 1cdb2a0701b7ed54399cc0d48dd894f2, type: 3}
-  duracionVisible: 12
+  iconoPowerUp: {fileID: 21300000, guid: f9f794782dfd7c045af92edef54d6e0b, type: 3}
+  duracionVisible: 60
 --- !u!114 &1166556995
 MonoBehaviour:
   m_ObjectHideFlags: 0
