@@ -47,6 +47,15 @@ public class TemporaryInputInvertEffect : MonoBehaviour
 
         if (panelEfecto != null)
             panelEfecto.SetActive(true);
+        Debug.Log(
+    "Activo = " +
+    panelEfecto.activeInHierarchy
+);
+
+        Debug.Log(
+            "Posicion = " +
+            panelEfecto.transform.position
+        );
 
         AplicarInversion();
 
