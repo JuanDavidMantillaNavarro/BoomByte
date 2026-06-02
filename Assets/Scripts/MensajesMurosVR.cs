@@ -14,6 +14,9 @@ public class MensajesMurosVR : MonoBehaviour
     [Header("Configuración Nivel 2")]
     public string tagDestructibleNivel2 = "Destructible2";
 
+    [Header("Configuración Nivel Final")]
+    public string tagDestructibleNivel3 = "Destructible3";
+
     [Header("Tiempo")]
     public float tiempoMensaje = 4f;
     public float intervaloRevision = 0.5f;
@@ -29,6 +32,12 @@ public class MensajesMurosVR : MonoBehaviour
     private int cantidadAnteriorNivel2;
     private bool primerMensajeNivel2 = false;
     private bool nivel2Completado = false;
+
+    // ================= NIVEL 3 =================
+
+    private int cantidadAnteriorNivel3;
+    private bool primerMensajeNivel3 = false;
+    private bool nivel3Completado = false;
 
     void Start()
     {
@@ -68,12 +77,26 @@ public class MensajesMurosVR : MonoBehaviour
             0f,
             intervaloRevision
         );
+
+        GameObject[] destructiblesNivel3 =
+          GameObject.FindGameObjectsWithTag(
+        tagDestructibleNivel3
+        );
+
+        cantidadAnteriorNivel3 =
+            destructiblesNivel3.Length;
+
+        Debug.Log(
+            "Nivel 3 paredes: " +
+            cantidadAnteriorNivel3
+        );
     }
 
     void RevisarMuros()
     {
         RevisarNivel1();
         RevisarNivel2();
+        RevisarNivel3();
     }
 
     // =====================================================
@@ -230,6 +253,82 @@ public class MensajesMurosVR : MonoBehaviour
             }
         }
     }
+
+    // =====================================================
+    // NIVEL 3 (FINAL)
+    // =====================================================
+
+    void RevisarNivel3()
+    {
+        if (nivel3Completado) return;
+
+        GameObject[] destructibles =
+            GameObject.FindGameObjectsWithTag(
+                tagDestructibleNivel3
+            );
+
+        int cantidadActual =
+            destructibles.Length;
+
+        if (cantidadActual < cantidadAnteriorNivel3)
+        {
+            cantidadAnteriorNivel3 =
+                cantidadActual;
+
+            Debug.Log(
+                "Nivel 3 restantes: " +
+                cantidadActual
+            );
+
+            // Primera pared
+            if (!primerMensajeNivel3)
+            {
+                primerMensajeNivel3 = true;
+
+                MostrarMensaje(
+                    "Destruiste la primera pared del nivel final."
+                );
+
+                return;
+            }
+
+            // Quedan paredes
+            if (cantidadActual > 0)
+            {
+                if (cantidadActual == 1)
+                {
+                    MostrarMensaje(
+                        "Solo queda 1 pared destructible.\n" +
+                        "Busca la última pared para restaurar completamente el sistema."
+                    );
+                }
+                else
+                {
+                    MostrarMensaje(
+                        "Destruiste una pared.\n" +
+                        "Restan " +
+                        cantidadActual +
+                        " paredes destructibles del nivel final."
+                    );
+                }
+            }
+            else
+            {
+                nivel3Completado = true;
+
+                MostrarMensaje(
+                    "¡Felicidades!\n" +
+                    "Ya destruiste todas las paredes destructibles.\n" +
+                    "Esta era la última pared."
+                );
+
+                Debug.Log(
+                    "Nivel 3 completado"
+                );
+            }
+        }
+    }
+
 
     // =====================================================
     // UI

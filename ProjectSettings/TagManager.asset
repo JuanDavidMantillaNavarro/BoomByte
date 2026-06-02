@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Destructible2
   - objeto
+  - Destructible3
   layers:
   - Default
   - TransparentFX
