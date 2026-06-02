@@ -147,8 +147,13 @@ public class GameController : MonoBehaviour
 
     public void Victoria()
     {
-        if (gameEnded) return;
+        if (gameEnded)
+            return;
+
+        gameEnded = true;
+
         Debug.Log("GANASTE");
+
         uiManager.MostrarVictoria();
     }
 

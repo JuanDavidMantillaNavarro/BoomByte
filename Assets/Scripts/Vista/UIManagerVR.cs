@@ -12,6 +12,7 @@ public class UIManagerVR : MonoBehaviour
     
     [Header("Timer")]
     public TextMeshProUGUI timerText;
+    public GameObject timerContainer;
 
     [Header("Panels")]
     public GameObject winPanel;
@@ -90,5 +91,17 @@ public class UIManagerVR : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         vignetteController.EndTunnelingVignette(explosionProvider);
+    }
+
+    public void OcultarTimer()
+    {
+        if (timerContainer != null)
+            timerContainer.SetActive(false);
+    }
+
+    public void MostrarTimer()
+    {
+        if (timerContainer != null)
+            timerContainer.SetActive(true);
     }
 }

@@ -50514,7 +50514,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 947992851}
   - {fileID: 215738796}
   - {fileID: 667564618}
   - {fileID: 110513933}
@@ -73570,7 +73569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 658305499}
   - component: {fileID: 658305501}
-  - component: {fileID: 658305500}
+  - component: {fileID: 658305502}
   m_Layer: 0
   m_Name: Zona_Victoria
   m_TagString: Untagged
@@ -73587,24 +73586,12 @@ Transform:
   m_GameObject: {fileID: 658305498}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -34.51, y: 0.15, z: 25.4}
+  m_LocalPosition: {x: -35.16, y: 0.15, z: 27.25}
   m_LocalScale: {x: 2.3092206, y: 5.934999, z: 5.360644}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &658305500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658305498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4333b551070d9d34e84e36dc675bdd44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!65 &658305501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73626,6 +73613,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &658305502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658305498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17b83af96b2fbdb49be66a8c3e2454c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerPanelInformacion
+  panelInfo: {fileID: 1315918911}
 --- !u!1 &659489191
 GameObject:
   m_ObjectHideFlags: 0
@@ -120138,57 +120138,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.008444165, y: 0.019130781, z: 0.025633698}
   m_Center: {x: 0, y: 9.313226e-10, z: 0.000000029802322}
---- !u!1 &947992850
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 947992851}
-  - component: {fileID: 947992852}
-  m_Layer: 5
-  m_Name: VictoryUIController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &947992851
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947992850}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 421938456}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &947992852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947992850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 501507e51384b0146bbf6c5f4891d7a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VictoryUIController
-  panelVictoria: {fileID: 1315918905}
-  puntoInicio: {fileID: 339559023}
-  player: {fileID: 64579887}
 --- !u!1001 &948124385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -158958,13 +158907,15 @@ GameObject:
   - component: {fileID: 1315918908}
   - component: {fileID: 1315918907}
   - component: {fileID: 1315918906}
+  - component: {fileID: 1315918911}
+  - component: {fileID: 1315918910}
   m_Layer: 5
   m_Name: PanelVictoria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1315918906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159038,6 +158989,33 @@ RectTransform:
   m_AnchoredPosition: {x: 11.65, y: 6.73}
   m_SizeDelta: {x: 196.25, y: 113.46}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1315918910
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315918905}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1315918911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315918905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501507e51384b0146bbf6c5f4891d7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PanelInformacionNivel
+  panel: {fileID: 1315918905}
+  canvasGroup: {fileID: 1315918910}
+  velocidadFade: 2
 --- !u!65 &1316603373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -191561,6 +191539,7 @@ GameObject:
   - component: {fileID: 1616090915}
   - component: {fileID: 1616090914}
   - component: {fileID: 1616090912}
+  - component: {fileID: 1616090918}
   m_Layer: 0
   m_Name: Zona despedida
   m_TagString: Untagged
@@ -191678,6 +191657,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1616090918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616090911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4333b551070d9d34e84e36dc675bdd44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZonaVictoria
 --- !u!1 &1616945264
 GameObject:
   m_ObjectHideFlags: 0
@@ -205569,6 +205560,7 @@ MonoBehaviour:
   vignetteController: {fileID: 1373153111}
   explosionProvider: {fileID: 1373153109}
   timerText: {fileID: 447880881}
+  timerContainer: {fileID: 447880879}
   winPanel: {fileID: 1315918905}
   losePanel: {fileID: 1740404362}
   easterEggText: {fileID: 7102169080002262468}
