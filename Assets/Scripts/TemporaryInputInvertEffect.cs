@@ -71,6 +71,8 @@ public class TemporaryInputInvertEffect : MonoBehaviour
         }
     }
 
+
+
     IEnumerator InvertirTemporalmente()
     {
         AplicarInversion();
@@ -156,5 +158,16 @@ public class TemporaryInputInvertEffect : MonoBehaviour
 
         if (turnAction != null)
             turnAction.action.RemoveAllBindingOverrides();
+    }
+
+    void OnDisable()
+    {
+        StopAllCoroutines();
+
+        if (panelEfecto != null)
+            panelEfecto.SetActive(false);
+
+        if (canvasGroup != null)
+            canvasGroup.alpha = 0f;
     }
 }
