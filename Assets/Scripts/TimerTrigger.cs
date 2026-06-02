@@ -28,12 +28,7 @@ public class TimerTrigger : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(
-            "Timer activo: " +
-            timerActivo +
-            " | Pausado: " +
-            pausado
-        );
+
         if (!timerActivo || pausado) return;
 
         tiempoRestante -= Time.deltaTime;

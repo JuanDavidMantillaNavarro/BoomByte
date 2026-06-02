@@ -11,78 +11,66 @@ public class EnemyAlertDetector : MonoBehaviour
 
     [Header("UI")]
     public GameObject panelAlerta;
-    public CanvasGroup fadeCanvas;
 
     [Header("Tiempo")]
     public float duracionVisible = 2f;
-    public float duracionFade = 1f;
 
     private bool alertaYaMostrada = false;
-    private bool mostrandoAlerta = false;
 
     void Start()
     {
+        Debug.Log("[ALERTA] Start");
+
         if (panelAlerta != null)
             panelAlerta.SetActive(false);
-
-        if (fadeCanvas != null)
-            fadeCanvas.alpha = 0f;
-
-        Debug.Log("Detector de alerta iniciado");
     }
 
     void Update()
     {
-        if (player == null) return;
+        if (player == null)
+            return;
 
-        if (alertaYaMostrada) return;
+        if (alertaYaMostrada)
+            return;
 
-        float distancia = Vector3.Distance(
-            transform.position,
-            player.position
-        );
+        float distancia =
+            Vector3.Distance(
+                transform.position,
+                player.position
+            );
 
-        if (distancia <= distanciaDeteccion && !mostrandoAlerta)
+        if (distancia <= distanciaDeteccion)
         {
-            StartCoroutine(MostrarAlertaTemporal());
+            alertaYaMostrada = true;
+
+            Debug.Log(
+                "[ALERTA] Jugador detectado"
+            );
+
+            StartCoroutine(
+                MostrarAlerta()
+            );
         }
     }
 
-    IEnumerator MostrarAlertaTemporal()
+    IEnumerator MostrarAlerta()
     {
-        mostrandoAlerta = true;
-        alertaYaMostrada = true;
-
-        Debug.Log("ALERTA: enemigo detectado");
+        Debug.Log(
+            "[ALERTA] Mostrando imagen"
+        );
 
         if (panelAlerta != null)
             panelAlerta.SetActive(true);
 
-        if (fadeCanvas != null)
-            fadeCanvas.alpha = 1f;
-
-        yield return new WaitForSeconds(duracionVisible);
-
-        float tiempo = 0f;
-
-        while (tiempo < duracionFade)
-        {
-            tiempo += Time.deltaTime;
-
-            if (fadeCanvas != null)
-            {
-                fadeCanvas.alpha =
-                    Mathf.Lerp(1f, 0f, tiempo / duracionFade);
-            }
-
-            yield return null;
-        }
+        yield return new WaitForSeconds(
+            duracionVisible
+        );
 
         if (panelAlerta != null)
             panelAlerta.SetActive(false);
 
-        mostrandoAlerta = false;
-
-        Debug.Log("ALERTA ocultada definitivamente");
+        Debug.Log(
+            "[ALERTA] Ocultada"
+        );
     }
 }

@@ -5401,9 +5401,7 @@ MonoBehaviour:
   player: {fileID: 426085145}
   distanciaDeteccion: 4
   panelAlerta: {fileID: 530817484}
-  fadeCanvas: {fileID: 530817486}
   duracionVisible: 2
-  duracionFade: 1
 --- !u!1001 &9034732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16582,9 +16580,7 @@ MonoBehaviour:
   moveAction: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   turnAction: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   panelEfecto: {fileID: 505391298}
-  fadeCanvas: {fileID: 505391299}
-  duracionEfecto: 9
-  duracionFade: 1
+  duracionEfecto: 5
 --- !u!114 &152288429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16597,12 +16593,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e64196a2b82d4b44ad808802a86fea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAlertDetector
-  player: {fileID: 1373153113}
-  distanciaDeteccion: 4
+  player: {fileID: 426085145}
+  distanciaDeteccion: 3
   panelAlerta: {fileID: 530817484}
-  fadeCanvas: {fileID: 530817486}
   duracionVisible: 2
-  duracionFade: 1
 --- !u!65 &155227178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19978,9 +19972,7 @@ MonoBehaviour:
   player: {fileID: 426085145}
   distanciaDeteccion: 4
   panelAlerta: {fileID: 530817484}
-  fadeCanvas: {fileID: 530817486}
   duracionVisible: 1
-  duracionFade: 1
 --- !u!114 &182900069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20010,9 +20002,7 @@ MonoBehaviour:
   moveAction: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   turnAction: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   panelEfecto: {fileID: 505391298}
-  fadeCanvas: {fileID: 505391299}
   duracionEfecto: 5
-  duracionFade: 1
 --- !u!54 &182900071
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -56446,11 +56436,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4217852477970405717, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
   m_PrefabInstance: {fileID: 505391296}
   m_PrefabAsset: {fileID: 0}
---- !u!225 &505391299 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 6579656430613814083, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
-  m_PrefabInstance: {fileID: 505391296}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &505391300 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5200757600723790774, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
@@ -62900,11 +62885,6 @@ Transform:
 --- !u!1 &530817484 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1788673387941717508, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
-  m_PrefabInstance: {fileID: 505391296}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &530817486 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 9075262895404840410, guid: bd23a92fb03e91748824a3fbb88d199a, type: 3}
   m_PrefabInstance: {fileID: 505391296}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &533237082
@@ -84494,9 +84474,7 @@ MonoBehaviour:
   moveAction: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   turnAction: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   panelEfecto: {fileID: 505391298}
-  fadeCanvas: {fileID: 505391299}
   duracionEfecto: 9
-  duracionFade: 1
 --- !u!114 &701798117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84512,9 +84490,7 @@ MonoBehaviour:
   player: {fileID: 426085145}
   distanciaDeteccion: 4
   panelAlerta: {fileID: 530817484}
-  fadeCanvas: {fileID: 530817486}
   duracionVisible: 2
-  duracionFade: 1
 --- !u!65 &703006191
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -179389,9 +179365,7 @@ MonoBehaviour:
   player: {fileID: 426085145}
   distanciaDeteccion: 4
   panelAlerta: {fileID: 530817484}
-  fadeCanvas: {fileID: 530817486}
   duracionVisible: 1
-  duracionFade: 1
 --- !u!114 &1512140149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179421,9 +179395,7 @@ MonoBehaviour:
   moveAction: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   turnAction: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   panelEfecto: {fileID: 505391298}
-  fadeCanvas: {fileID: 505391299}
   duracionEfecto: 5
-  duracionFade: 1
 --- !u!54 &1512140151
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -225521,9 +225493,7 @@ MonoBehaviour:
   player: {fileID: 426085145}
   distanciaDeteccion: 4
   panelAlerta: {fileID: 530817484}
-  fadeCanvas: {fileID: 530817486}
   duracionVisible: 2
-  duracionFade: 1
 --- !u!1 &1828832909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: acce7ec0909dbd4498daf46b61256936, type: 3}
@@ -230335,7 +230305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1873832328
 RectTransform:
   m_ObjectHideFlags: 0
@@ -268501,6 +268471,10 @@ PrefabInstance:
     - target: {fileID: 759964592940362795, guid: eea07ae9abf719649a95717df5dc69d7, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065496842111143437, guid: eea07ae9abf719649a95717df5dc69d7, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1073456993887724847, guid: eea07ae9abf719649a95717df5dc69d7, type: 3}
       propertyPath: m_Constraints

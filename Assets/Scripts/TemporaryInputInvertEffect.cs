@@ -4,38 +4,41 @@ using UnityEngine.InputSystem;
 
 public class TemporaryInputInvertEffect : MonoBehaviour
 {
-    [Header("Input Actions (nuevo sistema)")]
+    [Header("Input")]
     public InputActionReference moveAction;
     public InputActionReference turnAction;
 
     [Header("UI")]
     public GameObject panelEfecto;
-    public CanvasGroup fadeCanvas;
 
     [Header("Tiempo")]
     public float duracionEfecto = 5f;
-    public float duracionFade = 1f;
 
     private bool efectoActivo = false;
 
-    private void Start()
+    void Start()
     {
+        Debug.Log("[INVERTIDO] Start");
+
         if (panelEfecto != null)
             panelEfecto.SetActive(false);
-
-        Debug.Log("Sistema de inversi�n listo");
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (efectoActivo) return;
+        if (efectoActivo)
+            return;
 
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("JUGADOR TOC� ENEMIGO");
+        if (!other.CompareTag("Player"))
+            return;
 
-            StartCoroutine(InvertirTemporalmente());
-        }
+        Debug.Log(
+            "[INVERTIDO] Player detectado"
+        );
+
+        StartCoroutine(
+            InvertirTemporalmente()
+        );
     }
 
     IEnumerator InvertirTemporalmente()
@@ -45,47 +48,26 @@ public class TemporaryInputInvertEffect : MonoBehaviour
         if (panelEfecto != null)
             panelEfecto.SetActive(true);
 
-        if (fadeCanvas != null)
-            fadeCanvas.alpha = 1f;
-
         AplicarInversion();
 
-        Debug.Log("CONTROLES INVERTIDOS");
+        Debug.Log(
+            "[INVERTIDO] Controles invertidos"
+        );
 
-        // esperar TODO el efecto primero
-        yield return new WaitForSeconds(duracionEfecto);
-
-        // luego hacer fade
-        yield return StartCoroutine(FadeOutUI());
+        yield return new WaitForSeconds(
+            duracionEfecto
+        );
 
         RestaurarInputs();
 
         if (panelEfecto != null)
             panelEfecto.SetActive(false);
 
-        Debug.Log("CONTROLES RESTAURADOS");
+        Debug.Log(
+            "[INVERTIDO] Restaurado"
+        );
 
         efectoActivo = false;
-    }
-
-    IEnumerator FadeOutUI()
-    {
-        if (fadeCanvas == null)
-            yield break;
-
-        float tiempo = 0f;
-
-        while (tiempo < duracionFade)
-        {
-            tiempo += Time.deltaTime;
-
-            fadeCanvas.alpha =
-                Mathf.Lerp(1f, 0f, tiempo / duracionFade);
-
-            yield return null;
-        }
-
-        fadeCanvas.alpha = 0f;
     }
 
     void AplicarInversion()
@@ -96,11 +78,10 @@ public class TemporaryInputInvertEffect : MonoBehaviour
                 0,
                 new InputBinding
                 {
-                    overrideProcessors = "scaleVector2(x=-1,y=-1)"
+                    overrideProcessors =
+                        "scaleVector2(x=-1,y=-1)"
                 }
             );
-
-            Debug.Log("Movimiento invertido");
         }
 
         if (turnAction != null)
@@ -109,11 +90,10 @@ public class TemporaryInputInvertEffect : MonoBehaviour
                 0,
                 new InputBinding
                 {
-                    overrideProcessors = "scaleVector2(x=-1,y=-1)"
+                    overrideProcessors =
+                        "scaleVector2(x=-1,y=-1)"
                 }
             );
-
-            Debug.Log("Rotaci�n invertida");
         }
     }
 
