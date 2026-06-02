@@ -106,4 +106,17 @@ public class EnemyAlertDetector : MonoBehaviour
 
         panelAlerta.SetActive(false);
     }
+
+    void OnDisable()
+    {
+        StopAllCoroutines();
+
+        if (panelAlerta != null)
+            panelAlerta.SetActive(false);
+
+        if (canvasGroup != null)
+            canvasGroup.alpha = 0f;
+
+        activado = false;
+    }
 }

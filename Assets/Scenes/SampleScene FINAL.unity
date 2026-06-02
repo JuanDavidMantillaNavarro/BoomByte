@@ -9284,6 +9284,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: acce7ec0909dbd4498daf46b61256936, type: 3}
   m_PrefabInstance: {fileID: 37654426}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &40962047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 40962048}
+  m_Layer: 5
+  m_Name: UI_Final_Nivel 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &40962048
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40962047}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 258743949}
+  m_Father: {fileID: 1911187461}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &41580434
 GameObject:
   m_ObjectHideFlags: 0
@@ -28676,6 +28712,168 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8bd6d0a13621f124398bd5dabecdfe6b, type: 3}
   m_PrefabInstance: {fileID: 258119658}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &258743948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 258743949}
+  - component: {fileID: 258743954}
+  - component: {fileID: 258743953}
+  - component: {fileID: 258743952}
+  - component: {fileID: 258743951}
+  - component: {fileID: 258743950}
+  - component: {fileID: 258743956}
+  - component: {fileID: 258743955}
+  m_Layer: 5
+  m_Name: PanelVictoriaN1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &258743949
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258743948}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1553769533}
+  m_Father: {fileID: 40962048}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 11.65, y: 6.73}
+  m_SizeDelta: {x: 196.25, y: 113.46}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &258743950
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258743948}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &258743951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258743948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501507e51384b0146bbf6c5f4891d7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PanelInformacionNivel
+  panel: {fileID: 258743948}
+  canvasGroup: {fileID: 258743950}
+  velocidadFade: 2
+--- !u!114 &258743952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258743948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bff8fec81773d46b45f46d75789529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIFollowPlayer
+  playerCamera: {fileID: 64579887}
+  distancia: 1.5
+  alturaOffset: -0.2
+--- !u!114 &258743953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258743948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 37b909461e7529b409db13952cb58090, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &258743954
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258743948}
+  m_CullTransparentMesh: 1
+--- !u!114 &258743955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258743948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576a6e118797893469719d3f36b2fdb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
+  vrCamera: {fileID: 0}
+  mirarALaCamara: 1
+  sortingOrder: 1000
+  ignorarParedes: 1
+--- !u!223 &258743956
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258743948}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &259978342
 GameObject:
   m_ObjectHideFlags: 0
@@ -53229,7 +53427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 472183079}
   m_Layer: 5
-  m_Name: UI_Victoria
+  m_Name: UI_Final_Nivel 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63311,6 +63509,7 @@ GameObject:
   - component: {fileID: 541436688}
   - component: {fileID: 541436687}
   - component: {fileID: 541436686}
+  - component: {fileID: 541436689}
   m_Layer: 0
   m_Name: pasaste final
   m_TagString: Untagged
@@ -63398,6 +63597,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541436684}
   m_CullTransparentMesh: 1
+--- !u!114 &541436689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541436684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576a6e118797893469719d3f36b2fdb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
+  vrCamera: {fileID: 0}
+  mirarALaCamara: 1
+  sortingOrder: 1000
+  ignorarParedes: 1
 --- !u!1 &542237921 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -114795926800130887, guid: 69ca76836a06f9a4499ed6defd057510, type: 3}
@@ -66063,6 +66278,7 @@ GameObject:
   - component: {fileID: 590403380}
   - component: {fileID: 590403379}
   - component: {fileID: 590403378}
+  - component: {fileID: 590403381}
   m_Layer: 0
   m_Name: pasaste
   m_TagString: Untagged
@@ -66150,6 +66366,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590403376}
   m_CullTransparentMesh: 1
+--- !u!114 &590403381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590403376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576a6e118797893469719d3f36b2fdb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
+  vrCamera: {fileID: 0}
+  mirarALaCamara: 1
+  sortingOrder: 1000
+  ignorarParedes: 1
 --- !u!65 &593147635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73571,7 +73803,7 @@ GameObject:
   - component: {fileID: 658305501}
   - component: {fileID: 658305502}
   m_Layer: 0
-  m_Name: Zona_Victoria
+  m_Name: Zona_Terminal Nivel 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73586,7 +73818,7 @@ Transform:
   m_GameObject: {fileID: 658305498}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.16, y: 0.15, z: 27.25}
+  m_LocalPosition: {x: -36.67, y: 0.15, z: 28.05}
   m_LocalScale: {x: 2.3092206, y: 5.934999, z: 5.360644}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -154135,14 +154367,14 @@ RectTransform:
   m_GameObject: {fileID: 1256416088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.85151, y: 0.85151, z: 0.85151}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315918909}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.1, y: -35.59}
+  m_AnchoredPosition: {x: -1.6, y: -38.5}
   m_SizeDelta: {x: 60.92, y: 13.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1256416090
@@ -158909,8 +159141,10 @@ GameObject:
   - component: {fileID: 1315918906}
   - component: {fileID: 1315918911}
   - component: {fileID: 1315918910}
+  - component: {fileID: 1315918913}
+  - component: {fileID: 1315918912}
   m_Layer: 5
-  m_Name: PanelVictoria
+  m_Name: PanelVictoriaN2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158951,7 +159185,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 37b909461e7529b409db13952cb58090, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fccd4577cbdae447a99ce5695e4cec7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -159016,6 +159250,45 @@ MonoBehaviour:
   panel: {fileID: 1315918905}
   canvasGroup: {fileID: 1315918910}
   velocidadFade: 2
+--- !u!114 &1315918912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315918905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576a6e118797893469719d3f36b2fdb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
+  vrCamera: {fileID: 0}
+  mirarALaCamara: 1
+  sortingOrder: 1000
+  ignorarParedes: 1
+--- !u!223 &1315918913
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315918905}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!65 &1316603373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -161960,6 +162233,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364433393}
   m_CullTransparentMesh: 1
+--- !u!1 &1368207402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1368207405}
+  - component: {fileID: 1368207404}
+  - component: {fileID: 1368207403}
+  m_Layer: 0
+  m_Name: Zona_Terminal Nivel 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1368207403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368207402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17b83af96b2fbdb49be66a8c3e2454c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerPanelInformacion
+  panelInfo: {fileID: 258743951}
+--- !u!65 &1368207404
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368207402}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1368207405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368207402}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 27.89, y: 0.15, z: 8.94}
+  m_LocalScale: {x: 2.3092206, y: 5.934999, z: 5.360644}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1368223802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -183687,6 +184027,81 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.7617183, y: 62.721886, z: 6.0578613}
   m_Center: {x: -5678.282, y: 96.80972, z: -1025.7872}
+--- !u!1 &1553769532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1553769533}
+  - component: {fileID: 1553769535}
+  - component: {fileID: 1553769534}
+  m_Layer: 5
+  m_Name: botonASeguir
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1553769533
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553769532}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 258743949}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -4.1, y: -35.59}
+  m_SizeDelta: {x: 60.92, y: 13.42}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1553769534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553769532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1f70a9bfabfc5a04ab597349eafcd018, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1553769535
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553769532}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1555826960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191541,7 +191956,7 @@ GameObject:
   - component: {fileID: 1616090912}
   - component: {fileID: 1616090918}
   m_Layer: 0
-  m_Name: Zona despedida
+  m_Name: Zona Final Victoria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238487,6 +238902,7 @@ RectTransform:
   - {fileID: 2098491346}
   - {fileID: 567614}
   - {fileID: 472183079}
+  - {fileID: 40962048}
   - {fileID: 677291657}
   - {fileID: 2074520450}
   - {fileID: 1043699206}
@@ -271469,6 +271885,7 @@ SceneRoots:
   - {fileID: 1232732078}
   - {fileID: 1616090917}
   - {fileID: 658305499}
+  - {fileID: 1368207405}
   - {fileID: 1436917153}
   - {fileID: 1067208393}
   - {fileID: 1687453516}
