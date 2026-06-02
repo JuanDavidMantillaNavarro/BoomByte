@@ -4,6 +4,12 @@ using UnityEngine.InputSystem;
 
 public class TemporaryInputInvertEffect : MonoBehaviour
 {
+    [Header("Jugador")]
+    public Transform player;
+
+    [Header("Detección")]
+    public float distanciaDeteccion = 2f;
+
     [Header("Input")]
     public InputActionReference moveAction;
     public InputActionReference turnAction;
@@ -16,10 +22,8 @@ public class TemporaryInputInvertEffect : MonoBehaviour
 
     [Header("Mensaje")]
     public float duracionMensaje = 2f;
-    public float duracionFadeIn = 0.3f;
-    public float duracionFadeOut = 0.5f;
 
-    private bool efectoActivo = false;
+    private bool activado = false;
     private CanvasGroup canvasGroup;
 
     void Start()
@@ -34,27 +38,41 @@ public class TemporaryInputInvertEffect : MonoBehaviour
                     panelEfecto.AddComponent<CanvasGroup>();
 
             canvasGroup.alpha = 0f;
+
             panelEfecto.SetActive(false);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    void Update()
     {
-        if (efectoActivo)
+        if (activado)
             return;
 
-        if (!other.CompareTag("Player"))
+        if (player == null)
             return;
 
-        StartCoroutine(
-            InvertirTemporalmente()
-        );
+        float distancia =
+            Vector3.Distance(
+                transform.position,
+                player.position
+            );
+
+        if (distancia <= distanciaDeteccion)
+        {
+            activado = true;
+
+            Debug.Log(
+                "[INVERTIDO] Jugador detectado"
+            );
+
+            StartCoroutine(
+                InvertirTemporalmente()
+            );
+        }
     }
 
     IEnumerator InvertirTemporalmente()
     {
-        efectoActivo = true;
-
         AplicarInversion();
 
         StartCoroutine(
@@ -72,10 +90,8 @@ public class TemporaryInputInvertEffect : MonoBehaviour
         RestaurarInputs();
 
         Debug.Log(
-            "[INVERTIDO] Restaurado"
+            "[INVERTIDO] Controles restaurados"
         );
-
-        efectoActivo = false;
     }
 
     IEnumerator MostrarMensaje()
@@ -85,47 +101,25 @@ public class TemporaryInputInvertEffect : MonoBehaviour
 
         panelEfecto.SetActive(true);
 
-        float t = 0f;
+        if (canvasGroup != null)
+            canvasGroup.alpha = 1f;
 
-        while (t < duracionFadeIn)
-        {
-            t += Time.deltaTime;
-
-            canvasGroup.alpha =
-                Mathf.Lerp(
-                    0f,
-                    1f,
-                    t / duracionFadeIn
-                );
-
-            yield return null;
-        }
-
-        canvasGroup.alpha = 1f;
+        Debug.Log(
+            "[INVERTIDO] Mensaje mostrado"
+        );
 
         yield return new WaitForSeconds(
             duracionMensaje
         );
 
-        t = 0f;
-
-        while (t < duracionFadeOut)
-        {
-            t += Time.deltaTime;
-
-            canvasGroup.alpha =
-                Mathf.Lerp(
-                    1f,
-                    0f,
-                    t / duracionFadeOut
-                );
-
-            yield return null;
-        }
-
-        canvasGroup.alpha = 0f;
+        if (canvasGroup != null)
+            canvasGroup.alpha = 0f;
 
         panelEfecto.SetActive(false);
+
+        Debug.Log(
+            "[INVERTIDO] Mensaje ocultado"
+        );
     }
 
     void AplicarInversion()

@@ -16579,13 +16579,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a830cc2f7f322f049bc9ac746d531735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TemporaryInputInvertEffect
+  player: {fileID: 426085145}
+  distanciaDeteccion: 2
   moveAction: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   turnAction: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   panelEfecto: {fileID: 1108937320}
-  duracionEfecto: 5
+  duracionEfecto: 4
   duracionMensaje: 2
-  duracionFadeIn: 0.3
-  duracionFadeOut: 0.5
 --- !u!114 &152288429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20008,13 +20008,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a830cc2f7f322f049bc9ac746d531735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TemporaryInputInvertEffect
+  player: {fileID: 426085145}
+  distanciaDeteccion: 2
   moveAction: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   turnAction: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   panelEfecto: {fileID: 1108937320}
   duracionEfecto: 5
   duracionMensaje: 2
-  duracionFadeIn: 0.3
-  duracionFadeOut: 0.5
 --- !u!54 &182900071
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -70232,7 +70232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &639343020
 RectTransform:
   m_ObjectHideFlags: 0
@@ -80856,15 +80856,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675516957}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00022877}
-  m_LocalScale: {x: 3.0697615, y: 2.0251143, z: 1.7827345}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4.372261, y: 2.88437, z: 2.5391486}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1873832328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48.8, y: -13.5}
+  m_AnchoredPosition: {x: 57, y: -20}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &675516959
@@ -84398,13 +84398,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a830cc2f7f322f049bc9ac746d531735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TemporaryInputInvertEffect
+  player: {fileID: 426085145}
+  distanciaDeteccion: 2
   moveAction: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   turnAction: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   panelEfecto: {fileID: 1108937320}
   duracionEfecto: 9
   duracionMensaje: 2
-  duracionFadeIn: 0.3
-  duracionFadeOut: 1
 --- !u!114 &701798117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103575,7 +103575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &901718054
 RectTransform:
   m_ObjectHideFlags: 0
@@ -141643,7 +141643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1108937321
 RectTransform:
   m_ObjectHideFlags: 0
@@ -179459,13 +179459,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a830cc2f7f322f049bc9ac746d531735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TemporaryInputInvertEffect
+  player: {fileID: 426085145}
+  distanciaDeteccion: 2
   moveAction: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   turnAction: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   panelEfecto: {fileID: 1108937320}
   duracionEfecto: 5
   duracionMensaje: 2
-  duracionFadeIn: 0.3
-  duracionFadeOut: 0.5
 --- !u!54 &1512140151
 Rigidbody:
   m_ObjectHideFlags: 0
