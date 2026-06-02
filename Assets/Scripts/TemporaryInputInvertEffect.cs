@@ -11,17 +11,31 @@ public class TemporaryInputInvertEffect : MonoBehaviour
     [Header("UI")]
     public GameObject panelEfecto;
 
-    [Header("Tiempo")]
+    [Header("Efecto")]
     public float duracionEfecto = 5f;
 
+    [Header("Mensaje")]
+    public float duracionMensaje = 2f;
+    public float duracionFadeIn = 0.3f;
+    public float duracionFadeOut = 0.5f;
+
     private bool efectoActivo = false;
+    private CanvasGroup canvasGroup;
 
     void Start()
     {
-        Debug.Log("[INVERTIDO] Start");
-
         if (panelEfecto != null)
+        {
+            canvasGroup =
+                panelEfecto.GetComponent<CanvasGroup>();
+
+            if (canvasGroup == null)
+                canvasGroup =
+                    panelEfecto.AddComponent<CanvasGroup>();
+
+            canvasGroup.alpha = 0f;
             panelEfecto.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,10 +46,6 @@ public class TemporaryInputInvertEffect : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
-        Debug.Log(
-            "[INVERTIDO] Player detectado"
-        );
-
         StartCoroutine(
             InvertirTemporalmente()
         );
@@ -45,19 +55,11 @@ public class TemporaryInputInvertEffect : MonoBehaviour
     {
         efectoActivo = true;
 
-        if (panelEfecto != null)
-            panelEfecto.SetActive(true);
-        Debug.Log(
-    "Activo = " +
-    panelEfecto.activeInHierarchy
-);
-
-        Debug.Log(
-            "Posicion = " +
-            panelEfecto.transform.position
-        );
-
         AplicarInversion();
+
+        StartCoroutine(
+            MostrarMensaje()
+        );
 
         Debug.Log(
             "[INVERTIDO] Controles invertidos"
@@ -69,14 +71,61 @@ public class TemporaryInputInvertEffect : MonoBehaviour
 
         RestaurarInputs();
 
-        if (panelEfecto != null)
-            panelEfecto.SetActive(false);
-
         Debug.Log(
             "[INVERTIDO] Restaurado"
         );
 
         efectoActivo = false;
+    }
+
+    IEnumerator MostrarMensaje()
+    {
+        if (panelEfecto == null)
+            yield break;
+
+        panelEfecto.SetActive(true);
+
+        float t = 0f;
+
+        while (t < duracionFadeIn)
+        {
+            t += Time.deltaTime;
+
+            canvasGroup.alpha =
+                Mathf.Lerp(
+                    0f,
+                    1f,
+                    t / duracionFadeIn
+                );
+
+            yield return null;
+        }
+
+        canvasGroup.alpha = 1f;
+
+        yield return new WaitForSeconds(
+            duracionMensaje
+        );
+
+        t = 0f;
+
+        while (t < duracionFadeOut)
+        {
+            t += Time.deltaTime;
+
+            canvasGroup.alpha =
+                Mathf.Lerp(
+                    1f,
+                    0f,
+                    t / duracionFadeOut
+                );
+
+            yield return null;
+        }
+
+        canvasGroup.alpha = 0f;
+
+        panelEfecto.SetActive(false);
     }
 
     void AplicarInversion()

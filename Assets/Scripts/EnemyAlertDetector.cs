@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EnemyAlertDetector : MonoBehaviour
 {
@@ -13,10 +12,10 @@ public class EnemyAlertDetector : MonoBehaviour
     [Header("UI")]
     public GameObject panelAlerta;
 
-    [Header("Fade")]
+    [Header("Visual")]
     public float duracionFadeIn = 0.3f;
-    public float duracionVisible = 3f;
-    public float duracionFadeOut = 0.8f;
+    public float duracionVisible = 2f;
+    public float duracionFadeOut = 0.5f;
 
     private bool activado = false;
     private CanvasGroup canvasGroup;
@@ -25,40 +24,22 @@ public class EnemyAlertDetector : MonoBehaviour
     {
         if (panelAlerta == null)
         {
-            Debug.LogError(
-                "[ALERTA] Panel no asignado"
-            );
+            Debug.LogError("[ALERTA] Panel no asignado");
             return;
         }
 
-        canvasGroup =
-            panelAlerta.GetComponent<CanvasGroup>();
+        canvasGroup = panelAlerta.GetComponent<CanvasGroup>();
 
         if (canvasGroup == null)
-        {
-            canvasGroup =
-                panelAlerta.AddComponent<CanvasGroup>();
-
-            Debug.Log(
-                "[ALERTA] CanvasGroup agregado automáticamente"
-            );
-        }
+            canvasGroup = panelAlerta.AddComponent<CanvasGroup>();
 
         canvasGroup.alpha = 0f;
-
         panelAlerta.SetActive(false);
-
-        Debug.Log(
-            "[ALERTA] Sistema listo"
-        );
     }
 
     void Update()
     {
-        if (activado)
-            return;
-
-        if (player == null)
+        if (activado || player == null)
             return;
 
         float distancia =
@@ -69,28 +50,18 @@ public class EnemyAlertDetector : MonoBehaviour
 
         if (distancia <= distanciaDeteccion)
         {
-            Debug.Log(
-                "[ALERTA] Enemigo detectado a "
-                + distancia
-            );
-
             activado = true;
-
-            StartCoroutine(
-                MostrarAlerta()
-            );
+            StartCoroutine(MostrarAlerta());
         }
     }
 
     IEnumerator MostrarAlerta()
     {
+        Debug.Log("[ALERTA] Mostrar");
+
         panelAlerta.SetActive(true);
+        canvasGroup.alpha = 0f;
 
-        Debug.Log(
-            "[ALERTA] Mostrando panel"
-        );
-
-        // Fade In
         float t = 0f;
 
         while (t < duracionFadeIn)
@@ -113,7 +84,6 @@ public class EnemyAlertDetector : MonoBehaviour
             duracionVisible
         );
 
-        // Fade Out
         t = 0f;
 
         while (t < duracionFadeOut)
@@ -132,10 +102,8 @@ public class EnemyAlertDetector : MonoBehaviour
 
         canvasGroup.alpha = 0f;
 
-        panelAlerta.SetActive(false);
+        Debug.Log("[ALERTA] Desactivando");
 
-        Debug.Log(
-            "[ALERTA] Ocultada"
-        );
+        panelAlerta.SetActive(false);
     }
 }
