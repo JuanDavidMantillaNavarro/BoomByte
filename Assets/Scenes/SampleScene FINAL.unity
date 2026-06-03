@@ -12759,7 +12759,7 @@ MonoBehaviour:
   mensaje: "En mi clase de Inteligencia Artificial aprendemos a crear personajes
     que piensan. Tambi\xE9n dirijo un semillero donde hacemos procesamiento de lenguaje\u2026
     es muy divertido."
-  jugador: {fileID: 1373153113}
+  jugador: {fileID: 426085145}
   distanciaActivacion: 2
   duracionMaxima: 10
   duracionFade: 0.5
@@ -23709,7 +23709,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1226885609380789157, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1664298984}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1744335685880193345, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1345857047}
   m_SourcePrefab: {fileID: 100100000, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
 --- !u!225 &219920967 stripped
 CanvasGroup:
@@ -140567,15 +140570,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108937320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00022877}
-  m_LocalScale: {x: 5.428059, y: 3.4534872, z: 2.5256653}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 4.545294, y: 2.8918464, z: 2.1149163}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 475472852}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48.8, y: -13.5}
+  m_AnchoredPosition: {x: 80, y: -123}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1108937322
@@ -148319,7 +148322,7 @@ MonoBehaviour:
   m_BlockInteractionsWithScreenSpaceUI: 1
   m_BlockUIOnInteractableSelection: 1
   m_ManipulateAttachTransform: 1
-  m_UseForceGrab: 0
+  m_UseForceGrab: 1
   m_RotateSpeed: 180
   m_TranslateSpeed: 1
   m_RotateReferenceFrame: {fileID: 0}
@@ -148354,7 +148357,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_InputActionReferencePerformed: {fileID: 0}
+    m_InputActionReferencePerformed: {fileID: 3279264004350380116, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     m_InputActionReferenceValue: {fileID: 0}
     m_ObjectReferenceObject: {fileID: 0}
     m_ManualPerformed: 0
@@ -159019,6 +159022,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100, y: 0, z: 99.99999}
   m_Center: {x: 0, y: 0, z: -0.0000076293945}
+--- !u!1 &1345857042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1744335685880193345, guid: 7477d717e226adb4c80bdde642b26718, type: 3}
+  m_PrefabInstance: {fileID: 219920966}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1345857047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345857042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576a6e118797893469719d3f36b2fdb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
+  vrCamera: {fileID: 0}
+  sortingOrder: 1000
+  ignorarParedes: 1
 --- !u!1 &1346648512
 GameObject:
   m_ObjectHideFlags: 0
@@ -196943,7 +196966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -181, y: 109}
+  m_AnchoredPosition: {x: -181, y: 38}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1661638752
@@ -254181,6 +254204,7 @@ GameObject:
   - component: {fileID: 2098491349}
   - component: {fileID: 2098491348}
   - component: {fileID: 2098491347}
+  - component: {fileID: 2098491350}
   m_Layer: 5
   m_Name: 'panel sonido '
   m_TagString: Untagged
@@ -254262,6 +254286,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098491345}
   m_CullTransparentMesh: 1
+--- !u!114 &2098491350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098491345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!65 &2098803585
 BoxCollider:
   m_ObjectHideFlags: 0
