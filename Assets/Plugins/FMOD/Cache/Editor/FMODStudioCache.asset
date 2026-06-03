@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639141679776596071
+  lastModified: 639160342370785060
   FileSizes: []
   Exists: 1
 --- !u!114 &-8534602962646178124
@@ -328,13 +328,14 @@ MonoBehaviour:
   - {fileID: -1809609379582313404}
   - {fileID: 5943376787327431134}
   - {fileID: 9217327392476350573}
+  - {fileID: 476638407807837575}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8922935967432096436}
   StringsBanks:
   - {fileID: 4490191240115237655}
   cacheVersion: 131859
-  cacheTime: 639141679777187861
+  cacheTime: 639160342373410940
   SerializableEventsDict:
   - key: "event:/M\xFAsica ambiente 2"
     index: 0
@@ -360,6 +361,35 @@ MonoBehaviour:
     index: 10
   - key: "event:/_explosi\xF3n_"
     index: 11
+  - key: "event:/M\xFAsica ambiente 1"
+    index: 12
+--- !u!114 &476638407807837575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsica ambiente 1"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/M\xFAsica ambiente 1"
+  Guid:
+    Data1: -2014280502
+    Data2: 1233805949
+    Data3: 437511345
+    Data4: 1538075848
+  Banks:
+  - {fileID: -8922935967432096436}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &540384620337522641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +405,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639141679777187861
+  lastModified: 639160342373410940
   FileSizes: []
   Exists: 1
 --- !u!114 &570903147532449812
@@ -553,7 +583,7 @@ MonoBehaviour:
   - {fileID: -8922935967432096436}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -573,10 +603,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639141679776881623
+  lastModified: 639160342370800220
   FileSizes:
   - Name: 
-    Value: 1354
+    Value: 1422
   Exists: 1
 --- !u!114 &4542149923067462301
 MonoBehaviour:

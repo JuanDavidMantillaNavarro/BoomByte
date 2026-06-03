@@ -90,13 +90,7 @@ public class EnergyExplosion : MonoBehaviour
             }
         }
 
-        // Si se destruyó algo, suena el FMOD
-        if (destruyoPared)
-         {
-        RuntimeManager.PlayOneShot(zonaDesbloqueadaSound, transform.position);
-         AudioManagerFMOD.Instance.DetenerMusicaAmbiente();
-         Debug.Log("Pared destruida: música ambiente detenida");
-         }
+         
     }
 
     IEnumerator SlowDownRoutine(GameObject player)
