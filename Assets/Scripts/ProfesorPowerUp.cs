@@ -4,56 +4,39 @@ using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 
 public class ProfesorPowerUp : MonoBehaviour
 {
-    [Header("Movimiento XR")]
-    public ContinuousMoveProvider moveProvider;
-
-    [Header("Boost")]
-    public float velocidadExtra = 3f;
-    public float duracionBoost = 8f;
 
     [Header("UI")]
-    public GameObject panelVelocidad;
+    public GameObject panel;
     public CanvasGroup fadeCanvas;
     public float retrasoMensaje = 0.5f;
     public float duracionMensaje = 2f;
     public float duracionFade = 0.5f;
-
-    private bool activo = false;
+    public bool activo = false;
 
     public void ActivarBeneficio()
     {
-        if (!activo)
-            StartCoroutine(BoostVelocidad());
+        if(!activo)
+        StartCoroutine(BoostProfe());
     }
 
-    IEnumerator BoostVelocidad()
+    IEnumerator BoostProfe()
     {
-        activo = true;
-
-        float velocidadOriginal = moveProvider.moveSpeed;
-
-        moveProvider.moveSpeed += velocidadExtra;
-
+        activo = true ;
+        GameController.Instance.OnNpcCollide(gameObject.name);
         Debug.Log("BOOST ACTIVADO");
 
         yield return new WaitForSeconds(retrasoMensaje);
 
         yield return StartCoroutine(MostrarMensaje());
 
-        yield return new WaitForSeconds(duracionBoost);
-
-        moveProvider.moveSpeed = velocidadOriginal;
-
-        Debug.Log("BOOST FINALIZADO");
-
         activo = false;
     }
 
     IEnumerator MostrarMensaje()
     {
-        if (panelVelocidad == null) yield break;
+        if (panel == null) yield break;
 
-        panelVelocidad.SetActive(true);
+        panel.SetActive(true);
         fadeCanvas.alpha = 0f;
 
         float tiempo = 0f;
@@ -82,6 +65,6 @@ public class ProfesorPowerUp : MonoBehaviour
             yield return null;
         }
 
-        panelVelocidad.SetActive(false);
+        panel.SetActive(false);
     }
 }

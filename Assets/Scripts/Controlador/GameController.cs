@@ -40,6 +40,8 @@ public class GameController : MonoBehaviour
     public RadioExplosion radioExplosionDebuff;
     public RadioExplosion radioExplosionBuff;
     public InvControls InvControls;
+    public VelocidadEffect Velocidad;
+    public SlowCargaEffect CargaRapida;
 
     [Header("Respawn de enemigos")]
     [Tooltip("Prefab del enemigo a respawnear. Debe tener el tag 'Enemy' y el componente EnemySpawnPoint.")]
@@ -208,9 +210,18 @@ public class GameController : MonoBehaviour
     }
 
     // Se llama cuando choca con el Profesor
-    public void OnNpcCollide()
+    public void OnNpcCollide(string PROFE)
     {
-        effectManager.ApplyEffect(radioExplosionBuff);
+        if(PROFE == "PowerUpVelocidad")
+        {
+            effectManager.ApplyEffect(Velocidad);
+            Debug.Log("SVELOCIDAD");
+        }
+        if(PROFE == "PowerUpCargaRapida")
+        {
+            effectManager.ApplyEffect(CargaRapida);
+            Debug.Log("POWERUP");
+        }
     }
 
     public void OnPlayerExplosion()
