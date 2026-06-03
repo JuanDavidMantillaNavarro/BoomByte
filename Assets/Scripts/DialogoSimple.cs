@@ -31,6 +31,9 @@ public class DialogoSimple : MonoBehaviour
     [Header("FMOD - Audio")]
     [SerializeField] private EventReference sonidoDialogo;
 
+    [Header("Final del juego")]
+    public VideoFinalController videoFinal;
+
     private bool yaSeActivo = false;
 
     void Start()
@@ -101,6 +104,11 @@ public class DialogoSimple : MonoBehaviour
 
         // Ocultar canvas
         canvasDialogo.SetActive(false);
+
+        if (videoFinal != null)
+        {
+            videoFinal.IniciarVideo();
+        }
     }
 
     IEnumerator EscribirTexto()
