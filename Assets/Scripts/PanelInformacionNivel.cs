@@ -1,6 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR;
+
+using XRInputDevice = UnityEngine.XR.InputDevice;
+using XRNode = UnityEngine.XR.XRNode;
+using XRCommonUsages = UnityEngine.XR.CommonUsages;
 
 public class PanelInformacionNivel : MonoBehaviour
 {
@@ -31,9 +36,7 @@ public class PanelInformacionNivel : MonoBehaviour
             Keyboard.current != null &&
             Keyboard.current.tKey.wasPressedThisFrame;
 
-        bool botonA =
-            Gamepad.current != null &&
-            Gamepad.current.buttonSouth.wasPressedThisFrame;
+        bool botonA = BotonAVR();
 
         if (teclaT || botonA)
         {
@@ -52,6 +55,22 @@ public class PanelInformacionNivel : MonoBehaviour
 
         StartCoroutine(FadeIn());
 
+    }
+
+    bool BotonAVR()
+    {
+        XRInputDevice rightHand =
+            InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+
+        if (!rightHand.isValid)
+            return false;
+
+        bool botonA = false;
+
+        return rightHand.TryGetFeatureValue(
+            XRCommonUsages.primaryButton,
+            out botonA
+        ) && botonA;
     }
 
     IEnumerator FadeIn()

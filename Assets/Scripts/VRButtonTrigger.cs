@@ -1,6 +1,12 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.XR;
 
-public class VRButtonTrigger : MonoBehaviour
+using XRInputDevice = UnityEngine.XR.InputDevice;
+using XRNode = UnityEngine.XR.XRNode;
+using XRCommonUsages = UnityEngine.XR.CommonUsages;
+
+public class VRButtonTriggerUI : MonoBehaviour
 {
     public enum TipoBoton
     {
@@ -17,21 +23,24 @@ public class VRButtonTrigger : MonoBehaviour
     public TipoBoton tipo;
     public VRMenuManager manager;
 
-    private bool activado = false;
-
-    private void OnTriggerEnter(Collider other)
+    public void Ejecutar()
     {
-        if (activado) return;
 
-        if (other.CompareTag("Hand"))
+        Debug.Log("EJECUTAR LLAMADO");
+        bool teclaT =
+            Keyboard.current != null &&
+            Keyboard.current.tKey.isPressed;
+
+        bool botonA = BotonAVR();
+
+        bool gatillo = GatilloVR();
+
+        if (!teclaT && !botonA && !gatillo)
         {
-            activado = true;
-            Ejecutar();
+            Debug.Log("Botón bloqueado: falta T, A o Trigger");
+            return;
         }
-    }
 
-    void Ejecutar()
-    {
         switch (tipo)
         {
             case TipoBoton.Reanudar:
@@ -68,12 +77,35 @@ public class VRButtonTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    bool BotonAVR()
     {
-        if (other.CompareTag("Hand"))
-        {
-            activado = false;
-        }
+        XRInputDevice rightHand =
+            InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+
+        if (!rightHand.isValid)
+            return false;
+
+        bool botonA = false;
+
+        return rightHand.TryGetFeatureValue(
+            XRCommonUsages.primaryButton,
+            out botonA
+        ) && botonA;
+    }
+
+    bool GatilloVR()
+    {
+        XRInputDevice rightHand =
+            InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+
+        if (!rightHand.isValid)
+            return false;
+
+        float trigger = 0f;
+
+        return rightHand.TryGetFeatureValue(
+            XRCommonUsages.trigger,
+            out trigger
+        ) && trigger > 0.7f;
     }
 }
-

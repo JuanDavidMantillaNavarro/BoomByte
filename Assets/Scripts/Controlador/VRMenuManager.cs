@@ -51,7 +51,6 @@ public class VRMenuManager : MonoBehaviour
     void Update()
     {
         DetectarInputMenu();
-        DetectarInputMenu();
         ActualizarFondoOscuro();
     }
 
@@ -319,7 +318,6 @@ public class VRMenuManager : MonoBehaviour
     {
         Debug.Log("Reiniciando juego");
 
-        // Intenta usar la referencia directa de la rama, si no, busca por Tag
         Transform targetJugador = jugador;
         if (targetJugador == null)
         {

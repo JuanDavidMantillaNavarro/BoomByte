@@ -1,5 +1,11 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.XR;
+
+using XRInputDevice = UnityEngine.XR.InputDevice;
+using XRNode = UnityEngine.XR.XRNode;
+using XRCommonUsages = UnityEngine.XR.CommonUsages;
 
 public class UIButtonHoverTrigger : MonoBehaviour, IPointerEnterHandler
 {
@@ -8,7 +14,20 @@ public class UIButtonHoverTrigger : MonoBehaviour, IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("Hover sobre: " + accion);
+        bool teclaT =
+            Keyboard.current != null &&
+            Keyboard.current.tKey.isPressed;
+
+        bool botonA = BotonAVR();
+        bool gatillo = GatilloVR();
+
+        if (!teclaT && !botonA && !gatillo)
+        {
+            Debug.Log("Hover bloqueado");
+            return;
+        }
+
+        Debug.Log("Hover aceptado: " + accion);
 
         switch (accion)
         {
@@ -28,5 +47,37 @@ public class UIButtonHoverTrigger : MonoBehaviour, IPointerEnterHandler
                 menuManager.MostrarManual();
                 break;
         }
+    }
+
+    bool BotonAVR()
+    {
+        XRInputDevice rightHand =
+            InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+
+        if (!rightHand.isValid)
+            return false;
+
+        bool botonA;
+
+        return rightHand.TryGetFeatureValue(
+            XRCommonUsages.primaryButton,
+            out botonA
+        ) && botonA;
+    }
+
+    bool GatilloVR()
+    {
+        XRInputDevice rightHand =
+            InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+
+        if (!rightHand.isValid)
+            return false;
+
+        float trigger;
+
+        return rightHand.TryGetFeatureValue(
+            XRCommonUsages.trigger,
+            out trigger
+        ) && trigger > 0.7f;
     }
 }
