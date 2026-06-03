@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using FMODUnity;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameController : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class GameController : MonoBehaviour
     public bool abilitiesDisabled = false; //Desabilitar habilidades
 
     [Header("Variables de Tiempo")]
-    public float gameTime = 120f; // 2 minutos
+    public float gameTime = 600f; // 10 minutos
     private float currentTime;
     public int cameraUses = 3;
 
@@ -52,6 +53,13 @@ public class GameController : MonoBehaviour
     {
      
     };
+
+    [Header("Respawn")]
+    public Transform puntoInicio;        // Arrastra aquí el GameObject "PuntoInicio"
+    public Transform xrOrigin;           // Arrastra aquí el XR Origin
+    public GameObject[] ObjetosInicio, objetosIniciales;
+    public Transform contenedorObjetos; 
+    private List<GameObject> objetosInstanciados = new List<GameObject>();
 
     void Awake()
     {
@@ -256,9 +264,58 @@ public class GameController : MonoBehaviour
         isPaused = false;
         TimeStart = false;
         Time.timeScale = 1f;
-
+        ReiniciarObjetos();
+        MoveraInicio();
+        ManejoTiempo(TimeStart);
         uiManager.UpdateTimer(currentTime);
         Debug.Log("Juego reiniciado + timer reseteado");
+    }
+
+    private void ReiniciarObjetos()
+    {
+        // Destruir los que queden vivos
+        foreach (GameObject obj in objetosInstanciados)
+        {
+            if (obj != null)
+                Destroy(obj);
+        }
+        foreach (GameObject objI in objetosIniciales)
+        {
+            if (objI != null)
+                Destroy(objI);
+        }
+        objetosInstanciados.Clear();
+
+        // Reinstanciar todos desde prefab
+        foreach (GameObject prefab in ObjetosInicio)
+        {
+            GameObject nuevoObj = Instantiate(
+                prefab,
+                prefab.transform.position,  // posicion original del prefab
+                prefab.transform.rotation,
+                contenedorObjetos           // padre (puede ser null)
+            );
+            objetosInstanciados.Add(nuevoObj);
+        }
+    }
+
+    private void MoveraInicio()
+    {
+        if (xrOrigin != null && puntoInicio != null)
+        {
+            CharacterController cc = xrOrigin.GetComponent<CharacterController>();
+    
+            if (cc != null) cc.enabled = false;
+    
+            xrOrigin.position = puntoInicio.position;
+            xrOrigin.rotation = puntoInicio.rotation;
+    
+            if (cc != null) cc.enabled = true;
+        }
+        else
+        {
+            Debug.LogWarning("Faltan referencias: xrOrigin o puntoInicio es null");
+        }
     }
 }
 

@@ -63,6 +63,19 @@ public class UIManagerVR : MonoBehaviour
 
         if (winPanel != null)
             winPanel.SetActive(false);
+        
+        StartCoroutine(CerraryReiniciar());
+    }
+    IEnumerator CerraryReiniciar () 
+    {
+        yield return new WaitForSeconds(6f);
+        CerrarPanelesDerrVic();
+        GameController.Instance.ReiniciarEstado();
+    }
+    public void CerrarPanelesDerrVic()
+    {
+        winPanel.SetActive(false);
+        losePanel.SetActive(false);
     }
     public void AbrirPanel()
     {
