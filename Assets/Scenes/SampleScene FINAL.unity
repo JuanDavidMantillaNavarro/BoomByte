@@ -15717,6 +15717,7 @@ GameObject:
   - component: {fileID: 142658631}
   - component: {fileID: 142658630}
   - component: {fileID: 142658635}
+  - component: {fileID: 142658636}
   m_Layer: 5
   m_Name: CanvaPared
   m_TagString: Untagged
@@ -15838,6 +15839,21 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &142658636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142658629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576a6e118797893469719d3f36b2fdb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
+  vrCamera: {fileID: 0}
+  sortingOrder: 1000
+  ignorarParedes: 1
 --- !u!1 &142715597 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -114795926800130887, guid: 69ca76836a06f9a4499ed6defd057510, type: 3}
@@ -28382,7 +28398,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
   vrCamera: {fileID: 0}
-  mirarALaCamara: 1
   sortingOrder: 1000
   ignorarParedes: 1
 --- !u!223 &258743956
@@ -59756,7 +59771,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
   vrCamera: {fileID: 64579886}
-  mirarALaCamara: 1
   sortingOrder: 1000
   ignorarParedes: 1
 --- !u!1 &527005315 stripped
@@ -62968,7 +62982,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
   vrCamera: {fileID: 0}
-  mirarALaCamara: 1
   sortingOrder: 1000
   ignorarParedes: 1
 --- !u!1 &542237921 stripped
@@ -65737,7 +65750,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
   vrCamera: {fileID: 0}
-  mirarALaCamara: 1
   sortingOrder: 1000
   ignorarParedes: 1
 --- !u!65 &593147635
@@ -143217,7 +143229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c66e01e5eb2da8341915811f1d5fed2e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -157805,7 +157817,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
   vrCamera: {fileID: 0}
-  mirarALaCamara: 1
   sortingOrder: 1000
   ignorarParedes: 1
 --- !u!223 &1315918913
@@ -179111,7 +179122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!154 &1527434234
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -209881,7 +209892,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
   vrCamera: {fileID: 64579886}
-  mirarALaCamara: 1
   sortingOrder: 1000
   ignorarParedes: 1
 --- !u!1 &1716802251
@@ -266445,6 +266455,7 @@ GameObject:
   - component: {fileID: 4824848246288765304}
   - component: {fileID: 4650845797109876015}
   - component: {fileID: 7944740746821413893}
+  - component: {fileID: 9001695814572605403}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -266452,6 +266463,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9001695814572605403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9001695814572605402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576a6e118797893469719d3f36b2fdb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRAlwaysVisibleUI
+  vrCamera: {fileID: 0}
+  sortingOrder: 1000
+  ignorarParedes: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
