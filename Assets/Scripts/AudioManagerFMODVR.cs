@@ -40,7 +40,10 @@ public class AudioManagerFMODVR : MonoBehaviour
 
     public void SetGeneral(float value)
     {
-        masterBus.setVolume(value);
+        float volumen = Mathf.Lerp(0.05f, 1f, value);
+
+        masterBus.setVolume(volumen);
+
         PlayerPrefs.SetFloat("MasterVol", value);
     }
 
