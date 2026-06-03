@@ -7,9 +7,6 @@ public class VRAlwaysVisibleUI : MonoBehaviour
     [Header("Opcional")]
     public Camera vrCamera;
 
-    [Header("Configuración")]
-    public bool mirarALaCamara = true;
-
     public int sortingOrder = 1000;
 
     [Header("Always On Top")]
@@ -40,14 +37,6 @@ public class VRAlwaysVisibleUI : MonoBehaviour
         }
     }
 
-    void LateUpdate()
-    {
-        if (mirarALaCamara && vrCamera != null)
-        {
-            transform.forward = transform.position - vrCamera.transform.position;
-        }
-    }
-
     void OnEnable()
     {
         if (canvas != null)
@@ -61,31 +50,29 @@ public class VRAlwaysVisibleUI : MonoBehaviour
             AplicarMaterialAlwaysOnTop();
         }
     }
-
     void AplicarMaterialAlwaysOnTop()
     {
         Shader shader = Shader.Find("Custom/AlwaysOnTopUI");
 
         if (shader == null)
         {
-            Debug.LogError("NO se encontró el shader Custom/AlwaysOnTopUI");
+            Debug.LogError("NO se encontró el shader");
             return;
         }
 
-        Graphic[] graficos = GetComponentsInChildren<Graphic>(true);
+        Image[] imagenes = GetComponentsInChildren<Image>(true);
 
-        foreach (Graphic g in graficos)
+        foreach (Image img in imagenes)
         {
-            if (g == null) continue;
+            if (img == null)
+                continue;
 
             Material mat = new Material(shader);
 
-            if (g.mainTexture != null)
-            {
-                mat.SetTexture("_MainTex", g.mainTexture);
-            }
+            if (img.mainTexture != null)
+                mat.SetTexture("_MainTex", img.mainTexture);
 
-            g.material = mat;
+            img.material = mat;
         }
     }
 }
