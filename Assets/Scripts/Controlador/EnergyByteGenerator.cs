@@ -40,23 +40,38 @@ public class EnergyByteGenerator : MonoBehaviour
 
     private void Update()
     {
+        // Si el efecto está activo no se pueden generar Energy Bytes
+        if (GameController.Instance.energyBytesBloqueadas)
+            return;
+
         // Mano en generador
         foreach (var interactor in interactorsInZone)
         {
-            // Verifica si la mano está intentando seleccionar (botón presionado de grab) y no tiene nada seleccionado
+            // Verifica si la mano está intentando seleccionar
+            // y no tiene nada seleccionado
             if (IsPressingGrab(interactor) && !interactor.hasSelection)
             {
                 CreateAndGrabBall(interactor);
             }
         }
 
+        // Tecla de prueba
         if (Keyboard.current.pKey.wasPressedThisFrame)
         {
-        GameObject newBall = Instantiate(energyBytePrefab, Cam.transform.position, Quaternion.identity);
-        GameController.Instance.RegisterBallSpawned();
-        
-        EnergyByte ballInteractable = newBall.GetComponent<EnergyByte>();
-        Rigidbody ballRb = newBall.GetComponent<Rigidbody>();
+            GameObject newBall =
+                Instantiate(
+                    energyBytePrefab,
+                    Cam.transform.position,
+                    Quaternion.identity
+                );
+
+            GameController.Instance.RegisterBallSpawned();
+
+            EnergyByte ballInteractable =
+                newBall.GetComponent<EnergyByte>();
+
+            Rigidbody ballRb =
+                newBall.GetComponent<Rigidbody>();
         }
     }
 

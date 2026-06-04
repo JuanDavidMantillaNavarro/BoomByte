@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance { get; private set; }
 
+    public bool energyBytesBloqueadas = false;
+
     [Header("Vistas")]
     public LetrerosController letrerosController;
     public UIManagerVR uiManager;
