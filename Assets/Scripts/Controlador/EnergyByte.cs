@@ -139,7 +139,7 @@ private void ExecuteExplosion()
         explosionAnimator3.gameObject.SetActive(true);
         explosionAnimator3.SetTrigger("Explode");
     }
-
+    
     Destroy(gameObject);
 }
 

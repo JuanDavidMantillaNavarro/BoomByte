@@ -22,14 +22,14 @@ public class MapaNivelController : MonoBehaviour
     {
         nivelActual = nivel;
 
-        if (resaltadoLaboratorio != null)
-            resaltadoLaboratorio.SetActive(false);
+        //if (resaltadoLaboratorio != null)
+            //resaltadoLaboratorio.SetActive(false);
 
-        if (resaltadoTaller != null)
-            resaltadoTaller.SetActive(false);
+        //if (resaltadoTaller != null)
+            //resaltadoTaller.SetActive(false);
 
-        if (resaltadoPlaza != null)
-            resaltadoPlaza.SetActive(false);
+        //if (resaltadoPlaza != null)
+            //resaltadoPlaza.SetActive(false);
 
         switch (nivel)
         {
@@ -38,7 +38,7 @@ public class MapaNivelController : MonoBehaviour
                 if (textoMapa != null)
                 {
                     textoMapa.text =
-                        "Ubicación actual:\nNivel 1: Laboratorio MAC";
+                        "Ubicaciï¿½n actual:\nNivel 1: Laboratorio MAC";
                 }
 
                 if (resaltadoLaboratorio != null)
@@ -51,7 +51,7 @@ public class MapaNivelController : MonoBehaviour
                 if (textoMapa != null)
                 {
                     textoMapa.text =
-                        "Ubicación actual:\nNivel 2: Taller de Diseño";
+                        "Ubicaciï¿½n actual:\nNivel 2: Taller de Diseï¿½o";
                 }
 
                 if (resaltadoTaller != null)
@@ -64,7 +64,7 @@ public class MapaNivelController : MonoBehaviour
                 if (textoMapa != null)
                 {
                     textoMapa.text =
-                        "Ubicación actual:\nNivel Final";
+                        "Ubicaciï¿½n actual:\nNivel Final";
                 }
 
                 if (resaltadoPlaza != null)

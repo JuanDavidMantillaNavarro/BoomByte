@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Velocidad
   m_EditorClassIdentifier: Assembly-CSharp::Velocidad
   duration: 8
-  velocidadExtra: 4
+  velocidadExtra: 400

@@ -154,8 +154,6 @@ public class MissionIntroZone : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
 
-        Time.timeScale = 1f;
-
         if (GameController.Instance != null)
             GameController.Instance.isPaused = false;
 
@@ -164,7 +162,26 @@ public class MissionIntroZone : MonoBehaviour
 
         OcultarTodos();
 
+        StartCoroutine(ReanudarFisica());
+
         Debug.Log("INTRO FINALIZADA");
+    }
+
+    IEnumerator ReanudarFisica()
+    {
+        // Esperar un frame con timeScale 0 para que todo se asiente
+        yield return null; 
+
+        // Resetear velocidades de todos los Rigidbodies activos
+        // para que no exploten al reanudar
+        foreach (Rigidbody rb in FindObjectsByType<Rigidbody>(FindObjectsSortMode.None))
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        // Ahora sí reanudar
+        Time.timeScale = 1f;
     }
 
     IEnumerator MostrarPanelTemporal(GameObject panel, float duracion)

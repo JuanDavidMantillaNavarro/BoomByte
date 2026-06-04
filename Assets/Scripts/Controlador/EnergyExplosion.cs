@@ -5,6 +5,8 @@ using FMODUnity;
 
 public class EnergyExplosion : MonoBehaviour
 {
+    private GameObject playerRoot;
+    private Camera mainCam;
     private float gridRange;
     private float heightRange = 4f; 
     private float slowAmount = 0.4f; // 40%
@@ -41,8 +43,7 @@ public class EnergyExplosion : MonoBehaviour
 
     private void ApplySlowEffect()
     {
-        Camera mainCam = Camera.main;
-        if (mainCam == null) return;
+        if (mainCam == null || playerRoot == null) return;
 
         Vector3 playerPos = mainCam.transform.position;
         Vector3 explosionPos = transform.position;
@@ -74,6 +75,8 @@ public class EnergyExplosion : MonoBehaviour
 
         foreach (Collider hit in hitColliders)
         {
+            if (hit == null) continue;
+            
             if (hit.CompareTag(destructibleTag)||hit.CompareTag(destructibleTag2) ||hit.CompareTag(destructibleTag3))
             {
                 Debug.Log("<color=orange>Pared destruida: </color>" + hit.name);

@@ -136,6 +136,11 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+         // Debug temporal
+        if (Time.timeScale != 1f && !isPaused)
+        {
+            Debug.LogWarning("<color=red>timeScale raro: " + Time.timeScale + "</color>");
+        }
         if (isPaused || gameEnded || !TimeStart) return;
 
         currentTime -= Time.deltaTime;
