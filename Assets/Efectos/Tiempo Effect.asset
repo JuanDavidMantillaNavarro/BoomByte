@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aae33ab9d666a844b049b6c7b5acaa7, type: 3}
-  m_Name: Velocidad
-  m_EditorClassIdentifier: Assembly-CSharp::Velocidad
-  duration: 8
-  velocidadExtra: 1.3
+  m_Script: {fileID: 11500000, guid: 19353e152907e7b41ae914672467d5cd, type: 3}
+  m_Name: Tiempo Effect
+  m_EditorClassIdentifier: Assembly-CSharp::TiempoEffect
+  duration: 15
+  factorLentitud: 0.5

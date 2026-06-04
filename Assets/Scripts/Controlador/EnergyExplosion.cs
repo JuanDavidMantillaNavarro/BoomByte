@@ -43,7 +43,8 @@ public class EnergyExplosion : MonoBehaviour
 
     private void ApplySlowEffect()
     {
-        if (mainCam == null || playerRoot == null) return;
+        Camera mainCam = Camera.main;
+        if (mainCam == null)return;
 
         Vector3 playerPos = mainCam.transform.position;
         Vector3 explosionPos = transform.position;
@@ -104,8 +105,10 @@ public class EnergyExplosion : MonoBehaviour
 
     IEnumerator SlowDownRoutine(GameObject player)
     {
-        var moveProvider = player.GetComponentInChildren<ContinuousMoveProvider>();
+        var moveProvider = GameController.Instance.moveProvider;
         if (moveProvider == null) yield break;
+
+        if (GameController.Instance.inmuneLentitud) yield break;
 
         float originalSpeed = moveProvider.moveSpeed;
         float targetSpeed = originalSpeed * (1f - slowAmount);

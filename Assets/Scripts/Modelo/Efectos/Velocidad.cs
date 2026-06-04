@@ -3,15 +3,16 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Effects/VelocidadExtra")]
 public class VelocidadEffect : EffectData
 {
-    public float velocidadExtra = 4f;
-
+    public float velocidadExtra = 1.3f;
     public override void Apply(GameController controller)
     {
-        controller.speedMulti += velocidadExtra;
+        var moveProvider = GameController.Instance.moveProvider;
+        moveProvider.moveSpeed *= velocidadExtra;
     }
 
     public override void Remove(GameController controller)
     {
-        controller.speedMulti -= velocidadExtra;
+        var moveProvider = GameController.Instance.moveProvider;
+        moveProvider.moveSpeed /= velocidadExtra;
     }
 }

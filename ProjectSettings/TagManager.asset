@@ -13,6 +13,8 @@ TagManager:
   - objeto
   - Destructible3
   - Flecha
+  - VR
+  - Revelar
   layers:
   - Default
   - TransparentFX

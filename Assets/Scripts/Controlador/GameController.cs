@@ -2,6 +2,9 @@
 using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
+using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class GameController : MonoBehaviour
 {
@@ -22,8 +25,10 @@ public class GameController : MonoBehaviour
     public int BolasActivas = 0; //Bolas actualmente en el mundo
     public int MaxBolas = 1; //Limite Max de Bolas permitidas para spawn
     public float speedMulti = 1f; //Multiplicador de velocidad
+    public float timerSpeed = 1f;
     public float explosionRadiusModifier = 0f; //Modificador de radio de explosion de EnergyByte
     public float RadioExplosion;
+    public bool inmuneLentitud= false;
 
     public bool abilitiesDisabled = false; //Desabilitar habilidades
 
@@ -43,6 +48,9 @@ public class GameController : MonoBehaviour
     public VelocidadEffect Velocidad;
     public SlowCargaEffect CargaRapida;
     public FlechasGuiaEffect Flecha;
+    public InmuneLentitudEffect Inmune;
+    public RevelarEffect Revelar;
+    public TiempoEffect TiempoEff;
 
     [Header("Respawn de enemigos")]
     [Tooltip("Prefab del enemigo a respawnear. Debe tener el tag 'Enemy' y el componente EnemySpawnPoint.")]
@@ -60,9 +68,12 @@ public class GameController : MonoBehaviour
     [Header("Respawn")]
     public Transform puntoInicio;        // Arrastra aquí el GameObject "PuntoInicio"
     public Transform xrOrigin;           // Arrastra aquí el XR Origin
-    public GameObject[] ObjetosInicio, objetosIniciales;
+    public GameObject[] ObjetosInicio, objetosIniciales, ObjetosRevelar;
     public Transform contenedorObjetos; 
     private List<GameObject> objetosInstanciados = new List<GameObject>();
+
+    [Header("Locomotion")]
+    public DynamicMoveProvider moveProvider;
 
     void Awake()
     {
@@ -137,14 +148,13 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-         // Debug temporal
         if (Time.timeScale != 1f && !isPaused)
         {
             Debug.LogWarning("<color=red>timeScale raro: " + Time.timeScale + "</color>");
         }
         if (isPaused || gameEnded || !TimeStart) return;
 
-        currentTime -= Time.deltaTime;
+        currentTime -= Time.deltaTime * timerSpeed;
 
         if (currentTime <= 0)
         {
@@ -231,6 +241,24 @@ public class GameController : MonoBehaviour
         {
             effectManager.ApplyEffect(Flecha);
             Debug.Log("POWERUP");
+        }if(PROFE == "PowerUpCruz")
+        {
+            effectManager.ApplyEffect(radioExplosionBuff);
+            Debug.Log("POWERUP CRUZ");
+        }if(PROFE == "PowerUpRevela")
+        {
+            ObjetosRevelar = GameObject.FindGameObjectsWithTag("Revelar");
+            effectManager.ApplyEffect(Revelar);
+            Debug.Log("POWERUP Revelar");
+
+        }if(PROFE == "PowerUpInmuneLentitud")
+        {
+            effectManager.ApplyEffect(Inmune);
+            Debug.Log("POWERUP Inmune");
+        }if(PROFE == "PowerUpTiempo")
+        {
+            effectManager.ApplyEffect(TiempoEff);
+            Debug.Log("POWERUP Tiempo");
         }
     }
 
@@ -336,6 +364,27 @@ public class GameController : MonoBehaviour
         else
         {
             Debug.LogWarning("Faltan referencias: xrOrigin o puntoInicio es null");
+        }
+    }
+    public void RevelarEfecto(bool Activar)
+    {
+        ObjetosRevelar = GameObject.FindGameObjectsWithTag("Revelar");
+        bool activar = Activar;
+        foreach (GameObject obj in ObjetosRevelar)
+        {
+            if (obj != null) // Por si acaso el objeto fue destruido
+            {
+            var img = obj.GetComponent<UnityEngine.UI.Image>(); // Asegurar la referencia de UI
+            
+            if (img != null)
+            {
+                img.enabled = Activar;
+            }
+            else
+            {
+                Debug.LogWarning($"El objeto '{obj.name}' tiene el tag 'Revelar', pero no tiene un componente Image.");
+            }
+            }
         }
     }
 }
