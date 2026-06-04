@@ -9813,6 +9813,13 @@ MonoBehaviour:
   duracionFadeIn: 0.3
   duracionVisible: 2
   duracionFadeOut: 1
+  alertaEnemigoSound:
+    Guid:
+      Data1: 1458840919
+      Data2: 1140548641
+      Data3: 164432011
+      Data4: 357754894
+    Path: event:/Enemigo cerca
 --- !u!1001 &9034732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25165,6 +25172,13 @@ MonoBehaviour:
   duracionFadeIn: 0.3
   duracionVisible: 2
   duracionFadeOut: 1
+  alertaEnemigoSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!65 &155227178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30848,6 +30862,13 @@ MonoBehaviour:
   duracionFadeIn: 0.3
   duracionVisible: 2
   duracionFadeOut: 1
+  alertaEnemigoSound:
+    Guid:
+      Data1: 1458840919
+      Data2: 1140548641
+      Data3: 164432011
+      Data4: 357754894
+    Path: event:/Enemigo cerca
 --- !u!114 &182900069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44342,7 +44363,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &262799216
 Transform:
@@ -56289,7 +56310,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 100.000015, y: 99.99999, z: 100}
+  m_Size: {x: 100.000015, y: 98.24, z: 100}
   m_Center: {x: 0.00048828125, y: 0.0000038146973, z: 0}
 --- !u!4 &325156785 stripped
 Transform:
@@ -126268,6 +126289,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &698299305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7381153334109950007, guid: 77e0bcfd240ca014a90b438091c31b57, type: 3}
+  m_PrefabInstance: {fileID: 1436917153}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &698299306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698299305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ab80b41a8392f47b448a631d714cff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneMusicTrigger
+  musicaZona:
+    Guid:
+      Data1: 102704014
+      Data2: 1102814763
+      Data3: 1678684334
+      Data4: -806000977
+    Path: "event:/M\xFAsica ambiente 3"
 --- !u!1001 &698378251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126661,6 +126706,13 @@ MonoBehaviour:
   duracionFadeIn: 0.3
   duracionVisible: 2
   duracionFadeOut: 1
+  alertaEnemigoSound:
+    Guid:
+      Data1: 1458840919
+      Data2: 1140548641
+      Data3: 164432011
+      Data4: 357754894
+    Path: event:/Enemigo cerca
 --- !u!65 &703006191
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -199039,7 +199091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &1028036734
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -210543,6 +210595,7 @@ GameObject:
   - component: {fileID: 1067208391}
   - component: {fileID: 1067208390}
   - component: {fileID: 1067208389}
+  - component: {fileID: 1067208394}
   m_Layer: 0
   m_Name: TutorialExitZone
   m_TagString: Player
@@ -210655,6 +210708,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1067208394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067208388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ab80b41a8392f47b448a631d714cff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneMusicTrigger
+  musicaZona:
+    Guid:
+      Data1: 831725686
+      Data2: 1231290484
+      Data3: 1319189888
+      Data4: -1166654950
+    Path: "event:/M\xFAsica ambiente 2"
 --- !u!1 &1067243673 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bb40107929848f948bc46b853714c99d, type: 3}
@@ -229200,6 +229272,7 @@ GameObject:
   - component: {fileID: 1232732076}
   - component: {fileID: 1232732075}
   - component: {fileID: 1232732079}
+  - component: {fileID: 1232732080}
   m_Layer: 0
   m_Name: ZonaNivel final intro
   m_TagString: Untagged
@@ -229317,6 +229390,25 @@ MonoBehaviour:
   turnProvider: {fileID: 1305006493}
   duracion: 6
   velocidadFade: 1
+--- !u!114 &1232732080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232732073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ab80b41a8392f47b448a631d714cff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneMusicTrigger
+  musicaZona:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!65 &1235260933
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -254275,6 +254367,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1662137769942486075, guid: 77e0bcfd240ca014a90b438091c31b57, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662137769942486075, guid: 77e0bcfd240ca014a90b438091c31b57, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -254369,7 +254465,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7381153334109950007, guid: 77e0bcfd240ca014a90b438091c31b57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 698299306}
   m_SourcePrefab: {fileID: 100100000, guid: 77e0bcfd240ca014a90b438091c31b57, type: 3}
 --- !u!1001 &1437546746
 PrefabInstance:
@@ -259628,6 +259727,13 @@ MonoBehaviour:
   duracionFadeIn: 0.3
   duracionVisible: 2
   duracionFadeOut: 1
+  alertaEnemigoSound:
+    Guid:
+      Data1: 1458840919
+      Data2: 1140548641
+      Data3: 164432011
+      Data4: 357754894
+    Path: event:/Enemigo cerca
 --- !u!1001 &1466725955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -265432,6 +265538,13 @@ MonoBehaviour:
   duracionFadeIn: 0.3
   duracionVisible: 2
   duracionFadeOut: 1
+  alertaEnemigoSound:
+    Guid:
+      Data1: 1458840919
+      Data2: 1140548641
+      Data3: 164432011
+      Data4: 357754894
+    Path: event:/Enemigo cerca
 --- !u!114 &1512140149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266299,6 +266412,13 @@ MonoBehaviour:
   duracionFadeIn: 0.3
   duracionVisible: 2
   duracionFadeOut: 1
+  alertaEnemigoSound:
+    Guid:
+      Data1: 1458840919
+      Data2: 1140548641
+      Data3: 164432011
+      Data4: 357754894
+    Path: event:/Enemigo cerca
 --- !u!1 &1524412996 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bb40107929848f948bc46b853714c99d, type: 3}
@@ -338581,6 +338701,13 @@ MonoBehaviour:
   duracionFadeIn: 0.3
   duracionVisible: 2
   duracionFadeOut: 1
+  alertaEnemigoSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &1828832909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: acce7ec0909dbd4498daf46b61256936, type: 3}
@@ -370285,6 +370412,7 @@ GameObject:
   - component: {fileID: 2000398543}
   - component: {fileID: 2000398542}
   - component: {fileID: 2000398546}
+  - component: {fileID: 2000398547}
   m_Layer: 0
   m_Name: ZonaNivel2
   m_TagString: Untagged
@@ -370401,6 +370529,25 @@ MonoBehaviour:
   movimientoJugador: {fileID: 1373153112}
   duracion: 6
   velocidadFade: 1
+--- !u!114 &2000398547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000398541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ab80b41a8392f47b448a631d714cff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneMusicTrigger
+  musicaZona:
+    Guid:
+      Data1: -2014280502
+      Data2: 1233805949
+      Data3: 437511345
+      Data4: 1538075848
+    Path: "event:/M\xFAsica ambiente 1"
 --- !u!1001 &2000514859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -386056,11 +386203,6 @@ MonoBehaviour:
   duracionMensajeEfecto: 4
   locomotionProvider: {fileID: 747958278}
   turnProvider: {fileID: 1305006495}
---- !u!4 &2123665309 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9030460334835912027, guid: 377912155c2810d49be3a828765faca4, type: 3}
-  m_PrefabInstance: {fileID: 6533250452254478365}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2124636927
 GameObject:
   m_ObjectHideFlags: 0

@@ -108,6 +108,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{8a9eeb28-fe46-46b2-88d9-c7078111f98e}" />
 	<object class="SingleSound" id="{83856d22-002a-417e-afcd-2c50189a12f6}">
+		<property name="looping">
+			<value>true</value>
+		</property>
 		<relationship name="automators">
 			<destination>{7265f656-60c1-416f-97d0-a7bcfba8e98c}</destination>
 		</relationship>

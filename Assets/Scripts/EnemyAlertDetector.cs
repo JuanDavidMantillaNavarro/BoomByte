@@ -1,12 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using FMODUnity;
 
 public class EnemyAlertDetector : MonoBehaviour
 {
     [Header("Jugador")]
     public Transform player;
 
-    [Header("Detección")]
+    [Header("DetecciÃ³n")]
     public float distanciaDeteccion = 4f;
 
     [Header("UI")]
@@ -16,6 +17,9 @@ public class EnemyAlertDetector : MonoBehaviour
     public float duracionFadeIn = 0.3f;
     public float duracionVisible = 2f;
     public float duracionFadeOut = 0.5f;
+
+    [Header("FMOD - Audio")]
+    [SerializeField] private EventReference alertaEnemigoSound;
 
     private bool activado = false;
     private CanvasGroup canvasGroup;
@@ -42,15 +46,14 @@ public class EnemyAlertDetector : MonoBehaviour
         if (activado || player == null)
             return;
 
-        float distancia =
-            Vector3.Distance(
-                transform.position,
-                player.position
-            );
+        float distancia = Vector3.Distance(transform.position, player.position);
 
         if (distancia <= distanciaDeteccion)
         {
             activado = true;
+
+            RuntimeManager.PlayOneShot(alertaEnemigoSound, transform.position);
+
             StartCoroutine(MostrarAlerta());
         }
     }
@@ -67,36 +70,20 @@ public class EnemyAlertDetector : MonoBehaviour
         while (t < duracionFadeIn)
         {
             t += Time.deltaTime;
-
-            canvasGroup.alpha =
-                Mathf.Lerp(
-                    0f,
-                    1f,
-                    t / duracionFadeIn
-                );
-
+            canvasGroup.alpha = Mathf.Lerp(0f, 1f, t / duracionFadeIn);
             yield return null;
         }
 
         canvasGroup.alpha = 1f;
 
-        yield return new WaitForSeconds(
-            duracionVisible
-        );
+        yield return new WaitForSeconds(duracionVisible);
 
         t = 0f;
 
         while (t < duracionFadeOut)
         {
             t += Time.deltaTime;
-
-            canvasGroup.alpha =
-                Mathf.Lerp(
-                    1f,
-                    0f,
-                    t / duracionFadeOut
-                );
-
+            canvasGroup.alpha = Mathf.Lerp(1f, 0f, t / duracionFadeOut);
             yield return null;
         }
 

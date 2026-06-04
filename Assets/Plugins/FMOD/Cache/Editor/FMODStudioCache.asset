@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639141679776596071
+  lastModified: 639161194921439321
   FileSizes: []
   Exists: 1
 --- !u!114 &-8534602962646178124
@@ -146,6 +146,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-6002620955234586364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsica ambiente 4"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/M\xFAsica ambiente 4"
+  Guid:
+    Data1: 831725686
+    Data2: 1231290484
+    Data3: 1319189888
+    Data4: -1166654950
+  Banks:
+  - {fileID: -8922935967432096436}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4675924106459634580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +254,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1871918254560400981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica ambiente 5
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Musica ambiente 5
+  Guid:
+    Data1: 819071969
+    Data2: 1213424555
+    Data3: -147219023
+    Data4: -1522911450
+  Banks:
+  - {fileID: -8922935967432096436}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1809609379582313404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +304,33 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1584658944877120114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica-ambiente 2
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Musica-ambiente 2
+  Guid:
+    Data1: 1177627796
+    Data2: 1232654459
+    Data3: -1997068101
+    Data4: 1305966657
+  Banks:
+  - {fileID: -8922935967432096436}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -316,8 +397,6 @@ MonoBehaviour:
   - {fileID: -8922935967432096436}
   - {fileID: 540384620337522641}
   EditorEvents:
-  - {fileID: 4629757895390633356}
-  - {fileID: 4317683606730620182}
   - {fileID: -7545191133518695285}
   - {fileID: -414961253778557257}
   - {fileID: 2521801525248663692}
@@ -328,38 +407,76 @@ MonoBehaviour:
   - {fileID: -1809609379582313404}
   - {fileID: 5943376787327431134}
   - {fileID: 9217327392476350573}
+  - {fileID: 476638407807837575}
+  - {fileID: -6002620955234586364}
+  - {fileID: -1584658944877120114}
+  - {fileID: 4988337912378961966}
+  - {fileID: -1871918254560400981}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8922935967432096436}
   StringsBanks:
   - {fileID: 4490191240115237655}
   cacheVersion: 131859
-  cacheTime: 639141679777187861
+  cacheTime: 639161194921449331
   SerializableEventsDict:
-  - key: "event:/M\xFAsica ambiente 2"
-    index: 0
-  - key: "event:/M\xFAsica ambiente 3"
-    index: 1
   - key: event:/cuack2
-    index: 2
+    index: 0
   - key: event:/Balbuceo cartoon
-    index: 3
+    index: 1
   - key: event:/caminata 1
-    index: 4
+    index: 2
   - key: event:/Enemigo cerca
-    index: 5
+    index: 3
   - key: event:/Desbloquear nueva zona 1
-    index: 6
+    index: 4
   - key: event:/Enemigo
-    index: 7
+    index: 5
   - key: event:/Lanzar
-    index: 8
+    index: 6
   - key: event:/cuack
-    index: 9
+    index: 7
   - key: event:/Agarrar 1
-    index: 10
+    index: 8
   - key: "event:/_explosi\xF3n_"
+    index: 9
+  - key: "event:/M\xFAsica ambiente 1"
+    index: 10
+  - key: "event:/M\xFAsica ambiente 4"
     index: 11
+  - key: event:/Musica-ambiente 2
+    index: 12
+  - key: event:/Musica-ambiente 3
+    index: 13
+  - key: event:/Musica ambiente 5
+    index: 14
+--- !u!114 &476638407807837575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsica ambiente 1"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/M\xFAsica ambiente 1"
+  Guid:
+    Data1: 102704014
+    Data2: 1102814763
+    Data3: 1678684334
+    Data4: -806000977
+  Banks:
+  - {fileID: -8922935967432096436}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &540384620337522641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +492,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639141679777187861
+  lastModified: 639161192509986661
   FileSizes: []
   Exists: 1
 --- !u!114 &570903147532449812
@@ -499,7 +616,7 @@ MonoBehaviour:
   - {fileID: 540384620337522641}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -531,33 +648,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4317683606730620182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/M\xFAsica ambiente 3"
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: "event:/M\xFAsica ambiente 3"
-  Guid:
-    Data1: 102704014
-    Data2: 1102814763
-    Data3: 1678684334
-    Data4: -806000977
-  Banks:
-  - {fileID: -8922935967432096436}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &4490191240115237655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,10 +663,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639141679776881623
+  lastModified: 639161194921449331
   FileSizes:
   - Name: 
-    Value: 1354
+    Value: 1548
   Exists: 1
 --- !u!114 &4542149923067462301
 MonoBehaviour:
@@ -605,7 +695,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4629757895390633356
+--- !u!114 &4988337912378961966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -615,14 +705,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/M\xFAsica ambiente 2"
+  m_Name: event:/Musica-ambiente 3
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: "event:/M\xFAsica ambiente 2"
+  Path: event:/Musica-ambiente 3
   Guid:
-    Data1: 831725686
-    Data2: 1231290484
-    Data3: 1319189888
-    Data4: -1166654950
+    Data1: 594623663
+    Data2: 1290843293
+    Data3: -1938678875
+    Data4: 567463751
   Banks:
   - {fileID: -8922935967432096436}
   IsStream: 1
