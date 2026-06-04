@@ -37267,7 +37267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
-  target: {fileID: 73252249}
+  target: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
   mantenerYFija: 1
 --- !u!212 &219756384
@@ -356322,7 +356322,7 @@ Transform:
   m_GameObject: {fileID: 1893551171}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 121.7, y: 18.8, z: -141}
+  m_LocalPosition: {x: 121.7, y: 26, z: -141}
   m_LocalScale: {x: 7.0075636, y: 7.0075617, z: 7.0075617}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -356340,7 +356340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
-  target: {fileID: 1901425519}
+  target: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
   mantenerYFija: 1
 --- !u!212 &1893551174
