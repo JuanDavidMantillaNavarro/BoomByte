@@ -22583,11 +22583,11 @@ MonoBehaviour:
   duracionFadeOut: 1
   alertaEnemigoSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1458840919
+      Data2: 1140548641
+      Data3: 164432011
+      Data4: 357754894
+    Path: event:/Enemigo cerca
 --- !u!1 &85132022
 GameObject:
   m_ObjectHideFlags: 0
@@ -339420,11 +339420,11 @@ MonoBehaviour:
   duracionFadeOut: 1
   alertaEnemigoSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1458840919
+      Data2: 1140548641
+      Data3: 164432011
+      Data4: 357754894
+    Path: event:/Enemigo cerca
 --- !u!114 &1828509004
 MonoBehaviour:
   m_ObjectHideFlags: 0
