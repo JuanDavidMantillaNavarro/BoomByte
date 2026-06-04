@@ -427,7 +427,7 @@ Transform:
   m_GameObject: {fileID: 1522150}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -159.6, y: 43, z: -160}
+  m_LocalPosition: {x: -179, y: 45, z: -93}
   m_LocalScale: {x: 1.5182074, y: 1.5182071, z: 1.5182071}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -445,7 +445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
-  target: {fileID: 1368207405}
+  target: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
 --- !u!212 &1522153
 SpriteRenderer:
   serializedVersion: 2
@@ -9841,6 +9843,11 @@ MonoBehaviour:
   duracionEfecto: 4
   duracionMensaje: 3
   reduccionRadio: 1
+--- !u!4 &8829558 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9030460334835912027, guid: 377912155c2810d49be3a828765faca4, type: 3}
+  m_PrefabInstance: {fileID: 8829544}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9034732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10072,7 +10079,7 @@ Transform:
   m_GameObject: {fileID: 10381482}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 70.4, y: 6.5, z: -181.6}
+  m_LocalPosition: {x: 109.8, y: 58.5, z: -141}
   m_LocalScale: {x: 7.0075636, y: 7.0075617, z: 7.0075617}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10150,6 +10157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
   target: {fileID: 1396063769}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
 --- !u!1 &11056811
 GameObject:
   m_ObjectHideFlags: 0
@@ -15307,6 +15316,113 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 69ca76836a06f9a4499ed6defd057510, type: 3}
   m_PrefabInstance: {fileID: 26349761}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &26932620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 26932621}
+  - component: {fileID: 26932623}
+  - component: {fileID: 26932622}
+  m_Layer: 0
+  m_Name: ICONOS MAPA ENEMIGO (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &26932621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26932620}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 287, y: 1.2, z: -125.9}
+  m_LocalScale: {x: 7.969762, y: 7.96976, z: 7.96976}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1767779591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &26932622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26932620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
+  target: {fileID: 182900075}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
+--- !u!212 &26932623
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26932620}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ea8926a6fdb592245bd7d7d0a87d368e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 1277403317
+  m_SortingLayer: 1
+  m_SortingOrder: 100
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 67227539689815b4382c0b7e2a89b6ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15.36, y: 10.24}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1 &27173431 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -114795926800130887, guid: 69ca76836a06f9a4499ed6defd057510, type: 3}
@@ -22588,6 +22704,11 @@ MonoBehaviour:
       Data3: 164432011
       Data4: 357754894
     Path: event:/Enemigo cerca
+--- !u!4 &85113853 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9030460334835912027, guid: 377912155c2810d49be3a828765faca4, type: 3}
+  m_PrefabInstance: {fileID: 85113839}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &85132022
 GameObject:
   m_ObjectHideFlags: 0
@@ -22731,7 +22852,7 @@ Transform:
   m_GameObject: {fileID: 85923033}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.8, y: 6.4999995, z: -181.60002}
+  m_LocalPosition: {x: -66.6, y: 42.1, z: -141}
   m_LocalScale: {x: 7.0075636, y: 7.0075617, z: 7.0075617}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22750,6 +22871,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
   target: {fileID: 1056583986}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
 --- !u!212 &85923036
 SpriteRenderer:
   serializedVersion: 2
@@ -25450,6 +25573,11 @@ MonoBehaviour:
       Data3: 164432011
       Data4: 357754894
     Path: event:/Enemigo cerca
+--- !u!4 &152288436 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7661000884995411235, guid: eea07ae9abf719649a95717df5dc69d7, type: 3}
+  m_PrefabInstance: {fileID: 3162269201082630382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &155227178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25739,7 +25867,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
-  target: {fileID: 0}
+  target: {fileID: 152288436}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
 --- !u!1001 &165143175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30261,6 +30391,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
   target: {fileID: 426085145}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
 --- !u!1 &170425876
 GameObject:
   m_ObjectHideFlags: 0
@@ -37117,7 +37249,7 @@ Transform:
   m_GameObject: {fileID: 219756381}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.8, y: 6.4999995, z: -181.60002}
+  m_LocalPosition: {x: -22.8, y: 38, z: -141}
   m_LocalScale: {x: 7.0075636, y: 7.0075617, z: 7.0075617}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37136,6 +37268,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
   target: {fileID: 73252249}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
 --- !u!212 &219756384
 SpriteRenderer:
   serializedVersion: 2
@@ -39081,6 +39215,11 @@ MonoBehaviour:
       Data3: 164432011
       Data4: 357754894
     Path: event:/Enemigo cerca
+--- !u!4 &243906184 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7661000884995411235, guid: eea07ae9abf719649a95717df5dc69d7, type: 3}
+  m_PrefabInstance: {fileID: 243906174}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &244020820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51239,7 +51378,7 @@ Transform:
   m_GameObject: {fileID: 313676627}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.8, y: 6.4999995, z: -181.60002}
+  m_LocalPosition: {x: -46.9, y: 43.1, z: -141}
   m_LocalScale: {x: 7.0075636, y: 7.0075617, z: 7.0075617}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51258,6 +51397,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
   target: {fileID: 1835186783}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
 --- !u!212 &313676630
 SpriteRenderer:
   serializedVersion: 2
@@ -98668,6 +98809,113 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bb05decf3d6936849ad6b24cdfa2ba2e, type: 3}
   m_PrefabInstance: {fileID: 1910159988}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &600803463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 600803464}
+  - component: {fileID: 600803466}
+  - component: {fileID: 600803465}
+  m_Layer: 0
+  m_Name: ICONOS MAPA ENEMIGO (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &600803464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600803463}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 287, y: 1.2, z: -125.9}
+  m_LocalScale: {x: 7.969762, y: 7.96976, z: 7.96976}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1767779591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &600803465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600803463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
+  target: {fileID: 701798124}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
+--- !u!212 &600803466
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600803463}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ea8926a6fdb592245bd7d7d0a87d368e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 1277403317
+  m_SortingLayer: 1
+  m_SortingOrder: 100
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 67227539689815b4382c0b7e2a89b6ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15.36, y: 10.24}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!65 &601366656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -98926,6 +99174,113 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606161900}
   m_CullTransparentMesh: 1
+--- !u!1 &608870568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 608870569}
+  - component: {fileID: 608870571}
+  - component: {fileID: 608870570}
+  m_Layer: 0
+  m_Name: ICONOS MAPA ENEMIGO (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &608870569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608870568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 287, y: 1.2, z: -125.9}
+  m_LocalScale: {x: 7.969762, y: 7.96976, z: 7.96976}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1767779591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &608870570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608870568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
+  target: {fileID: 1828509015}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
+--- !u!212 &608870571
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608870568}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ea8926a6fdb592245bd7d7d0a87d368e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 1277403317
+  m_SortingLayer: 1
+  m_SortingOrder: 100
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 67227539689815b4382c0b7e2a89b6ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15.36, y: 10.24}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!65 &608973938
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -123565,6 +123920,11 @@ MonoBehaviour:
       Data3: 164432011
       Data4: 357754894
     Path: event:/Enemigo cerca
+--- !u!4 &671581505 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7661000884995411235, guid: eea07ae9abf719649a95717df5dc69d7, type: 3}
+  m_PrefabInstance: {fileID: 671581495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &673542029
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -127371,6 +127731,11 @@ MonoBehaviour:
       Data3: 164432011
       Data4: 357754894
     Path: event:/Enemigo cerca
+--- !u!4 &701798124 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7661000884995411235, guid: eea07ae9abf719649a95717df5dc69d7, type: 3}
+  m_PrefabInstance: {fileID: 701798114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &703006191
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -149866,7 +150231,7 @@ Transform:
   m_GameObject: {fileID: 829163242}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.8, y: 6.4999995, z: -181.60002}
+  m_LocalPosition: {x: 53.5, y: 19, z: -141}
   m_LocalScale: {x: 7.0075636, y: 7.0075617, z: 7.0075617}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -149885,6 +150250,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
   target: {fileID: 1927220434}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
 --- !u!212 &829163245
 SpriteRenderer:
   serializedVersion: 2
@@ -152321,6 +152688,113 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &869139030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 869139031}
+  - component: {fileID: 869139033}
+  - component: {fileID: 869139032}
+  m_Layer: 0
+  m_Name: ICONOS MAPA ENEMIGO (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &869139031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869139030}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 287, y: 1.2, z: -125.9}
+  m_LocalScale: {x: 7.969762, y: 7.96976, z: 7.96976}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1767779591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &869139032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869139030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
+  target: {fileID: 8829558}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
+--- !u!212 &869139033
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869139030}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ea8926a6fdb592245bd7d7d0a87d368e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 1277403317
+  m_SortingLayer: 1
+  m_SortingOrder: 100
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 67227539689815b4382c0b7e2a89b6ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15.36, y: 10.24}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!65 &872129821
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -158637,7 +159111,7 @@ Transform:
   m_GameObject: {fileID: 909425575}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.4, y: 32.5, z: -181.3}
+  m_LocalPosition: {x: 13.4, y: 32.5, z: -119.7}
   m_LocalScale: {x: 1.5182074, y: 1.5182071, z: 1.5182071}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -158655,7 +159129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
-  target: {fileID: 1368207405}
+  target: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
 --- !u!212 &909425578
 SpriteRenderer:
   serializedVersion: 2
@@ -199779,7 +200255,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028036733}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -213052,7 +213528,7 @@ Transform:
   m_GameObject: {fileID: 1094210632}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 162, y: -15, z: -181}
+  m_LocalPosition: {x: 160.6, y: -15, z: -134}
   m_LocalScale: {x: 1.5182074, y: 1.5182071, z: 1.5182071}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -213129,7 +213605,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
-  target: {fileID: 1368207405}
+  target: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
 --- !u!1001 &1097390178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -238241,7 +238719,7 @@ Transform:
   m_GameObject: {fileID: 1318186024}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.8, y: 6.4999995, z: -181.60002}
+  m_LocalPosition: {x: -14.1, y: 20.2, z: -141}
   m_LocalScale: {x: 7.0075636, y: 7.0075617, z: 7.0075617}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -238260,6 +238738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
   target: {fileID: 1145173909}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
 --- !u!212 &1318186027
 SpriteRenderer:
   serializedVersion: 2
@@ -247166,6 +247646,113 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100, y: 0, z: 99.99999}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1383148929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1383148930}
+  - component: {fileID: 1383148932}
+  - component: {fileID: 1383148931}
+  m_Layer: 0
+  m_Name: ICONOS MAPA ENEMIGO (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1383148930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383148929}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 287, y: 1.2, z: -125.9}
+  m_LocalScale: {x: 7.969762, y: 7.96976, z: 7.96976}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1767779591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1383148931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383148929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
+  target: {fileID: 243906184}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
+--- !u!212 &1383148932
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383148929}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ea8926a6fdb592245bd7d7d0a87d368e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 1277403317
+  m_SortingLayer: 1
+  m_SortingOrder: 100
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 67227539689815b4382c0b7e2a89b6ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15.36, y: 10.24}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1 &1385710726
 GameObject:
   m_ObjectHideFlags: 0
@@ -260526,6 +261113,11 @@ MonoBehaviour:
       Data3: 164432011
       Data4: 357754894
     Path: event:/Enemigo cerca
+--- !u!4 &1465001814 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67670bbd8d8ed7645933eef2a2504b77, type: 3}
+  m_PrefabInstance: {fileID: 1465001804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1465001815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265120,6 +265712,113 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100.00002, y: 197.88867, z: 502.82703}
   m_Center: {x: 0.00036621094, y: 0.000015258789, z: -0.0009765625}
+--- !u!1 &1498568974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1498568975}
+  - component: {fileID: 1498568977}
+  - component: {fileID: 1498568976}
+  m_Layer: 0
+  m_Name: ICONOS MAPA ENEMIGO (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1498568975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498568974}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 287, y: 1.2, z: -125.9}
+  m_LocalScale: {x: 7.969762, y: 7.96976, z: 7.96976}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1767779591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1498568976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498568974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
+  target: {fileID: 1465001814}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
+--- !u!212 &1498568977
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498568974}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ea8926a6fdb592245bd7d7d0a87d368e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 1277403317
+  m_SortingLayer: 1
+  m_SortingOrder: 100
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 67227539689815b4382c0b7e2a89b6ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15.36, y: 10.24}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1 &1498846681 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4386572125101676502, guid: 7a224c4bcf3d0bf499ca15df840bb553, type: 3}
@@ -267405,7 +268104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!154 &1527434234
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -285492,6 +286191,113 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 85.88703, y: 0, z: 87.09225}
   m_Center: {x: -13.041802, y: 0.0000005364418, z: -6.453647}
+--- !u!1 &1615917594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1615917595}
+  - component: {fileID: 1615917597}
+  - component: {fileID: 1615917596}
+  m_Layer: 0
+  m_Name: ICONOS MAPA ENEMIGO (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1615917595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615917594}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 287, y: 1.2, z: -125.9}
+  m_LocalScale: {x: 7.969762, y: 7.96976, z: 7.96976}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1767779591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1615917596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615917594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
+  target: {fileID: 2123665310}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
+--- !u!212 &1615917597
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615917594}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ea8926a6fdb592245bd7d7d0a87d368e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 1277403317
+  m_SortingLayer: 1
+  m_SortingOrder: 100
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 67227539689815b4382c0b7e2a89b6ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15.36, y: 10.24}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1 &1616090911
 GameObject:
   m_ObjectHideFlags: 0
@@ -314565,6 +315371,113 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 69ca76836a06f9a4499ed6defd057510, type: 3}
   m_PrefabInstance: {fileID: 1695965095}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1697556278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1697556279}
+  - component: {fileID: 1697556281}
+  - component: {fileID: 1697556280}
+  m_Layer: 0
+  m_Name: ICONOS MAPA ENEMIGO (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1697556279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697556278}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 287, y: 1.2, z: -125.9}
+  m_LocalScale: {x: 7.969762, y: 7.96976, z: 7.96976}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1767779591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697556280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697556278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
+  target: {fileID: 671581505}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
+--- !u!212 &1697556281
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697556278}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ea8926a6fdb592245bd7d7d0a87d368e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 1277403317
+  m_SortingLayer: 1
+  m_SortingOrder: 100
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 67227539689815b4382c0b7e2a89b6ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15.36, y: 10.24}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1 &1700137650 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bb40107929848f948bc46b853714c99d, type: 3}
@@ -318376,6 +319289,16 @@ RectTransform:
   m_Children:
   - {fileID: 1406493308}
   - {fileID: 163476266}
+  - {fileID: 1615917595}
+  - {fileID: 600803464}
+  - {fileID: 1383148930}
+  - {fileID: 1697556279}
+  - {fileID: 869139031}
+  - {fileID: 608870569}
+  - {fileID: 1864048237}
+  - {fileID: 26932621}
+  - {fileID: 2126329299}
+  - {fileID: 1498568975}
   - {fileID: 170392626}
   - {fileID: 10381483}
   - {fileID: 219756382}
@@ -339443,6 +340366,11 @@ MonoBehaviour:
   duracionEfecto: 4
   duracionMensaje: 3
   reduccionRadio: 1
+--- !u!4 &1828509015 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9030460334835912027, guid: 377912155c2810d49be3a828765faca4, type: 3}
+  m_PrefabInstance: {fileID: 1828509001}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1828832909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: acce7ec0909dbd4498daf46b61256936, type: 3}
@@ -345409,6 +346337,113 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.009999999, y: 0.01, z: 0.009999999}
   m_Center: {x: 0, y: -4.656613e-10, z: -0.000000059604645}
+--- !u!1 &1864048236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1864048237}
+  - component: {fileID: 1864048239}
+  - component: {fileID: 1864048238}
+  m_Layer: 0
+  m_Name: ICONOS MAPA ENEMIGO (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1864048237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864048236}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 287, y: 1.2, z: -125.9}
+  m_LocalScale: {x: 7.969762, y: 7.96976, z: 7.96976}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1767779591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1864048238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864048236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
+  target: {fileID: 85113853}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
+--- !u!212 &1864048239
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864048236}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ea8926a6fdb592245bd7d7d0a87d368e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 1277403317
+  m_SortingLayer: 1
+  m_SortingOrder: 100
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 67227539689815b4382c0b7e2a89b6ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15.36, y: 10.24}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1 &1864263064
 GameObject:
   m_ObjectHideFlags: 0
@@ -355287,7 +356322,7 @@ Transform:
   m_GameObject: {fileID: 1893551171}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.8, y: 6.4999995, z: -181.60002}
+  m_LocalPosition: {x: 121.7, y: 18.8, z: -141}
   m_LocalScale: {x: 7.0075636, y: 7.0075617, z: 7.0075617}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -355306,6 +356341,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
   target: {fileID: 1901425519}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
 --- !u!212 &1893551174
 SpriteRenderer:
   serializedVersion: 2
@@ -379348,7 +380385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &2086551790
 AudioListener:
   m_ObjectHideFlags: 0
@@ -386932,6 +387969,11 @@ MonoBehaviour:
   duracionEfecto: 4
   duracionMensaje: 0
   reduccionRadio: 1
+--- !u!4 &2123665310 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9030460334835912027, guid: 377912155c2810d49be3a828765faca4, type: 3}
+  m_PrefabInstance: {fileID: 6533250452254478365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2124636927
 GameObject:
   m_ObjectHideFlags: 0
@@ -389367,6 +390409,113 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a8211a3e0e87d014e8326e23ae022d39, type: 3}
   m_PrefabInstance: {fileID: 2125541156}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2126329298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2126329299}
+  - component: {fileID: 2126329301}
+  - component: {fileID: 2126329300}
+  m_Layer: 0
+  m_Name: ICONOS MAPA ENEMIGO (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2126329299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126329298}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 287, y: 1.2, z: -125.9}
+  m_LocalScale: {x: 7.969762, y: 7.96976, z: 7.96976}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1767779591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2126329300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126329298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477800c08d24e964c96b8406a9c806da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowIcons
+  target: {fileID: 1512140155}
+  offset: {x: 0, y: 0, z: 0}
+  mantenerYFija: 1
+--- !u!212 &2126329301
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126329298}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ea8926a6fdb592245bd7d7d0a87d368e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 1277403317
+  m_SortingLayer: 1
+  m_SortingOrder: 100
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 67227539689815b4382c0b7e2a89b6ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15.36, y: 10.24}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1001 &2128893376
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,30 +2,32 @@ using UnityEngine;
 
 public class FollowIcons : MonoBehaviour
 {
+    [Header("Objeto a seguir")]
     public Transform target;
 
-    private float offsetX;
-    private float offsetZ;
-    private float fixedY;
+    [Header("Separación respecto al objetivo")]
+    public Vector3 offset = Vector3.zero;
+
+    [Header("Mantener altura fija")]
+    public bool mantenerYFija = true;
+
+    private float yInicial;
 
     void Start()
     {
-        if (target == null) return;
-
-        offsetX = transform.position.x - target.position.x;
-        offsetZ = transform.position.z - target.position.z;
-
-        fixedY = transform.position.y; // Y se queda fijo
+        yInicial = transform.position.y;
     }
 
-    void Update()
+    void LateUpdate()
     {
-        if (target == null) return;
+        if (target == null)
+            return;
 
-        transform.position = new Vector3(
-            target.position.x + offsetX, // X sigue X
-            fixedY,                      // Y fijo
-            target.position.z + offsetZ  // Z sigue Z
-        );
+        Vector3 nuevaPosicion = target.position + offset;
+
+        if (mantenerYFija)
+            nuevaPosicion.y = yInicial;
+
+        transform.position = nuevaPosicion;
     }
 }

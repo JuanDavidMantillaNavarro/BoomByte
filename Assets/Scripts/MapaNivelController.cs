@@ -38,7 +38,7 @@ public class MapaNivelController : MonoBehaviour
                 if (textoMapa != null)
                 {
                     textoMapa.text =
-                        "Ubicaci�n actual:\nNivel 1: Laboratorio MAC";
+                        "Ubicacion actual:\nNivel 1: Laboratorio MAC";
                 }
 
                 if (resaltadoLaboratorio != null)
@@ -51,7 +51,7 @@ public class MapaNivelController : MonoBehaviour
                 if (textoMapa != null)
                 {
                     textoMapa.text =
-                        "Ubicaci�n actual:\nNivel 2: Taller de Dise�o";
+                        "Ubicacion actual:\nNivel 2: Taller de Dibujo";
                 }
 
                 if (resaltadoTaller != null)
@@ -64,7 +64,7 @@ public class MapaNivelController : MonoBehaviour
                 if (textoMapa != null)
                 {
                     textoMapa.text =
-                        "Ubicaci�n actual:\nNivel Final";
+                        "Ubicacion actual:\nNivel Final";
                 }
 
                 if (resaltadoPlaza != null)
