@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639161194921439321
+  lastModified: 639158554704588239
   FileSizes: []
   Exists: 1
 --- !u!114 &-8534602962646178124
@@ -65,6 +65,33 @@ MonoBehaviour:
   - Name: 
     Value: 1354
   Exists: 1
+--- !u!114 &-8453613332447587867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsica ambiente 3"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/M\xFAsica ambiente 3"
+  Guid:
+    Data1: 102704014
+    Data2: 1102814763
+    Data3: 1678684334
+    Data4: -806000977
+  Banks:
+  - {fileID: -8922935967432096436}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7720073084225596345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,33 +169,6 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-6002620955234586364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/M\xFAsica ambiente 4"
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: "event:/M\xFAsica ambiente 4"
-  Guid:
-    Data1: 831725686
-    Data2: 1231290484
-    Data3: 1319189888
-    Data4: -1166654950
-  Banks:
-  - {fileID: -8922935967432096436}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -254,33 +254,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1871918254560400981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica ambiente 5
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Musica ambiente 5
-  Guid:
-    Data1: 819071969
-    Data2: 1213424555
-    Data3: -147219023
-    Data4: -1522911450
-  Banks:
-  - {fileID: -8922935967432096436}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-1809609379582313404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,33 +277,6 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-1584658944877120114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica-ambiente 2
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Musica-ambiente 2
-  Guid:
-    Data1: 1177627796
-    Data2: 1232654459
-    Data3: -1997068101
-    Data4: 1305966657
-  Banks:
-  - {fileID: -8922935967432096436}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -407,18 +353,15 @@ MonoBehaviour:
   - {fileID: -1809609379582313404}
   - {fileID: 5943376787327431134}
   - {fileID: 9217327392476350573}
-  - {fileID: 476638407807837575}
-  - {fileID: -6002620955234586364}
-  - {fileID: -1584658944877120114}
-  - {fileID: 4988337912378961966}
-  - {fileID: -1871918254560400981}
+  - {fileID: 4244985466823882124}
+  - {fileID: -8453613332447587867}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8922935967432096436}
   StringsBanks:
   - {fileID: 4490191240115237655}
   cacheVersion: 131859
-  cacheTime: 639161194921449331
+  cacheTime: 639158554708882736
   SerializableEventsDict:
   - key: event:/cuack2
     index: 0
@@ -440,43 +383,10 @@ MonoBehaviour:
     index: 8
   - key: "event:/_explosi\xF3n_"
     index: 9
-  - key: "event:/M\xFAsica ambiente 1"
+  - key: "event:/M\xFAsica ambiente 2"
     index: 10
-  - key: "event:/M\xFAsica ambiente 4"
+  - key: "event:/M\xFAsica ambiente 3"
     index: 11
-  - key: event:/Musica-ambiente 2
-    index: 12
-  - key: event:/Musica-ambiente 3
-    index: 13
-  - key: event:/Musica ambiente 5
-    index: 14
---- !u!114 &476638407807837575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/M\xFAsica ambiente 1"
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: "event:/M\xFAsica ambiente 1"
-  Guid:
-    Data1: 102704014
-    Data2: 1102814763
-    Data3: 1678684334
-    Data4: -806000977
-  Banks:
-  - {fileID: -8922935967432096436}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &540384620337522641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,7 +402,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639161192509986661
+  lastModified: 639158554708882736
   FileSizes: []
   Exists: 1
 --- !u!114 &570903147532449812
@@ -616,7 +526,7 @@ MonoBehaviour:
   - {fileID: 540384620337522641}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -648,6 +558,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &4244985466823882124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsica ambiente 2"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/M\xFAsica ambiente 2"
+  Guid:
+    Data1: 831725686
+    Data2: 1231290484
+    Data3: 1319189888
+    Data4: -1166654950
+  Banks:
+  - {fileID: -8922935967432096436}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4490191240115237655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,10 +600,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639161194921449331
+  lastModified: 639158554704603311
   FileSizes:
   - Name: 
-    Value: 1548
+    Value: 1390
   Exists: 1
 --- !u!114 &4542149923067462301
 MonoBehaviour:
@@ -691,33 +628,6 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &4988337912378961966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica-ambiente 3
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Musica-ambiente 3
-  Guid:
-    Data1: 594623663
-    Data2: 1290843293
-    Data3: -1938678875
-    Data4: 567463751
-  Banks:
-  - {fileID: -8922935967432096436}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
