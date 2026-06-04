@@ -12,6 +12,7 @@ TagManager:
   - Destructible2
   - objeto
   - Destructible3
+  - Flecha
   layers:
   - Default
   - TransparentFX

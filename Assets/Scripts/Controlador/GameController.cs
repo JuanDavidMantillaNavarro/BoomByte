@@ -42,6 +42,7 @@ public class GameController : MonoBehaviour
     public InvControls InvControls;
     public VelocidadEffect Velocidad;
     public SlowCargaEffect CargaRapida;
+    public FlechasGuiaEffect Flecha;
 
     [Header("Respawn de enemigos")]
     [Tooltip("Prefab del enemigo a respawnear. Debe tener el tag 'Enemy' y el componente EnemySpawnPoint.")]
@@ -225,6 +226,10 @@ public class GameController : MonoBehaviour
         if(PROFE == "PowerUpCargaRapida")
         {
             effectManager.ApplyEffect(CargaRapida);
+            Debug.Log("POWERUP");
+        }if(PROFE == "PowerUpFlechas")
+        {
+            effectManager.ApplyEffect(Flecha);
             Debug.Log("POWERUP");
         }
     }
