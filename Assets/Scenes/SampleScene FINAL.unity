@@ -21445,6 +21445,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7917674758326848202, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
   m_PrefabInstance: {fileID: 1373153106}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &64579889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64579876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e2b0717678a6744cb813b0bb6088d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FootstepsController
+  footstepsEvent:
+    Guid:
+      Data1: -1415176367
+      Data2: 1337814701
+      Data3: -826651003
+      Data4: -2075007514
+    Path: event:/caminata 1
 --- !u!65 &67482102
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73832,14 +73851,14 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 698150253}
         m_TargetAssemblyTypeName: AudioManagerFMODVR, Assembly-CSharp
         m_MethodName: SetGeneral
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -76734,11 +76753,11 @@ MonoBehaviour:
   effectManager: {fileID: 439260411}
   enemigoSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1365962379
+      Data2: 1164610099
+      Data3: 1046734269
+      Data4: -1387945579
+    Path: event:/Enemigo
   BolasActivas: 0
   MaxBolas: 1
   speedMulti: 1
@@ -179215,7 +179234,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -190162,7 +190181,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -230664,11 +230683,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZoneMusicTrigger
   musicaZona:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1177627796
+      Data2: 1232654459
+      Data3: -1997068101
+      Data4: 1305966657
+    Path: event:/Musica-ambiente-4
 --- !u!65 &1235260933
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -246808,6 +246827,9 @@ PrefabInstance:
       insertIndex: 0
       addedObject: {fileID: 1293005738}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7917674758326848201, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 64579889}
     - targetCorrespondingSourceObject: {fileID: 5518899284880179291, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1373153109}
@@ -249110,7 +249132,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1406092149}
-  - component: {fileID: 1406092148}
   m_Layer: 0
   m_Name: MusicaGameplayFMOD
   m_TagString: Untagged
@@ -249118,25 +249139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1406092148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1406092147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1141f72691aa86042b5cdea49f85e349, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MusicaGameplayFMOD
-  musicaDespuesSegundaPared:
-    Guid:
-      Data1: 831725686
-      Data2: 1231290484
-      Data3: 1319189888
-      Data4: -1166654950
-    Path: "event:/M\xFAsica ambiente 2"
 --- !u!4 &1406092149
 Transform:
   m_ObjectHideFlags: 0
@@ -286330,6 +286332,7 @@ GameObject:
   - component: {fileID: 1616090914}
   - component: {fileID: 1616090912}
   - component: {fileID: 1616090918}
+  - component: {fileID: 1616090919}
   m_Layer: 0
   m_Name: Zona Final Victoria
   m_TagString: Untagged
@@ -286459,6 +286462,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4333b551070d9d34e84e36dc675bdd44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaVictoria
+--- !u!114 &1616090919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616090911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ab80b41a8392f47b448a631d714cff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneMusicTrigger
+  musicaZona:
+    Guid:
+      Data1: 594623663
+      Data2: 1290843293
+      Data3: -1938678875
+      Data4: 567463751
+    Path: event:/Musica-ambiente-5
 --- !u!1 &1616945264
 GameObject:
   m_ObjectHideFlags: 0

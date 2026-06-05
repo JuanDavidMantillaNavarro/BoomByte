@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639141679776596071
+  lastModified: 639162530762375221
   FileSizes: []
   Exists: 1
 --- !u!114 &-8534602962646178124
@@ -87,7 +87,7 @@ MonoBehaviour:
   - {fileID: -8922935967432096436}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -355,13 +355,16 @@ MonoBehaviour:
   - {fileID: 9217327392476350573}
   - {fileID: 4244985466823882124}
   - {fileID: -8453613332447587867}
+  - {fileID: 4780160921507617119}
+  - {fileID: 1862639789193492783}
+  - {fileID: 2814176182898717605}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8922935967432096436}
   StringsBanks:
   - {fileID: 4490191240115237655}
   cacheVersion: 131859
-  cacheTime: 639141679777187861
+  cacheTime: 639162530762785467
   SerializableEventsDict:
   - key: event:/cuack2
     index: 0
@@ -387,6 +390,12 @@ MonoBehaviour:
     index: 10
   - key: "event:/M\xFAsica ambiente 3"
     index: 11
+  - key: event:/Musica-ambiente-4
+    index: 12
+  - key: event:/Musica-ambiente-5
+    index: 13
+  - key: "event:/M\xFAsica ambiente 1"
+    index: 14
 --- !u!114 &540384620337522641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,7 +411,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639141679777187861
+  lastModified: 639162530762785467
   FileSizes: []
   Exists: 1
 --- !u!114 &570903147532449812
@@ -477,6 +486,33 @@ MonoBehaviour:
   lastModified: 639141376074021868
   FileSizes: []
   Exists: 1
+--- !u!114 &1862639789193492783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica-ambiente-5
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Musica-ambiente-5
+  Guid:
+    Data1: 594623663
+    Data2: 1290843293
+    Data3: -1938678875
+    Data4: 567463751
+  Banks:
+  - {fileID: -8922935967432096436}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2250633151073869373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,7 +562,34 @@ MonoBehaviour:
   - {fileID: 540384620337522641}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2814176182898717605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsica ambiente 1"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/M\xFAsica ambiente 1"
+  Guid:
+    Data1: -2014280502
+    Data2: 1233805949
+    Data3: 437511345
+    Data4: 1538075848
+  Banks:
+  - {fileID: -8922935967432096436}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -600,10 +663,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639141679776881623
+  lastModified: 639162530762395233
   FileSizes:
   - Name: 
-    Value: 1354
+    Value: 1526
   Exists: 1
 --- !u!114 &4542149923067462301
 MonoBehaviour:
@@ -628,6 +691,33 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4780160921507617119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica-ambiente-4
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Musica-ambiente-4
+  Guid:
+    Data1: 1177627796
+    Data2: 1232654459
+    Data3: -1997068101
+    Data4: 1305966657
+  Banks:
+  - {fileID: -8922935967432096436}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
