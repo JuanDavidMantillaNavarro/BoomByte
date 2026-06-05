@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639158554704588239
+  lastModified: 639141679776596071
   FileSizes: []
   Exists: 1
 --- !u!114 &-8534602962646178124
@@ -361,7 +361,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 4490191240115237655}
   cacheVersion: 131859
-  cacheTime: 639158554708882736
+  cacheTime: 639141679777187861
   SerializableEventsDict:
   - key: event:/cuack2
     index: 0
@@ -402,7 +402,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639158554708882736
+  lastModified: 639141679777187861
   FileSizes: []
   Exists: 1
 --- !u!114 &570903147532449812
@@ -600,10 +600,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Sonidos/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639158554704603311
+  lastModified: 639141679776881623
   FileSizes:
   - Name: 
-    Value: 1390
+    Value: 1354
   Exists: 1
 --- !u!114 &4542149923067462301
 MonoBehaviour:
